@@ -72,8 +72,8 @@ out.extend([
  r'For the second line, put $v=(s-1)/(s+1)$, apply Landen transformation to the negative argument, and then use $\operatorname{Li}_2(v^2)=2\operatorname{Li}_2(v)+2\operatorname{Li}_2(-v)$. Reflection and the preceding half-argument identity give the displayed expression. All intermediate arguments used in these identities are real and their logarithms have the signs fixed by $s>1$.',
  r'Equivalently, denote the two right-hand sides by $Q_1(s)$ and $Q_2(s)$. Differentiation and the positive-factor logarithm identities for $s>1$ give',
  r'\begin{equation}',
- r' Q_1\prime(s)=-\frac{\ln s}{s-1},\qquad',
- r' Q_2\prime(s)=-\frac{2(s+1)}{s(s-1)}\ln\frac{s+1}{2\sqrt s}.',
+ r" Q_1'(s)=-\frac{\ln s}{s-1},\qquad",
+ r" Q_2'(s)=-\frac{2(s+1)}{s(s-1)}\ln\frac{s+1}{2\sqrt s}.",
  r'\end{equation}',
  r'These are precisely the derivatives of the two left-hand sides. At $s\to1^+$ both sides vanish. Here the coefficient of $M=\ln(s-1)$ vanishes at least linearly, and $\operatorname{Li}_2(1/2)=\pi^2/12-\ln^22/2$ fixes the remaining constant. Equality of derivatives and this boundary value establish the identities on the connected domain $s>1$.',
 ])

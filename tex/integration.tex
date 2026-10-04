@@ -89,37 +89,114 @@ The scalar coefficient of $N_0$ is
  D_0=\int_0^1\dd z\int_0^1\dd b\int_0^1\dd\rho\,
  \frac{\rho^2(1-b)}{[\rho(A\rho+B)+(1-\rho)\lambda^2-\ii0]^2}.
 \end{equation}
-Its infrared endpoint is $b=\rho=0$. Introduce a temporary
-parameter boundary $\delta$ in $b$, with
-$\lambda\ll\delta\ll1$. In the region $b>\delta$ the radial
-integral can use $\lambda=0$, giving
+Its infrared endpoint is $b=\rho=0$. The Feynman boundary value
+means that $-\ii0$ is first replaced by $-\ii\epsilon$, with
+$\epsilon\downarrow0$ at each fixed $\lambda>0$. We next take
+$\lambda\to0$ at fixed nonzero $D$ and fixed $t$. A direct estimate
+on the physical side is useful because an asymptotic expansion in the
+region $D<0$ need not remain uniform on a cut.
+
+For $D>0$, deform the $b$ contour to $\Gamma$, parametrized by
 \begin{equation}
- D_0^{>}=-\frac1D\int_0^1\dd z\int_\delta^1\dd b\,
-             \frac{1-b}{b[1+(M_z-1)(1-b)^2]}.
+ b(v)=v+\ii\eta v(1-v),\qquad 0\leq v\leq1,
+ \qquad 0<\eta\ll1.
 \end{equation}
-For $b<\delta$, keep the photon mass in the endpoint denominator
-$M_z\rho^2-D b\rho+\lambda^2-\ii0$ and integrate $b$ first.
-The $b$ integral is elementary because its denominator is linear in
-$b$. Its leading endpoint contribution is
+Here $\eta$ is fixed independently of $\lambda$. Along this contour,
+with $h=M_z-1\geq0$, the exact denominator obeys
+\begin{equation}
+ \operatorname{Im}\Delta
+ =-\eta v(1-v)\rho
+       [D(1-\rho)+2h\rho(1-v)]\leq0.
+\end{equation}
+Thus the deformation crosses no displaced pole. At $\rho=1$ and
+$h=0$ the denominator is $1$, so the vanishing imaginary part there
+causes no singularity. The undeformed endpoint $b=1$ is understood
+by the same Feynman limit. For $D<0$ the real contour suffices, and
+we set $\eta=0$. Choose a temporary boundary $v=\delta\ll1$ and
+write $b_*=b(\delta)$. The two contour segments define $D_0^{<}$
+and $D_0^{>}$.
+
+On the segment $v\geq\delta$, the radial integral has the uniform
+small-mass limit $R_0=1/(BC)$. To see this directly for $D>0$,
+factor its quadratic denominator. Its roots are
+\begin{equation}
+ \rho_-=\frac{\lambda^2}{Db}+O_\delta(\lambda^4),\qquad
+ \rho_+=\frac{Db}{A}+O_\delta(\lambda^2).
+\end{equation}
+The roots remain separated, and $b$, $A$, and $C=A-Db$ stay away
+from zero for sufficiently small fixed $\eta$. In particular,
+$\rho_+$ stays away from both radial endpoints, uniformly in $z$
+and $v\geq\delta$. In the partial fractions, the double-pole and
+simple-pole coefficients at $\rho_-$ are respectively $O_\delta(\lambda^4)$
+and $O_\delta(\lambda^2)$. Their integrals are therefore
+$O_\delta(\lambda^2)$ and $O_\delta(\lambda^2|\ln\lambda|)$.
+The coefficients at $\rho_+$ change by $O_\delta(\lambda^2)$, and
+their endpoint primitives remain bounded on the chosen branch.
+These statements also hold as $v\to1$, where a displaced pole approaches
+the real radial interval but never either of its endpoints.
+They are uniform at $h=0$, including $z=0,1$ and $t=0$.
+Thus the radial error is $O_\delta(\lambda^2|\ln\lambda|)$.
+At zero mass the primitive is
+$-1/[A(A\rho+B-\ii0)]$, which gives $1/(BC)$ also when $B<0$.
+For $D<0$ no radial pole occurs, and the same limit follows directly.
+Consequently,
+\begin{equation}
+ D_0^{>}=-\frac1D\int_0^1\dd z\int_{\Gamma^{>}}\dd b\,
+ \frac{1-b}{b[1+(M_z-1)(1-b)^2]}+o_\lambda(1).
+\end{equation}
+
+On $0\leq v\leq\delta$, put
+$G=\rho^2+v\rho+\lambda^2$ and
+$F=M_z\rho^2-Db\rho+\lambda^2$.
+The fixed contour angle gives $|F|\geq cG$, with $c>0$ uniform in
+$z$, $v$, $\rho$, and small $\lambda$. For $D<0$ positivity gives
+the same bound. Moreover,
+\begin{equation}
+ \Delta-F=O(v\rho^2+\rho\lambda^2),\qquad
+ |\Delta|\geq c'G.
+\end{equation}
+The second inequality follows for small $\delta$ and $\lambda$,
+since $|\Delta-F|/G=O(v+\lambda)$.
+Replacing $1-b$ by $1$ and $\Delta$ by $F$ consequently changes
+this segment by at most a constant times
+\begin{equation}
+ \int_0^\delta\dd v\int_0^1\dd\rho
+ \left[\frac{v\rho^2}{G^2}
+       +\frac{\lambda^2\rho^3}{G^3}\right]
+ =O(\delta)+O(\lambda).
+\end{equation}
+For the first term use $G\geq\rho(\rho+v)$ and integrate $\rho$.
+For the second integrate $v$ first, leaving a bound proportional
+to $\lambda^2\int_0^1\rho^2(\rho^2+\lambda^2)^{-2}\dd\rho=O(\lambda)$.
+This controls the endpoint approximation on the physical branch,
+including its subsequent $z$ integral.
+
+The model denominator is linear in $b$, so its contour integral gives
 \begin{equation}
  D_0^{<}=\frac1D\int_0^1\dd z\int_0^1\rho\,\dd\rho
- \left[\frac1{M_z\rho^2-D\delta\rho+\lambda^2-\ii0}
-       -\frac1{M_z\rho^2+\lambda^2-\ii0}\right].
+ \left[\frac1{M_z\rho^2-Db_*\rho+\lambda^2}
+       -\frac1{M_z\rho^2+\lambda^2}\right]
+       +O(\delta)+o_\lambda(1).
 \end{equation}
-Equalities for this endpoint approximation omit terms vanishing in
-the ordered limits $\lambda\to0$ and then $\delta\to0$.
-First take $D<0$, so both radial denominators are positive.
-At fixed $\delta$, the first radial integral tends to
-$M_z^{-1}\ln[(M_z+|D|\delta)/(|D|\delta)]$.
-The second is exactly
+At fixed $b_*$ the first radial integral tends to
+\begin{equation}
+ \frac1{M_z}\bigl[\ln(M_z-Db_*)-\ln(-Db_*)\bigr],
+\end{equation}
+whereas the second is exactly
 $(2M_z)^{-1}\ln[(M_z+\lambda^2)/\lambda^2]$.
-Subtracting them and then taking small $\delta$ fixes both the
-logarithm and its finite scale. Continuing $D$ with the original
-Feynman boundary value gives
+For $D>0$, $-Db_*$ lies below the negative real axis and
+$\ln(-Db_*)=\ln(-D-\ii0)+\ln b_*$.
+This fixes the physical branch directly, without continuing a remainder
+from $D<0$. Expanding only after the fixed-$\delta$ mass limit gives
 \begin{equation}
  D_0^{<}=\frac1D\int_0^1\frac{\dd z}{M_z}
-       \ln\frac{\lambda\sqrt{M_z}}{\delta(-D-\ii0)}.
+ \left[\ln\lambda+\frac12\ln M_z-\ln b_*
+                       -\ln(-D-\ii0)\right]
+       +O(\delta)+o_\lambda(1).
 \end{equation}
+The regular part of the outer contour integral can be deformed back
+to the real interval. Its singular part is $-\ln b_*/M_z$,
+so the complex cutoff cancels just as a real cutoff would.
 The finite part of the remaining $b$ integral is elementary.
 With $h=M_z-1\geq0$ and $r=1-b$,
 \begin{align}
@@ -129,7 +206,9 @@ With $h=M_z-1\geq0$ and $r=1-b$,
  &=\frac1{M_z}\left[\frac12\ln M_z
                   -\frac{\arctan\sqrt h}{\sqrt h}\right].
 \end{align}
-Adding the two regions cancels $\delta$. We obtain
+Adding the two regions cancels $b_*$. After the mass limit the
+remaining error is bounded by $O(\delta)$, and therefore vanishes
+as $\delta\to0$. We obtain
 \begin{equation}
  \boxed{D_0=\frac1D\left[g_0(t)\ln\frac\lambda{-D-\ii0}
                               +g_a(t)\right]+o(1),}

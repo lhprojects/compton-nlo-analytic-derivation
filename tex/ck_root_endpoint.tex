@@ -92,6 +92,27 @@ The resulting remainder is the short expression
 \end{aligned}
 \label{eq:comp-ck-regular-root-kernel}
 \end{equation}
+More explicitly, define the endpoint-normalized boundary
+\begin{equation}
+\begin{aligned}
+ \widetilde{\mathcal B}(U)={}&[Q_{aL}(U)-A_L]aL
+                   +[Q_{af}(U)-A_f]af\\
+ &+[Q_a(U)-Q_a(1)]a+[Q_L(U)-Q_L(1)]L+Q_1(U).
+\end{aligned}
+\end{equation}
+The identity that implements both integrations by parts is
+\begin{equation}
+ \boxed{\Phi(U)=\frac{\dd\widetilde{\mathcal B}}{\dd U}
+                    +\widehat\Phi(U).}
+ \label{eq:comp-ck-normalized-kernel-identity}
+\end{equation}
+It can be checked without integrating: differentiate the displayed
+boundary with the four derivatives above and collect the coefficients
+of $aL$, $af$, $a$, $L$, $f$, and $1$. Subtracting them and the
+corresponding coefficients of \eqref{eq:comp-ck-regular-root-kernel}
+from the pole-removed integrand gives six rational zero identities
+using $k^2=(1+XU^2)/s$. This states the complete relation without
+requiring the intermediate $T_i$ separately.
 None of its rational coefficients has a pole on the closed physical
 interval. The logarithmic growth at $U=1$ is integrable. In particular,
 the constant-function term integrates immediately to

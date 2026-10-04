@@ -16,6 +16,7 @@ delta=x*(1-u*u)/s
 h1=-(x**3-6*x*x-16*x-8)/x**2+delta*(x*x+2*x+4)/(2*x)-3*x*delta**2/8
 
 def certificate():
+ normalized_endpoint_certificate()
  A,F,k=S.symbols('A F k');K=(1+x*u*u)/s;W=A/den
  Wprime=beta/den**2+2*beta**2*u*A/den**2
  # Coefficients of F/k: use k^2=K after differentiation.
@@ -29,6 +30,50 @@ def certificate():
  P1=-sum(S.residue(R1*w**(j-1),w,0)/(j-1)/w**(j-1) for j in range(2,5))
  U=(w-1/w)/(2*S.sqrt(x))
  assert S.factor(S.residue(R0-P1*S.diff(U,w)/(1-U*U),w,0))==0
+ return True
+
+def normalized_endpoint_certificate():
+ """Check Phi = d(normalized boundary)/dU + regular Phi coefficientwise."""
+ k=S.Symbol('k');K=(1+x*u*u)/s;common=4/(beta*E2);d=den
+ AL=4*(x+2)*(x**3+12*x*x+18*x+8)/(x**3*s)
+ AF=32*s*(x+2)**2/(x**3*(x+4))
+ P=-16*s*(x*x-4*x-6)/(x*x*(x+2))
+ B=16*s*(x**4+2*x**3-24*x*x-80*x-48)/(x**3*(x+2)*(x+4))
+ CL=-4*(x**3+14*x*x+20*x+8)/(x*x*s)
+ M=-32*s*(x+2)/(x*x*(x+4));C0=8*(x+2)/(x*x)
+ Q={
+  'aL':2*u*(x+2)*(u*u*x**3+x**3+24*x*x+36*x+16)/(x**3*s),
+  'af':128*s*s*u*k/(x**3*(x+4)*d),
+  'a':-2*u*u*(x+2)/s,
+  'L':u*u*(x+2)**2/(x*s),
+  'f':S.S.Zero,
+  '1':-u*(x+2)**2/(x*s),
+ }
+ assert S.cancel(Q['aL'].subs(u,1)-AL)==0
+ assert S.cancel(Q['af'].subs({u:1,k:1},simultaneous=True)-AF)==0
+ for name in ('aL','af','a','L','f'):
+  Q[name]-=Q[name].subs({u:1,k:1},simultaneous=True)
+ DQ={n:S.diff(q,u)+x*u/(s*k)*S.diff(q,k) for n,q in Q.items()}
+ DQ['a']+=Q['aL']/(1-u*u)+Q['af']/(k*(1-u*u))
+ DQ['L']+=Q['aL']*beta/d
+ DQ['f']+=Q['af']*beta/d
+ DQ['1']+=Q['a']*beta/d+Q['L']/(1-u*u)+Q['f']/(k*(1-u*u))
+ original={
+  'aL':common*h1/d,
+  'af':common*(b1/d+16*s*u*u/(x*(x+2)*d*d))/k,
+  'a':common*h0/d,'L':S.S.Zero,
+  'f':-2*common*u*(1-u*u)/(k*d*d),'1':S.S.Zero,
+ }
+ regular={
+  'aL':P/d,'af':B/(k*d),
+  'a':(AL+AF)*(1+beta*beta*u)/((1+u)*d)+AF*x/(s*k*(1+k)),
+  'L':(CL*u+AL*beta)/d,'f':(M*u/k+AF*beta)/d,'1':C0*beta/d,
+ }
+ field=S.QQ.frac_field(x,u)
+ for name in original:
+  numerator=S.fraction(S.cancel(original[name]-DQ[name]-regular[name]))[0]
+  residual=S.Poly(numerator,k,domain=field).rem(S.Poly(k*k-K,k,domain=field))
+  assert residual.is_zero,('normalized endpoint identity',name)
  return True
 
 def symbolic_kernels():
