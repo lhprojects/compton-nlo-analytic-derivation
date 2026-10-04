@@ -1,0 +1,341 @@
+\section{Checks of the integrated amplitudes}
+The following checks test the analytic integrations derived in Chapter 3.
+Numerical values do not fix their constants or physical branches.
+
+\subsection{Checks of the spanning matrix}
+Numerical integration of the earlier two-parameter formula provides
+a check of the analytic box, not its definition. At
+$(s,c)=(1.6,0.2),(10,-0.4),(100,0.7)$, comparison of all
+four physical polarization matrices in both photon orderings with
+128-point integration in each parameter gives maximal relative
+matrix differences $1.9\times10^{-13}$,
+$7.1\times10^{-13}$ and $5.0\times10^{-12}$, respectively.
+Separately, evaluating the rational interference coefficients
+agrees with explicit covariant polarization contractions of the
+closed $4\times4$ matrices to relative precision better than
+$7.1\times10^{-15}$ at these points. Neither comparison uses a
+published total-cross-section formula.
+
+\subsection{Evaluation of the spanning angular primitives}
+The numerical evaluation of the GPL expression can be performed
+by convergent Taylor expansions without integrating the original
+angle-dependent correction. Around a point $v_0$ away from a
+letter $a$, write the Taylor coefficients of the shorter word
+as $t_n$ and those of the derivative of $G(a,w)$ as $d_n$.
+Its differential equation gives the recursion
+\begin{equation}
+ d_{-1}=0,\qquad
+ d_n=\frac{t_n-d_{n-1}}{v_0-a},\qquad
+ [ (v-v_0)^{n+1}]G(a,w;v)=\frac{d_n}{n+1}.
+\end{equation}
+Overlapping disks along the upper path then continue the same
+analytic function to the endpoint. This operation evaluates the closed special functions on the
+branch already fixed by the Feynman pole displacement and the
+continuation path derived above. No cross-section comparison
+enters that choice.
+
+As a check, take $\lambda=10^{-5}$ and define
+$J_j=\mathcal F_j(v_{\max};x)-\mathcal L_j(x)$ for $j=s,u$.
+This is the quantity before multiplication by $1/(2x^2)$. Evaluation of the closed expressions gives
+\begin{align}
+ J_s(0.6)&=-18.6105396630505172566260787241204817816433900769,\\
+ J_u(0.6)&=-14.1391278522157817227769489975337484383516616217,\\
+ J_u(9)&=-3080.09775949773657530083054013237461366392218650.
+\end{align}
+Independent quadrature of the already derived angular interference
+agrees with these values to absolute differences
+$9\times10^{-47}$, $10^{-62}$ and $2\times10^{-58}$,
+respectively. The last GPL evaluation crosses the apparent
+$\eta$ pole by the specified upper path. Its residual imaginary
+part is below $3\times10^{-64}$ before taking any real part.
+These checks test the analytic integrations and the causal branch
+choice. They do not use a published total cross section.
+
+\subsection{Checks of the finite soft function}
+The script \texttt{compton\_soft\_analytic.py} evaluates
+\eqref{eq:comp-soft-K-dilog} directly and separately integrates
+\eqref{eq:comp-soft-I-definition} for a check. At 70 decimal digits,
+checks at $s=1.6$, $10$, $100$, and $19570.511835591835$, with
+$a^2/q^2=0.0001$, $0.2$, $0.8$, and $0.9999$, give absolute differences below
+$1.2\times10^{-66}$. These quadratures check the derived closed expression.
+They do not define it. The result completes the finite soft parameter
+integral at fixed angle. Its Born-weighted elastic angular integral
+is a further part of the total-cross-section calculation.
+
+\subsection{Check of the integrated infrared coefficient}
+Direct checks of the
+original angular integral at 65-digit working precision give
+$\mathcal C_{\mathrm{IR}}=0.2034909958483591$, $10.14476601141435$,
+$64.23179863499513$, and $359.2271977981074$ at $s=1.6$, $10$, $100$, and $19570.511835591835$. The largest absolute difference between the dilogarithmic
+expression and quadrature is $1.1\times10^{-61}$.
+
+\subsection{Independent numerical angular integration}
+The numerical angular check evaluates the covariant Dirac trace before
+integrating over the scattering angle.  Its scalar one-loop functions are
+the logarithms and dilogarithms obtained from the parameter integrals.
+It does not evaluate an integrated GPL primitive inside the numerical
+integrand. In units $m=1$, put $x=s-1$, $y=x+t$, and use the
+spin-averaged interference trace $\mathcal T$ and the Born factor
+$\mathcal B=\overline{|\mathcal M_0|^2}/e_{\mathrm T}^4$ from
+\eqref{eq:comp-supp-independent-total}.
+The finite virtual-plus-soft coefficient in the local real-emission
+subtraction scheme is
+\begin{equation}
+ \mathcal C_{\mathrm{VS}}(s)=\frac{1}{s}\int_{-1}^{1}\dd c\,
+ \left\{\frac{\operatorname{Re}\mathcal T(s,c;\lambda)}4
+ +\mathcal B(s,c)\left[(b_e-1)\ln\frac2\lambda-K(s,c)\right]\right\}.
+\end{equation}
+The logarithm of the photon mass cancels inside this combined integrand.
+This coefficient must be combined with the real contribution defined by
+the same local subtraction.  The finite coefficient obtained with the
+analytic factor $(xy)^\eta$ has a different soft matching term. Here
+$x,y$ in the regulator are the real-emission Dalitz variables, not the
+elastic invariants used in this angular check.
+
+To resolve both angular endpoints at large $s$, write $L=\ln s$ and
+introduce $0<u<1$ by
+\begin{align}
+ c&=\left(1+\frac2x\right)\tanh\bigl[L(u-\tfrac12)\bigr],
+ &y&=x-\frac{x^2}{2s}(1-c),\\
+ \frac{dc}{du}&=\left(1+\frac2x\right)
+ \frac{L}{\cosh^2[L(u-\tfrac12)]}.
+\end{align}
+The identity $\tanh(L/2)=x/(x+2)$ proves that the endpoints map exactly
+to $c=-1$ and $c=1$.  Positive Gauss--Legendre nodes lie strictly inside
+this interval, so no removable endpoint expression is evaluated directly.
+The check uses arbitrary-precision arithmetic and three successively
+doubled node counts.  Ten times the larger of the final two differences
+is an empirical discretization error estimate, not a rigorous error bound.
+The reported uncertainty also has the conservative arithmetic floor
+$10^{20-d}$ when using $d$ decimal digits.
+Increasing the arithmetic precision provides a separate check of
+cancellation error, particularly near threshold.  A second variable map,
+$y=(x/s)\exp(u\ln s)$, checks the angular Jacobian independently.
+The scope of this test is the angular integration and its implementation.
+The earlier comparison with parameter quadrature tests the scalar
+one-loop functions themselves.
+
+\subsection{Checks of the soft angular primitive}
+The algebraic reduction has also been implemented independently of the
+quadrature check. At $s=10$ it generates 306 terms involving 305 distinct
+nonempty polylogarithm words, including words needed to evaluate their
+lower-weight derivatives. Partial-fraction reconstruction of the
+rational kernels agrees to $1.3\times10^{-60}$ at 60-digit precision.
+At $z=0.9Z$, evaluating the generated polylogarithms through their defining
+differential equations gives $17.00560385716334$, compared with
+$17.00560385716422$ from direct quadrature of the rationalized kernel.
+These two numerical evaluations check the algebraically integrated expression.
+
+\subsection{Series evaluation of the soft angular endpoint}
+\paragraph{Arbitrary-precision polylogarithm evaluation.}
+The generated expression can be checked beyond machine precision by
+convergent power series, without integrating the Compton kernel. For a
+word $(a,\boldsymbol b)$ expand $G(a,\boldsymbol b;z_0+h)$ in powers of
+$h$ with coefficients $c_n$, and write the tail word as
+$G(\boldsymbol b;z_0+h)=\sum_n d_nh^n$. Its differential equation gives
+\begin{equation}
+ c_{n+1}=\frac{d_n-nc_n}{(z_0-a)(n+1)},\qquad z_0\ne a.
+\end{equation}
+Words are processed in increasing length, so all $d_n$ are already known.
+At the regular origin of a word beginning with zero, $d_0=0$ and
+$c_n=d_n/n$ for $n\geq1$. Steps smaller than the distance to the nearest
+letter analytically continue these series along the real physical path.
+At 60-digit working precision, the 306-term expression at $s=10$ and
+$z=0.9Z$ agrees with direct quadrature to $1.0\times10^{-59}$.
+Thus the finite polylogarithmic reduction itself, rather than only the
+preceding integral transformations, has been checked independently.
+For the total angular coefficient, taking
+$z/Z=1-10^{-25}$ gives $d=8.8303688\times10^{-26}$.
+Adding the analytically derived endpoint tail then yields
+$\mathcal C_K(10)=10.058462232631976837745\ldots$.
+Its difference from the original integral is $7.8\times10^{-48}$,
+consistent with the $O(d^2\ln d)$ tail remainder. At $s=1.6$ the
+interior endpoint check agrees to $2.8\times10^{-58}$.
+These checks use only the amplitudes, soft integral, and algebraic
+reductions derived here, with no published total cross section as input.
+
+\subsection{Check of the inner-energy Laurent coefficients}
+The script \nolinkurl{compton_real_uv_endpoint.py} verifies the
+Laurent coefficients against the exact beta--hypergeometric
+expressions at 80 decimal digits. This check evaluates analytic
+functions and does not use numerical quadrature.
+
+\subsection{Checks of the UV difference}
+At $H=9$, the generated endpoint expression for this pole coefficient
+contains six terms, with words drawn from
+$G(r_\pm-1,-1;9)$, $G(r_\pm-1;9)$, and $G(-1;9)$, together with a
+rational endpoint term. Evaluating this analytic expression gives
+\begin{equation}
+ \int_1^{10}\mathcal P_{\mathrm{UV}}(9,v)\,\dd v
+ =27551.4550049022114364696640244483\ldots.
+\end{equation}
+The difference from independent quadrature is $4.4\times10^{-61}$ at
+65-digit working precision. The quadrature uses the analytic local series
+near $v=1$ to avoid subtracting individually divergent numerical terms.
+The integrated result includes the complete difference with its Taylor
+subtraction, rather than either divergent component in isolation.
+
+The finite coefficient is reduced by the same rules to 26 terms.
+Its origin expansions at two independent values of $H$ are
+\begin{align}
+ \mathcal F_{\mathrm{UV}}(9,1+\zeta)
+ &=\left(\frac{24064}{729}-\frac{28672\ln3}{243}\right)\zeta+O(\zeta^2),\\
+ \mathcal F_{\mathrm{UV}}(3/5,1+\zeta)
+ &=\left(\frac{34816}{15}+\frac{114688}{135}\ln\frac53\right)\zeta+O(\zeta^2).
+\end{align}
+The integrated endpoint values are
+\begin{align}
+ \int_1^{10}\mathcal F_{\mathrm{UV}}(9,v)\,\dd v
+ &=114586.9312643746457220611778438924\ldots,\\
+ \int_1^{8/5}\mathcal F_{\mathrm{UV}}(3/5,v)\,\dd v
+ &=504.4462882483088914154537366764\ldots.
+\end{align}
+At 65-digit precision, independent quadrature differs by
+$6.3\times10^{-60}$ and $4.2\times10^{-62}$, respectively.
+These values concern this angular difference sector before the overall
+normalization and the other sectors are assembled.
+The callable routine \texttt{uv\_difference\_closed} returns its pole or
+finite coefficient from the generated polylogarithmic expression.
+It performs no quadrature.
+
+\subsection{Check of the UW pole integral}
+At $H=9$ its integrand begins as $-1152t+O(t^2)$, and
+\begin{equation}
+ \int_0^1g_1(9,t)\,\dd t
+ =-15.9227404613352952442617815523\ldots.
+\end{equation}
+At 60-digit working precision this expression agrees with independent
+quadrature to $2.6\times10^{-56}$.
+
+\subsection{Checks of the UW function basis}
+The eight functions in the inner finite result have also been checked
+against their real logarithm and dilogarithm definitions. At $H=9$ and
+$t=0.1,0.5,0.9$, their polylogarithmic translations agree to better than
+$2.4\times10^{-45}$ at 45-digit working precision. This includes the
+difference of two dilogarithms with large negative arguments near $t=0$.
+The identity is fixed by differentiation and its value at the origin,
+so the numerical check does not choose a physical branch.
+
+\subsection{Checks of the finite UW integral}
+Its endpoint values before the common overall normalization are
+\begin{align}
+ \mathcal F_{UW}(9)
+ &=-599.2785090120818758407150390268563\ldots,\\
+ \mathcal F_{UW}(3/5)
+ &=5.33372142619549103751931327587136\ldots.
+\end{align}
+Independent coordinate quadrature differs by $2.4\times10^{-74}$ and
+$1.3\times10^{-65}$, respectively. These differences are consistent with
+the estimated analytic tail remainder. The production routine
+\texttt{real\_uw\_closed} returns the pole and finite coefficients using
+only the polylogarithmic expression and convergent endpoint series.
+It does not include the crossed angular sector.
+
+\subsection{Check of the UW inner finite coefficient}
+The independent numerical check integrates
+the original $a$ expression only after subtracting its two endpoint
+poles. It agrees with \eqref{eq:comp-real-UW-inner-closed} at an
+interior point $H=0.6,t=0.3$ to better than $10^{-43}$ relatively.
+The numerical integral is a check, not a definition of the answer.
+
+\subsection{Checks of the soft-boundary conversion}
+For the kernels $K=x^{-2}$ and $K=x^{-3}$ of
+Section~\ref{sec:compton-soft-matching-check}, the comparison is as follows.
+At $H=9$,
+evaluation of the exact Mellin formulas at $\eta=\pm10^{-22}$ with
+90-digit arithmetic reproduces these finite terms to more than 42 digits.
+The exact cutoff formulas at $\zeta=10^{-30}$ agree with their displayed
+asymptotic finite parts to more than 30 digits.  These evaluations test
+analytic formulas and do not replace the integration by quadrature.
+
+\subsection{Checks of the Bose subtraction correction}
+The moments $P,A,B,C$ and finite parts $F_z,F_\eta$ use the definitions
+of Section~\ref{sec:compton-soft-matching-check}. Here $H=s-1$,
+and $D$ is the rational correction in
+\eqref{eq:comp-real-bose-restoration}.
+An independent evaluation at $H=9$ gives
+\begin{align}
+ P&=37497.9773085349211509285356121\ldots,\\
+ A&=3813.01541537757944985908409943\ldots,\\
+ B&=-1194.39517843100551019039928260\ldots,\\
+ C&=875.197982980881880082536498852\ldots,\\
+ F_\eta-F_z&=8697.24837987961462163725697550\ldots.
+\end{align}
+These values are evaluations of the closed moments, with no numerical
+integration.  They provide the finite matching contribution of this
+individual subtraction correction.
+
+At $H=9$, the resulting closed endpoint value is
+\begin{align}
+ F_z[D]&=-34968.0992648172707249254370242076502947231\ldots,\\
+ F_\eta[D]&=-26270.8508849376561032881800487118253811979\ldots.
+\end{align}
+Evaluations requested at 45 and 70 decimal digits agree in all the displayed
+digits.  As an independent check only, quadrature of the one-dimensional
+kernel up to $u=s-0.02$ agrees with its generalized-polylogarithm primitive
+to an absolute difference below $1.1\times10^{-79}$ at 85-digit precision.
+The finite endpoint value itself uses the analytic asymptotic expansion,
+not quadrature or a fit to a cutoff sequence.
+
+\subsection{Finite parts of the real-energy primitives}
+Exact symbolic differentiation verifies the displayed GPL
+primitives for all three sectors. As independent checks, at $H=9$
+their $z$-cut finite parts are
+\begin{align}
+ F_{z,W}&=-199.1245079022571280440396316233659,\\
+ F_{z,\ln s}&=371.2012216070278610540821023119374,\\
+ F_{z,\mathrm{reg}}&=-13063.03114094500957535028266440329.
+\end{align}
+These numbers do not include the common factor $1/(8sH)$ or the
+conversion from the $z$ cut to the symmetric analytic regulator.
+Separate real integrations check the interior primitive boundary
+differences to better than fifty decimal places at this point.
+Continuing the full regular-sector GPL combination above and below
+its artificial interior letter agrees to eighty decimal places.
+These checks concern evaluation of the analytic primitives and do
+not supply coefficients to them.
+
+\subsection{Checks of the real soft residues}
+The following checks evaluate the analytic residue moments and their
+integrated sum. At $H=0.6,9,99$, separate 70-digit quadratures of these residue
+moments agree with the analytic expressions to better than
+$10^{-60}$ relatively.
+
+At $H=9$ this correction is
+\begin{equation}
+ A_D=3813.01541537757944985908409942886783767351749\ldots.
+\end{equation}
+Evaluating the analytic expressions on both sides of
+\eqref{eq:comp-real-integrated-pole-check} gives
+\begin{center}
+\begin{tabular}{rll}
+\toprule
+$H$ & Common value & Relative difference\\
+\midrule
+$0.6$ & $0.976756780072123721541847283885$ & $7.0\times10^{-68}$\\
+$9$ & $730.423152821833269374946708743$ & $5.0\times10^{-70}$\\
+$99$ & $50871.5845189161404834801869055$ & $6.0\times10^{-66}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+This is a numerical check of the separately derived analytic
+coefficients at three energies. It does not replace an identity
+proof for arbitrary $H$, nor does it verify the finite total.
+
+\subsection{Fixed-energy checks of endpoint subtraction}
+At $H=9$ the pole integrand has the local expansion
+\begin{equation}
+ \mathcal P_{\mathrm{UV}}(9,1+\zeta)
+ =-\frac{7168}{243}\zeta+O(\zeta^2).
+\end{equation}
+Thus its apparent origin poles cancel and the lower endpoint is regular.
+
+As an independent check, the coefficient of its analytic-regulator pole
+at $H=9$ integrates to
+\begin{equation}
+ P_{\mathrm{shift}}(9)
+ =20\ln10+\frac{2913280}{59319}\ln\frac{11}{2}
+ +\frac{5602208}{1521}.
+\end{equation}
+This term checks the subtraction bookkeeping independently of the
+finite-angle polylogarithm evaluation.

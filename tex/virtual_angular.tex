@@ -1,0 +1,106 @@
+\subsection{Angular integration of the vertex and self-energy terms}
+\label{sec:comp-supp-vertex-angle}
+The closed vertex matrices can now be interfered with the Born
+amplitude and integrated over the elastic scattering angle.
+Define $x=s-1$ and $y=1-u=x+t$, with $c$ the center-of-mass
+photon scattering cosine. Since $t=-x^2(1-c)/(2s)$, the physical
+limits and Jacobian are
+\begin{equation}
+ y_- =\frac{x}{1+x},\qquad y_+=x,\qquad
+ \dd c=\frac{2s}{x^2}\dd y.
+\end{equation}
+Let $T_s$ and $T_u$ be the spin-averaged interferences from the two
+vertex insertions and the self-energy insertion in each ordering,
+with the common loop factor removed as above. We contract each
+external photon pair with $-\eta_{\mu\nu}$. These diagram subsets
+are not separately gauge invariant. Physical transverse polarization
+sums can replace these contractions only after including the
+spanning graphs, when the full Ward identities apply.
+
+The traces use only the Clifford anticommutation relation and
+on-shell momentum identities. They are recorded by
+\texttt{compton\_virtual\_trace\_analytic.py}. Both vertex insertions
+in a given ordering give the same interference. For the $s$ ordering,
+\begin{equation}
+ T_s(x,y)=\sum_f f(1+x)
+       \left[\frac{a_f(x)}y+b_f(x)+c_f(x)y\right],
+\end{equation}
+where the symbols $f$ in the first column of
+Table~\ref{tab:comp-vt-angle-coefficients} mean the moments and
+self-energy coefficients already evaluated above. The entries
+$\widehat c_Z$ and $1$ are constants, not functions of $1+x$.
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{c|ccc}
+$f$ & $a_f$ & $b_f$ & $c_f$\\
+\hline
+$J_{00}$ & $16(x^2+2x+4)/x$ & $-8(x^3+2x^2+8x+8)/x^2$ & $0$\\
+$J_{10}$ & $-8(x^2+2x+8)/x$ & $8(x^3+x^2+6x+8)/x^2$ & $16/x$\\
+$J_{11}$ & $-8x$ & $8(x+2)$ & $-8/x$\\
+$J_{20}$ & $-4(2x^2+7x+12)/x$ & $4(2x^2+13x+12)/x^2$ & $-4/x$\\
+$J_{21}$ & $4(x-4)$ & $-4(2x^2+x-4)/x$ & $4(x+2)/x$\\
+$\widehat a$ & $-4(x+2)^2/x^2$ & $2(3x^2+12x+8)/x^3$ & $2(x+1)/x^2$\\
+$\widehat b$ & $-2(x^2+4x+8)/x^2$ & $16(x+1)/x^3$ & $2/x^2$\\
+$\widehat c_Z$ & $-2(x+4)/x$ & $2(3x+4)/x^2$ & $2/x$\\
+$1$ & $2(7x^2+28x+32)/x^2$ & $-2(x+4)(9x+8)/x^3$ & $-2(3x+4)/x^2$\\
+\end{tabular}
+\caption{Exact trace coefficients for the two $s$-channel vertex
+insertions and the self-energy insertion together.}
+\label{tab:comp-vt-angle-coefficients}
+\end{table}
+There is no $J_{22}$ contribution after the trace. The integral is
+therefore elementary once the moments have been evaluated,
+\begin{equation}
+ I_s=\sum_f f(1+x)\left[a_f\ln(1+x)
+       +b_f\frac{x^2}{1+x}
+       +\frac{c_f x^2}{2}\left(1-\frac1{(1+x)^2}\right)\right].
+ \label{eq:comp-vt-s-angle}
+\end{equation}
+
+For the crossed ordering the moment arguments depend on the
+integration variable, $S=1-y$. Substituting the explicit moments
+and self-energy coefficients reduces $T_u$ to rational functions
+multiplying $1$, $\ln y$ and $\operatorname{Li}_2(1-y)$.
+Partial fractions and integration by parts give the following
+closed primitive. Define the real functions
+\begin{align}
+ H_{10}(y)&=\frac{\pi^2}6-\operatorname{Li}_2(1-y),\\
+ H_{010}(y)&=2\operatorname{Li}_3(y+\ii0)
+                        -\ln y\operatorname{Li}_2(y+\ii0).
+\end{align}
+Their derivatives are $H'_{10}=\ln y/(y-1)$ and
+$H'_{010}=H_{10}/y$. For $y>1$, continuation from the upper
+half-plane gives imaginary parts $\pi\ln y$ and
+$\pi\ln^2y/2$ for the dilogarithm and trilogarithm respectively.
+They cancel in $H_{010}$. Thus these expressions are real for all
+$y>0$, including when the physical interval crosses $y=1$.
+
+The primitive is
+\begin{align}
+ F_u(x,y)={}&-\frac{2(x^2+8)}x\ln^2y
+       +\frac{8(x+1)}x H_{010}(y)
+       +P(x,y)\ln y+Q(x,y)H_{10}(y)+R(x,y),\\
+ P(x,y)={}&-\frac2{y-1}-\frac{4(x+8)}y
+       +\frac{8x+12}{x}y
+       +\frac{2\widehat c_Z(x^2-3x-4)+2x^2+10x}{x},\\
+ Q(x,y)={}&-\frac{4x}{y^2}+\frac{16}y
+                         +\frac{2x^2-18x+20}{x},\\
+ R(x,y)={}&\frac{4(-2\widehat c_Z+x-8)}y
+                 +\frac{2\widehat c_Z-12x-16}{x}y.
+ \label{eq:comp-vt-u-primitive}
+\end{align}
+The apparent pole multiplying $\ln y$ at $y=1$ is removable,
+since $\ln y/(y-1)\to1$. Direct differentiation recovers the
+complete crossed-ordering interference, including its finite
+on-shell subtraction. Consequently the angular integral of this
+virtual subset is
+\begin{equation}
+ \boxed{\mathcal C_{\mathrm{vertex}+\Sigma}
+ =\frac1{2x^2}\operatorname{Re}
+       [I_s+F_u(x,x)-F_u(x,x/(1+x))].}
+ \label{eq:comp-vt-integrated}
+\end{equation}
+This is an analytic contribution to the total cross section, with
+no loop-parameter or angular integral left. It still contains
+$\widehat c_Z=-4-4\ln\lambda$. Its regulator dependence is canceled
+only in the complete sum with the spanning and real contributions.

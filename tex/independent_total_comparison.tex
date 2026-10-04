@@ -1,0 +1,56 @@
+\section{Three-way comparison over the energy range}
+\label{sec:comp-independent-total-comparison}
+The coefficient compared here is
+\begin{equation}
+ C(s)=C_1(s-1)=\frac{m^2\sigma_1}{\alpha_{\mathrm T}^3},\qquad
+ s=\frac{s_{\mathrm{phys}}}{m^2}=1+\frac{2\omega}{m}.
+\end{equation}
+The photon energy $\omega$ is measured in the initial electron rest
+frame. The seven energies span $10^{-4}\leq\omega/m\leq10^5$.
+The first value at each energy in
+Table~\ref{tab:comp-independent-total-50} is our independent analytic
+coefficient, freshly evaluated from the collected expression in
+Equation~\eqref{eq:comp-total-energy-collected}. Its 50 displayed digits
+also agree with the original assembled sector primitives.
+All 50 displayed significant digits agree between two runs at
+65 and 85 requested decimal digits, each with 40 guard digits.
+This agreement checks numerical stability. The endpoint series used
+to evaluate our primitives have truncation-error estimates, but a
+rigorous bound on every omitted tail has not been established.
+The displayed digits therefore do not constitute a certified
+50-digit error bound.
+
+The two subsequent entries are absolute coefficient differences,
+\begin{equation}
+ \Delta C_{\mathrm{num}}=C_{\mathrm{num}}-C(s),\qquad
+ \Delta C_{\mathrm{ref}}=C_{\mathrm{ref}}-C(s).
+\end{equation}
+The differences use the full saved analytic value before rounding it
+to the 50 digits displayed in the table.
+For $C_{\mathrm{num}}$, the virtual and soft terms are integrated
+numerically over the elastic angle from the pointwise amplitude.
+The real term is a separate four-dimensional phase-space integral
+of the six-diagram double-Compton matrix element, with its local
+soft subtraction. Neither calculation calls the analytic total
+or its integrated GPL primitives.
+
+The real quadrature error estimate includes both the integrator's
+reported error and the change upon refinement. The virtual estimate
+includes angular refinement and an arithmetic accuracy floor.
+We add these estimates rather than treating them as independent
+statistical errors. Thus the $\pm$ entries are numerical error
+estimates, not confidence intervals or experimental uncertainties.
+The numerical integration is not required to reproduce 50 digits.
+
+The reference coefficient is Equation (6) of Lee, Schwartz and
+Zhang~\cite{qed-processes-lsz}. It is evaluated separately, after
+our analytic result is fixed. Its error estimate uses two working
+precisions, changes in the special-function integration endpoint,
+an analytic bound on the omitted tail, and a rounding scale based
+on the sizes of its terms. It does not use the difference from our
+answer to estimate its own error. This comparison tests numerical evaluation of the two analytic
+expressions. Section~\ref{sec:compton-analytic-equivalence} separately
+establishes their exact equality by comparing every coefficient and
+fixing their common physical continuation.
+
+\input{independent_total_table}

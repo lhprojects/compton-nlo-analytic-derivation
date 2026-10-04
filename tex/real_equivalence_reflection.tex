@@ -1,0 +1,289 @@
+\section{Reciprocal symmetry of the real-emission integral}
+After the first energy integration, write $s=1+H$, with $H>0$,
+and $z=s+1-u-s/u$. The two algebraic boundaries of the first
+integral are $x_-=s-u$ and $x_+=s-s/u$. Under $u\mapsto s/u$,
+$z$ is unchanged and these boundaries exchange places. The
+oriented boundary difference therefore changes sign. Its
+Jacobian $j=1-s/u^2$ also changes sign, so the complete last
+integrand obeys
+\begin{equation}
+ \frac{s}{u^2}f(s/u)=f(u).
+\end{equation}
+This identity holds separately for the regular rational,
+energy-logarithm, $W$, and Bose-restoring sectors. It can also be
+checked coefficient by coefficient: $L_1,L_2,L_3$ change sign,
+whereas $L_1L_2$ is invariant under the reciprocal transformation.
+
+The physical upper branch has $\sqrt{s}<u<s$. Its reflected
+partner is $1<u<\sqrt{s}$. A common cut $z>\epsilon$ selects
+reciprocal endpoints $u_-(\epsilon)u_+(\epsilon)=s$. Consequently
+\begin{equation}
+ \int_{\sqrt{s}}^{u_+(\epsilon)}f(u)\,\dd u
+ =\frac12\int_{u_-(\epsilon)}^{u_+(\epsilon)}f(u)\,\dd u.
+\end{equation}
+Thus the square-root lower boundary can be eliminated exactly,
+without changing the infrared subtraction or making an asymptotic
+approximation.
+
+Let $A$ be the coefficient of $1/(s-u)$ at the upper endpoint.
+Reciprocal symmetry makes it also the coefficient of $1/(u-1)$
+at the lower endpoint. Define
+\begin{equation}
+ \operatorname{FP}_{[1,s]}\int f
+ =\lim_{\delta\to0^+}
+ \left[\int_{1+\delta}^{s-\delta}f(u)\,\dd u+2A\ln\delta\right].
+\end{equation}
+Since $z=H(u-1)+O((u-1)^2)$ at the lower boundary and
+$z=H(s-u)/s+O((s-u)^2)$ at the upper boundary, the finite part
+in the original $z$ convention is
+\begin{equation}
+ F_z=\frac12\operatorname{FP}_{[1,s]}\int f
+                  +A\ln\frac{H}{\sqrt{s}}.
+\end{equation}
+The explicit logarithm is essential. The replacement of the lower
+boundary does not permit changing the finite subtraction constant.
+
+The Bose-restoring term also has a double endpoint pole. If
+\begin{equation}
+ f(s-b)=D/b^2+A/b+O(1),
+\end{equation}
+reciprocal symmetry gives $f(1+a)=D/(sa^2)+A/a+O(1)$.
+The finite-part definition then also subtracts
+$D(1+1/s)/\delta$. Expanding both cut boundaries to second order
+gives the corrected general formula
+\begin{equation}
+ F_z=\frac12\operatorname{FP}_{[1,s]}\int f
+       +A\ln\frac{H}{\sqrt{s}}-\frac{D(s+1)}{2sH}.
+\end{equation}
+The previous expression is the case $D=0$. The extra constant
+comes from the double pole multiplied by the second-order change
+of the endpoint, and must be kept for the Bose term.
+
+\paragraph{Eliminating the apparent threshold at $s=9$.}
+The regular rational primitive contains ten words whose first letters are
+\begin{equation}
+ q_\pm=\frac{s-3\pm\sqrt{(s-1)(s-9)}}2.
+\end{equation}
+They can be replaced by a single real dilogarithm and GPLs whose letters
+already occur in the other terms. This replacement follows from the
+coefficients of our primitive. It does not use a total-cross-section formula.
+Throughout this paragraph the GPL basepoint is $r=\sqrt{s}$, as in the
+original primitive. Define
+\begin{align}
+ A(u)&=\frac{(u-1)(u+s)^2}{u(u+1)^2(s-u)},
+ &Q(u)&=u^2-(s-3)u+s,\\
+ (k_0,k_1,k_s,k_{-s},k_{-1})&=(-1,1,-1,2,-2),
+ &C(s)&=\frac{128s(s+5)}{3(s-1)}.
+\end{align}
+The ten coefficients are precisely $C(s)k_b$ for each of the two first
+letters $q_\pm$ and each $b\in\{0,1,s,-s,-1\}$. Since $A(r)=1$,
+\begin{equation}
+ L_3(u)=\ln A(u)=\sum_b k_bG(b;u).
+\end{equation}
+Factorization of $1-A$ gives the rational differential identity
+\begin{equation}
+ \frac{Q'(u)}{Q(u)}
+ =\frac{\dd}{\dd u}\ln(1-A(u))
+ -\frac1{u-r}-\frac1{u+r}
+ +\frac1u+\frac1{u-s}+\frac2{u+1}.
+\end{equation}
+Here the logarithmic derivative denotes the rational quotient
+$-A'(u)/(1-A(u))$ wherever its separate terms have removable poles.
+Multiplying by $L_3$ and using
+$\dd\operatorname{Li}_2(1-A)=-\ln A\,\dd\ln(1-A)$ yields
+\begin{align}
+ \sum_{\epsilon=\pm}\sum_b k_bG(q_\epsilon,b;u)
+ ={}&-\operatorname{Li}_2(1-A(u))\\
+ &+\sum_b k_b\bigl[-G(r,b;u)-G(-r,b;u)
+       +G(0,b;u)\bigr]\\
+ &+\sum_b k_b\bigl[G(s,b;u)+2G(-1,b;u)\bigr].
+ \label{eq:comp-real-qpair-reduction}
+\end{align}
+Both sides vanish at $u=r$, which fixes the integration constant.
+Although $r$ is a first letter on the right, the summed second-letter
+function $L_3$ vanishes there, so the corresponding lower endpoint is
+regular. For $r<u<s$, $A(u)>0$. Thus $1-A(u)<1$, and the dilogarithm
+in this expression lies on its real branch. At a zero of $Q$, $A=1$
+and this dilogarithm is regular. The formula also holds by continuity
+at $s=9$, without choosing a side of an artificial threshold.
+
+Replacing the ten words by \eqref{eq:comp-real-qpair-reduction} removes
+$q_\pm$ from the primitive. It reintroduces the letters $\pm r$, so it
+is a trade between two representations rather than a simultaneous
+elimination of every auxiliary root. The accompanying coefficient
+record contains the full replaced primitive. Its ten input coefficients,
+rational differential identity, and lower-endpoint constant are checked
+exactly by \texttt{compton\_real\_equivalence\_qpair.py}.
+
+\paragraph{Combining the rational and $W$ primitives.}
+The two primitives should be added before selecting a function basis.
+Their original lists contain 48 and 19 nonempty GPL words. Collecting
+identical words and canceling their exact rational coefficients leaves
+43 words. In particular, the six Gram words discussed above disappear.
+The coefficients in this combined list can be reduced further by shuffle
+identities. For weight two,
+\begin{equation}
+ G(a,b)+G(b,a)=G(a)G(b),\qquad G(a,a)=\frac12G(a)^2.
+\end{equation}
+Applying these identities only to pairs present in the combined list leaves
+40 GPL words and three elementary logarithm products.
+
+There is a further reduction in the weight-three part. Define
+\begin{equation}
+ K=\frac{32s(2s+1)}{(s-1)^2},\qquad g=G(0;u)=\ln(u/\sqrt{s}).
+\end{equation}
+The entire weight-three contribution of the combined primitive is
+\begin{align}
+ K\bigl[&G(0,0,s)+G(0,s,0)-G(0,0,1)-G(0,1,0)
+          -2G(0,0,0)\bigr]\\
+ &=K\bigl[g\{G(0,s)-G(0,1)\}
+          -G(0,0,s)+G(0,0,1)-g^3/3\bigr].
+\end{align}
+This follows from
+$G(0)G(0,b)=2G(0,0,b)+G(0,b,0)$ for $b=1,s$.
+Consequently the combined representation requires 37 nonempty GPL words,
+three logarithm products, two logarithm--weight-two products, and one
+logarithm cube. These are representation counts, not a claim of functional
+independence of all remaining GPLs. The rational term is included throughout.
+
+By contrast, substituting \eqref{eq:comp-real-qpair-reduction} before the
+same combination gives 50 GPL words. Weight-two shuffle reduction leaves
+42 words, eight logarithm products, and the additional dilogarithm.
+The root-pair identity is therefore useful for displaying regularity at
+$s=9$, but the original root-pair representation gives the shorter combined
+formula. The full coefficient dictionary for the 37-word form and exact
+reconstruction checks are recorded by
+\texttt{compton\_real\_equivalence\_combine.py}.
+
+\paragraph{Classical trilogarithms for the weight-three term.}
+For positive real $z$, define $\mathcal L_n(z)$ here as
+$\operatorname{Re}\operatorname{Li}_n(z+\ii0)$, for $n=2,3$.
+The two boundary values are complex conjugates, so their real parts agree.
+The differential relations are
+\begin{equation}
+ \frac{\dd\mathcal L_2(z)}{\dd z}=-\frac{\ln|1-z|}{z},
+ \qquad
+ \frac{\dd\mathcal L_3(z)}{\dd z}=\frac{\mathcal L_2(z)}{z}.
+\end{equation}
+They determine the continuation needed on each of the intervals used below.
+For $b=1,s$ and $r<u<s$, direct differentiation and the zero value at $u=r$
+give
+\begin{align}
+ G(0,b;u)&=-\mathcal L_2(u/b)+\mathcal L_2(r/b)
+                      -\ln|1-r/b|\,g,\\
+ G(0,0,b;u)&=-\mathcal L_3(u/b)+\mathcal L_3(r/b)
+       +\mathcal L_2(r/b)g-\tfrac12\ln|1-r/b|\,g^2.
+\end{align}
+No singularity at $u=b$ is crossed along either open integration interval.
+The complete weight-three contribution therefore reduces to
+\begin{align}
+ \mathcal F^{(3)}_{R_0+W}(u)=K\bigl[&
+ \mathcal L_3(u/s)-\mathcal L_3(u)
+ -\mathcal L_3(1/r)+\mathcal L_3(r)\\
+ &+g\{\mathcal L_2(u)-\mathcal L_2(u/s)\}
+ +\tfrac12g^2\ln r-\tfrac13g^3\bigr].
+ \label{eq:comp-real-classical-weight-three}
+\end{align}
+The logarithmic coefficient uses
+$|1-r|/|1-r/s|=r$. Thus the five original weight-three words require
+only classical trilogarithms, dilogarithms, and logarithms. The lower
+endpoint still vanishes exactly.
+
+The remaining weight-two GPLs admit a uniform classical representation.
+For distinct letters $a,b$ write
+\begin{equation}
+ z_a(u;b)=\frac{a-u}{a-b},\qquad z_a(r;b)=\frac{a-r}{a-b}.
+\end{equation}
+Then
+\begin{align}
+ G(a,b;u)={}&-\operatorname{Li}_2(z_a(u;b))
+              +\operatorname{Li}_2(z_a(r;b))\\
+ &-\operatorname{Log}(1-z_a(r;b))G(a;u).
+ \label{eq:comp-real-classical-weight-two}
+\end{align}
+The logarithm and dilogarithm on the right must be continued together
+from $u=r$ along the same path as the original GPL. More explicitly, their
+logarithms satisfy
+\begin{equation}
+ \operatorname{Log}(1-z_a(u;b))
+ -\operatorname{Log}(1-z_a(r;b))=G(b;u).
+\end{equation}
+This condition prevents independent principal-branch substitutions at the
+two endpoints. Differentiation of \eqref{eq:comp-real-classical-weight-two}
+then gives $G(b;u)/(u-a)$, and its initial value is zero. It therefore
+proves the identity, including the continuation around removable letters.
+Conjugate letters are combined before taking the real physical value.
+Together with \eqref{eq:comp-real-classical-weight-three}, this eliminates
+all GPL notation from the combined primitive if a classical-function
+representation is preferred. Expanding every such identity separately
+need not shorten the displayed expression, so conjugate pairs and common
+coefficients should remain grouped.
+
+At the upper endpoint the weight-three part simplifies further.
+Put $\ell=\tfrac12\ln s$. The real inversion identities for $z>1$ are
+\begin{align}
+ \mathcal L_2(z)+\operatorname{Li}_2(z^{-1})
+ &=\frac{\pi^2}{3}-\frac12\ln^2 z,\\
+ \mathcal L_3(z)-\operatorname{Li}_3(z^{-1})
+ &=\frac{\pi^2}{3}\ln z-\frac16\ln^3z.
+\end{align}
+Their derivatives agree on $z>1$, and their constants follow from
+$\operatorname{Li}_2(1)=\pi^2/6$ and
+$\operatorname{Li}_3(1)=\zeta(3)$. Applying them at $z=s,r$ gives
+\begin{equation}
+ \mathcal F^{(3)}_{R_0+W}(s)
+ =K\left[\zeta(3)-\operatorname{Li}_3(s^{-1})
+ -\ell\operatorname{Li}_2(s^{-1})
+ -\frac{\pi^2\ell}{6}-\frac{2\ell^3}{3}\right].
+ \label{eq:comp-real-classical-weight-three-endpoint}
+\end{equation}
+The lower endpoint is zero. The resulting expression depends only on
+$s$ and contains no auxiliary square root or continued polylogarithm.
+
+\paragraph{Finite energy endpoints before further combination.}
+For the combined rational and $W$ primitive, cancellation of common
+factors makes every rational coefficient regular at $u=s$. Thus its
+finite upper endpoint needs only the coefficients evaluated at $s$.
+No derivative of a coefficient multiplying a power-divergent GPL is
+required. This statement follows by exact cancellation of their rational
+denominators, whose endpoint factors are powers of $s$, $s-1$, and $s+3$.
+
+For a one-letter word define its constant endpoint term by
+\begin{equation}
+ h_a=\begin{cases}
+ \operatorname{Log}[(s-a)/(r-a)],&a\ne s,\\
+ -\ln(s-r),&a=s.
+ \end{cases}
+\end{equation}
+The second line removes the term $\ln(s-u)$ from $G(s;u)$.
+For a weight-two word write $d_{ab}$ for the corresponding constant term.
+For $a\ne s$, it is the boundary value of
+\eqref{eq:comp-real-classical-weight-two}. For $a=s$ it is explicitly
+\begin{equation}
+ d_{sb}=\operatorname{Li}_2\left(\frac{s-r}{s-b}\right)
+ +\operatorname{Log}\left(\frac{r-b}{s-b}\right)\ln(s-r).
+\end{equation}
+Indeed, the omitted divergent term is
+$-\operatorname{Log}[(r-b)/(s-b)]\ln(s-u)$.
+All logarithms use the continuation specified above. The only
+logarithm products in the reduced primitive are $G(0)^2$, $G(0)G(1)$,
+and $G(0)G(s)$, so their constant terms are simply the corresponding
+products of the $h_a$. There is no product of two divergent one-letter
+functions in this representation.
+
+Replacing each word in the coefficient table by these constant endpoint
+terms, and replacing its entire weight-three block by
+\eqref{eq:comp-real-classical-weight-three-endpoint}, gives a function
+$E_{R_0+W}(s)$ of energy alone. Let $A_{R_0}$ be the pole coefficient of
+this pair, with the normalization preceding the common factor $1/(8sH)$.
+Its $z$-cut finite part is
+\begin{equation}
+ F_{R_0+W,z}=E_{R_0+W}(s)
+ -\frac{2s(-s^5-5s^4+18s^3+122s^2+151s-45)}{3(s^2+2s-3)}
+ +A_{R_0}\ln\frac{s-1}{s}.
+\end{equation}
+The rational subtraction is the complete lower-basepoint constant.
+The $W$ part has zero lower constant and zero soft pole. Finally, the
+previously derived rational-sector matching shift converts this expression
+to the common $(xy)^\eta$ convention. This order of operations preserves
+all finite endpoint terms before combining the other real sectors.

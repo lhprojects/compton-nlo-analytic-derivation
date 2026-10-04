@@ -1,0 +1,21 @@
+\begin{tikzpicture}[
+  font=\sffamily,
+  box/.style={rounded corners=5pt, draw=blue!35!black, line width=0.8pt,
+    fill=blue!4, align=center, inner sep=10pt},
+  flow/.style={-{Latex[length=3mm]}, line width=1pt, draw=black!60}]
+\node[box, text width=2.2cm] (incoming) at (0,0)
+  {\large $e^-+\gamma$\\[4pt]Incoming state};
+\node[box, text width=3.4cm] (elastic) at (4.2,1.15)
+  {\large $e^-+\gamma$\\[4pt]Born + one-loop\\interference};
+\node[box, text width=3.4cm, fill=orange!7, draw=orange!45!black] (real) at (4.2,-1.15)
+  {\large $e^-+\gamma+\gamma$\\[4pt]Double Compton\\emission};
+\node[box, text width=3.0cm, fill=black!3, draw=black!45] (combine) at (8.9,0)
+  {Integrate both\\final-state phase spaces\\[4pt]Cancel infrared regulator};
+\node[box, text width=2.6cm, fill=teal!7, draw=teal!65!black] (total) at (13.1,0)
+  {\large $\sigma_0+\sigma_1$\\[4pt]Inclusive total\\through $\alpha_{\mathrm T}^3$};
+\draw[flow] (incoming.east) to[out=0,in=180] (elastic.west);
+\draw[flow] (incoming.east) to[out=0,in=180] (real.west);
+\draw[flow] (elastic.east) to[out=0,in=180] (combine.west);
+\draw[flow] (real.east) to[out=0,in=180] (combine.west);
+\draw[flow] (combine.east) -- (total.west);
+\end{tikzpicture}

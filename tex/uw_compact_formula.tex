@@ -1,0 +1,142 @@
+\subsection{The integrated UW contribution}
+Put $H=X>0$ and use $Y$ and $q$ defined at the beginning of this chapter. The completed $UW$ integral can be expressed in the same functions as the virtual contribution. Define the real logarithms
+\begin{equation} L_0=\ln X,\qquad L_1=\ln(1+X),\qquad L_2=\ln(1+X/2).\end{equation}
+In the following formula every $G$ has endpoint $X$. Its rational letters have kernels $\dd z/(z-a)$, and the letter $r$ has kernel $\dd z/\sqrt{z(z+4)}$, with positive square root for $z>0$. Define
+\begin{equation} \mathcal U(X)=G(-4,r,-1;X)+G(r,-1,-1;X)-G(r,0,-1;X).\end{equation}
+The unnormalized finite contribution is
+\begin{equation}\begin{aligned}
+ F_{UW}^{\eta}(X)={}&a_0+a_1L_1+a_LL_0+a_{11}L_1^2+a_{10}L_0L_1\\
+ &+a_D\operatorname{Li}_2(-X)+a_2L_2+a_{D2}\operatorname{Li}_2(-X/2)\\
+ &+a_{20}(L_0L_2+L_2^2/4)+(a_R+2KL_0)G(r,-1;X)\\
+ &+K\mathcal U(X)+a_{011}G(0,-1,-1;X)+a_{RR}G(r,r,-1;X).
+\end{aligned}\label{eq:comp-uw-integrated-compact}\end{equation}
+Its contribution to $C_1$ is $F_{UW}^{\eta}/[4X(1+X)]$, including the second Bose-related sector. The coefficients are as follows.
+\begin{equation}
+a_0=\frac{\begin{aligned}&497 X^{6} - 1647 X^{5} + 46 X^{4} + 51270 X^{3}\\&+18924 X^{2} - 46080 X - 18432\end{aligned}}{216 X^{3}}.
+\end{equation}
+\begin{equation}
+a_1=\frac{\begin{aligned}&- 24 X^{8} + 24 X^{7} + 1548 X^{6} - 7712 X^{5}\\&- 91001 X^{4} - 208525 X^{3} - 177316 X^{2} - 44544 X\\&+6144\end{aligned}}{18 X^{4} \left(X + 4\right)}.
+\end{equation}
+\begin{equation}
+a_L=\frac{\begin{aligned}&- 12 X^{6} - 24 X^{5} + 48 X^{4} + 2912 X^{3}\\&+6656 X^{2} + 5376 X + 1536\end{aligned}}{9 X^{3}}.
+\end{equation}
+\begin{equation}
+a_{11}=\frac{\begin{aligned}&X^{8} - 3 X^{7} - 106 X^{6} + 210 X^{5}\\&+3762 X^{4} + 8930 X^{3} + 7656 X^{2} + 1664 X\\&-512\end{aligned}}{3 X^{4} \left(X + 4\right)}.
+\end{equation}
+\begin{equation}
+a_{10}=\frac{\begin{aligned}&4 X^{8} - 12 X^{7} - 352 X^{6} + 144 X^{5}\\&+8160 X^{4} + 21248 X^{3} + 19200 X^{2} + 3584 X\\&-2048\end{aligned}}{3 X^{4} \left(X + 4\right)}.
+\end{equation}
+\begin{equation}
+a_D=\frac{\begin{aligned}&2 X^{6} - 6 X^{5} - 224 X^{4} - 632 X^{3}\\&+352 X^{2} + 1920 X + 1152\end{aligned}}{3 X^{2} \left(X + 4\right)}.
+\end{equation}
+\begin{equation}
+a_2=- \frac{128 \left(X + 1\right) \left(X + 2\right) \left(X^{2} - 17 X - 22\right)}{3 X^{3}}.
+\end{equation}
+\begin{equation}
+a_{D2}=\frac{128 \left(X + 1\right) \left(X + 6\right)}{3 X}.
+\end{equation}
+\begin{equation}
+a_{20}=\frac{256 \left(X + 1\right) \left(X^{3} - 5 X^{2} - 28 X - 24\right)}{3 X^{3}}.
+\end{equation}
+\begin{equation}
+a_R=\frac{\begin{aligned}&- 24 X^{5} Y - 72 X^{4} Y + 528 X^{3} Y + 2112 X^{2} Y\\&+768 X Y - 768 Y\end{aligned}}{X^{3} \left(X + 4\right)}.
+\end{equation}
+\begin{equation}
+K=\frac{\begin{aligned}&24 X^{5} Y + 72 X^{4} Y - 528 X^{3} Y - 2496 X^{2} Y\\&- 2688 X Y - 768 Y\end{aligned}}{X^{3} \left(X + 4\right)}.
+\end{equation}
+\begin{equation}
+a_{011}=- \frac{16 \left(X + 1\right) \left(7 X + 3\right)}{X^{2}}.
+\end{equation}
+\begin{equation}
+a_{RR}=- \frac{24 \left(X + 1\right) \left(X^{2} - 2 X - 12\right)}{X^{2}}.
+\end{equation}
+\paragraph{Integration and endpoint constants.} Starting from the eight-function kernel above, rational integration by parts gives
+\begin{equation} \Phi_{UW}(t)=\frac{\dd}{\dd t}\sum_i Q_i(t)f_i(t)+\sum_i T_i(t)f_i(t).\end{equation}
+Here $Q_i$ are rational functions, and $T_i$ have only simple poles. The identity follows by substituting the derivatives of the eight functions and matching their rational coefficients. At each endpoint the negative powers in the Laurent expansion of the sum $\sum_iQ_if_i$ cancel. Its constant term must include products of the poles of $Q_i$ with the Taylor coefficients of $f_i$. Thus the integrated boundary is the difference of the two constant terms, not the difference of the constant coefficients of the rational functions alone.
+The simple-pole terms integrate to GPLs with endpoint $t=1$.
+Set $X=(1-q)^2/q$ and $\delta=1-q$, with $0<q<1$. The moving letters are
+\begin{equation}
+ a=-\frac{q}{(1-q)^2},\qquad c=-\frac{2q}{(1-q)^2},\qquad
+ r_-=-\frac{q}{1-q},\qquad r_+=\frac1{1-q}.
+\end{equation}
+They lie outside the interval $[0,1]$. Together with the fixed letters
+$0,1$, they specify the endpoint functions whose constants are needed.
+
+For a word $w$, define $g_w(q)$ as the constant coefficient in the
+$t\to1^-$ expansion of $G(w;t)$ in powers of $\ln(1-t)$.
+The endpoint is regularized at fixed $q$ before taking $q\to1$.
+The remaining terms vanish as $(1-t)$ times powers of its logarithm,
+so this constant-term operation respects shuffle products.
+In particular, $g_{\varnothing}=1$, $g_0=g_1=0$, and all nonempty
+pure-zero or pure-one words have value zero. The nonzero fixed-letter
+values through weight three are
+\begin{align}
+ g_{0,1}&=-\zeta(2),&g_{1,0}&=\zeta(2),\\
+ g_{0,0,1}&=-\zeta(3),&g_{0,1,0}&=2\zeta(3),\\
+ g_{1,0,0}&=-\zeta(3),&g_{0,1,1}&=\zeta(3),\\
+ g_{1,0,1}&=-2\zeta(3),&g_{1,1,0}&=\zeta(3).
+\end{align}
+Three convergent integrals fix this table:
+\begin{align}
+ G(0,1;1)&=\int_0^1\frac{\ln(1-t)}t\,\dd t=-\zeta(2),\\
+ G(0,0,1;1)&=-\operatorname{Li}_3(1)=-\zeta(3),\\
+ G(0,1,1;1)&=\frac12\int_0^1\frac{\ln^2(1-t)}t\,\dd t
+ =\frac12\int_0^1\frac{\ln^2u}{1-u}\,\dd u=\zeta(3).
+\end{align}
+The first two follow from the convergent polylogarithm series.
+For the third, expanding $1/(1-u)=\sum_{n=0}^{\infty}u^n$ and using
+$\int_0^1u^n\ln^2u\,\dd u=2/(n+1)^3$ gives the stated value.
+The remaining entries follow from the regularized shuffle relations
+\begin{align}
+ 0&=g_{0,1}+g_{1,0},\\
+ 0&=2g_{0,0,1}+g_{0,1,0},\\
+ 0&=g_{1,0,0}+g_{0,1,0}+g_{0,0,1},\\
+ 0&=g_{1,0,1}+2g_{0,1,1},\\
+ 0&=g_{0,1,1}+g_{1,0,1}+g_{1,1,0}.
+\end{align}
+These are the products $g_0g_1$, $g_0g_{0,1}$, $g_1g_{0,0}$,
+$g_1g_{0,1}$ and $g_0g_{1,1}$, respectively.
+
+The words containing a moving letter have zero boundary value as
+$q\to1$. To establish this before interchanging limits, first use
+shuffle products to remove initial letters $1$ and terminal letters $0$.
+The factors $g_1$ and $g_0$ vanish. Every surviving word therefore
+starts with a letter other than $1$ and ends with a letter other than
+$0$, and still contains each moving letter of the original word.
+Its ordered integral is absolutely convergent at both endpoints.
+For $0<\delta<1/4$, each moving letter $\alpha$ satisfies
+\begin{equation}
+ \left|\frac1{t-\alpha(q)}\right|\leq\frac2{|\alpha(q)|},
+ \qquad 0\leq t\leq1.
+\end{equation}
+Replacing the moving kernels by these bounds leaves only the fixed
+kernels $1/t$, $1/(1-t)$ and the constant kernel in the ordered integral.
+The endpoint conditions just established make this integral finite.
+Consequently, for each surviving word $w$,
+\begin{equation}
+ |G(w;1)|\leq C_w
+ \prod_{j\,\mathrm{moving}}\frac2{|\alpha_j(q)|},
+ \qquad C_w<\infty,
+\end{equation}
+where $C_w$ is independent of $q$. The factors $1/a$ and $1/c$
+are $O(\delta^2)$, while $1/r_\pm=O(\delta)$. The bound therefore
+tends to zero, and so does the finite shuffle combination defining
+$g_w$. This proves the moving-letter boundary value through every
+weight required here. It applies to each special function before
+multiplication by possibly singular rational energy coefficients.
+
+Differentiating the endpoint GPLs by the total-differential recursion
+of Section~\ref{sec:comp-virtual-energy-basis} now gives logarithmic
+differentials in a fixed alphabet with the explicitly fixed constants
+above. Add the complete Hermite boundary difference, including its
+Laurent--Taylor cross terms, before returning to the $X$ kernels.
+The result contains eighteen words with rational coefficients in $X$
+and $Y$. Exact substitution of the kernel maps reproduces every
+coefficient of the fixed-alphabet expression.
+\paragraph{Collection of the functions.} The shuffle identity gives
+\begin{equation}G(0,r,-1;X)=L_0G(r,-1;X)-G(r,0,-1;X)-G(r,-1,0;X).\end{equation}
+The five root words occur with coefficients proportional to $1,2,1,2,1$, in the order $(-4,r,-1)$, $(0,r,-1)$, $(r,-1,-1)$, $(r,-1,0)$, $(r,0,-1)$. Applying this identity reduces their sum to $K[\mathcal U+2L_0G(r,-1;X)]$. For the rational letters, use
+\begin{align}G(-1,0;X)&=L_0L_1+\operatorname{Li}_2(-X),\\
+G(-2,0;X)&=L_0L_2+\operatorname{Li}_2(-X/2),\\
+G(-j,-j;X)&=\tfrac12\ln^2(1+X/j),\qquad j=1,2.\end{align}
+These are shuffle identities and the defining dilogarithm integral, so no continuation across a cut is needed. All kernels and logarithms in the final expression are real for $X>0$.

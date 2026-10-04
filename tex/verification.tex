@@ -1,0 +1,364 @@
+\section{Scope and reproducibility of the checks}
+The algebraic reductions and physical branches in the preceding chapters
+are fixed before any numerical comparison. The command \texttt{make check}
+regenerates its required analytic intermediates and runs the standard
+verification suite. It checks source consistency, exact coefficient
+identities, amplitudes, integrated sectors, endpoint matching, asymptotic
+expansions and numerical implementations. Each check records its exit
+status and its output in \nolinkurl{build/checks/}. The command
+\texttt{make check-list} lists the preparation steps and tests.
+The more expensive full phase-space audits have separate commands in
+the build instructions. Their saved results below are distinguished
+from the standard suite.
+
+For example, \nolinkurl{compton_dilog_identities.py} establishes the two
+real dilogarithm reductions by differentiating both sides and fixing
+their common boundary values at $s=1$. Only after that proof does
+\nolinkurl{check_compton_dilog_identities.py} compare their implementations
+at $s=1.0001,1.02,1.6,10,1000$, using 70-digit arithmetic and an
+absolute tolerance of $10^{-60}$. These samples determine neither the
+identity nor its integration constant.
+
+The regular product form has a separate implementation in
+\nolinkurl{compton_total_regular.py}. Its exact checks reconstruct every
+coefficient and verify the real-axis inversion relations by derivatives
+and boundary values. The numerical program
+\nolinkurl{check_compton_total_regular.py} then compares the full result
+with the original collected expression at ten energies from $X=0.0002$
+to $X=200000$, including $X=1$ and offsets of $10^{-20}$ on either side.
+Its tolerance is $10^{-30}\max(1,|C_1|)$. The paired trilogarithm is also
+checked against its original boundary-value representation at those
+points. These tests check the implementation of already established
+identities.
+
+Near threshold, subtracting primitive endpoints and dividing by $X^3$
+amplifies rounding errors. The regular evaluator adds six working digits
+per decade of $X<1$ to its base guard precision, then repeats the
+evaluation with thirty additional digits. It checks both the change
+and the imaginary residual relative to the result. A further increase
+is allowed, and failure to converge raises an error.
+At $X=10^{-18}$ and $10^{-24}$, the same test compares the result
+with the independently derived low-energy expansion through $X^4$.
+The relative differences are below $7\times10^{-55}$ and
+$7\times10^{-73}$, respectively. These tests validate the evaluation
+of the exact expression, without determining its coefficients.
+
+The same program checks the shared root-function evaluator in
+\nolinkurl{compton_root_classical.py}. It evaluates the common endpoint
+differences once and uses the shuffle identity for the outer-zero word.
+The original primitives, endpoint constants and complex branches are
+unchanged. At the same ten energies, seven words are compared with their
+separate implementations using 80-digit arithmetic and tolerance
+$10^{-70}\max(1,|G|)$. The word $G(r,r,-1;X)$ is checked through its
+defining derivative, with tolerance $10^{-65}\max(1,|\partial_XG|)$.
+
+The direction averages have a separate check in
+\nolinkurl{compton_real_analytic_angular_check.py}. It compares the closed
+masters with direct sphere quadrature at four regular kinematic points.
+Near threshold, small Gram determinants and cancellation between terms
+require additional working precision. At $H=0.02$, the check repeats the
+master sum at increasing precision and the sphere integral at two angular
+resolutions. Both quadratures agree with the master sum to a relative
+tolerance of $10^{-30}$. These evaluations share the same 25 coefficients,
+so the comparison tests the direction averages and their implementation.
+Precision and angular-resolution changes provide stability checks,
+not rigorous error bounds or independent checks of the original trace.
+
+\section{Independent amplitude checks}
+The program \texttt{check\_compton\_amplitudes.py} constructs explicit
+Dirac matrices with $m=e_{\mathrm T}=1$. It does not insert a known
+squared Compton amplitude. It sums physical transverse photon
+polarizations and performs the spin traces. Three Born points with
+$(\omega/m,\cos\theta)=(0.1,-0.4),(1,0.3),(20,-0.7)$ agree with
+Klein--Nishina to a relative error below $5\times10^{-16}$.
+
+For the real amplitude it constructs on-shell three-body events
+at $\omega/m=0.3,1,7$. At every event it replaces each of the three
+photon polarizations in turn by its momentum. The spinor-sandwiched
+matrix vanishes with a relative residual below $6\times10^{-14}$.
+Interchanging the two outgoing photons changes the kernel by less
+than $3\times10^{-16}$ relative to its norm. A separate test of the
+contracted off-shell vertex integrand verifies
+\eqref{eq:comp-supp-ward} before counterterms, with a relative
+residual below $2\times10^{-16}$.
+
+The soft check is more restrictive than a Ward identity. Keep a
+hard-photon direction fixed and compare the exact three-body square
+with $e_{\mathrm T}^2(-J^2)B_{\mathrm{amp}}$, projecting the hard system onto
+on-shell two-body kinematics in the denominator. Table~\ref{tab:comp-supp-soft}
+shows the approach to the derived limit. Corrections are linear in
+the small photon energy at this fixed event.
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{cc}
+\toprule
+Soft photon energy divided by $m$ & Exact square / soft approximation\\
+\midrule
+$10^{-3}$ & $0.9980259445$\\
+$10^{-4}$ & $0.9998019242$\\
+$10^{-5}$ & $0.9999801857$\\
+$10^{-6}$ & $0.9999980193$\\
+\bottomrule
+\end{tabular}
+\caption{Soft-limit check of the six real-emission diagrams at
+incident energy $\omega=m$. The event directions are fixed in the
+verification script.}
+\label{tab:comp-supp-soft}
+\end{table}
+The program \texttt{check\_compton\_virtual.py} separately integrates
+the full subtracted loop tensor by Gauss quadrature. It uses
+$\omega/m=0.3$, $\cos\theta=0.2$ and $\lambda/m=0.7$ so that
+the parameter denominators stay away from physical cuts. This
+finite regulator is a test of the matrix identities, not a physical
+small-$\lambda$ prediction. Including all eight diagrams, the two
+external Ward residuals decrease from $4.1\times10^{-9}$ at
+quadrature order 12 to $7.6\times10^{-15}$ at order 28. The loop
+matrix changes by $5.3\times10^{-15}$ relative to its norm between
+orders 20 and 28. This independently tests the parameter reduction,
+finite counterterms and relative signs. It does not evaluate the
+inclusive total or the physical small-$\lambda$ loop across its cuts.
+
+\section{Cross-check of the analytic scalar box}
+The script \texttt{check\_compton\_scalar\_analytic.py} evaluates
+\eqref{eq:comp-supp-box-dilog} at 50 decimal digits and compares it
+with quadrature of \eqref{eq:comp-supp-box-one-dimensional}.
+At $-t=0.001,0.09,5,7800$, the absolute differences are below
+$3\times10^{-50}$. Quadrature serves only to check the derived
+dilogarithm identity. This test checks the scalar box identity, rather than the total
+phase-space integration.
+
+\section{Cross-check of the closed vertex}
+The script \texttt{check\_compton\_vertex\_analytic.py} compares
+the six closed moments in \eqref{eq:comp-supp-vertex-closed-moments}
+with their parameter integrals at $S=-4,0,0.49,1.6,10$.
+Both real and imaginary parts are included. At 60 decimal digits,
+the largest absolute difference is below $10^{-58}$.
+The continuation in the integrand and in the closed expression
+is fixed by the Feynman denominator as derived above.
+
+The same program compares all four vertex insertions in the
+Compton amplitude with parameter quadrature at
+$(s,c)=(1.6,0.2),(10,-0.4),(100,0.7)$.
+Increasing the quadrature order from 32 to 64 and 128 decreases
+the maximum matrix discrepancy at the last point from
+$8.33\times10^{-9}$ to $1.37\times10^{-10}$ and
+$2.19\times10^{-12}$. Here the discrepancy is the Frobenius norm
+of the matrix difference divided by the larger of one and the
+norm of the closed matrix. The analytic expression itself has
+no quadrature order. These tests concern the vertex contribution,
+rather than the complete total-cross-section integration.
+
+\section{Analytic integration of a virtual subset}
+The trace coefficients for the vertex and self-energy terms are
+generated by \nolinkurl{compton_virtual_trace_analytic.py} using
+Clifford anticommutation. Explicit covariant polarization sums of
+the Dirac matrices reproduce those coefficients to relative errors
+below $3\times10^{-15}$ at the three points used above.
+The covariant sum is used on both sides of this check because this
+subset alone is not gauge invariant.
+
+The primitive in \eqref{eq:comp-vt-u-primitive} has an exact symbolic
+derivative equal to the crossed-ordering trace. Independent
+50-digit quadrature of that trace at $s=1.6,10,100$ differs from
+the primitive's endpoint difference by less than $10^{-45}$.
+The script \nolinkurl{check_compton_virtual_angular_analytic.py}
+also verifies the complete vertex-plus-self-energy angular integral,
+including its phase-space normalization, against a separate
+double-precision trace quadrature. At $\lambda=10^{-6}$ the analytic
+coefficients $\mathcal C_{\mathrm{vertex}+\Sigma}$ are
+\begin{align}
+ s=1.6 &: \quad 52.9138831571782534624971544028,\\
+ s=10 &: \quad 15.1114502033743705973520745024,\\
+ s=100 &: \quad 2.81971068757998578698139625584.
+\end{align}
+These regulator-dependent numbers are diagram-subset checks.
+They are not physical NLO correction factors and must be combined
+with the spanning and real terms before comparison with a total
+cross section.
+
+\section{Ward identities of the complete closed amplitude}
+The script \nolinkurl{compton_amplitude_analytic.py} combines the
+closed self-energy, vertex and spanning matrices. No loop-parameter
+quadrature is used. Replacing either external polarization by its
+photon momentum gives normalized Ward residuals below
+$1.1\times10^{-13}$ at
+$(s,c)=(1.6,0.2),(10,-0.4),(100,0.7)$, for both
+$\lambda=10^{-5}$ and $10^{-8}$. The normalization is the larger
+of one and the norm of a transverse spinor-sandwiched amplitude,
+as in the earlier Ward check. This tests the relative signs and
+finite terms of the complete analytic virtual amplitude in the
+physical region. It is distinct from the real-radiation energy integrals in the
+total cross section.
+
+The script \nolinkurl{check_compton_infrared_analytic.py} separately
+changes $\lambda$ from $10^{-5}$ to $10^{-8}$ in this same closed
+amplitude. At the three points above it verifies
+\begin{equation}
+ \frac{\operatorname{Re}\mathcal T(10^{-5})
+       -\operatorname{Re}\mathcal T(10^{-8})}{4\ln(10^3)}
+       =\mathcal B(b_e-1)
+\end{equation}
+with absolute residuals below $2\times10^{-14}$. This is the
+coefficient required for pointwise cancellation against the
+massive-photon soft term. It checks the independently derived
+infrared factor, rather than determining that factor by fitting.
+
+\input{integration_numerical_checks}
+\input{simplification_numerical_checks}
+
+\section{Numerical evaluation of the published reference}
+Only after completing the amplitude integration do we evaluate the
+published total in Equation (6) of Lee, Schwartz and
+Zhang~\cite{qed-processes-lsz}.  Its thirteen iterated-integral contributions
+are combined into one integral in $t=\ln z$, so the lower-weight functions
+at a common argument are computed once.  Near $z=0$, convergent power
+series evaluate the lower-weight functions without cancellation between
+constant terms.  This numerical integration evaluates the special
+functions in the published reference.  It is not an input to the
+independent derivation or to its closed endpoint formulas.
+
+We compare evaluations with 75 and 90 decimal digits and lower endpoints
+$t=-140$ and $t=-165$.  The omitted tails have analytic absolute bounds.
+For example, for $0<z<1$ the lower-weight words obey
+\begin{align}
+ |G(-1,0;z)|&\leq z(1+|\ln z|),\\
+ 0\leq G(-2,-1;z)&\leq z^2/4,\\
+ 0\leq G(r,-1;z)&\leq z^{3/2}/3.
+\end{align}
+Here the letter $r$ denotes the kernel $1/\sqrt{z(z+4)}$, as in the
+published formula, rather than the angular variable used earlier.
+Multiplication by the outer kernels and integration of these elementary
+bounds controls the lower-endpoint truncation.  The reported error
+estimate adds these tail bounds, ten times the difference between the two
+evaluations, and a rounding estimate based on working precision and the
+absolute sizes of the individual coefficients.  It is an independent
+numerical error estimate, not an interval-arithmetic proof and not an
+estimate inferred from agreement with our result.
+For the seven values $s=1.0002$, $1.02$, $1.6$, $10$, $100$, $2001$, and
+$200001$, all reference error estimates are below $5.6\times10^{-58}$.
+At $s=1.6$, evaluating each published iterated integral separately with
+75-digit arithmetic and the same lower endpoint $t=-140$ differs from
+the combined evaluation by $7.74\times10^{-75}$.  This checks the
+combination independently of the comparison with our cross section.
+
+\subsection{Evaluation of the reference words}
+The implementation evolves the thirteen words in $\mathcal H$ and uses
+the elementary expressions for $G(-1;X)$, $G(0,-1;X)$, $G(-1,0;X)$ and
+$G(-1,-1;X)$ from Section~\ref{sec:comp-reference-elementary} for their
+lower-weight derivatives. At
+$\tau=\ln X$ the coefficient for a rational letter is
+$X/(X-a)$ and that for $r$ is $\sqrt{X/(X+4)}$.
+Each derivative involves a lower-weight word. All thirteen unknowns
+vanish at $X=0$. Starting at $\tau=-36$ with zero initial values
+neglects only endpoint powers, and repeating at $\tau=-40$ checks
+this approximation. Large cancellations among the terms of $\mathcal H$
+make the accuracy of the final correction weaker than the accuracy
+of each individual $G$. The verification reports the error of the
+combined cross section as well as that of the functions.
+
+
+Numerically the double-precision implementation is intended for
+$X\geq0.01$ and the tested energies, rather than arbitrarily close
+to threshold or at arbitrarily large energy.
+
+\section{Checks of the collected total}
+At $X=0.6,9,99$, the collected formula gives
+\begin{align}
+C_1(0.6)&=0.39497522084295373429747165489072725825168951498178\ldots,\\
+C_1(9)&=0.77515165401174580343102580969237768056470578000273\ldots,\\
+C_1(99)&=0.35308838117224168652124506257313479270540259204215\ldots.
+\end{align}
+The absolute differences from the original independent analytic evaluations are $2.2\times10^{-79}$, $8.8\times10^{-81}$, and $1.1\times10^{-85}$, respectively. These are checks between two representations of our own calculation. No published total is used in the collection or in these comparisons.
+
+
+
+\section{Integrated benchmarks}
+The program \texttt{check\_compton\_nlo.py} tests four elementary
+reductions of the $G$ functions at $X=0.07,0.5,1,10,20000$.
+The maximum absolute error divided by $\max(1,|G|)$ is
+$7.5\times10^{-14}$. Tightening both differential-equation
+tolerances and lowering the starting point changes the correction
+at the three tested PrimEx energies by less than $2.5\times10^{-8}$
+of that correction. This is far below the experimental uncertainty.
+
+For a head-on laser of energy $1.165\,\mathrm{eV}$, transform an
+electron beam energy $E$ to the rest-frame photon energy by
+\begin{equation}
+ \omega=\omega_{\mathrm{laser}}
+                  \frac{E+\sqrt{E^2-m^2}}m.
+\end{equation}
+Using $m=0.51099906\,\mathrm{MeV}$ and
+$\alpha_{\mathrm T}^{-1}=137.0359895$ gives
+Table~\ref{tab:compton-nlo-benchmark}. The reference values are
+theoretical predictions from Table 3 of Denner and Dittmaier
+\cite{qed-processes-denner}, used here to check the numerical
+implementation. They are not experimental input to the PrimEx figure.
+\begin{table}[!htbp]
+ \centering
+ \begin{tabular}{ccc}
+ \toprule
+ $E$ [GeV] & $100\sigma_1/\sigma_0$ [\%], evaluation
+          & Reference~\cite{qed-processes-denner}, Table 3 [\%]\\
+ \midrule
+ 4 & 0.0023092 & 0.0023\\
+ 6 & 0.0044867 & 0.0045\\
+ 8 & 0.0070869 & 0.0071\\
+ \bottomrule
+ \end{tabular}
+ \caption{Inclusive photonic corrections with no acceptance cuts.
+ The laser energy is $1.165\,\mathrm{eV}$ in all three rows.}
+ \label{tab:compton-nlo-benchmark}
+\end{table}
+
+At center-of-mass energy
+$\sqrt{s_{\mathrm{phys}}}=1\,\mathrm{GeV}$ the correction is $8.17\%$, which
+reproduces the $8.2\%$ quoted in Reference~\cite{qed-processes-lsz}.
+These comparisons verify the implementation of Equation (6) of
+Lee, Schwartz and Zhang~\cite{qed-processes-lsz}.
+
+\section{Experimental input and reproducibility}
+The data source is Table 2 of the PrimEx publication
+\cite{qed-processes-primex}, the same thin-carbon measurements used
+in the book's tree-level comparison. An unchanged copy of the raw table is included as
+\nolinkurl{data/primex_carbon_raw.dat}. Its columns give the run period,
+photon energy in GeV, cross section in mb per electron, and separate
+statistical and systematic uncertainties in the same cross-section
+units. The 29 values are copied without fitting or rescaling.
+
+The comparison uses $m=0.51099895\,\mathrm{MeV}$,
+$\alpha_{\mathrm T}^{-1}=137.035999084$, and
+$1\,\mathrm{GeV}^{-2}=0.3893793721\,\mathrm{mb}$.
+The plotted error is the quadrature sum of the two tabulated errors.
+The published cross sections include background, luminosity and
+acceptance corrections and are not Born-unfolded quantities.
+A detector simulation is therefore not reapplied to the reported
+total. The experiment's extraction already uses a radiative-event
+model. The comparison does not redo that extraction.
+
+At $5\,\mathrm{GeV}$ the tree and inclusive NLO predictions are
+$0.264648\,\mathrm{mb}$ and $0.273692\,\mathrm{mb}$ respectively.
+
+
+All calculation programs are in \texttt{scripts/}.
+\texttt{compton\_nlo.py} evaluates the exact total in Equation (6)
+of Lee, Schwartz and Zhang~\cite{qed-processes-lsz}.
+
+\texttt{generate\_compton\_nlo\_comparison.py} evaluates the independently
+integrated total through
+\nolinkurl{compton_total_independent_closed.py}, without calling the
+published formula. It writes sampled theory,
+experimental points and their errors as \texttt{.dat} files in the
+local \texttt{tex/figures/} directory. The vector figure is drawn by PGFPlots
+during the chapter build. Verification programs write their numeric
+reports in the \texttt{reports/} directory. The build instructions give
+the commands and required Python libraries.
+
+Figure~\ref{fig:compton-nlo-primex} compares the measured totals with
+both predictions. The inclusive radiative correction raises the curve
+over this energy range. The lower panel displays this change relative
+to the Born prediction using the same normalization for data and theory.
+\input{figures/compton_nlo_comparison}
+
+\input{real_numerical_audit}
+
+\input{independent_total_comparison}

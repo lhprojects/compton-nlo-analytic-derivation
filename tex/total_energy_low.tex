@@ -1,0 +1,67 @@
+\subsection{Expansion of the collected analytic formula}
+\label{sec:comp-total-energy-low}
+The complete product form \eqref{eq:comp-total-energy-product} gives
+two further orders beyond the leading result above. The external energy variable remains $X$.
+Direct expansion gives
+\begin{equation}
+\begin{aligned}
+ \sigma_1=\frac{\alpha_{\mathrm T}^3}{m^2}\biggl\{
+ &X^2\left[-\frac{16}{9}\ln X+\frac7{15}\right]
+ +X^3\left[\frac43\ln X-\frac{113}{90}\right]\\
+ &+X^4\left[-\frac{25}{9}\ln X+\frac{203}{125}\right]
+ +O\!\left(X^5|\ln X|\right)\biggr\},\qquad X\to0^+.
+\end{aligned}
+\label{eq:comp-collected-total-low-four}
+\end{equation}
+No individual virtual or real integral is expanded again here. The
+starting point is the complete infrared-finite analytic formula.
+
+The expansion can be performed recursively from the defining GPL
+kernels. For a nonzero rational letter $a$, and for the root letter,
+\begin{align}
+ \frac1{X-a}&=-\sum_{j=0}^{\infty}\frac{X^j}{a^{j+1}},
+                      \qquad |X|<|a|,\\
+ \frac1{\sqrt{X(X+4)}}
+ &=\frac1{2\sqrt X}\sum_{j=0}^{\infty}
+       \binom{-1/2}{j}\frac{X^j}{4^j},\qquad |X|<4.
+\end{align}
+For the zero letter the kernel is $1/X$. Starting with the empty
+word $G(\varnothing;X)=1$, multiply the kernel series by the series
+for the shorter word and integrate each term. For $p\ne-1$,
+\begin{equation}
+ \int X^p\ln^k X\,\dd X
+ =X^{p+1}\sum_{j=0}^{k}
+       \frac{(-1)^j k!}{(k-j)!(p+1)^{j+1}}\ln^{k-j}X.
+\end{equation}
+For $p=-1$ the primitive is $\ln^{k+1}X/(k+1)$.
+The zero-letter words are normalized as
+$G(\underbrace{0,\ldots,0}_{k};X)=\ln^k X/k!$.
+All other integration constants follow from their vanishing limit at
+the lower endpoint. This gives the required half-integer power series
+without a numerical fit.
+
+The rational coefficients of the total have poles of order at most
+four at $X=0$. Accordingly the GPL series are computed through $X^8$
+before multiplication, which suffices for the total through $X^4$.
+On summing all terms, the negative powers, the constant and linear
+terms, every half-integer power, and powers of $\ln X$ above one
+cancel exactly. The first surviving term is the $X^2$ term displayed
+in \eqref{eq:comp-collected-total-low-four}. The local kernel series
+converge in a sufficiently small interval $0<X<1$.
+After the displayed terms are removed, the next possible contributions
+have the form $X^5$ times an analytic function or $X^5\ln X$ times an
+analytic function, giving the stated remainder. Indeed, every
+non-elementary word in the product form has at most one trailing zero,
+and the only explicit factor $\ln X$ multiplying a GPL multiplies a
+word with no trailing zero. The elementary part is also at most linear
+in $\ln X$. Thus no higher logarithmic power can first appear in the
+omitted orders.
+
+Only after deriving these coefficients do we compare the leading
+term with Lee, Schwartz and Zhang~\cite{qed-processes-lsz},
+Equation (10). Their variable is the same $X=(s_{\mathrm{phys}}-m^2)/m^2$,
+and their order-$\alpha^3$ normalization is $\alpha^3/m^2$.
+The logarithmic coefficient $-16/9$ and the finite coefficient $7/15$
+agree separately. That displayed literature equation does not give
+the $X^3$ and $X^4$ coefficients, so no comparison of those two orders
+is inferred from it.

@@ -1,0 +1,232 @@
+\section{The virtual contribution in a common function basis}
+\label{sec:comp-virtual-energy-basis}
+\subsection{A constant alphabet}
+Use iterated integrals based at $X=0$, with the following kernels:
+\begin{align}
+ G(a,w;X)&=\int_0^X\omega_a(t)G(w;t),\qquad G(\varnothing;X)=1,\\
+ \omega_a&=\frac{\dd X}{X-a}\quad(a=0,1,-1,-2,-4),\qquad
+ \omega_r=\frac{\dd X}{\sqrt{X(X+4)}}.
+\end{align}
+The root is positive for $X>0$. Pure-zero words have the normalization
+$G(0,\ldots,0;X)=\ln^nX/n!$. The letter $1$ occurs in combinations
+whose apparent pole is canceled by an inner function vanishing at
+$X=1$, as in $G(1,0;X)$ with kernel $\ln X/(X-1)$.
+
+Define a new variable $q$, unrelated to electric charge, by
+\begin{equation}
+ q=\frac{\sqrt{X+4}-\sqrt X}{\sqrt{X+4}+\sqrt X},\qquad
+ X=\frac{(1-q)^2}{q},\qquad 0<q<1.
+\end{equation}
+The physical square roots are positive.  Introduce
+\begin{equation}
+ \rho_\pm=\frac{1\pm\ii\sqrt3}{2},\qquad
+ \gamma_\pm=\frac{3\pm\sqrt5}{2},\qquad
+ \nu_a=\frac{\mathrm{d}q}{q-a}.
+\end{equation}
+Direct differentiation gives the complete pullback of the kernels:
+\begin{align}
+ \frac{\mathrm{d}X}{X}&=2\nu_1-\nu_0,\\
+ \frac{\mathrm{d}X}{X+1}&=\nu_{\rho_+}+\nu_{\rho_-}-\nu_0,\\
+ \frac{\mathrm{d}X}{X+2}&=\nu_{\ii}+\nu_{-\ii}-\nu_0,\\
+ \frac{\mathrm{d}X}{X+4}&=2\nu_{-1}-\nu_0,\\
+ \frac{\mathrm{d}X}{X-1}&=\nu_{\gamma_+}+\nu_{\gamma_-}-\nu_0,\\
+ \frac{\mathrm{d}X}{\sqrt{X(X+4)}}&=-\nu_0.
+ \label{eq:compton-equivalence-pullback}
+\end{align}
+Replacing each letter by its linear combination in these equations
+converts every independently integrated word to constant-letter GPLs based at $q=1$.
+The basepoint is approached from the left.  Its logarithmic convention
+is fixed by the exact relation
+\begin{equation}
+ \ln X=2\ln(1-q)-\ln q.
+\end{equation}
+Writing $q=1-\delta$ gives $X=\delta^2/(1-\delta)$ and
+$\ln X=2\ln\delta+O(\delta)$.  The leading coefficient of
+$X$ in this relation is one, so it produces no finite logarithmic
+constant.  This fixes words ending in the singular letter without an
+undetermined additive constant.  All other boundary constants follow
+by induction from the vanishing lower-weight words.  Complex letters
+occur in conjugate pairs, with the same real path and conjugate boundary
+values.  The resulting alphabet is
+\begin{equation}
+ \mathcal A=\{0,1,-1,\ii,-\ii,\rho_+,\rho_-,\gamma_+,\gamma_-\}.
+\end{equation}
+The transformed words have finite rational coefficient dictionaries.
+All six kernel identities
+in \eqref{eq:compton-equivalence-pullback} are checked symbolically.
+
+\subsection{The vertex and self-energy contribution}
+The entire independently integrated vertex and self-energy contribution
+can already be reduced to constant letters.  In the direct channel, the
+physical continuation gives
+\begin{equation}
+ \operatorname{Re}\operatorname{Li}_2(1+X+\ii0)
+ =\frac{\pi^2}{6}-G(-1,0;X),\qquad
+ \operatorname{Re}\ln(-X-\ii0)=\ln X.
+\end{equation}
+The imaginary part of the dilogarithm is fixed by its indicated boundary,
+not by a fit to the final answer.  The interference coefficients in this
+channel are real, so these real parts suffice for this contribution.
+In the crossed channel the two angular endpoints are $y=X$ and
+$y=X/(1+X)$.  At the latter endpoint, the substitution $y=t/(1+t)$ gives
+\begin{equation}
+ \frac{\mathrm{d}y}{y}=\frac{\mathrm{d}t}{t}
+ -\frac{\mathrm{d}t}{t+1},\qquad
+ \frac{\mathrm{d}y}{y-1}=-\frac{\mathrm{d}t}{t+1}.
+\end{equation}
+Its derivative at $t=0$ is one, so the logarithmic basepoint adds no
+constant: $\ln y=\ln t-\ln(1+t)$.  Applying these replacements to the
+independent angular primitive, including its rational coefficients,
+gives exactly thirteen words:
+\begin{equation}
+ C_{V+\Sigma}(s,\lambda)
+ =\sum_{w\in\mathcal W_V}v_w(X,\widehat c_Z)G(w;X),\qquad
+ \widehat c_Z=-4-4\ln\lambda.
+\end{equation}
+Here $\lambda$ is measured in units of $m$. The symbol
+$\widehat c_Z$ is the ultraviolet-finite field coefficient used in the
+angular primitive, not the full counterterm $c_Z$ of Chapter 2.
+With $G(\varnothing;X)=1$, the word set is
+\begin{align}
+ \mathcal W_V={}&\{\varnothing,(-1),(0),(-1,-1),(-1,0),(0,-1),(1,0),\\
+ &(-1,-1,-1),(-1,-1,0),(-1,0,-1),(0,-1,-1),(0,-1,0),(0,1,0)\}.
+\end{align}
+Every $v_w$ is rational in $X$ and $\widehat c_Z$.  All explicit $\pi^2$ constants
+cancel in this representation.  For example,
+\begin{align}
+ v_{(0,1,0)}&=v_{(0,-1,0)}=\frac{4(X+1)}{X^3},\\
+ v_{(-1,-1,0)}&=-\frac{4(X-1)}{X^3},\qquad
+ v_{(1,0)}=\frac{X^2-9X+16}{X^3}.
+\end{align}
+The full coefficient and derivative dictionaries are obtained from the
+independent trace and angular-primitive files, without using the
+published total.  This reduces the complete vertex and self-energy subset. It is not
+separately gauge invariant and must be combined with the spanning boxes.
+
+\subsection{The direct spanning box}
+The direct spanning-box channel can also be reduced completely.  In its
+angular integral let
+\begin{equation}
+ b=\sqrt{\frac{X}{X+4}},\qquad
+ y=\frac{X-(X+4)v^2}{1-v^2},\qquad
+ 0<v<V=\frac{X}{X+2}.
+\end{equation}
+Its input GPL words use only $0,\pm1$.  Exact rational integration in
+$v$ adds first letters $\pm b$, with no other roots.  Setting
+$X=4b^2/(1-b^2)$ makes every rational coefficient and partial-fraction
+pole rational in $b$.  The resulting angular primitive has been
+checked by differentiation, with every GPL coefficient canceling
+identically for arbitrary $b$.
+
+At the physical endpoint the variable $q$ gives
+\begin{equation}
+ b=\frac{1-q}{1+q},\qquad V=\frac{(1-q)^2}{1+q^2}.
+\end{equation}
+Both quantities are rational in $q$.  Let $\mathcal G$ denote GPLs
+based at $q=1$, with the same real left tangent used above.  The
+weight-one transformations are
+\begin{align}
+ G(0;V)&=2\mathcal G(1;q)-\mathcal G(\ii;q)
+                   -\mathcal G(-\ii;q)-\ln2,\\
+ G(1;V)&=\mathcal G(0;q)-\mathcal G(\ii;q)-\mathcal G(-\ii;q),\\
+ G(-1;V)&=\mathcal G(\rho_+;q)+\mathcal G(\rho_-;q)
+                  -\mathcal G(\ii;q)-\mathcal G(-\ii;q),\\
+ G(b;V)&=2\mathcal G(0;q)-\mathcal G(\ii;q)-\mathcal G(-\ii;q),\\
+ G(-b;V)&=-\mathcal G(\ii;q)-\mathcal G(-\ii;q).
+\end{align}
+These follow by taking logarithms of the corresponding rational ratios,
+with their constants fixed at $q=1$.  In particular, for
+$q=1-\delta$ one has $V=\delta^2/2+O(\delta^3)$, so the $-\ln2$
+in the first line is necessary.
+
+Higher weights follow recursively from the total differential of a
+moving-letter GPL.  All differences between $0,\pm1,\pm b$ and $V$
+are rational functions of $q$.  Their logarithmic derivatives have
+simple poles only in
+\begin{equation}
+ \mathcal A_s=\{0,1,-1,\ii,-\ii,\rho_+,\rho_-\}.
+\end{equation}
+After a lower-weight word has been converted, integration of each term
+$\nu_a\mathcal G(w;q)$ prepends the letter $a$.  Every original word
+containing a nonzero letter vanishes as $q\to1$, since $V=O(\delta^2)$
+while $b=O(\delta)$.  Thus its integration constant is zero.  The
+all-zero words are fixed by powers of the first weight-one identity.
+Coincident adjacent letters cancel in the total differential before
+individual logarithmic derivatives are taken.  The transformation
+checks these cancellations exactly, including the cancellation of
+any spurious pure powers of $\ln(1-q)$ at the boundary.
+
+Finally, the scalar factors multiplying the angular words satisfy
+\begin{equation}
+ d_s=\frac{G(-1,0;X)}{X},\qquad \ell_X=G(0;X).
+\end{equation}
+Transforming these factors with the kernel map above and applying
+shuffle identities completes the direct-box result as 101 constant-letter
+words of weight at most three.  Its rational coefficients depend only
+on $q$ and $\ln\lambda$, with possible constant $\ln2$ factors.  The
+normalization is $C_{\mathrm{box},s}=J_s/(2X^2)$.
+This reduction uses only the independent box coefficients.
+
+\subsection{The crossed spanning box in the energy basis}
+Section~\ref{sec:comp-crossed-first} has already integrated the rational
+crossed subgroup in $y$, before introducing the angular square root.
+Its endpoint maps contain only the letters $-1,0,1$. Applying the
+kernel pullbacks above converts those words to the same $q$ basis.
+The remaining angular integral has no auxiliary $\rho_u$ letter.
+
+\subsection{The complete virtual contribution}
+After the crossed subgroup is integrated as just described, its remaining
+seventeen angular words involve only $0,\pm1,\pm b$.  The same total
+differential construction used for the direct box therefore applies.
+Combining it with the crossed subgroup gives 110 constant-letter words
+for $J_u$.  The two independent constructions of the subgroup endpoint
+coefficients agree as exact rational functions.  The remaining angular
+primitive has also been checked by an exact derivative, coefficient by
+coefficient, for arbitrary kinematics.
+
+The entire independently computed virtual contribution is consequently
+in the comparison basis:
+\begin{equation}
+ C_V(q,\lambda)=\sum_{w\in\mathcal W}V_w(q,\ln\lambda)\mathcal G(w;q).
+\end{equation}
+There are 116 nonzero words.  All explicit $\ln2$ coefficients introduced
+by intermediate changes of endpoint cancel in this complete virtual
+sum.  This is an algebraic cancellation of coefficients, not a numerical
+inference.  The coefficients still depend on $\ln\lambda$, as expected
+for the virtual contribution.
+
+\subsection{Exact inversion of the kernel transformation}
+The common basis can be reduced without choosing functions from a
+published answer. Let $M$ be the $9\times6$ matrix of coefficients
+in the six kernel pullbacks above. A row labels a letter in
+$\mathcal A$, and a column labels one of the six $X$ kernels. Its
+six columns are linearly independent. Select six independent rows
+with a projection matrix $P$ and define
+\begin{equation}
+ L=(PM)^{-1}P,\qquad LM=I_6.
+\end{equation}
+For weight $n$, let $v_n$ denote the entire coefficient vector of
+the independently integrated $q$ words, with zero entries for absent
+words. Applying the tensor product of $n$ copies of $L$ gives the
+candidate $X$ coefficients $c_n$. The necessary and sufficient
+reconstruction test is
+\begin{equation}
+ c_n=L^{\otimes n}v_n,\qquad
+ M^{\otimes n}c_n-v_n=0,\qquad 0\leq n\leq3.
+\end{equation}
+Every component of the second equation is checked as an exact
+rational identity, including the rows not selected by $P$. Thus the
+choice of independent rows cannot hide an omitted word. The
+weight-zero equation includes constants. The common basepoint and
+logarithmic normalization established above make this an equality
+of integrals, including their boundary constants.
+
+The remaining coefficient functions are rational in $q$. Polynomial
+reduction using $q^2-(X+2)q+1=0$ reduces each one to $A(X)+qB(X)$.
+The physical root is fixed by $0<q<1$:
+\begin{equation}
+ q=\frac{X+2-\sqrt{X(X+4)}}2.
+\end{equation}
+The other root exceeds one for $X>0$. Substitution therefore gives
+coefficients rational in $X$ and $Y=\sqrt{X/(X+4)}$, with no branch
+choice left to numerical evaluation.

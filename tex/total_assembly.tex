@@ -1,0 +1,112 @@
+\section{Assembly in a common infrared convention}
+All quantities in this section use $m=1$, so that $s$ means
+$s_{\mathrm{phys}}/m^2$ and $\lambda$ means
+$\lambda_{\mathrm{phys}}/m$. Put $H=s-1>0$. Define
+\begin{equation}
+ A(s)=\frac1s\int_{-1}^1\mathcal B(c)[b_e(c)-1]\,\dd c,
+ \qquad \mathcal C_K(s)=\int_{-1}^1\mathcal B(c)K(s,c)\,\dd c.
+\end{equation}
+These are the integrated eikonal coefficient and the finite soft
+angular integral derived above. Let $C_V$ be the complete virtual
+contribution, including both external-photon orderings and the
+on-shell subtractions, in units of $\alpha_{\mathrm T}^3/m^2$.
+Its photon-mass term is $A(s)\ln\lambda$.
+
+The relation to the local subtraction follows by angular integration.
+For a future-directed timelike vector $v$, direct integration in polar
+coordinates gives $\int\dd\Omega_1/(v\cdot n_1)^2=4\pi/v^2$.
+Combining the two denominators in the cross term with a Feynman
+parameter $\xi$ therefore gives
+\begin{equation}
+ \int\dd\Omega_1\,\frac{p\cdot p'_B}
+ {(p\cdot n_1)(p'_B\cdot n_1)}
+ =4\pi z_e\int_0^1\frac{\dd\xi}
+ {1+2(z_e-1)\xi(1-\xi)}=4\pi b_e.
+\end{equation}
+In the last step, the substitution $2\xi-1$ gives the parameter integral
+\begin{equation}
+ \frac{2\operatorname{artanh}\sqrt{(z_e-1)/(z_e+1)}}{\sqrt{z_e^2-1}}
+ =\frac{\operatorname{arcosh}z_e}{\sqrt{z_e^2-1}},
+\end{equation}
+with continuous value one at $z_e=1$.
+The two diagonal terms each give $4\pi$, so
+$\int\dd\Omega_1(-j_n^2)=8\pi(b_e-1)$. Using the factor
+$q/\sqrt{s}=(s-1)/(2s)$ in $\mathcal A_{\mathrm{loc}}$ then yields
+\begin{equation}
+ \frac1{4\pi(s-1)}\int_{-1}^1\dd c_2\int\dd\Omega_1\,
+ \mathcal A_{\mathrm{loc}}
+ =\frac1s\int_{-1}^1\mathcal B(c_2)[b_e(c_2)-1]\,\dd c_2=A(s).
+\end{equation}
+Thus the local soft subtraction integrates to the same infrared
+coefficient $A(1+X)$ used in Chapter 1.
+
+The real integral regulated by $(xy)^\eta$ has the Laurent expansion
+\begin{equation}
+ C_R(\eta)=\frac{A(s)}\eta+F_R(s)+O(\eta).
+ \label{eq:comp-assembly-real-laurent}
+\end{equation}
+This auxiliary regulator is used to evaluate the energy integrals.
+Its finite part is converted to the same photon-mass convention as
+the virtual result before either contribution is combined.
+Near either soft corner the outgoing photon energy in the center-of-mass
+frame is $\omega=e/(2\sqrt s)$, and $xy=He+O(e^2)$.
+Consequently a real-energy cut $\omega>\varepsilon$ gives
+\begin{equation}
+ C_R^{\mathrm{hard}}(\varepsilon)
+ =F_R-A\ln(2\sqrt s H\varepsilon)+o(1).
+\end{equation}
+The soft integral with photon mass $\lambda$ gives
+$A\ln(2\varepsilon/\lambda)-\mathcal C_K/s$. Adding it first to the hard
+integral removes $\varepsilon$. Adding the virtual term then gives
+\begin{equation}
+ C_{\mathrm{total}}
+ =C_V(s,\lambda)+F_R(s)
+   +A(s)\ln\frac1{\sqrt s H\lambda}-\frac{\mathcal C_K(s)}s.
+ \label{eq:comp-assembly-common-regulator}
+\end{equation}
+The $\ln\lambda$ terms cancel algebraically. This argument fixes
+both the coefficient of the regulator logarithm and the finite
+scale factor $\sqrt s H$.
+
+For the energy-sector decomposition used here, let
+$F_{\mathrm{rat}}^z,F_{\log}^z,F_W^z,F_D^z$ denote finite parts
+of the integrated rational, single-logarithm, $L_W$, and restoring
+term $D$ with $z>\zeta$. Power and logarithmic divergences are
+removed before taking $\zeta\to0$. Write $\Delta_j$ for the finite
+conversion from this definition to $(xy)^\eta$. The $UV$ and $UW$
+finite parts, $F_{UV}^{\eta}$ and $F_{UW}^{\eta}$, have already
+been computed directly with the latter regulator. The required
+assembly is
+\begin{equation}
+ \begin{aligned}
+ F_R=\frac1{8sH}\big[&F_{\mathrm{rat}}^z+\Delta_{\mathrm{rat}}
+       +F_{\log}^z+\Delta_{\log}+F_W^z\\
+       &+F_D^z+\Delta_D+F_{UV}^{\eta}+2F_{UW}^{\eta}\big].
+ \end{aligned}
+ \label{eq:comp-assembly-real-sectors}
+\end{equation}
+Here $\Delta_W=0$. The term $D$ makes the replacement of the
+subtracted $VW$ integral by a second $UW$ integral exact.
+The factor $1/(8sH)$ includes the incident flux, the phase-space
+normalization, and the identical-photon factor already established
+in the real-emission derivation. It is applied once, after summing
+the unnormalized energy integrals.
+
+Every energy integral in \eqref{eq:comp-assembly-real-sectors}
+is represented by a finite GPL primitive evaluated at its endpoints.
+The endpoint conversions are logarithms and dilogarithms of the
+explicit rational soft residues. Consequently the assembled answer
+has no unevaluated phase-space integral:
+\begin{equation}
+ \boxed{\sigma_{\mathrm{inc}}^{\mathrm{NLO}}
+ =\sigma_0+\frac{\alpha_{\mathrm T}^3}{m^2}
+ C_{\mathrm{total}}(s_{\mathrm{phys}}/m^2)
+ +\frac1{m^2}O(\alpha_{\mathrm T}^4).}
+ \label{eq:comp-assembly-sigma}
+\end{equation}
+The remainder is at fixed dimensionless kinematics. The preceding
+sector formulas and finite primitive recursions specify
+$C_{\mathrm{total}}$ constructively, without using a published total
+as an integration condition. Evaluating the GPLs by convergent
+series is an evaluation of these analytic special functions, not
+a numerical integration of the scattering phase space.

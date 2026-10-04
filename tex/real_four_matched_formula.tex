@@ -1,0 +1,110 @@
+\subsection{The matched real contribution}
+The four real sectors and their finite matching shifts can now be combined into a formula with two dilogarithms and one trilogarithm. Define
+\begin{equation}
+ \mathcal R_4(s)=F_{\mathrm{rat}}^z+F_W^z+F_{\log}^z+F_D^z
+                    +\Delta_{\mathrm{rat}}+\Delta_{\log}+\Delta_D.
+\end{equation}
+Here $s>1$, $H=s-1$ and $r=\sqrt{s}$. Use the real logarithms
+\begin{equation}
+ L=\ln s,\qquad M=\ln(s-1),\qquad J=\ln\frac{s+1}{2},
+\end{equation}
+and the following three special-function combinations:
+\begin{align}
+ D(s)&=\operatorname{Li}_2(1/s),\\
+ V(s)&=\operatorname{Li}_2\!\left(\frac2{s+1}\right)+\ln2\,J,\\
+ T(s)&=\zeta(3)-\operatorname{Li}_3(1/s).
+\end{align}
+Both dilogarithm arguments and the trilogarithm argument lie strictly between zero and one. The complete matched expression is
+\begin{equation}
+\begin{aligned}
+ \mathcal R_4(s)={}&A_0+A_1L+A_2L^2+A_3L^3
+                  +\pi^2(B_0+B_1L)\\
+ &+(C_0+C_1L)D+KT+NV+EJ^2+FJ\\
+ &+M(H_0+H_1L+H_2L^2+H_3J).
+\end{aligned}
+\label{eq:comp-real-four-matched-compact}
+\end{equation}
+Every coefficient is a rational function of $s$. Explicitly,
+\begin{equation}
+A_0=\frac{\begin{aligned}&30 s^{7} - 198 s^{6} - 785 s^{5} + 4079 s^{4}\\&- 22927 s^{3} + 22309 s^{2} - 10692 s + 4428\end{aligned}}{108 s H}.
+\end{equation}
+\begin{equation}
+A_1=\frac{\begin{aligned}&39 s^{7} - 333 s^{6} + 174 s^{5} + 10076 s^{4}\\&+6798 s^{3} - 116 s^{2} + 222 s + 36\end{aligned}}{9 s H^{3}}.
+\end{equation}
+\begin{equation}
+A_2=\frac{\begin{aligned}&- 5 s^{7} + 77 s^{6} + 102 s^{5} - 630 s^{4}\\&- 641 s^{3} - 151 s^{2} + 132 s - 36\end{aligned}}{3 s H^{3}}.
+\end{equation}
+\begin{equation}
+A_3=- \frac{8 s \left(3 s^{2} - 25 s - 2\right)}{3 H^{2}}.
+\end{equation}
+\begin{equation}
+B_0=\frac{2 \left(s^{4} - 17 s^{3} + 25 s^{2} + 219 s - 12\right)}{9 H}.
+\end{equation}
+\begin{equation}
+B_1=- \frac{8 s \left(5 s + 1\right)}{3 H^{2}}.
+\end{equation}
+\begin{equation}
+C_0=- \frac{4 \left(s^{4} - 17 s^{3} - 39 s^{2} - 101 s - 12\right)}{3 H}.
+\end{equation}
+\begin{equation}
+C_1=\frac{16 s}{s - 1}.
+\end{equation}
+\begin{equation}
+K=\frac{32 s \left(2 s + 1\right)}{H^{2}}.
+\end{equation}
+\begin{equation}
+N=- \frac{256 s \left(s + 5\right)}{3 H}.
+\end{equation}
+\begin{equation}
+E=- \frac{128 s \left(2 s^{3} - 5 s^{2} - 24 s + 3\right)}{3 H^{3}}.
+\end{equation}
+\begin{equation}
+F=\frac{256 s \left(s + 1\right) \left(s^{2} - 19 s - 4\right)}{3 H^{3}}.
+\end{equation}
+\begin{equation}
+H_0=\frac{\begin{aligned}&- 2 s^{7} + 2 s^{6} + 64 s^{5} - 260 s^{4}\\&- 314 s^{3} - 2638 s^{2} + 220 s - 144\end{aligned}}{3 s H}.
+\end{equation}
+\begin{equation}
+H_1=\frac{\begin{aligned}&- 8 s^{7} + 80 s^{6} + 24 s^{5} - 1800 s^{4}\\&- 2336 s^{3} - 2248 s^{2} + 240 s - 96\end{aligned}}{3 s H^{3}}.
+\end{equation}
+\begin{equation}
+H_2=- \frac{16 s \left(2 s^{2} - 9 s - 2\right)}{H^{2}}.
+\end{equation}
+\begin{equation}
+H_3=- \frac{256 s \left(s^{3} - 19 s^{2} - 21 s - 9\right)}{3 H^{3}}.
+\end{equation}
+This is the unnormalized real finite contribution. Its relation to the remainder in \eqref{eq:comp-simplified-master} is
+\begin{equation}
+ \mathcal R_{\mathrm{rem}}(X)=\mathcal R_4(1+X)+2F_{UW}^{\eta}(X).
+\end{equation}
+Thus \eqref{eq:comp-real-four-matched-compact} replaces the four separate endpoint evaluations and their three matching shifts. The UV term is already included with the virtual contribution in that master formula. The remaining $UW$ and finite soft terms are separate.
+\paragraph{Reduction of the function basis.} After the endpoint identities above, real reflection and inversion relations put the dilogarithm arguments in $(0,1)$. Two five-term identities reduce their number further:
+\begin{align}
+ \operatorname{Li}_2\!\left(\frac2{r+1}\right)+\operatorname{Li}_2\!\left(\frac{r+1}{2r}\right)
+ &=\operatorname{Li}_2(1/r)+\operatorname{Li}_2\!\left(\frac1{r+1}\right)+\frac{\pi^2}{12}-\frac12\ln^22+\ln2\ln\frac{r+1}{r}.
+\end{align}
+The same identity with $r$ replaced by $s$ reduces the half-argument function in the matching shift. For the second identity, define $\mathcal L(z)=\operatorname{Li}_2(z)+\tfrac12\ln z\ln(1-z)$ for $0<z<1$. Then
+\begin{equation}
+ \mathcal L\!\left(\frac{r+1}{r^2+1}\right)-\mathcal L\!\left(\frac{r-1}{r(r+1)}\right)
+ =\mathcal L(1/r)+\mathcal L\!\left(\frac1{r^2+1}\right)-\mathcal L\!\left(\frac1{r+1}\right).
+\end{equation}
+Both identities follow by differentiation using $\dd\operatorname{Li}_2(z)/\dd z=-\ln(1-z)/z$, with the integration constant fixed as $r\to\infty$. The remaining square-root arguments occur in a common-coefficient difference. Landen transformation and duplication give
+\begin{equation}
+ \operatorname{Li}_2\!\left(\frac1{r+1}\right)-\operatorname{Li}_2(1/r)
+ =-\frac12\operatorname{Li}_2(1/r^2)-\frac12\ln^2\!\left(\frac{r+1}{r}\right).
+\end{equation}
+After this substitution, all coefficients of $\ln(r+1)$ cancel exactly when $\ln(r-1)=\ln(s-1)-\ln(r+1)$ is used. The result therefore has no square-root argument. Adding the matching shift also cancels the entire coefficient of $\operatorname{Li}_2(1/(s+1))$.
+The matching shifts are reduced with the explicit identities
+\begin{align}
+ \operatorname{Li}_2(1-s)&=D-LM+\tfrac12L^2-\frac{\pi^2}{6},\\
+ \operatorname{Li}_2\!\left(-\frac{(s-1)^2}{4s}\right)
+ &=4\operatorname{Li}_2\!\left(\frac2{s+1}\right)-2D-2\operatorname{Li}_2\!\left(\frac1{s+1}\right)\\
+ &\quad+J^2+2J(L+\ln2)-\tfrac32L^2+2M(L-2J)-\frac{\pi^2}{6}-\ln^22.
+\end{align}
+For the second line, put $v=(s-1)/(s+1)$, apply Landen transformation to the negative argument, and then use $\operatorname{Li}_2(v^2)=2\operatorname{Li}_2(v)+2\operatorname{Li}_2(-v)$. Reflection and the preceding half-argument identity give the displayed expression. All intermediate arguments used in these identities are real and their logarithms have the signs fixed by $s>1$.
+Equivalently, denote the two right-hand sides by $Q_1(s)$ and $Q_2(s)$. Differentiation and the positive-factor logarithm identities for $s>1$ give
+\begin{equation}
+ Q_1\prime(s)=-\frac{\ln s}{s-1},\qquad
+ Q_2\prime(s)=-\frac{2(s+1)}{s(s-1)}\ln\frac{s+1}{2\sqrt s}.
+\end{equation}
+These are precisely the derivatives of the two left-hand sides. At $s\to1^+$ both sides vanish. Here the coefficient of $M=\ln(s-1)$ vanishes at least linearly, and $\operatorname{Li}_2(1/2)=\pi^2/12-\ln^22/2$ fixes the remaining constant. Equality of derivatives and this boundary value establish the identities on the connected domain $s>1$.

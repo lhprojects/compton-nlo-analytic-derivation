@@ -1,0 +1,221 @@
+\subsection{Matching a moving soft boundary}
+\label{sec:compton-soft-matching-check}
+
+The separate rational subtraction terms can have stronger soft poles than
+ their sum.  Their finite parts therefore require the exact phase-space
+boundary and the first subleading term of the regulator.  This section derives
+that matching directly from the integration region.
+
+Let $H>0$, $s=H+1$, and $y=H-x+z$.  The dimensionless Dalitz region is
+\begin{equation}
+ 0<x<H,\qquad 0<z<\frac{x(H-x)}{s-x}.
+\end{equation}
+At either soft corner introduce a variable $e$, which here denotes a
+kinematic variable rather than the electric charge, and $r=z/e$.  The two
+choices are $e=x$ and $e=y$.  In both cases the Jacobian is $e$ and
+\begin{align}
+ xy&=e[H+e(r-1)],\qquad
+ 0<e<H,\qquad 0<r<R(e)=\frac{H-e}{s-e},\\
+ R(e)&=q+q_1e+O(e^2),\qquad
+ q=\frac{H}{s},\qquad q_1=-\frac{1}{s^2}.
+\end{align}
+Consider a kernel whose expansion at this corner is
+\begin{equation}
+ K(e,er)=\frac{a(r)}{e^3}+\frac{b(r)}{e^2}+O(e^{-1}),
+ \label{eq:compton-matching-kernel}
+\end{equation}
+where $a$ and $b$ are smooth on $[0,q]$.  Terms with $a=0$ include the usual
+logarithmic soft singularity.  Define the four moments
+\begin{align}
+ P&=\int_0^q r a(r)\,\mathrm{d}r,\\
+ A&=\int_0^q b(r)\,\mathrm{d}r+q_1a(q),\\
+ B&=\int_0^q b(r)\ln r\,\mathrm{d}r+q_1a(q)\ln q,\\
+ C&=\frac{1}{H}\int_0^q(1-r)a(r)\,\mathrm{d}r.
+\end{align}
+The moment $A$ includes the displacement of the upper boundary.  Indeed,
+after multiplication by the Jacobian, the singular part can be written,
+in the sense of integration against smooth functions of $r$, as
+\begin{equation}
+ eK\,\theta(R(e)-r)
+ =\frac{a(r)\theta(q-r)}{e^2}
+ +\frac{b(r)\theta(q-r)+q_1a(q)\delta(r-q)}{e}
+ +O(1).
+ \label{eq:compton-moving-boundary-distribution}
+\end{equation}
+Here $\theta$ is the Heaviside step function and $\delta$ is the
+Dirac delta distribution. The last term includes distributions at $r=q$ with integrable coefficients
+in $e$.  It contributes the same finite limit in the two regularizations.
+
+Let $I_z(\zeta)$ be the integral with $z>\zeta>0$.  Let $I_\eta$ be the
+integral multiplied by $(xy)^\eta$, initially at sufficiently large
+$\operatorname{Re}\eta$ and then continued to zero.  Define their finite
+parts by
+\begin{align}
+ I_z(\zeta)&=\frac{P}{\zeta}-A\ln\zeta+F_z+o(1),\\
+ I_\eta&=\frac{A}{\eta}+F_\eta+O(\eta).
+\end{align}
+The relation between them is
+\begin{equation}
+ \boxed{F_\eta=F_z+A\ln H-B-C.}
+ \label{eq:compton-general-soft-matching}
+\end{equation}
+Contributions from distinct corners are added.  All quantities here refer
+to the unnormalized integral, before the common cross-section prefactor.
+
+To prove the relation, first replace the regulator by $(He)^\eta$.
+Integration of the $e^{-1}$ term in
+\eqref{eq:compton-moving-boundary-distribution} gives $A/\eta+A\ln H$.
+Changing the lower boundary from $e>\zeta/r$ to an $r$-independent lower
+boundary gives the logarithmic moment $B$.  The $e^{-2}$ term gives
+$P/\zeta$, with no additional finite shift for a fixed upper boundary.
+The remaining regulator dependence follows from the exact identity for
+$xy$:
+\begin{equation}
+ (xy)^\eta=(He)^\eta
+ \left[1-\frac{\eta e(1-r)}{H}
+ +O(\eta e^2)+O(\eta^2e^2)\right].
+\end{equation}
+Its linear term multiplies $a/e^2$.  The resulting power-regulated integral contains
+$\eta\int e^{\eta-1}\mathrm{d}e$, whose limit is one.  This gives $-C$.
+Terms quadratic in $e$ are integrable at $\eta=0$ and give no finite
+regulator shift.  Omitting the linear term would thus give an incorrect
+constant even if the residue $A$ were correct.
+
+The corner of the moving boundary does not add another constant.
+The lower intersection with $z=\zeta$ satisfies
+\begin{equation}
+ e_{\min}=\frac{\zeta}{q}-\frac{q_1\zeta^2}{q^3}
+ +O(\zeta^3).
+\end{equation}
+The interval displaced from $\zeta/q$ has width $O(\zeta^2)$.
+After the leading angular interval has closed, its integrated density
+is at most $O(\zeta^{-1})$, so its contribution is $O(\zeta)$.
+Smoothness at $r=0$ likewise makes the excluded strip contribute a
+vanishing remainder after the displayed singular terms have been removed.
+This establishes that the boundary term already present in $A$ and $B$
+is sufficient.
+
+\paragraph{A logarithmic test kernel.}
+For $K=x^{-2}$, $a=0$, $b=1$, and $A=q$.  The exact analytically regulated integral is
+\begin{equation}
+ I_\eta^{(2)}=
+ H^{2\eta}\frac{\Gamma(\eta-1)\Gamma(\eta+1)}{\Gamma(2\eta+1)}
+ \left[{}_2F_1(\eta+1,\eta-1;2\eta+1;q)-1\right].
+\end{equation}
+This follows by first integrating $y^\eta$ between
+$H-x$ and $s(H-x)/(s-x)$ and then using the Euler beta integral.
+Let
+\begin{equation}
+ x_\pm=\frac{H+\zeta\pm\sqrt{(H-\zeta)^2-4\zeta}}{2}.
+\end{equation}
+The independent cutoff integral and the two finite parts are
+\begin{align}
+ I_z^{(2)}&=q\ln\frac{x_+}{x_-}
+ +\frac{1}{s}\ln\frac{s-x_+}{s-x_-}
+ +\zeta\left(\frac{1}{x_+}-\frac{1}{x_-}\right),\\
+ F_z^{(2)}&=2q\ln H-\ln s-q,\\
+ F_\eta^{(2)}&=2q\ln H-\frac{\ln s}{s}.
+\end{align}
+Since $B=q(\ln q-1)$, these expressions obey
+\eqref{eq:compton-general-soft-matching}.  In particular, the finite
+$-q$ in the cutoff integral cannot be discarded.
+
+\paragraph{A power-divergent test kernel.}
+For $K=x^{-3}$, $a=1$, $b=0$, and the residue comes entirely from the
+moving boundary: $A=-1/s^2$.  Direct integration gives
+\begin{align}
+ I_\eta^{(3)}&=
+ H^{2\eta-1}\frac{\Gamma(\eta-2)\Gamma(\eta+1)}{\Gamma(2\eta)}
+ \left[{}_2F_1(\eta+1,\eta-2;2\eta;q)-1\right],\\
+ I_z^{(3)}&=J(x_+)-J(x_-),\\
+ J(x)&=-\frac{q}{x}-\frac{\ln x}{s^2}
+ +\frac{\ln(s-x)}{s^2}+\frac{\zeta}{2x^2}.
+\end{align}
+Their expansions yield
+\begin{align}
+ P&=\frac{q^2}{2},\qquad B=-\frac{\ln q}{s^2},\qquad
+ C=\frac{q-q^2/2}{H},\\
+ F_z^{(3)}&=-\frac{1}{s}-\frac{2\ln H}{s^2},\\
+ F_\eta^{(3)}&=-\frac{1}{s}-\frac{2\ln H+\ln s}{s^2}
+ -\frac{q-q^2/2}{H}.
+\end{align}
+Both the boundary term and $C$ are necessary for agreement.
+
+\paragraph{The Bose subtraction correction.}
+For the correction $D=R_{VW}[T_{UW}(y,z)-T_{VW}(x,z)]$ constructed from the
+rational coefficients and their local subtraction terms, the $x$ corner
+is integrable.  At the $y$ corner its leading coefficient is
+\begin{equation}
+ a(r)=\frac{16(H+1)(Hr+2)(Hr-2H-6)}{3H(r-1)^3}.
+\end{equation}
+The coefficient $b(r)$ is obtained by differentiating $e^3D$ at $e=0$,
+after substituting $y=e$, $z=er$, and $x=H+e(r-1)$.
+This is a finite algebraic operation on the exact rational subtraction.
+The only poles of these coefficients in $r$ are at $1$ and $-4/H$,
+outside $[0,q]$.  Their moments are therefore closed logarithms and
+dilogarithms.  For example, every repeated pole follows by differentiation
+with respect to its location $u$:
+\begin{align}
+ \int_0^q\frac{\mathrm{d}r}{(r-u)^n}
+ &=\frac{\partial_u^{n-1}}{(n-1)!}\ln(1-q/u),\\
+ \int_0^q\frac{\ln r\,\mathrm{d}r}{(r-u)^n}
+ &=\frac{\partial_u^{n-1}}{(n-1)!}
+ \left[\ln q\ln(1-q/u)+\operatorname{Li}_2(q/u)\right].
+\end{align}
+The arguments make both expressions real for these pole locations.
+\paragraph{Integrating the rational correction.}
+Write the exact partial fraction decomposition of $D$ in $x$ as
+\begin{equation}
+ D(x,z)=\sum_{a,n}\frac{c_{a,n}(z)}{(x-a(z))^n}.
+\end{equation}
+There are nine terms, with $(a,n)$ equal to
+\begin{gather}
+ (H+z,1),\ (H+z,2),\ (H,1),\ (H,2),\ (H,3),\
+ (z,1),\ (z,2),\ (a_*,1),\ (a_*,2),\\
+ a_* = \frac{-4H+z^2-4z}{z-4}.
+\end{gather}
+The coefficients are fixed algebraically by the residues of $D$, including
+ derivatives for repeated poles.  Thus no fit is involved.  Rationalize
+the physical boundary by
+\begin{equation}
+ z=s+1-u-\frac{s}{u},\qquad
+ x_-=s-u,\qquad x_+=s-\frac{s}{u},\qquad \sqrt{s}<u<s.
+\end{equation}
+The inner integral is explicitly
+\begin{align}
+ \int_{x_-}^{x_+}D\,\mathrm{d}x
+ &=\sum_a c_{a,1}(z)\ln\frac{x_+-a}{x_--a}\\
+ &\quad+\sum_{a,n>1}\frac{c_{a,n}(z)}{1-n}
+ \left[(x_+-a)^{1-n}-(x_--a)^{1-n}\right].
+\end{align}
+The ratios are positive in the physical interval, as follows directly
+from the positions of the poles relative to $[x_-,x_+]$.
+After multiplication by $1-s/u^2$, the outer integrand consists of rational
+functions multiplying the following three real logarithms:
+\begin{align}
+ L_1&=\ln\frac{u^2}{s},\\
+ L_2&=\ln\frac{u(u-1)}{s-u},\\
+ L_3&=\ln\frac{(u-1)(u+s)^2}{u(u+1)^2(s-u)}.
+\end{align}
+Each logarithm vanishes at $u=\sqrt{s}$.  Partial fractions followed by
+integration by parts therefore gives a finite sum of generalized
+polylogarithms of weight at most two, based at $\sqrt{s}$, with rational
+coefficients.  The letters are the zeros of the rational denominators and
+of the logarithm arguments.  Differentiating that finite sum checks the
+original outer integrand term by term.
+
+The power divergence also affects the conversion of the outer endpoint.
+For $b=s-u$, the exact relation gives
+\begin{equation}
+ \zeta=\frac{H}{s}b-\frac{b^2}{s^2}+O(b^3),\qquad
+ \frac{P}{\zeta}=\frac{Ps}{Hb}+\frac{P}{H^2}+O(b).
+\end{equation}
+Consequently, if $F_b$ is the finite part after subtracting the
+$b^{-1}$ and $\ln b$ terms, then
+\begin{equation}
+ F_z=F_b+A\ln(H/s)-\frac{P}{H^2}.
+\end{equation}
+The last constant is required before applying
+\eqref{eq:compton-general-soft-matching}.  Convergent Taylor series for the
+endpoint remainder and for the generalized polylogarithms evaluate this
+closed result without quadrature.

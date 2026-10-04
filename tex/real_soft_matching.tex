@@ -1,0 +1,144 @@
+\subsection{Soft endpoints of the real-energy integrals}
+The remaining rational and single-logarithm sectors have elementary
+soft residues. Put $H=s-1$, and use $e=x$ at the first soft endpoint
+and $e=y$ at the second. Here $e$ is an energy invariant, not the
+charge. With $z=er$, the exact phase-space boundary is
+\begin{equation}
+ 0<e<H,\qquad 0<r<\rho(e)=\frac{H-e}{H+1-e},\qquad
+ xy=e[H+e(r-1)],\qquad \dd x\,\dd z=e\,\dd e\,\dd r.
+ \label{eq:comp-real-soft-domain}
+\end{equation}
+To obtain this domain from $0<z<x(H-x)/(s-x)$, set
+$x=e$ and divide the inequality by $e>0$. At the other soft
+endpoint set $y=e$ and use $x=H-e+z$ in the same inequality.
+Both give $r<\rho(e)$. The two changes of variables have Jacobian
+magnitude $e$. A disjoint partition near the two soft corners
+allows their residues to be added without double counting. Away
+from both corners the regulators converge to one on compact
+subsets, so their difference has zero limit there.
+
+Let $q=\rho(0)=H/(H+1)$. For a sector with a simple soft
+singularity, define its two residues by
+\begin{equation}
+ f_X(r)=\lim_{e\to0}e^2R(H,e,er),\qquad
+ f_Y(r)=\lim_{e\to0}e^2R(H,H+e(r-1),er).
+\end{equation}
+The rational sector and the two terms multiplying $\ln s$ have
+this behavior. The coefficient of $L_W$ is only of order $e^{-1}$,
+and $L_W(0)$ is finite, so this sector needs no soft matching term.
+All coefficients in this section precede the common normalization
+$1/(8sH)$ of the real cross section.
+
+Write $f=f_X+f_Y$. The regulator $(xy)^\eta$ gives a pole
+$A/\eta$ and finite part $F_\eta$. If the energy primitives are
+instead evaluated with $z>\zeta$, define their finite part by
+subtracting $-A\ln\zeta$. The symbol $\operatorname{FP}$ denotes
+the constant term after that subtraction. Then
+\begin{align}
+ A&=\int_0^q f(r)\,\dd r,\\
+ F_\eta&=\operatorname{FP}_{\zeta\to0}
+                \int_{z>\zeta}R\,\dd x\,\dd z
+       +A\ln H-\int_0^q f(r)\ln r\,\dd r.
+ \label{eq:comp-real-simple-matching}
+\end{align}
+Indeed, the soft measure is $f(r)\dd e/e$, while $z>\zeta$
+sets its lower endpoint to $e=\zeta/r$. The analytic regulator
+instead multiplies this measure by $(He)^\eta$ at leading order.
+The difference produces the two logarithmic terms above. The
+$O(e)$ change in $\rho(e)$ is integrable for a simple soft pole.
+
+These residue integrals do not require numerical quadrature.
+Partial fractions give a polynomial and poles at $r=1$ and
+$r=-4/H$, both outside $0\leq r\leq q$. The necessary moments are
+\begin{align}
+ \int_0^q r^n\,\dd r&=\frac{q^{n+1}}{n+1},\\
+ \int_0^q r^n\ln r\,\dd r
+ &=q^{n+1}\left[\frac{\ln q}{n+1}-\frac1{(n+1)^2}\right],\\
+ \int_0^q\frac{\dd r}{r-a}&=\ln(1-q/a),\\
+ \int_0^q\frac{\ln r}{r-a}\,\dd r
+ &=\ln q\ln(1-q/a)+\operatorname{Li}_2(q/a).
+\end{align}
+Here $n\geq0$ and $a$ is a pole outside the interval.
+Repeated poles follow by applying
+$\partial_a^{j-1}/(j-1)!$. Every logarithm above has a positive
+argument, and $q/a<1$. These formulas therefore specify real
+branches directly from the physical integration interval.
+The independently generated residue coefficients and their exact
+moments are recorded in
+\nolinkurl{compton_real_soft_matching_integrated.json}.
+
+
+\paragraph{Bose symmetry of the subtractions.} The two mixed angular
+kernels $J_{UW}$ and $J_{VW}$ are exchanged by $x\leftrightarrow y$.
+Their local Taylor subtractions, however, were expanded at fixed
+$x$. Thus $T_{VW}(H,x,z)$ is not exactly
+$T_{UW}(H,H-x+z,z)$. To replace the subtracted $VW$ sector by a
+second copy of $UW$, the rational sector must receive
+\begin{equation}
+ D(H,x,z)=R_{VW}(H,x,z)
+ \big[T_{UW}(H,H-x+z,z)-T_{VW}(H,x,z)\big].
+ \label{eq:comp-real-bose-restoration}
+\end{equation}
+The bracket starts at $z^2$, so it introduces no artificial Gram
+pole. It can nevertheless change the soft residue because its
+expansion at fixed $x$ is not uniform as $y\to0$.
+
+At this endpoint write
+$D(H,H+e(r-1),er)=a(r)e^{-3}+b(r)e^{-2}+O(e^{-1})$.
+The coefficients needed in this endpoint expansion are explicit:
+\begin{align}
+ a(r)&=\frac{16(H+1)(Hr+2)(Hr-2H-6)}{3H(r-1)^3},\\
+ b(r)&=\frac{2(H+1)}{3H^2(r-1)^3(Hr+4)^2}
+                    \sum_{j=0}^5 B_j(H)r^j.
+\end{align}
+The six polynomials are
+\begin{align}
+ B_0(H)&=256 H,\\
+ B_1(H)&=64 \left(H^{3} + 6 H^{2} - 11 H - 12\right),\\
+ B_2(H)&=16 \left(H^{4} + 2 H^{3} + 2 H^{2} + 128 H + 108\right),\\
+ B_3(H)&=- 8 \left(H^{5} + 8 H^{4} - 19 H^{3} - 160 H^{2} - 192 H - 72\right),\\
+ B_4(H)&=- 2 H \left(H^{5} + 3 H^{4} - 36 H^{3} - 108 H^{2} - 152 H - 96\right),\\
+ B_5(H)&=H^{2} \left(H + 6\right) \left(H^{3} - 4 H^{2} - 12 H - 8\right).
+\end{align}
+These follow by substituting the exact soft coordinates into
+\eqref{eq:comp-real-bose-restoration} and expanding the resulting
+rational numerator and denominator through the first two powers.
+
+The moving angular boundary now contributes to the logarithmic
+soft coefficient. Since $\rho'(0)=-1/(H+1)^2$, it is
+\begin{equation}
+ A_D=\int_0^q b(r)\,\dd r-\frac{a(q)}{(H+1)^2}.
+ \label{eq:comp-real-bose-pole}
+\end{equation}
+More explicitly, the radial density after the angular integration is
+\begin{align}
+ \int_0^{\rho(e)} eD\,\dd r
+ &=\frac{1}{e^2}\int_0^q a(r)\,\dd r
+   +\frac1e\left[\int_0^q b(r)\,\dd r+\rho'(0)a(q)\right]
+   +O(1).
+\end{align}
+The first term is a power singularity, whose analytic continuation
+has a pole at $\eta=1$. The coefficient of $1/e$ gives the pole
+at $\eta=0$. This explains why expanding at a fixed angular upper
+limit would miss the second term in
+\eqref{eq:comp-real-bose-pole}. The terms generated by the
+$O(\eta e)$ part of $(xy)^\eta$ affect its finite part and must
+not be discarded.
+
+Its finite contribution must also be included when combining the
+real sectors. Omitting $D$ would violate the integrated soft
+coefficient even though the original amplitude is Bose symmetric.
+
+\paragraph{Integrated infrared check.} Denote the poles of the
+rational, $\ln s$, $UV$, and $UW$ sectors by
+$A_{\mathrm{rat}},A_{\log},A_{UV},A_{UW}$, respectively.
+The required sum, before the common factor $1/(8sH)$, is
+\begin{equation}
+ A_{\mathrm{rat}}+A_{\log}+A_{UV}+2A_{UW}+A_D
+ =8H\int_{-1}^1\mathcal B(c)\,[b_e(c)-1]\,\dd c.
+ \label{eq:comp-real-integrated-pole-check}
+\end{equation}
+The right-hand side follows independently from the soft current
+and the Born trace. It equals the coefficient required to cancel
+the photon-mass logarithm of the virtual amplitude after the
+regulator matching.

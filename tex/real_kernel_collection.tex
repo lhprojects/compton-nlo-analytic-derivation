@@ -1,0 +1,78 @@
+\subsection{Cancelling a quadratic pole family before integration}
+\label{sec:comp-real-kernel-collection}
+The separate primitive constructions above also provide a way to check
+individual sectors. For the total, a shorter route combines their inner
+integrals before constructing the outer primitives. The four contributions
+use the same coordinate $u$, the same interval $\sqrt{s}<u<s$, and the
+same relation $z=s+1-u-s/u$ to the original endpoint. They can therefore
+be added at any fixed positive cutoff in $z$. This observation permits
+cancellations before either a generalized polylogarithm or an endpoint
+constant is evaluated.
+
+For $A=R_0,D$, denote the rational coefficients of the corresponding
+inner integral, including the Jacobian $1-s/u^2$, by $K_{A,j}$, with
+$j=0,1,2,3$. Thus its outer integrand is
+$K_{A,0}+\sum_{j=1}^3K_{A,j}L_j$, with the real logarithms $L_j$
+already defined above. Write the energy-logarithm sector as
+$\ell(K_{\log,0}+K_{\log,1}L_1+K_{\log,2}L_2)$, where
+$\ell=\ln s$, and the single-$W$ sector as $A_WL_1+B_WL_1L_2$.
+Here $A_W$ and $B_W$ are its two rational coefficients after the same
+change of variable. The combined integrand is exactly
+\begin{align}
+ f_4(u)&=\overline K_0+\overline K_1L_1+
+             \overline K_2L_2+\overline K_3L_3+B_WL_1L_2,\\
+ \overline K_0&=K_{R_0,0}+K_{D,0}+\ell K_{\log,0},\\
+ \overline K_1&=K_{R_0,1}+K_{D,1}+\ell K_{\log,1}+A_W,\\
+ \overline K_2&=K_{R_0,2}+K_{D,2}+\ell K_{\log,2},\\
+ \overline K_3&=K_{R_0,3}+K_{D,3}.
+ \label{eq:comp-real-combined-kernel}
+\end{align}
+All these coefficients follow from the preceding rational partial
+fractions and inner boundary differences.
+
+Consider the polynomial
+\begin{equation}
+ Q_b(u)=u^2+2u+s=(u+1)^2+s-1.
+\end{equation}
+For $s>1$ it is irreducible over the real numbers. Its two roots
+$b_\pm=-1\pm\ii\sqrt{s-1}$ would introduce an additional pair of GPL
+letters if the sectors were integrated separately. Polynomial division
+shows that their entire pole family cancels. To specify this statement
+precisely, let $\nu_b(K)$ be the multiplicity of $Q_b$ in the reduced
+denominator of a rational coefficient $K$. The inner integrals give
+\begin{equation}
+\begin{array}{c|ccc}
+ j&\nu_b(K_{R_0,j})&\nu_b(K_{D,j})&
+                 \nu_b(K_{R_0,j}+K_{D,j})\\ \hline
+ 0&2&2&0\\
+ 1&0&0&0\\
+ 2&3&3&0\\
+ 3&3&3&0
+\end{array}.
+ \label{eq:comp-real-b-pole-orders}
+\end{equation}
+The cancellation can be checked without factoring $Q_b$ into its roots.
+For each row, put the two coefficients over a common denominator
+$Q_b^n d$, where $d$ has no factor $Q_b$, and write their numerator
+sum as $N$. Euclidean division gives
+\begin{equation}
+ N=Q_b^n M+R,\qquad \deg_uR<2n,\qquad R=0.
+\end{equation}
+Cancelling $Q_b^n$ then gives $M/d$. This is an exact identity over
+the rational functions of $H=s-1$. The energy-logarithm and single-$W$
+coefficients have no $Q_b$ factor, so none is reintroduced in
+\eqref{eq:comp-real-combined-kernel}.
+
+The preferred outer integration applies partial fractions to these
+combined coefficients. Products of logarithms are converted to GPL
+words by the shuffle identity, and repeated poles are reduced by the
+integration-by-parts operations already given. The letters $b_\pm$
+need never be introduced, and their rational pole terms and six
+weight-two functions need never be evaluated separately. This reduction
+also leaves no boundary constant to determine for the removed group:
+its integrand vanishes identically at every common finite cutoff.
+Linearity then preserves the identity when the endpoint finite parts
+and their previously derived cutoff conversions are taken. The exact
+coefficient construction and the polynomial divisions are implemented
+in \nolinkurl{compton_real_combined_kernel.py} using only the inner
+rational kernels.

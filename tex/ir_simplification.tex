@@ -1,0 +1,96 @@
+\section{A shorter infrared coefficient}
+\label{sec:comp-ir-simplification}
+The two roots in \eqref{eq:comp-soft-integrated-ir} are reciprocal.
+This relation reduces its endpoint sum to one dilogarithmic function.
+Set
+\begin{equation}
+ X=s-1>0,\qquad Y=\sqrt{\frac{X}{X+4}},\qquad
+ q=\frac{X+2-\sqrt{X(X+4)}}2,\qquad L=\ln(1+X).
+\end{equation}
+Then $0<q<1$, $X=(1-q)^2/q$, and $z_-=q$, $z_+=q^{-1}$.
+Define
+\begin{equation}
+ \mathcal G(X)=\frac12\ln^2q
+ +\frac13\operatorname{Li}_2(-q^3)
+ -\operatorname{Li}_2(-q)-\frac{\pi^2}{18}.
+ \label{eq:comp-ir-short-function}
+\end{equation}
+Both dilogarithm arguments lie between $-1$ and zero.  All functions
+in this expression are consequently real on the physical interval,
+with their branches fixed without a continuation across a cut.
+The integrated infrared coefficient is
+\begin{equation}
+ \begin{aligned}
+ A(1+X)={}&-\frac{2(X^2-4X-6)}{X^3}L^2
+ -\frac{2P(X)}{X^3(1+X)^2(X+4)}L\\
+ &+\frac{12YQ(X)}{X^4(X+4)}\mathcal G(X)
+ -\frac{R(X)}{X^2(1+X)^2},
+ \end{aligned}
+ \label{eq:comp-ir-short}
+\end{equation}
+where
+\begin{align}
+ P(X)&=X^5-22X^4-184X^3-444X^2-424X-144,\\
+ Q(X)&=X^4+2X^3-24X^2-80X-48,\\
+ R(X)&=5X^3+60X^2+100X+48.
+\end{align}
+The normalization is $A(s)=\mathcal C_{\mathrm{IR}}(s)/s$, so
+$A(s)\ln(\lambda_{\mathrm{phys}}/m)$ is the logarithmic term of the
+complete virtual coefficient in units of $\alpha_{\mathrm T}^3/m^2$.
+Equation~\eqref{eq:comp-ir-short} is exact for every $X>0$.
+Its apparent threshold poles cancel in the combined expression.
+
+To derive it directly from the angular integral, denote the endpoint
+difference of a primitive by $\Delta J=J(s)-J(1)$.  The two logarithmic
+pole primitives in \eqref{eq:comp-soft-integrated-ir} satisfy
+\begin{align}
+ \Delta H_1(q)&=-\ln q, & \Delta H_1(q^{-1})&=\ln q,\\
+ \Delta H_2(q)&=1, & \Delta H_2(q^{-1})&=1.
+\end{align}
+Their residues obey $c_{-,q}=c_{-,q^{-1}}$ and
+$d_{-,q}+d_{-,q^{-1}}=8$.  Thus the logarithms of the negative-sign
+sector cancel, while its double poles give the constant eight.
+For the positive-sign sector, $c_{+,q}=-c_{+,q^{-1}}$.
+Use the real dilogarithm inversion identity
+\begin{equation}
+ \operatorname{Re}\operatorname{Li}_2(u)
+ +\operatorname{Re}\operatorname{Li}_2(u^{-1})
+ =\frac{\pi^2}{3}-\frac12\ln^2u,\qquad u>0,
+\end{equation}
+to combine its simple-pole endpoint functions into
+\begin{equation}
+ \begin{aligned}
+ \Delta J_1(q)-\Delta J_1(q^{-1})
+ ={}&2\operatorname{Li}_2(q)-\operatorname{Li}_2(q/s)
+  -\operatorname{Li}_2(qs)\\
+ &-2L\ln q-\frac12L^2\equiv\mathcal F(q).
+ \end{aligned}
+\end{equation}
+Here $qs=1-q+q^2<1$ and $q/s=q^2/(1-q+q^2)<1$.
+Differentiation and the identity
+$(1+q)(1-q+q^2)=1+q^3$ give
+\begin{equation}
+ \frac{\dd\mathcal F}{\dd q}=-\frac{3L}{q},\qquad
+ \frac{\dd\mathcal G}{\dd q}=-\frac{L}{q},\qquad
+ \mathcal F(1)=\mathcal G(0)=0.
+\end{equation}
+In the last boundary value the argument of $\mathcal G$ is $X$,
+which tends to zero as $q\to1$.  Therefore
+$\mathcal F(q)=3\mathcal G(X(q))$, with no undetermined constant.
+The double-pole primitives supply only elementary terms,
+\begin{align}
+ \Delta J_2(q)&=-\frac{L}{s-q}-\frac{L+\ln q}{q},\\
+ \Delta J_2(q^{-1})&=-\frac{L}{s-q^{-1}}+q(\ln q-L).
+\end{align}
+Substituting these differences and the elementary power primitives
+into \eqref{eq:comp-soft-integrated-ir} yields
+\eqref{eq:comp-ir-short}.  This derivation uses only the original
+Born-weighted soft angular integral.
+
+An independent internal check differentiates the complete virtual
+23-word result with respect to $\ln(\lambda_{\mathrm{phys}}/m)$.
+Its four nonzero coefficients agree algebraically with
+\eqref{eq:comp-ir-short}, using
+$G(-1;X)=L$, $G(-1,-1;X)=L^2/2$ and
+$G(r,-1;X)=\mathcal G(X)$.  This check does not set any integration
+constant in the soft calculation.

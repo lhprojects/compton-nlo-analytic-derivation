@@ -1,0 +1,340 @@
+\section{Asymptotic expansions of real radiation}
+Throughout this section $X=s_{\mathrm{phys}}/m^2-1>0$ and $s=1+X$.
+The labels $UV$ and $UW$ denote the angular denominator pairs
+defined in the real-emission calculation.
+
+\subsection{Threshold terms of the UV sector}
+The analytic inner integral permits a uniform threshold expansion on a
+fixed interval.  Set $v=1+Xw$, with $0\leq w\leq1$ and
+$\dd v=X\,\dd w$.  Then
+\begin{align}
+ \ln v&=\ln(1+Xw),\\
+ \ln(1-k)&=\ln[1+Xw(1-w)]-\ln(1+Xw),\qquad
+ k=\frac{Xw^2}{1+Xw}.
+\end{align}
+Both logarithms have uniformly convergent Taylor series for $0<X<1$.
+The rational denominators left after the soft subtraction contain
+$1+Xw$ and $1+Xw(1-w)$, which are bounded away from zero.
+The apparent powers of $w^{-1}$ cancel when the Laurent coefficients
+are combined.  This cancellation is performed before integrating the
+coefficient polynomials.  Keeping the Jacobian is essential to obtain
+the correct leading power.
+
+Let $F_{UV}$ denote the finite Laurent coefficient before multiplication
+by the real cross-section prefactor $1/[8s X]$.  Direct expansion and
+polynomial integration give
+\begin{align}
+ F_{UV}(X)={}&\frac{128}{X}+\frac{608}{3}-\frac{64}{3}\ln X\\
+ &+X\left(\frac{1568}{15}+\frac{64}{15}\ln X\right)
+ +X^2\left(\frac{380}{9}+\frac{56}{15}\ln X\right)\\
+ &+X^3\left(\frac{1364}{315}-\frac{400}{63}\ln X\right)
+                    +O\!\left(X^4[1+|\ln X|]\right).
+\end{align}
+The inverse power belongs to the sector decomposition, not to the
+physical threshold cross section.  It must be added to the other real
+sectors before their common prefactor is expanded.  The stated remainder
+becomes $O(X^3[1+|\ln X|])$ after that prefactor.
+The exact coefficient calculation is recorded in
+\nolinkurl{soft_asymptotic_UV_low.json}.
+
+\subsection{Threshold terms of the UW sector}
+For the $UW$ sector the existing rectangle $0<a<X$, $0<t<1$ has already
+been integrated in $a$.  Its logarithms are expanded uniformly in $X$.
+The difference of dilogarithms in its remaining kernel can be expanded
+without separately expanding either divergent argument at $t=0$:
+\begin{align}
+ d_3(X,t)&=\operatorname{Li}_2\!\left(-\frac{(1-t)(1+Xt)}t\right)
+                  -\operatorname{Li}_2\!\left(-\frac{1-t}t\right),\\
+ \frac{\partial d_3}{\partial X}
+ &=-\frac{t}{1+Xt}\left[-\ln t+\ln(1+Xt(1-t))\right],
+ \qquad d_3(0,t)=0.
+\end{align}
+Both dilogarithm arguments are negative, which fixes their real branches.
+The Taylor series of this derivative is uniform apart from the integrable
+factor $t\ln t$.  The analogous derivative of
+$\operatorname{Li}_2(-1-Xt)+\pi^2/12$ is
+$-t\ln(2+Xt)/(1+Xt)$, also with a zero boundary value at $X=0$.
+The apparent endpoint poles cancel when the complete coefficient at each
+power of $X$ is collected, before its final $t$ integration.
+
+To control the remainder, first apply the endpoint Taylor subtractions
+of Section~\ref{sec:comp-UW-simplified} to the eight-function kernel
+$\Phi_{UW}(X,t)$. Separate its explicit dependence on $\ln X$, which
+is at most linear. The accompanying rational coefficients have poles
+of order at most four at $X=0$. Define
+\begin{equation}
+ X^4\Phi_{UW}(X,t)=\Psi_0(X,t)+\ln X\,\Psi_1(X,t).
+\end{equation}
+For any fixed $0<X_0<1$, both functions $\Psi_j$ extend analytically to
+a neighborhood of $[0,X_0]\times[0,1]$. Indeed, the nonendpoint
+denominators $1+Xt$, $2+Xt$ and $1+Xt(1-t)$ are bounded away from zero
+there. Each endpoint Taylor subtraction is an analytic divided
+difference. For the function $J$, its short dilogarithm expression
+establishes joint analyticity near $t=0$, and its original
+$d_3-\ell\ln t+\ell p$ expression does so near $t=1$.
+The eighth $X$ derivatives of the $\Psi_j$ are consequently bounded
+on this compact rectangle. Taylor expansion through $X^7$ has a
+remainder bounded uniformly in $t$ by $C X^8[1+|\ln X|]$, with $C$
+independent of $X$ and $t$. Dividing by $X^4$ and integrating over the
+fixed unit interval gives the remainder below. The coefficient
+integrals give, for one $UW$ sector,
+\begin{align}
+ F_{UW}(X)={}&X\left(\frac{16}{15}-\frac{64}{5}\ln X\right)
+ +X^2\left(-\frac43-\frac{16}{5}\ln X\right)\\
+ &+X^3\left(\frac{788}{315}-\frac{236}{105}\ln X\right)
+                  +O\!\left(X^4[1+|\ln X|]\right).
+\end{align}
+The normalization is again before $1/[8s X]$.  The complete real answer
+contains $2F_{UW}$ and the separate rational Bose-restoration term.
+The exact coefficients are saved in \nolinkurl{soft_asymptotic_UW_low.json}.
+
+\subsection{The combined real contribution at low energy}
+Put $X=s-1>0$. The finite real coefficient $F_{\mathrm R}^{\eta}$
+in this paragraph is the constant term obtained with the symmetric
+regulator $(X_1X_2)^\eta$, before matching to the photon-mass
+calculation. With $P=p+k$, these are exactly the dimensionless
+Dalitz variables
+\begin{equation}
+ X_1=x=\frac{2P\cdot k_1}{m^2},\qquad
+ X_2=y=\frac{2P\cdot k_2}{m^2}.
+\end{equation}
+In the center-of-mass frame, $X_i=2\sqrt{s}\,\omega_i/m$.
+Thus $(X_1X_2)^\eta=(xy)^\eta$ uses the same finite-part
+normalization as the earlier integration. The subscripts distinguish
+the two outgoing energies from the incident-energy parameter $X$.
+
+For the regular rational, energy-logarithm, $W$, and Bose terms,
+use reciprocal symmetry to replace the last energy interval by
+$1<u<s$, with an overall factor $1/2$. Set
+\begin{equation}
+ u=1+Xw,\qquad 0<w<1,\qquad
+ \ell=\ln\frac{w}{1-w}.
+\end{equation}
+The logarithms in the exact kernels become
+\begin{align}
+ L_1&=2\ln(1+Xw)-\ln(1+X),\\
+ L_2&=\ell+\ln(1+Xw),\\
+ L_3&=\ell+2\ln[2+X(1+w)]-\ln(1+Xw)-2\ln(2+Xw).
+\end{align}
+Their expansions now have a fixed integration interval. The
+removable Gram factors are combined before expanding. For example,
+$\ln(a/b)/(a-b)$ is analytic at $a=b>0$. Such divided differences
+remove the apparent interior pole near $w=1/2$.
+After the four sectors are added, every coefficient through the
+required order is a polynomial in $w$ multiplying $\ell$, plus a
+rational function whose only poles are at the fixed endpoints.
+This cancellation is an exact rational identity.
+
+Subtract the simple and double endpoint terms before interchanging
+the expansion and the integral. The remaining rational
+denominators are bounded away from zero for sufficiently small
+positive $X$ on the compact $w$ interval. Their subtracted
+remainders are bounded by a constant times
+$1+|\ln w|+|\ln(1-w)|$. This integrable bound justifies the
+coefficientwise expansion. The endpoint counterterms themselves
+are integrated exactly in the same finite-part convention.
+The needed polynomial moment is
+\begin{equation}
+ \int_0^1w^n\ell\,\dd w=\frac{H_n}{n+1},\qquad
+ H_n=\sum_{j=1}^{n}\frac1j,\qquad H_0=0.
+\end{equation}
+The finite parts of $w^{-1}$ and $(w-1)^{-1}$ vanish. Those of
+$w^{-2}$ and $(w-1)^{-2}$ both equal $-1$.
+
+Let $\Phi=\operatorname{FP}\int_0^1X f(1+Xw)\,\dd w$
+for the sum of these four sectors. Let $A$ be its upper simple-pole
+coefficient and $D_w$ its upper double-pole coefficient. Their
+exact expansions are
+\begin{align}
+ \Phi={}&-\frac{192}{X}-\frac{1024}{3}-\frac{1792}{9}X
+             -\frac{532}{9}X^2-\frac{7052}{135}X^3+O(X^4),\\
+ A={}&\frac{32}{3}+\frac{32}{3}X+\frac43X^2
+                            +\frac{188}{15}X^3+O(X^4),\\
+ D_w={}&\frac{32}{X}+\frac{224}{3}+\frac{544}{9}X
+                     +\frac{208}{9}X^2+\frac{172}{45}X^3+O(X^4).
+\end{align}
+The double pole belongs to the Bose-restoring contribution. Its
+finite boundary correction must be included even though the
+complete real integral eventually has only a logarithmic soft
+divergence.
+
+Denote the sum of the already derived $z$-cut to $\eta$-scheme
+matching constants by $M_\eta$. Expanding their exact logarithms
+and dilogarithms gives
+\begin{equation}
+ M_\eta=\frac{80}{3}+\frac{112}{3}X+\frac{62}{9}X^2
+                              +\frac{352}{45}X^3+O(X^4\ln X).
+\end{equation}
+The unnormalized four-sector finite part is therefore
+\begin{equation}
+ F_4=\frac{\Phi}{2}+2A\ln X-\frac A2\ln(1+X)
+                     -\frac{D_w(X+2)}{2(X+1)}+M_\eta.
+\end{equation}
+The logarithmic terms follow from the common $z$ boundary. The
+term containing $D_w$ follows from the second-order displacement
+of that boundary. Substitution yields
+\begin{align}
+ F_4={}&-\frac{128}{X}-\frac{608}{3}+\frac{64}{3}\ln X\\
+ &+X\left(\frac{64}{3}\ln X-\frac{320}{3}\right)
+ +X^2\left(\frac83\ln X-\frac{356}{9}\right)\\
+ &+X^3\left(\frac{376}{15}\ln X-\frac{2596}{135}\right)
+                                     +O(X^4\ln X).
+\end{align}
+Combining this with the independently expanded $UV$ and twice
+the $UW$ contributions cancels every $X^{-1}$, constant, $X$,
+and $X^2$ term, including their logarithms. The exact remaining
+unnormalized expression is
+\begin{equation}
+ F_4+F_{UV}+2F_{UW}
+ =X^3\left(\frac{128}{9}\ln X-\frac{1336}{135}\right)
+                                      +O(X^4\ln X).
+\end{equation}
+Restoring the common phase-space factor $1/[8X(1+X)]$ gives
+\begin{equation}
+ \boxed{F_{\mathrm R}^{\eta}
+ =X^2\left(\frac{16}{9}\ln X-\frac{167}{135}\right)
+                                      +O(X^3\ln X).}
+\end{equation}
+The remainder follows from the uniform subtracted expansion and
+the single explicit logarithm in the regulator matching. It is
+not inferred by fitting numerical values. In the center-of-mass
+local-subtraction convention, using
+$A_{\mathrm{phys}}=8X^2/9+O(X^3)$ and
+$\mathcal C_{\mathrm R}=F_{\mathrm R}^{\eta}
+ -A_{\mathrm{phys}}\ln[2\sqrt{1+X}\,X]$, the same result is
+\begin{equation}
+ \mathcal C_{\mathrm R}
+ =X^2\left[\frac89\ln\frac{X}{2}-\frac{167}{135}\right]
+                                      +O(X^3\ln X).
+\end{equation}
+
+\subsection{The high-energy UV contribution}
+Put $L=\ln X$. The constant-letter representation of the $UV$ finite coefficient gives
+an independent route to its large-$X$ expansion.  In that representation,
+$q=(\sqrt{X+4}-\sqrt{X})/(\sqrt{X+4}+\sqrt{X})$ tends to zero and
+\begin{equation}
+ q=\frac1X-\frac2{X^2}+\frac5{X^3}-\frac{14}{X^4}
+                       +\frac{42}{X^5}+O(X^{-6}).
+\end{equation}
+The GPL differential equation expands each word in powers of $q$ and
+$\ln q$.  The only singular kernel at this endpoint is $\dd q/q$.
+All other kernels have convergent Taylor series about zero.  Words of
+weight at most three therefore have remainders bounded by powers of
+$q$ times at most $|\ln q|^3$.  The rational coefficients have poles
+of order at most three, so the word expansion is carried through $q^4$
+before extracting the physical $1/X$ term.
+
+The integration constants in this expansion are the finite parts
+$\operatorname{FP}G_1(w;0)$, where the subscript denotes basepoint one
+and the same real left tangent as above.  They are evaluated analytically,
+not determined by fitting.  Let
+$a_\pm=(1\pm\ii\sqrt3)/2$ and $D(t)=1-t+t^2$.
+The weight-one sum is
+\begin{equation}
+ G_1(a_+;t)+G_1(a_-;t)=\ln D(t).
+\end{equation}
+Shuffle identities remove most higher-weight endpoint constants.
+The remaining weight-two sum is
+\begin{equation}
+ \sum_{a=a_\pm}G_1(1,a;0)
+ =\int_0^1\frac{\ln D(t)}{1-t}\dd t
+ =-\frac{\pi^2}{18}.
+\end{equation}
+The substitution $t\mapsto1-t$ reduces the integral to
+$-\operatorname{Li}_2(a_+)-\operatorname{Li}_2(a_-)$.
+The standard real boundary values follow directly by integrating the
+Fourier series for $\ln(1-e^{\ii\theta})$, or by the dilogarithm
+reflection identity on the conjugate pair.
+
+Define the only remaining weight-three combination by
+\begin{align}
+ U&=\sum_{a,b=a_\pm}G_1(0,a,b;0)
+                 =-\frac12\int_0^1\frac{\ln^2D(t)}t\dd t,\\
+ V&=\sum_{a=a_\pm}G_1(-1,0,a;0)
+                 =\int_0^1\frac{\ln D(t)\ln(1+t)}t\dd t.
+\end{align}
+Both are convergent real integrals.  The algebraic identity
+$(1+t)D(t)=1+t^3$ gives
+\begin{equation}
+ V-U=\frac12\int_0^1
+ \frac{\ln^2(1+t^3)-\ln^2(1+t)}t\dd t
+ =-\frac13\int_0^1\frac{\ln^2(1+t)}t\dd t
+ =-\frac{\zeta(3)}{12}.
+\end{equation}
+For the last elementary polylogarithmic moment, set $w=1/(1+t)$.
+A primitive of $\ln^2w/(1-w)$ is
+$-\ln^2w\ln(1-w)-2\ln w\operatorname{Li}_2(w)+2\operatorname{Li}_3(w)$.
+Its values at $w=1/2,1$, together with
+\begin{align}
+ \operatorname{Li}_2(1/2)&=\frac{\pi^2}{12}-\frac12\ln^22,\\
+ \operatorname{Li}_3(1/2)&=\frac78\zeta(3)-\frac{\pi^2}{12}\ln2
+                                      +\frac16\ln^32,
+\end{align}
+prove that the moment is $\zeta(3)/4$.  Thus every boundary constant
+needed here is fixed analytically.
+
+Writing $\widehat F_{UV}=F_{UV}/[8s X]$, the result is
+\begin{align}
+ \widehat F_{UV}={}&X^3\left(\frac L{12}-\frac5{144}\right)
+ +X^2\left(\frac L3+\frac1{18}\right)\\
+ &+X\left(\frac5{24}L^2-\frac{49}{24}L+\frac{65}{72}\right)
+ -\frac76L^2+\frac{11}{3}L+\frac{47}{36}+\frac{\pi^2}{6}\\
+ &+\frac1X\left[7L^3-\frac{73}{6}L^2
+ +\left(\frac{133}{8}-\frac{\pi^2}{3}\right)L
+ +\frac{2335}{144}-\frac{\pi^2}{6}-4\zeta(3)\right]
+ +O\!\left(\frac{L^3}{X^2}\right).
+\end{align}
+The growing terms are artifacts of the sector decomposition and must
+cancel in the complete real contribution.  They are included explicitly
+so that this cancellation can be checked rather than assumed.
+The recurrence and the exact endpoint-constant reductions are implemented
+in \nolinkurl{compton_soft_asymptotic_uv_high.py}, with the reduced result
+saved in \nolinkurl{soft_asymptotic_UV_high.json}.
+
+\section{The total cross section at low energy}
+\label{sec:comp-independent-total-low}
+The preceding expansions determine the first nonzero radiative
+correction to the total cross section. Here
+$X=s_{\mathrm{phys}}/m^2-1=2\omega/m$, with $\omega$ the incident
+photon energy in the electron rest frame, and
+$\ell_\lambda=\ln(\lambda_{\mathrm{phys}}/m)$.
+Before taking the low-energy limit, cancel the exact photon-mass
+logarithm in \eqref{eq:comp-assembly-common-regulator} by writing
+\begin{equation}
+ C_1=\bigl[C_V-A\ell_\lambda\bigr]+F_{\mathrm R}^{\eta}
+       -A\ln\bigl[X\sqrt{1+X}\bigr]-\frac{\mathcal C_K}{1+X}.
+\end{equation}
+Each term in this expression is independent of the photon mass.
+Consequently the following expansion does not interchange a
+fixed-regulator threshold expansion with the infrared limit:
+\begin{align}
+ C_V-A\ell_\lambda
+ &=X^2\left[-\frac83\ln X+\frac{22}{9}\right]
+       +O\!\left(X^3|\ln X|\right),\\
+ F_{\mathrm R}^{\eta}
+ &=X^2\left[\frac{16}{9}\ln X-\frac{167}{135}\right]
+       +O\!\left(X^3|\ln X|\right),\\
+ -A\ln\bigl[X\sqrt{1+X}\bigr]-\frac{\mathcal C_K}{1+X}
+ &=X^2\left[-\frac89\ln X-\frac{20}{27}\right]
+       +O\!\left(X^3|\ln X|\right).
+\end{align}
+The logarithmic coefficients sum to $-16/9$, and the constants sum
+to $22/9-167/135-20/27=7/15$. Thus
+\begin{equation}
+ \boxed{\sigma_1=\frac{\alpha_{\mathrm T}^3}{m^2}
+ \left\{X^2\left[-\frac{16}{9}\ln X+\frac7{15}\right]
+       +O\!\left(X^3|\ln X|\right)\right\},\qquad X\to0^+.}
+ \label{eq:comp-independent-total-low}
+\end{equation}
+This is the order-$\alpha_{\mathrm T}^3$ contribution. The NLO total
+is $\sigma_0+\sigma_1$, with the Born expansion
+\begin{equation}
+ \sigma_0=\frac{\pi\alpha_{\mathrm T}^2}{m^2}
+ \left[\frac83-\frac83X+\frac{52}{15}X^2
+                   -\frac{133}{30}X^3+O(X^4)\right].
+\end{equation}
+The remainder follows by adding the remainders of the independently
+expanded, regulator-independent terms. No numerical fit or published
+total is used to fix either coefficient. Since $X^2\ln X\to0$, this
+order of the radiative correction vanishes in the Thomson limit.
+\input{total_energy_low}

@@ -1,0 +1,135 @@
+[
+  {
+    "s": "1.0002",
+    "orders": [
+      64,
+      128,
+      256
+    ],
+    "values": [
+      "0.00000100103546920297957214774539988989427842326383",
+      "0.00000100103546920297957214774539992193696772563385",
+      "0.00000100103546920297957214774539990886565686283182"
+    ],
+    "estimated_absolute_error": "1e-25",
+    "error_definition": "max(10 times last two order differences, 10^(20-dps)); empirical, not a rigorous bound",
+    "dps": 45,
+    "mapping": "c=(1+2/(s-1))*tanh(log(s)*(u-1/2))",
+    "lambda": "1e-8",
+    "normalization": "C_VS, coefficient of alpha^3/m^2, to combine with locally subtracted real term"
+  },
+  {
+    "s": "1.02",
+    "orders": [
+      64,
+      128,
+      256
+    ],
+    "values": [
+      "0.00496496938602447745958852092748691485615924713",
+      "0.00496496938602447745958852092748691485621010899",
+      "0.00496496938602447745958852092748691485617664617"
+    ],
+    "estimated_absolute_error": "1e-25",
+    "error_definition": "max(10 times last two order differences, 10^(20-dps)); empirical, not a rigorous bound",
+    "dps": 45,
+    "mapping": "c=(1+2/(s-1))*tanh(log(s)*(u-1/2))",
+    "lambda": "1e-8",
+    "normalization": "C_VS, coefficient of alpha^3/m^2, to combine with locally subtracted real term"
+  },
+  {
+    "s": "1.6",
+    "orders": [
+      64,
+      128,
+      256
+    ],
+    "values": [
+      "0.735630424600763851523191677689185691478279187",
+      "0.735630424600763851523191677689185691478279221",
+      "0.735630424600763851523191677689185691478279182"
+    ],
+    "estimated_absolute_error": "1e-25",
+    "error_definition": "max(10 times last two order differences, 10^(20-dps)); empirical, not a rigorous bound",
+    "dps": 45,
+    "mapping": "c=(1+2/(s-1))*tanh(log(s)*(u-1/2))",
+    "lambda": "1e-8",
+    "normalization": "C_VS, coefficient of alpha^3/m^2, to combine with locally subtracted real term"
+  },
+  {
+    "s": "10",
+    "orders": [
+      64,
+      128,
+      256
+    ],
+    "values": [
+      "1.36034470139283374055845895100327625381355378",
+      "1.36034470139283374055845895100327625381355378",
+      "1.36034470139283374055845895100327625381355378"
+    ],
+    "estimated_absolute_error": "1e-25",
+    "error_definition": "max(10 times last two order differences, 10^(20-dps)); empirical, not a rigorous bound",
+    "dps": 45,
+    "mapping": "c=(1+2/(s-1))*tanh(log(s)*(u-1/2))",
+    "lambda": "1e-8",
+    "normalization": "C_VS, coefficient of alpha^3/m^2, to combine with locally subtracted real term"
+  },
+  {
+    "s": "100",
+    "orders": [
+      64,
+      128,
+      256
+    ],
+    "values": [
+      "-0.237370435414005809729058450737561196316456202",
+      "-0.237370435414005809729058450737561994128180629",
+      "-0.237370435414005809729058450737561994128180628"
+    ],
+    "estimated_absolute_error": "1e-25",
+    "error_definition": "max(10 times last two order differences, 10^(20-dps)); empirical, not a rigorous bound",
+    "dps": 45,
+    "mapping": "c=(1+2/(s-1))*tanh(log(s)*(u-1/2))",
+    "lambda": "1e-8",
+    "normalization": "C_VS, coefficient of alpha^3/m^2, to combine with locally subtracted real term"
+  },
+  {
+    "s": "2001",
+    "orders": [
+      64,
+      128,
+      256
+    ],
+    "values": [
+      "-0.187731879860350897324549513197314145419365988",
+      "-0.187731879860350897325125086151411259440163087",
+      "-0.187731879860350897325125086151411259440163176"
+    ],
+    "estimated_absolute_error": "5.7557295e-21",
+    "error_definition": "max(10 times last two order differences, 10^(20-dps)); empirical, not a rigorous bound",
+    "dps": 45,
+    "mapping": "c=(1+2/(s-1))*tanh(log(s)*(u-1/2))",
+    "lambda": "1e-8",
+    "normalization": "C_VS, coefficient of alpha^3/m^2, to combine with locally subtracted real term"
+  },
+  {
+    "s": "200001",
+    "orders": [
+      64,
+      128,
+      256
+    ],
+    "values": [
+      "-0.0107593115070710785413543447624524826270469284",
+      "-0.0107593115070721009077857564988213131165786513",
+      "-0.01075931150707210090778575652225188833797072"
+    ],
+    "estimated_absolute_error": "1.0223664e-14",
+    "error_definition": "max(10 times last two order differences, 10^(20-dps)); empirical, not a rigorous bound",
+    "dps": 45,
+    "mapping": "c=(1+2/(s-1))*tanh(log(s)*(u-1/2))",
+    "lambda": "1e-8",
+    "normalization": "C_VS, coefficient of alpha^3/m^2, to combine with locally subtracted real term"
+  }
+]

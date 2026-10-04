@@ -1,0 +1,72 @@
+\section{Checks of the analytic simplification}
+These checks compare the simplified expressions with the original
+independent sector results. The algebraic derivations above fix all
+coefficients and boundary values before any numerical comparison.
+
+\subsection{Checks of the classical root functions}
+The reduction was also checked against the defining integrals at
+$X=10^{-6}$, $10^{-2}$, $0.6$, $1$, $10$ and $10^4$, using 70-digit arithmetic.
+The substitution $X=4\sinh^2(y/2)$ removes the square-root kernel
+from those numerical checks. All 36 endpoint comparisons have absolute
+differences below $1.2\times10^{-68}$. Independent differentiation
+checks of all six classical expressions at five of these points also
+reproduce their defining kernels. These numerical checks supplement
+the primitive identities and boundary derivations above. They do not
+supply any part of the analytic expressions.
+
+\subsection{Checks of the simplified soft primitive}
+At an interior endpoint, the old primitive equals
+$\widetilde\Psi+4apf/(\beta E^2dk)$, which permits a direct check
+without a numerical integral.  At $z=0.7Z$, evaluating both GPL
+expressions with 65 decimal digits gives differences below
+$2.6\times10^{-63}$ for $s=1.6$ and $s=10$.  These checks support
+the implementation of the exact relation
+\eqref{eq:comp-ck-pole-removal}.
+
+\subsection{Checks of the collected soft kernel}
+As a cross-check of this reorganization, numerical integration of the
+regular kernel gives
+\begin{align}
+ \mathcal C_K(1.6)&=0.1712265509990548695712562109522182979661\ldots,\\
+ \mathcal C_K(10)&=10.0584622326319768377445483326880109081643\ldots.
+\end{align}
+These values agree with the previous analytic soft expression.
+The numerical integrations test the algebraic reorganization and do
+not replace the analytic expression.
+
+\subsection{Checks of the soft energy-variable integrals}
+Direct quadrature of the defining
+$I_1,I_2,I_7$ integrals at $X=10^{-3},0.6,9,100$ agrees with their
+energy-variable analytic expressions to better than $3\times10^{-72}$
+in absolute value for $I_2$ and $I_7$. The integral evaluations in this
+check are not used to determine any coefficient or boundary constant.
+
+\subsection{Checks of the integrated UW expression}
+Evaluation of the fixed-alphabet result and the original finite GPL primitive gives
+\begin{align} F_{UW}^{\eta}(0.6)&=5.33372142619549103751931327587135840926047\ldots,\\
+F_{UW}^{\eta}(9)&=-599.278509012081875840715039026856308771543\ldots.\end{align}
+The absolute differences are $1.4\times10^{-65}$ and $3.1\times10^{-63}$, respectively. These checks concern the $UW$ contribution. The conversion to \eqref{eq:comp-uw-integrated-compact} uses the exact coefficient and shuffle identities above.
+
+\subsection{Checks of the matched real contribution}
+Fresh evaluations of the original four GPL primitives at $s=1.6$ and $10$ agree with the endpoint formula before matching. Adding the original finite shifts gives agreement with \eqref{eq:comp-real-four-matched-compact} through the 45 significant digits recorded for those original values. These checks use our own integrated expressions. No published total is substituted.
+
+\subsection{Checks of the four-sector endpoints}
+The coefficients $A_4,D_4$ extracted from the collected primitive were
+also checked against the Laurent expansions of the four original
+integrands at $s=1.01$, $1.6$ and $10$, using 70-digit arithmetic.
+This checks the endpoint signs and normalization independently of the
+primitive coefficient collection.
+
+\subsubsection{The conjugate-pair endpoint}
+The function $\mathcal A_{\mathrm{pair}}(s)$ is defined in
+\eqref{eq:comp-real-a-pair-endpoint}. Direct quadrature of $P'\ln B/P$ at six points from
+$s=1.000001$ to $10^4$ agrees with this expression to an absolute
+error below $6\times10^{-70}$ in 70-digit arithmetic.
+
+\subsection{Checks of the direct-box basis conversion}
+The independent direct-box conversion is derived in
+Section~\ref{sec:comp-virtual-energy-basis}. As a check
+of its implementation, evaluation at $s=1.6$ and $s=10$ differs from the
+original closed endpoint representation by less than
+$3.4\times10^{-78}$.  The exact derivative and boundary arguments,
+rather than these two numbers, establish the basis transformation.

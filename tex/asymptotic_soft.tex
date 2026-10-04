@@ -1,0 +1,201 @@
+\section{Asymptotic expansions of the soft contribution}
+\label{sec:comp-soft-asymptotic}
+Use the dimensionless variable $X=s_{\mathrm{phys}}/m^2-1=2\omega/m$.  In the intermediate
+formulas below $m=1$, so $s=1+X$.  The infrared residue is
+$A=\mathcal C_{\mathrm{IR}}/s$, and the finite soft angular term in the
+matched total is $-\mathcal C_K/s$.  These quantities are expanded from
+the eikonal parameter integral and the Born trace, independently of any
+published total cross section.
+
+\subsection{Uniform threshold expansion}
+At fixed physical angle $-1\leq c\leq1$ and Feynman parameter
+$0\leq u\leq1$, write
+\begin{align}
+ t&=-\frac{X^2(1-c)}{2(1+X)},\qquad
+ E^2=\frac{(X+2)^2}{4(1+X)},\qquad
+ M_u=1-tu(1-u),\\
+ v_u^2&=1-\frac{M_u}{E^2},\qquad \beta^2=\frac{X^2}{(X+2)^2}.
+\end{align}
+Both $v_u^2$ and $\beta^2$ are uniformly $O(X^2)$, and $M_u\geq1$.
+Consequently the convergent real series
+\begin{equation}
+ \frac{\operatorname{artanh}v}{v}
+ =1+\frac{v^2}{3}+\frac{v^4}{5}+O(v^6)
+\end{equation}
+can be integrated term by term on the compact parameter and angular
+intervals.  Its remainder is uniform for sufficiently small positive
+$X$, since $0\leq v_u\leq\beta<1$.
+Substitution in the defining integral for $K$ gives
+\begin{align}
+ K(s,c)={}&\frac5{36}(1-c)(X^2-X^3)\\
+ &+\left(-\frac{3c^2}{200}-\frac{437c}{3600}
+                              +\frac{491}{3600}\right)X^4\\
+ &+\left(\frac{3c^2}{100}+\frac{187c}{1800}
+                              -\frac{241}{1800}\right)X^5+O(X^6).
+\end{align}
+For the infrared factor, put $d=-t/2$.  Its corresponding analytic series is
+\begin{equation}
+ b_e-1=\frac{2d}{3}-\frac{d^2}{5}+O(d^3).
+\end{equation}
+The apparent inverse powers of $X$ in the invariant Born expression
+cancel when $y=X+t$ is substituted before expansion.  Its leading term
+is $2(1+c^2)$.  Multiplication followed by exact polynomial integration
+over $c$ yields
+\begin{align}
+ A(1+X)&=\frac89X^2-\frac{28}{15}X^3+\frac{238}{75}X^4
+                          -\frac{7618}{1575}X^5+O(X^6),\\
+ \frac{\mathcal C_K(1+X)}{s}
+ &=\frac{20}{27}X^2-\frac{14}{9}X^3+\frac{6023}{2250}X^4
+                          -\frac{195133}{47250}X^5+O(X^6).
+\end{align}
+All coefficients are rational because the uniform expansion leaves
+only polynomials on the compact integration domain.
+
+The term matching the symmetric analytic real regulator to the photon
+mass is
+\begin{equation}
+ \mathcal M(X;\lambda)
+ =-A(1+X)\left[\ln X+\frac12\ln(1+X)+\ln\lambda\right]
+                      -\frac{\mathcal C_K(1+X)}s.
+\end{equation}
+Its first nonzero order is therefore
+\begin{equation}
+ \mathcal M(X;\lambda)
+ =-X^2\left[\frac89\ln(X\lambda)+\frac{20}{27}\right]
+             +O\!\left(X^3[1+|\ln X|+|\ln\lambda|]\right).
+\end{equation}
+This is a component of the matched answer, not the total correction.
+The photon-mass logarithm cancels against the virtual term before the
+physical limit $\lambda\to0$.  These component expansions refer to the leading small-$\lambda$
+expression obtained at fixed $X>0$, with $\ln\lambda$ kept symbolic.
+They do not describe a threshold limit at fixed nonzero photon mass.
+The exact algebraic
+infrared identity allows the cancellation to be made before expanding
+if a regulator-independent remainder is required.
+The script \nolinkurl{compton_soft_asymptotic_low.py} performs the polynomial
+steps and saves their exact coefficients in \nolinkurl{soft_asymptotic_low.json}.
+
+\subsection{The high-energy infrared residue}
+The leading large-$X$ residue can also be obtained directly from its
+elastic angular integral.  Use $T=-t=X-y$, where
+$X/(X+1)\leq y\leq X$.  The Born factor is
+$\mathcal B(X,y)=\overline{|\mathcal M_0|^2}/e_{\mathrm T}^4$,
+as in the angular integral above. Since $\dd c=2s\,\dd y/X^2$,
+\begin{equation}
+ A(1+X)=\frac2{X^2}\int_{X/(X+1)}^X
+             \mathcal B(X,y)[b_e(X-y)-1]\,\dd y.
+\end{equation}
+For large $T$, the exact rapidity expression gives
+$b_e(T)=\ln T+O((1+\ln T)/T)$.  Its replacement by $\ln T$ is not
+pointwise valid at $T=0$, but the endpoint error is integrable.
+Indeed $\mathcal B$ is bounded near $y=X$, while $\ln T$ is integrable at zero.
+For $T\geq1$, splitting the remaining interval at $y=X/2$ bounds the
+integrated replacement error by $O(1+\ln^2X)$ before the prefactor
+$X^{-2}$.  The subleading Born terms likewise contribute at most
+$O(\ln^2X/X^2)$.  The lower endpoint can be replaced by one at this
+accuracy.  Therefore the leading term is
+\begin{align}
+ A(1+X)=\frac4{X^2}\left\{
+ X\int_1^X\frac{\ln(X-y)-1}{y}\,\dd y
+ +\frac1X\int_0^X y[\ln(X-y)-1]\,\dd y\right\}
+ +O\!\left(\frac{\ln^2X}{X^2}\right).
+\end{align}
+The first integral follows from $y=Xz$ and
+$\int_0^1\ln(1-z)\,\dd z/z=-\pi^2/6$.
+The second uses $\int_0^1z\ln(1-z)\dd z=-3/4$.
+Putting $L=\ln X$ gives
+\begin{equation}
+ A(1+X)=\frac1X\left(4L^2-2L-\frac{2\pi^2}{3}-5\right)
+             +O\!\left(\frac{L^2}{X^2}\right),\qquad X\to\infty.
+\end{equation}
+The logarithmic part of the real-regulator matching is consequently
+\begin{equation}
+ -A\ln(\sqrt{s}X\lambda)
+ =-\frac{4L^2-2L-2\pi^2/3-5}{X}
+          \left(\frac32L+\ln\lambda\right)
+ +O\!\left(\frac{L^3+L^2|\ln\lambda|}{X^2}\right).
+\end{equation}
+The finite term $-\mathcal C_K/s$ must still be included.  As at threshold,
+the photon-mass logarithm is canceled algebraically before removing the
+regulator in the total cross section.
+
+\subsection{The high-energy finite soft term}
+A separate derivation is needed for the finite function $K$, because its
+parameter endpoints generate additional logarithms.  Put $T=-t$ and
+$r=T/s$.  Away from the forward region $T=O(1)$, subtract the endpoint
+approximation
+$\tfrac12\ln(s/M_u)$ from $\operatorname{artanh}v_u/v_u$ before taking
+the massless limit of the remaining parameter integral.  The subtracted
+part uses the already integrated functions $b_e$ and $\mathcal H(T)$,
+\begin{equation}
+ K=\frac12\ln s\,(b_e-1)-\frac12z_e\mathcal H(T)+F(r)
+                     +\hbox{power-suppressed terms}.
+\end{equation}
+Here $z_e\mathcal H(T)=\tfrac12\ln^2T-\pi^2/6+
+O((1+\ln^2T)/T)$.  The finite shape function is
+\begin{equation}
+ F(r)=\frac12\int_0^1\frac{\dd u}{u(1-u)}
+ \left[\frac{\operatorname{artanh}\sqrt{1-4ru(1-u)}}
+                  {\sqrt{1-4ru(1-u)}}
+       -\frac12\ln\frac1{ru(1-u)}\right],\qquad 0<r\leq1.
+\end{equation}
+The subtraction removes both parameter endpoint singularities.  It also
+makes $F(r)\to0$ as $r\to0$.  Differentiating the convergent difference
+and setting $u=(1+w)/2$ gives
+\begin{equation}
+ F'(r)=\int_0^1\dd w\,
+ \frac{\operatorname{artanh}v/v-1}{v^2},\qquad
+ v^2=1-r+rw^2.
+\end{equation}
+To perform this integral, use the exact identity
+\begin{equation}
+ (1-r)\frac{\operatorname{artanh}v/v-1}{v^2}
+ =\frac{\dd}{\dd w}\left(w\frac{\operatorname{artanh}v}{v}\right)
+                         -\frac1{1-w^2}.
+\end{equation}
+The two endpoint logarithms must be combined.  Their difference as
+$w\to1^-$ is $-\tfrac12\ln r$, giving
+\begin{equation}
+ F'(r)=-\frac{\ln r}{2(1-r)},\qquad
+ F(r)=\frac12\left[\operatorname{Li}_2(r)+\ln r\ln(1-r)\right].
+\end{equation}
+All arguments lie on the real interval, and the value at $r=1$ is the
+continuous limit $F(1)=\pi^2/12$.
+
+With $L=\ln X$, the finite angular dependence at leading power is
+\begin{align}
+ K&=\frac14L^2-\frac12L+f(r)+\hbox{power-suppressed terms},\\
+ f(r)&=\frac{\pi^2}{12}-\frac14\ln^2r+F(r),\qquad
+ f(1)=\frac{\pi^2}{6}.
+\end{align}
+Use $z=y/X$, so $r=1-z$ at leading power.  The Born weight becomes
+$4(X^{-1})(z^{-1}+z)\dd z$ after the cross-section prefactor.
+The logarithmic lower endpoint is $z=1/X$ to the required accuracy.
+The finite constant needed in the angular integration is
+\begin{align}
+ C_f&=\int_0^1\left[\frac{f(r)-f(1)}{1-r}+(1-r)f(r)\right]\dd r\\
+ &=-\zeta(3)+\frac{\pi^2}{24}-\frac14.
+\end{align}
+For the first integral, integration by parts and
+$f'(r)=-\ln r/[2r(1-r)]$ reduce it to $-\zeta(3)$.
+Expanding $-\ln(1-r)=\sum_{n\geq1}r^n/n$ proves the logarithmic
+moments by absolutely convergent integration.  The second integral uses
+only elementary logarithmic moments and one integration by parts of
+$\operatorname{Li}_2(r)$.
+The result is
+\begin{equation}
+ \frac{\mathcal C_K}{s}
+ =\frac1X\left[L^3-\frac32L^2+
+ \left(\frac{2\pi^2}{3}-1\right)L
+ +\frac{\pi^2}{6}-1-4\zeta(3)\right]
+ +O\!\left(\frac{L^3}{X^2}\right).
+\end{equation}
+The forward interval $T\lesssim1$ cannot use the fixed-$r$ expansion.
+Its width in $y$ is bounded, and its integrated difference contributes
+at most $O(L^2/X^2)$.  On $T\geq1$, the endpoint-subtracted parameter
+integral bounds the omitted terms by a constant times
+$(1+L^2)/T+(1+L^2)/s$.  Splitting the angular interval at $y=X/2$
+then gives the stated $O(L^3/X^2)$ remainder.  Thus the angular integral
+has been controlled in the endpoint region as well as at fixed angle.
+The exact differential identity and moment algebra are checked by
+\nolinkurl{compton_soft_asymptotic_high.py}.

@@ -1,0 +1,142 @@
+\section{A shorter finite UW expression}
+\label{sec:comp-UW-simplified}
+The finite $UW$ contribution already has the integrated endpoint form
+\eqref{eq:comp-real-UW-final-primitive}. Its thirteen inner monomials
+contain repeated weight-two functions. Combining them before the
+rational primitive reduces the endpoint expression. Throughout this
+section $H=s-1>0$, the electron mass is one, and $0<t<1$.
+Define
+\begin{equation}
+ P=1+Ht-Ht^2,\qquad \ell=\ln(1+Ht),\qquad
+ p=\ln P,\qquad b=\ln(1+Ht/2).
+\end{equation}
+All three logarithms are real. The two weight-two combinations needed
+below are
+\begin{align}
+ J_2(H,t)&=\operatorname{Li}_2(-1-Ht)+\frac{\pi^2}{12}
+       +\ell\ln(2+Ht),\\
+ J(H,t)&=\operatorname{Li}_2(t/P)-\operatorname{Li}_2(t)
+       -p\ln(1-t)+\frac{p^2}{2}.
+ \label{eq:comp-UW-J-short}
+\end{align}
+The dilogarithm arguments in $J$ obey $0<t/P\leq t<1$.
+The argument in $J_2$ is negative. These expressions therefore fix the
+physical real branches directly.
+
+\paragraph{Exact coefficient combinations.} Let $r_f(H,t)$ denote the
+coefficient of the atom monomial $f$ in the thirteen-term inner result.
+Its rational coefficients obey
+\begin{equation}
+ r_{d_3}=-r_{\ell\ln t}=r_{\ell p},\qquad
+ r_{d_2}=r_{\ell\ln(2+Ht)},\qquad
+ [\ln2]r_1=-r_{\ln(2+Ht)}.
+ \label{eq:comp-UW-coefficient-combinations}
+\end{equation}
+The last notation means the coefficient of $\ln2$ in $r_1$.
+These are polynomial identities after multiplication by their common
+rational denominators, for arbitrary $H$ and $t$. Here
+$d_2=\operatorname{Li}_2(-1-Ht)+\pi^2/12$ and $d_3$ is the two-dilogarithm
+difference defined in the inner integration. Thus its finite kernel is
+\begin{equation}
+ \Phi_{UW}=A_0+A_1\ell+A_2\ell^2+A_p p+A_b b
+             +A_d\operatorname{Li}_2(-Ht)+A_{J_2}J_2+A_JJ,
+ \label{eq:comp-UW-eight-kernel}
+\end{equation}
+with the following factored sums of the original rational coefficients:
+\begin{align}
+ A_0&=\left.r_1\right|_{\ln2=0}+r_{\ln H}\ln H,
+ &A_1&=r_\ell+r_{\ell\ln H}\ln H,\\
+ A_2&=r_{\ell^2},& A_p&=r_p,\\
+ A_b&=r_{\ln(2+Ht)},& A_d&=r_{d_1},\\
+ A_{J_2}&=r_{d_2},& A_J&=r_{d_3}.
+\end{align}
+Here $d_1=\operatorname{Li}_2(-Ht)$. Keeping these sums factored avoids
+expanding large common numerators. The explicit eight coefficients are
+stored with the calculation in
+\texttt{\detokenize{uw_simplified_kernel.json}}.
+
+\paragraph{Dilogarithm reduction.} To obtain $J$ without guessing a
+branch, first apply the negative-real-axis identity
+$\operatorname{Li}_2(-z)+\operatorname{Li}_2(-1/z)
+=-\pi^2/6-\ln^2z/2$, with $z>0$, to $d_3$.
+It gives the analytic combination $D=d_3-\ell\ln t$ derived at the lower
+endpoint. Next use
+\begin{equation}
+ \operatorname{Li}_2(-z)
+ =-\operatorname{Li}_2\!\left(\frac{z}{1+z}\right)
+  -\frac12\ln^2(1+z),\qquad z>0.
+\end{equation}
+The two positive arguments are
+$t/[(1-t)(1+Ht)]$ and $t/(1-t)$.
+Their transformed arguments are $t/P$ and $t$. The logarithms combine
+exactly to give $J=D+\ell p$, hence \eqref{eq:comp-UW-J-short}.
+In particular no explicit $\ln t$ survives. Both $J(0)=0$ and $J_2(0)=0$.
+At the upper endpoint their analyticity follows from the original
+$d_3-\ell\ln t+\ell p$ and $d_2+\ell\ln(2+Ht)$ representations.
+This observation also fixes the value at $t=1$, where separate terms
+of \eqref{eq:comp-UW-J-short} have logarithmic derivatives.
+
+\paragraph{The integrated result.} Introduce the letters
+\begin{equation}
+ a=-\frac1H,\qquad c=-\frac2H,\qquad
+ r_\pm=\frac{1\pm\sqrt{1+4/H}}2.
+\end{equation}
+In the same GPL convention as the rational primitive,
+\begin{align}
+ J_2(H,t)&=G(c,a;t),\\
+ J(H,t)&=\sum_{r=r_\pm}
+       \bigl[G(0,r;t)-G(1,r;t)+G(r,a;t)\bigr]-G(0,a;t).
+\end{align}
+For example $J_2'=H\ell/(2+Ht)$ and $J_2(0)=0$ prove its single-word
+form. The formula for $J$ follows from the shuffle product
+$G(a;t)G(r;t)=G(a,r;t)+G(r,a;t)$ and the expression for $D$.
+The complete finite integral is therefore
+\begin{equation}
+\begin{aligned}
+ \mathcal F_{UW}(H)=\lim_{Z\to1^-}\bigg\{&
+ \mathfrak T[A_0;\varnothing](Z)+\mathfrak T[A_1;a](Z)
+ +2\mathfrak T[A_2;a,a](Z)\\
+ &+\mathfrak T[A_b;c](Z)+\mathfrak T[A_{J_2};c,a](Z)
+ -\mathfrak T[A_d+A_J;0,a](Z)\\
+ &+\sum_{r=r_\pm}\Bigl(
+ \mathfrak T[A_p;r](Z)+\mathfrak T[A_J;0,r](Z)\\
+ &\hspace{26mm}-\mathfrak T[A_J;1,r](Z)
+ +\mathfrak T[A_J;r,a](Z)\Bigr)\bigg\}.
+\end{aligned}
+\label{eq:comp-UW-short-primitive}
+\end{equation}
+The operator $\mathfrak T$ is the finite rational-to-GPL primitive
+already evaluated by the terminating rules above, including its
+zero finite part at the lower endpoint. Thus this is a shorter
+representation of the completed integral, with fourteen primitive
+contributions. It is not a replacement by an unevaluated quadrature.
+The terms with first letter one must be summed before taking the
+upper limit. The total cross section uses this sector with the same
+factor $1/(8sH)$ and the second Bose-related contribution as before.
+
+\paragraph{Removal of apparent endpoint poles.} The certificates in
+Sections~\ref{sec:comp-UW-upper-certificate} and
+\ref{sec:comp-UW-lower-certificate} also give a form in which each
+summand is finite at both endpoints. For any one of the eight functions
+$f_i$ in \eqref{eq:comp-UW-eight-kernel}, decompose its coefficient as
+\begin{equation}
+ A_i(t)=A_i^{\mathrm{reg}}(t)
+       +\sum_{e=0,1}\sum_{k=1}^{m_{ie}}\frac{c_{iek}}{(t-e)^k}.
+\end{equation}
+The regular coefficient has no pole at zero or one. Since every $f_i$
+is analytic there, define its finite Taylor subtraction
+\begin{equation}
+ f_i^{[e,k]}(t)=\frac{f_i(t)-\displaystyle\sum_{n=0}^{k-1}
+                  f_i^{(n)}(e)(t-e)^n/n!}{(t-e)^k}.
+\end{equation}
+Then the same finite kernel satisfies the exact identity
+\begin{equation}
+ \Phi_{UW}(t)=\sum_i A_i^{\mathrm{reg}}(t)f_i(t)
+          +\sum_{i,e,k}c_{iek}f_i^{[e,k]}(t).
+\end{equation}
+Indeed, the omitted Taylor pieces are exactly the principal parts
+of the full kernel at zero and one, which the two symbolic certificates
+show to vanish. These divided differences are explicit logarithms and
+dilogarithms minus finite polynomials. They introduce no new integral.
+The factored form \eqref{eq:comp-UW-short-primitive} is shorter for
+presenting the integrated result.

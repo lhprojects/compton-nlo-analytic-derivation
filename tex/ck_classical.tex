@@ -1,0 +1,144 @@
+\subsection{The finite soft coefficient in classical polylogarithms}
+\label{sec:comp-ck-classical}
+All weight-three terms in the preceding soft coefficient arise from
+products of two ordinary logarithms.  This permits a classical
+polylogarithmic endpoint expression for the complete coefficient,
+without a GPL primitive operator.
+
+For $z>0$ and real $\rho\ne0$, define
+\begin{align}
+ J(z,\rho)&=\ln^2z\ln|1-z/\rho|
+ +2\ln z\operatorname{Re}\operatorname{Li}_2(z/\rho)
+ -2\operatorname{Re}\operatorname{Li}_3(z/\rho),\\
+ K(z,\rho)&=\ln z\ln|1-z/\rho|
+ +\operatorname{Re}\operatorname{Li}_2(z/\rho).
+\end{align}
+The real parts denote the real boundary values on the standard
+polylogarithm cut.  They enter because the original logarithms are real.
+Their derivatives are listed below. At the degenerate values
+$\rho=0,\infty$, the primitive is defined up to an additive constant,
+which cancels in every normalized boundary difference. We use
+\begin{align}
+ \partial_z J(z,\rho)&=\frac{\ln^2z}{z-\rho},&
+ J(z,0)&=\frac13\ln^3z,&J(z,\infty)&=0,\\
+ \partial_z K(z,\rho)&=\frac{\ln z}{z-\rho},&
+ K(z,0)&=\frac12\ln^2z.
+\end{align}
+The convention at infinity specifies a constant primitive with zero
+derivative.  It will occur when a pole maps to infinity.
+
+For a real letter $a$ outside the open physical interval, put
+$A_a(z)=1-z/a$ and $\ell_a(z)=\ln A_a(z)$.  All factors used below
+are positive for $0<z<Z$.  The normalized single-log primitive is
+\begin{equation}
+ \mathcal K_{a;c}(z)
+ =K(A_a(z),A_a(c))-K(1,A_a(c)).
+\end{equation}
+For $a\ne b$ define
+\begin{equation}
+ \begin{aligned}
+ \mathcal H_{a,b;c}(z)=\frac12\bigg[&
+ J(A_a(z),A_a(c))+J(A_b(z),A_b(c))\\
+ &-J\left(\frac{A_a(z)}{A_b(z)},
+                 \frac{A_a(c)}{A_b(c)}\right)
+ +J\left(\frac{A_a(z)}{A_b(z)},\frac ba\right)\bigg]
+ -(z\to0).
+ \end{aligned}
+ \label{eq:comp-ck-classical-product}
+\end{equation}
+If $c=b$, the third term has its second argument at infinity and
+vanishes.  If $a=b$, use
+$\mathcal H_{a,a;c}(z)=J(A_a(z),A_a(c))-J(1,A_a(c))$.
+These definitions obey
+\begin{equation}
+ \mathcal K'_{a;c}(z)=\frac{\ell_a(z)}{z-c},\qquad
+ \mathcal H'_{a,b;c}(z)=\frac{\ell_a(z)\ell_b(z)}{z-c},\qquad
+ \mathcal K_{a;c}(0)=\mathcal H_{a,b;c}(0)=0.
+\end{equation}
+To verify the product primitive, first use
+$2\ln A\ln B=\ln^2A+\ln^2B-\ln^2(A/B)$.  Under
+$v=A_a(z)/A_b(z)$, the rational differential transforms as
+\begin{equation}
+ \frac{\dd z}{z-c}
+ =\frac{\dd v}{v-A_a(c)/A_b(c)}
+  -\frac{\dd v}{v-b/a}.
+\end{equation}
+The second kernel is the image of infinity and is essential.
+This identity derives both ratio terms in
+\eqref{eq:comp-ck-classical-product}.  Positivity of $A_a,A_b$
+justifies the logarithmic identity without additional multiples of
+$\ii\pi$.  Subtraction at zero fixes every integration constant.
+
+Here is a finite formula for including the rational coefficients.
+For any rational $R(z)$ in the four soft kernels, write
+\begin{equation}
+ R=P_R'+\sum_c\frac{r_c(R)}{z-c},\qquad
+ P_R=\sum_{n\geq0}\frac{p_nz^{n+1}}{n+1}
+ -\sum_c\sum_{j\geq2}\frac{r_{c,j}}{(j-1)(z-c)^{j-1}}.
+\end{equation}
+The sums use its polynomial and partial-fraction coefficients.
+They are finite algebraic derivatives of rational functions.
+Let $\mathcal E[R](z)$ be the elementary primitive of $R$ normalized
+to zero at the origin,
+\begin{equation}
+ \mathcal E[R](z)=P_R(z)-P_R(0)
+ +\sum_cr_c(R)\ln\left|\frac{z-c}{-c}\right|.
+\end{equation}
+No pole here lies at the integration origin.  Define the following
+explicit combinations of classical functions:
+\begin{equation}
+ \mathcal I_a[R]
+ =P_R\ell_a+\sum_cr_c(R)\mathcal K_{a;c}
+ -\mathcal E\!\left[\frac{P_R}{z-a}\right].
+ \label{eq:comp-ck-classical-single}
+\end{equation}
+For the product, put $R_a=P_R/(z-a)$ and $R_b=P_R/(z-b)$.  Then
+\begin{equation}
+ \begin{aligned}
+ \mathcal I_{a,b}[R]={}&P_R\ell_a\ell_b
+ +\sum_cr_c(R)\mathcal H_{a,b;c}
+ -P_{R_a}\ell_b-P_{R_b}\ell_a\\
+ &-\sum_cr_c(R_a)\mathcal K_{b;c}
+  -\sum_cr_c(R_b)\mathcal K_{a;c}\\
+ &+\mathcal E\!\left[\frac{P_{R_a}}{z-b}
+                         +\frac{P_{R_b}}{z-a}\right].
+ \end{aligned}
+ \label{eq:comp-ck-classical-double}
+\end{equation}
+These are nonrecursive formulas.  Direct differentiation gives
+$\mathcal I_a'[R]=R\ell_a$ and
+$\mathcal I_{a,b}'[R]=R\ell_a\ell_b$.
+Their zero values at the origin follow from the normalized
+$\mathcal E,\mathcal K,\mathcal H$ and $\ell_a(0)=0$.
+
+Denote the weights of the three specified logarithm lists by
+$b_a$ for $L_\beta$, $u_a$ for $L_1$ and $k_a$ for $L_k$.
+The complete classical primitive is
+\begin{equation}
+ \begin{aligned}
+ \Psi_{\mathrm{cl}}(z)={}&
+ \sum_ab_a\mathcal I_a[\widetilde R_0]
+ +\sum_{a,b}b_au_b\mathcal I_{a,b}[\widetilde R_1]\\
+ &+\sum_{a,b}b_ak_b\mathcal I_{a,b}[\widetilde R_k]
+ +\sum_ak_a\mathcal I_a[\widetilde R_f].
+ \end{aligned}
+\end{equation}
+Each index ranges over its four explicitly given real letters.
+Finally,
+\begin{equation}
+ \boxed{\mathcal C_K(s)=\lim_{z\to Z^-}\Psi_{\mathrm{cl}}(z)
+ -\frac{\operatorname{artanh}\beta}{\beta}\mathcal C_0(s).}
+ \label{eq:comp-ck-classical-complete}
+\end{equation}
+This expression uses only rational functions, real logarithms,
+$\operatorname{Li}_2$ and $\operatorname{Li}_3$.  The endpoint limit
+is taken after combining the terms.  It is the same finite limit
+already established for the soft coefficient.
+
+There is a further exact simplification before evaluation.  Each
+logarithm list has weights summing to zero.  Hence the first two
+$J$ terms in \eqref{eq:comp-ck-classical-product} cancel in both
+weighted double sums, including their base-point constants.
+Only the two ratio terms are needed there.  This cancellation
+reduces the number of classical function evaluations without
+changing the endpoint or its branch choice.

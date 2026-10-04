@@ -1,0 +1,178 @@
+\label{sec:compton-total-simplification}
+\section{The total cross section}
+\textbf{Roman~N.~Lee, Matthew~D.~Schwartz and Xiaoyuan Zhang have already obtained
+an analytic expression for this total cross section~\cite{qed-processes-lsz}.
+The expression developed here is an independent recalculation for
+verification.}
+The integrations of our virtual and real amplitudes are complete.
+This chapter simplifies their analytic sum in a common energy-variable
+basis. We begin with the sector assembly already derived, reduce its
+terms to that basis, and collect their coefficients. No published
+cross-section coefficient is used in this reduction.
+We use
+\begin{equation}
+ X=\frac{s_{\mathrm{phys}}}{m^2}-1,\qquad
+ q=\frac{\sqrt{X+4}-\sqrt X}{\sqrt{X+4}+\sqrt X},\qquad
+ Y=\sqrt{\frac{X}{X+4}},\qquad X>0.
+\end{equation}
+The square roots are positive.  The Thomson coupling is denoted by
+$\alpha_{\mathrm T}$, and $m$ is the electron mass.  Define
+$s=1+X$ and $r_\omega=X/2$, so that the incident photon energy in the
+electron rest frame is $m r_\omega$.  The complete result is
+\begin{equation}
+ \boxed{\sigma_{\mathrm{inc}}^{\mathrm{NLO}}(X)
+ =\frac{\pi\alpha_{\mathrm T}^2}{m^2}B(X)
+  +\frac{\alpha_{\mathrm T}^3}{m^2}C_1(X)
+  +\frac1{m^2}O(\alpha_{\mathrm T}^4).}
+ \label{eq:comp-simplified-total}
+\end{equation}
+Here the real contribution includes the complete two-photon final-state
+phase space, with its identical-photon factor.  The remainder is at fixed
+$X>0$.  The Born coefficient is
+\begin{equation}
+ \begin{aligned}
+ B(X)=2\bigg[&\frac{1+r_\omega}{r_\omega^2}
+ \left(\frac{2(1+r_\omega)}{1+2r_\omega}
+       -\frac{\ln(1+2r_\omega)}{r_\omega}\right)\\
+ &+\frac{\ln(1+2r_\omega)}{2r_\omega}
+       -\frac{1+3r_\omega}{(1+2r_\omega)^2}\bigg].
+ \end{aligned}
+ \label{eq:comp-simplified-born}
+\end{equation}
+For the NLO coefficient, put
+\begin{equation}
+ \begin{aligned}
+ \mathcal R_{\mathrm{rem}}(X)
+ ={}&F_{\mathrm{rat}}^z+\Delta_{\mathrm{rat}}
+       +F_{\log}^z+\Delta_{\log}+F_W^z\\
+       &+F_D^z+\Delta_D+2F_{UW}^{\eta}.
+ \end{aligned}
+ \label{eq:comp-simplified-real-remainder}
+\end{equation}
+\begin{equation}
+ \begin{aligned}
+ C_1(X)={}&\widehat C_{V+\mathrm{UV}}(X)
+ +\frac{\mathcal R_{\mathrm{rem}}(X)}{8X(1+X)}\\
+ &-A(1+X)\ln\!\bigl(X\sqrt{1+X}\bigr)
+ -\frac{\mathcal C_K(1+X)}{1+X}.
+ \end{aligned}
+ \label{eq:comp-simplified-master}
+\end{equation}
+All finite parts in $\mathcal R_{\mathrm{rem}}$ use the unnormalized
+energy integrals of \eqref{eq:comp-assembly-real-sectors}.
+Specifically, $F_j^z$ is the constant term of the endpoint expansion
+with $z>\zeta$ after subtracting its power and logarithmic divergences.
+The finite GPL endpoint formula is \eqref{eq:comp-real-gpl-endpoint-finite}.
+The term $D$ restores the exact difference between $VW$ and the second
+copy of $UW$, as defined in \eqref{eq:comp-real-bose-restoration}.
+The shifts $\Delta_{\mathrm{rat}}$ and $\Delta_{\log}$ are given by
+\eqref{eq:comp-real-simple-matching}.  The shift $\Delta_D$ includes the moving
+boundary and double-pole terms in
+\eqref{eq:compton-general-soft-matching}.  The $W$ sector has no such
+shift.  The finite part $F_{UW}^{\eta}$ uses the analytic-regulator
+definition and closed primitives of
+\eqref{eq:comp-real-UW-eta-finite}--\eqref{eq:comp-real-UW-inner-closed}.
+Thus $\mathcal R_{\mathrm{rem}}$ contains already integrated terms.  It
+is not an omitted physical contribution or an unevaluated phase-space
+integral.
+
+The infrared coefficient $A(s)=\mathcal C_{\mathrm{IR}}(s)/s$ has
+the integrated form \eqref{eq:comp-soft-integrated-ir}. The finite soft term
+$\mathcal C_K(s)$ is given by \eqref{eq:comp-soft-K-angular-GPL}.
+The three endpoint shifts are the finite regulator conversions
+derived in \eqref{eq:compton-general-soft-matching}.
+To define the first term in \eqref{eq:comp-simplified-master}, set
+\begin{equation}
+ C_{V+\mathrm{UV}}(X;\ell_\lambda)
+ =C_V(1+X,\lambda_{\mathrm{phys}}/m)
+ +\frac{F_{UV}^{\eta}(X)}{8X(1+X)}.
+\end{equation}
+Here $UV$ labels the real angular denominator pair, not an ultraviolet
+counterterm. Separate the photon-mass logarithm as
+\begin{equation}
+ C_{V+\mathrm{UV}}(X;\ell_\lambda)
+ =A(1+X)\ell_\lambda+\widehat C_{V+\mathrm{UV}}(X),
+ \qquad \ell_\lambda=\ln(\lambda_{\mathrm{phys}}/m).
+ \label{eq:comp-simplified-log-split}
+\end{equation}
+Its 23 coefficients are displayed below.  The hat denotes the constant
+coefficient in this polynomial in $\ell_\lambda$, rather than a choice
+of a large photon mass.  Equation~\eqref{eq:comp-simplified-master}
+follows by canceling the photon-mass logarithm in
+\eqref{eq:comp-assembly-common-regulator}.  It is independent of
+$\lambda_{\mathrm{phys}}$.  The reductions below put every finite contribution into the same
+alphabet before their coefficients are combined.
+
+\input{virtual_energy_basis}
+
+\section{The virtual and UV contribution}
+\paragraph{Common functions and exact alphabet reduction.}
+The physical kernels required for the UV term are
+\begin{equation}
+ \omega_0=\frac{\dd X}{X},\qquad
+ \omega_{-1}=\frac{\dd X}{X+1},\qquad
+ \omega_{-4}=\frac{\dd X}{X+4},\qquad
+ \omega_r=\frac{\dd X}{\sqrt{X(X+4)}}.
+\end{equation}
+Their exact pullbacks provide a finite algebraic test of whether the
+apparently larger endpoint alphabet is needed:
+\begin{align}
+ \omega_0&=2\frac{\dd q}{q-1}-\frac{\dd q}{q},&
+ \omega_{-4}&=2\frac{\dd q}{q+1}-\frac{\dd q}{q},\\
+ \omega_{-1}&=\frac{\dd q}{q-\rho_+}+\frac{\dd q}{q-\rho_-}
+                    -\frac{\dd q}{q},&
+ \omega_r&=-\frac{\dd q}{q},\qquad
+ \rho_\pm=\frac{1\pm \ii\sqrt3}{2}.
+\end{align}
+The endpoint $X=0$ corresponds to the same left tangential base point
+$q=1$ used in the preceding calculation.  In particular,
+$\ln X=2\ln(1-q)-\ln q$ has no additional constant there.
+
+For each weight through three, form every tensor word in these four
+kernels and expand it with the displayed pullbacks.  This gives a matrix
+with integer entries.  Solving its coefficient equations against the
+independently integrated UV dictionary, and substituting the solution
+back into every equation, proves an identity of iterated integrals with
+the same base point.  No comparison cross section enters this operation.
+The rational prefactors are simplified using
+\begin{equation}
+ q^2-(X+2)q+1=0,\qquad
+ q=\frac{X+2-(X+4)Y}{2}.
+\end{equation}
+Thus they belong to $\mathbb Q(X)+Y\mathbb Q(X)$, without auxiliary roots.
+The two UV dictionaries each satisfy all 156 coefficient equations of
+this transformation.  Their normalization remains that of the original
+real integral: the contribution to the coefficient of $\alpha_{\mathrm T}^3/m^2$
+is obtained by multiplying the UV finite part by $1/[8X(1+X)]$.
+
+Adding this transformed finite part to the full virtual contribution
+requires only the same 23 $X$ words already obtained for the virtual
+amplitude.  The files accompanying this calculation give the separate
+UV coefficients and the summed coefficients, so the normalization and
+every cancellation can be checked before other contributions are added.
+The 23-word sum by itself is not infrared finite.  The other terms appear with their complete endpoint definitions in
+\eqref{eq:comp-simplified-master}.  The following sections reduce them to the same small alphabet,
+so that their coefficients can be added algebraically.
+
+After exact removal of vanishing coefficients, the UV finite dictionary
+contains twelve nonzero $X$ words (rather than its original 41 $q$ words),
+and its pole dictionary contains three.  All twelve finite words already
+occur in the full virtual dictionary.  Thus their sum still contains
+23 words.  Its coefficients are displayed explicitly below.
+\input{total_simplification_coefficients}
+\input{ir_simplification}
+\input{virtual_root_compact}
+\input{virtual_classical_reduction}
+\input{matching_simplification}
+\input{ck_simplification}
+\input{ck_classical}
+\input{ck_root_endpoint}
+\input{ck_energy_formula}
+\input{soft_uw_simplified}
+\input{real_equivalence_reflection}
+\input{real_combined_coefficients}
+\input{real_allfour_collection}
+\input{real_four_matched_formula}
+\input{uw_compact_formula}
+\input{total_energy_formula}
+\input{total_energy_compact_formula}

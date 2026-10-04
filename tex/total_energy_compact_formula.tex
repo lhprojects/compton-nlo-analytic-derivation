@@ -1,0 +1,19 @@
+\subsection{A product form of the total}
+\label{sec:comp-total-energy-product}
+\begingroup
+\def\comptonproductlabel{eq:comp-total-energy-product}
+\input{total_energy_product_body}
+\endgroup
+This form follows from the complete coefficient table using only the identities
+\begin{align}
+G(-1,0)&=LM-G(0,-1),\\
+G(-1,0,-1)&=L\,G(0,-1)-2G(0,-1,-1),\\
+G(-1,-1,0)&=\tfrac12ML^2-L\,G(0,-1)+G(0,-1,-1),\\
+G(0,r,-1)&=M\,G(r,-1)-G(r,0,-1)-G(r,-1,0).
+\end{align}
+The common endpoint is $X$. In addition, repeated letters $-1$ give powers of $L$ divided by factorials. Expanding every product back by the shuffle identity reproduces all twenty-three original coefficients exactly. The two words combined into $\mathcal P$ have the same coefficient $c_{15}=c_{16}$, so this last grouping replaces their sum without another factor of two.
+The extraction of $R_{\log}$ is fixed by the coefficient $c_2$ of $M$ in the collected table. Direct polynomial division gives
+\begin{equation}
+ X^3c_2(X,Y)=\frac{1}{X-1}+e_5(X),\qquad X^3c_2(X,Y)M=R_{\log}(X)+e_5(X)M.
+\end{equation}
+The second equality at $X=1$ means its continuous limit. All other coefficients are multiplied by $X^3$ before the common factor $X^{-3}$ is placed outside the bracket. Thus this extraction changes neither the normalization of $C_1$ nor the coefficient of its removable term. Every displayed rational coefficient is regular at $X=1$, as follows by exact polynomial cancellation. The function $G(1,0;X)=\zeta(2)-\operatorname{Li}_2(1-X)$ is also explicitly real and regular for every $X>0$. Its derivative is $\ln X/(X-1)$ and its limit as $X\to0^+$ is zero, which fixes the identity without numerical continuation.

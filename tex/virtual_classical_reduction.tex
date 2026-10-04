@@ -1,0 +1,301 @@
+\subsection{Auxiliary classical identities}
+The rational-letter terms of the preceding coefficient list do not
+require separate GPL evaluations. Put $L=\ln(1+X)$, $M=\ln X$ and
+$v=1/(1+X)$, with $X>0$. The elementary reductions are
+\begin{align}
+ G_{-1}&=L,\qquad G_0=M,\qquad
+ G_{-1,-1}=\tfrac12L^2,\qquad G_{-1,-1,-1}=\tfrac16L^3,\\
+ G_{0,-1}&=-\operatorname{Li}_2(-X),\qquad
+ G_{-1,0}=LM+\operatorname{Li}_2(-X),\\
+ G_{1,0}&=\frac{\pi^2}{6}-\operatorname{Li}_2(1-X),\\
+ G_{0,-1,0}&=-M\operatorname{Li}_2(-X)+2\operatorname{Li}_3(-X),\\
+ G_{0,1,0}&=-M\mathcal L_2(X)+2\mathcal L_3(X).
+\end{align}
+Here $\mathcal L_n(X)=\operatorname{Re}\operatorname{Li}_n(X+\ii0)$.
+The real boundary value is fixed by integrating
+$\dd\mathcal L_2/\dd X=-\ln|1-X|/X$ and
+$\dd\mathcal L_3/\dd X=\mathcal L_2/X$ from the interval $0<X<1$.
+It is not selected by fitting numerical values. The combination
+for $G_{1,0}$ is regular at $X=1$.
+
+One additional classical combination suffices for the three words
+with two letters $-1$ and one zero:
+\begin{align}
+ T(X)&=\tfrac12L^2M-\tfrac13L^3
+       -L\operatorname{Li}_2(v)-\operatorname{Li}_3(v)+\zeta(3),\\
+ G_{0,-1,-1}&=T(X),\\
+ G_{-1,0,-1}&=-L\operatorname{Li}_2(-X)-2T(X),\\
+ G_{-1,-1,0}&=\tfrac12L^2M+L\operatorname{Li}_2(-X)+T(X).
+\end{align}
+For example, substituting $v=1/(1+X)$ into
+$\tfrac12\int_0^X\ln^2(1+t)\,\dd t/t$ gives the displayed $T$.
+Its derivative is $L^2/(2X)$ and its lower limit is zero.
+The last two lines then follow from the shuffle product.
+All dilogarithms and trilogarithms with argument $v$ are on
+$0<v<1$. These substitutions reduce the number of nonclassical
+words in the partial sum without changing any rational coefficient
+or the photon-mass convention.
+
+The repeated square-root kernel can also be integrated classically.
+Use the same $q$ as in \eqref{eq:comp-ir-short-function}. Since
+$\omega_r=-\dd q/q$, integrating that independently derived expression
+once more gives
+\begin{equation}
+ G_{r,r,-1}=\operatorname{Li}_3(-q)
+ -\frac19\operatorname{Li}_3(-q^3)-\frac16\ln^3q
+ +\frac{\pi^2}{18}\ln q+\frac23\zeta(3).
+\end{equation}
+Differentiating with respect to $q$ gives
+$-\mathcal G(X(q))/q$. At $q=1$ the expression vanishes, using
+$\operatorname{Li}_3(-1)=-3\zeta(3)/4$, which fixes the constant.
+Its two trilogarithms have negative real arguments.
+The remaining rational-letter word also has a short classical form.
+With $u=1+X$, its inner weight-two function is
+$\operatorname{Li}_2(-u)+\ln u\ln(1+u)+\pi^2/12$.
+Integrating it with $\dd u/u$ gives
+\begin{equation}
+ G_{-1,-2,-1}=2\operatorname{Li}_3(-1-X)
+ -L\operatorname{Li}_2(-1-X)+\frac{\pi^2}{12}L
+ +\frac32\zeta(3).
+\end{equation}
+The last constant follows from the zero value at $X=0$.
+Together with \eqref{eq:comp-ir-short-function}, these reductions
+leave only six nonclassical words in this partial sum:
+\begin{equation}
+ \left\{G_{-4,r,-1},G_{0,r,-1},G_{r,-1,-1},
+ G_{r,-1,0},G_{r,-2,-1},G_{r,0,-1}\right\}.
+\end{equation}
+
+\paragraph{A classical primitive for the squared logarithm.}
+The word $G_{r,-1,-1}$ can be removed from this list without
+introducing another iterated integral. Define
+\begin{align}
+ a&=e^{\ii\pi/3},\quad b=\overline a,\quad X=(1-q)^2/q,\quad 0<q<1,\\
+ A&=1-aq,\quad B=1-bq,\quad R=A/B.
+\end{align}
+The quadratic factorization gives $AB=1-q+q^2$ and hence
+$\ln(1+X)=\log A+\log B-\ln q$.
+Here and below $\log$ is the principal complex logarithm.
+Introduce the classical function
+\begin{equation}
+ \mathcal J(z,\rho)=\log^2z\log(1-z/\rho)
+ +2\log z\operatorname{Li}_2(z/\rho)
+ -2\operatorname{Li}_3(z/\rho).
+\end{equation}
+Differentiation of the polylogarithms cancels the terms proportional
+to $\operatorname{Li}_2$ and $\log(1-z/\rho)$, leaving
+\begin{equation}
+ \frac{\partial\mathcal J(z,\rho)}{\partial z}
+ =\frac{\log^2 z}{z-\rho}.
+\end{equation}
+For the ratio $R$, the inverse transformation is
+$q=(1-R)/(a-bR)$. Consequently
+\begin{equation}
+ \frac{\dd q}{q}=\frac{\dd R}{R-1}
+                   -\frac{\dd R}{R-a/b}.
+\end{equation}
+This second pole is essential. Applying this identity to
+$2\log A\log B=\log^2A+\log^2B-\log^2R$ reduces the
+product of logarithms to the same primitive. The remaining mixed
+term follows from
+\begin{equation}
+ \frac{\dd}{\dd q}\left[-\ln q\operatorname{Li}_2(aq)
+                  +\operatorname{Li}_3(aq)\right]
+ =\frac{\ln q\log(1-aq)}q.
+\end{equation}
+Combining these operations gives
+\begin{align}
+ \mathcal F(q)&=2\mathcal J(A,1)+2\mathcal J(B,1)
+                  -\mathcal J(R,1)+\mathcal J(R,a/b)
+                  +\mathcal D(q),\\
+ \mathcal D(q)&=2\ln q\left[\operatorname{Li}_2(aq)
+                         +\operatorname{Li}_2(bq)\right]
+ -2\left[\operatorname{Li}_3(aq)+\operatorname{Li}_3(bq)\right]
+ +\frac13\ln^3q,\\
+ G_{r,-1,-1}(X)&=-\frac12\left[\mathcal F(q)-\mathcal F(1)\right].
+ \label{eq:comp-root-squared-classical}
+\end{align}
+Indeed, $\mathcal F'(q)=\ln^2[(1-q+q^2)/q]/q$.
+The minus sign follows from $\omega_r=-\dd q/q$, and the
+subtraction at $q=1$ enforces the original lower limit $X=0$.
+
+The branches in this formula follow directly from the physical
+interval. The arguments of $A$ and $B$ lie respectively in
+$[-\pi/3,0]$ and $[0,\pi/3]$, so
+$\log R=\log A-\log B$ throughout the interval.
+The ratio $R$ follows the lower unit-circle arc from $1$ to
+$e^{-2\pi\ii/3}$. Neither this arc nor the rotated arc $R/(a/b)$
+crosses the polylogarithm cut $[1,\infty)$ in the open interval.
+The other polylogarithm arguments are $A$, $B$, $aq$ and $bq$,
+which also avoid that cut. The logarithms in $\mathcal J$ are
+continuous on these paths. Thus principal values suffice, with no
+numerically chosen branch corrections. Although individual terms
+are complex, the derivative of $\mathcal F$ is real, so the endpoint
+difference in \eqref{eq:comp-root-squared-classical} is real.
+This reduction leaves five nonclassical words in the partial sum.
+
+\paragraph{Classical forms for the five remaining words.}
+The same primitive also integrates the mixed logarithms generated by
+integration by parts. This gives a common classical representation for
+all six words, rather than six unrelated integration formulas.
+For $d\in\{a,b\}$ and $h\in\{1,-1\}$, define
+\begin{align}
+ B_d(q)&=1-dq,\qquad R_d(q)=q/B_d(q),\qquad
+ T_{hd}(q)=(1-hq)/B_d(q),\\
+ N_d(q)&=-\ln q\operatorname{Li}_2(dq)+\operatorname{Li}_3(dq),\\
+ P_{hd}(q)&=\tfrac12\bigl[\mathcal J(1-hq,1)+\mathcal J(B_d,1)
+             -\mathcal J(T_{hd},1)+\mathcal J(T_{hd},h/d)\bigr],\\
+ H_{dc}(q)&=\tfrac12\bigl[\mathcal J(q,c)+\mathcal J(B_d,1-dc)
+             -\mathcal J(R_d,c/(1-dc))+\mathcal J(R_d,-1/d)\bigr].
+ \label{eq:comp-root-mixed-functions}
+\end{align}
+The definition of $N_d$ is also used for $d=1,-1$.
+In $H_{dc}$ only $c=1,\ii,-\ii$ is needed.
+To derive these expressions, apply the square-of-a-ratio identity
+used above to each pair of logarithms. The transformed measures
+include both the finite pole and the image of infinity. Direct
+differentiation then gives
+\begin{align}
+ N_d'(q)&=\frac{\ln q\log(1-dq)}q,\\
+ P_{hd}'(q)&=\frac{\log(1-hq)\log(1-dq)}q,\\
+ H_{dc}'(q)&=\frac{\ln q\log(1-dq)}{q-c}.
+ \label{eq:comp-root-mixed-derivatives}
+\end{align}
+These identities specify the primitives independently of any cross-section
+formula from the literature.
+
+Some individual terms have a singular expression at $q=1$, although
+the required combinations are finite. Their boundary values must therefore
+be evaluated before numerical subtraction. The necessary limits are
+\begin{align}
+ \mathcal J(0,\rho)&=0\quad(\rho\ne0),\qquad
+ \mathcal J(1,1)=-2\zeta(3),\\
+ P_{1d}(1)&=\tfrac12\mathcal J(1-d,1),\\
+ H_{d1}(1)&=\tfrac12\bigl[-2\zeta(3)
+       +\log^2(1-d)\log(-d)+4\zeta(2)\log(1-d)
+       +\mathcal J(1/(1-d),-1/d)\bigr].
+ \label{eq:comp-root-mixed-boundary}
+\end{align}
+For example, the two divergent logarithms in $H_{d1}$ occur in
+$\mathcal J(B_d,1-d)-\mathcal J(R_d,1/(1-d))$.
+As $q\to1^-$, their difference tends to $\log(-d)$.
+Their coefficients both tend to $\log^2(1-d)$ because
+$\log(1/(1-d))=-\log(1-d)$. The dilogarithms tend to
+$\zeta(2)$, giving the displayed $4\zeta(2)\log(1-d)$ term.
+This determines the boundary constant analytically.
+
+Put $S(q)=N_a(q)+N_b(q)$ and define
+\begin{align}
+ U(q)&=-2\sum_{d=a,b}P_{1d}(q)+S(q)+2N_1(q)-\tfrac13\ln^3q,\\
+ V(q)&=\ln q\operatorname{Li}_2(-X)
+       +2\sum_{d=a,b}H_{d1}(q)-S(q)
+       -2\mathcal J(q,1)+\tfrac13\ln^3q,\\
+ W(q)&=2\sum_{d=a,b}P_{-1,d}(q)-S(q)-2N_{-1}(q)
+       +\tfrac13\ln^3q+\ln4\,E(q),\\
+ E(q)&=\operatorname{Li}_2(aq)+\operatorname{Li}_2(bq)
+                 +\tfrac12\ln^2q,\\
+ Z(q)&=-\ln q\,D(X)
+       +\sum_{c=\ii,-\ii}\left[\sum_{d=a,b}H_{dc}(q)-\mathcal J(q,c)\right]
+       -S(q)+\tfrac13\ln^3q,\\
+ D(X)&=\operatorname{Li}_2(-1-X)+\ln(1+X)\ln(2+X)+\frac{\pi^2}{12}.
+\end{align}
+All occurrences of $X$ here mean $(1-q)^2/q$.
+Write $\Delta f=f(q)-f(1)$, with the finite boundary values just derived.
+The five reductions are
+\begin{align}
+ G_{r,0,-1}(X)&=\Delta V,\\
+ G_{r,-1,0}(X)&=\Delta U-\Delta V,\\
+ G_{0,r,-1}(X)&=\ln X\,\mathcal G(X)-\Delta U,\\
+ G_{-4,r,-1}(X)&=\ln\!\left(\frac{X+4}{4}\right)\mathcal G(X)+\Delta W,\\
+ G_{r,-2,-1}(X)&=\Delta Z.
+ \label{eq:comp-root-five-classical}
+\end{align}
+Here $\mathcal G(X)=G_{r,-1}(X)$ is the classical dilogarithm
+combination in \eqref{eq:comp-ir-short-function}.
+
+For completeness, the integration steps fixing these formulas can be
+checked without manipulating the full rational coefficients of the cross
+section. Since $G_{0,-1}=-\operatorname{Li}_2(-X)$, integration by parts gives
+\begin{equation}
+ G_{r,0,-1}(X)=\ln q\operatorname{Li}_2(-X)
+ +\int_1^q\ln t\ln(1+X(t))
+       \left(\frac2{t-1}-\frac1t\right)\dd t.
+\end{equation}
+Inserting $\ln(1+X(t))=\log(1-at)+\log(1-bt)-\ln t$
+and using \eqref{eq:comp-root-mixed-derivatives} gives $\Delta V$.
+The shuffle identity gives
+$G_{-1,0}+G_{0,-1}=\ln X\ln(1+X)$, whose integral with
+$\omega_r$ is $\Delta U$. Multiplication of $G_{r,-1}$ by
+$\ln X$ then gives the third line of
+\eqref{eq:comp-root-five-classical}.
+For the fourth line, integrate the outer $-4$ kernel by parts and use
+\begin{equation}
+ \ln\!\left(\frac{X(t)+4}{4}\right)
+       =2\ln(1+t)-\ln t-\ln4.
+\end{equation}
+Finally, $D(X)=G_{-2,-1}(X)$ satisfies
+$\dd D/\dd X=\ln(1+X)/(X+2)$. The factorization
+$X(t)+2=(t-\ii)(t+\ii)/t$ gives
+\begin{equation}
+ \frac{\dd D(X(t))}{\dd t}
+ =\ln(1+X(t))\left(\frac1{t-\ii}+\frac1{t+\ii}-\frac1t\right).
+\end{equation}
+Integrating $-D(X(t))\,\dd t/t$ by parts now gives $\Delta Z$.
+Thus all constants follow from the original zero lower limit, and
+no GPL remains among these six functions.
+
+The complex arguments in the mixed primitives also have fixed physical
+branches. For $d=a$, $B_d$ lies below the real axis, while
+$q/B_d$ and $(1\pm q)/B_d$ lie above it. Their arguments stay
+between $0$ and $\pi/3$, so each logarithm of a ratio is the
+difference of the corresponding logarithms. The $d=b$ expressions
+are their conjugate continuations. For $c=\pm\ii$, the arguments
+$B_a/(1-ac)$ and $R_a(1-ac)/c$ can cross the real axis, but
+only below $1$. This follows by multiplying numerator and denominator
+by the conjugate denominator. For instance the possible crossing is
+at $q=2-\sqrt3$, where $B_a/(1-a\ii)=2\sqrt3-3<1$ and
+$R_a(1+a\ii)/(-\ii)=1-2\sqrt3/3<0$. Thus these paths do not cross the
+polylogarithm cut. The sole real argument on that cut is $1+q$
+in $\mathcal J(1+q,1)$. There the real boundary value is used:
+\begin{equation}
+ \mathcal J(z,1)=\ln^2z\ln(z-1)
+ +2\ln z\operatorname{Re}\operatorname{Li}_2(z)
+ -2\operatorname{Re}\operatorname{Li}_3(z),\qquad z>1.
+\end{equation}
+Its derivative is $\ln^2z/(z-1)$ and its limit at $z=1$ is
+$-2\zeta(3)$. This fixes the continuation without a fitted imaginary
+part. Equations \eqref{eq:comp-root-squared-classical} and
+\eqref{eq:comp-root-five-classical} complete the classical reduction
+of this virtual and UV partial sum. Further simplification of their
+combined coefficients and arguments remains a separate step.
+
+\paragraph{Combining the root terms in the cross section.}
+The preceding conversion to classical functions does not by itself shorten
+the cross section. Their coefficients must also be combined. Let
+$C_{\mathrm{six}}(X)$ denote just the contribution of the six words listed
+above to $\widehat C_{V+\mathrm{UV}}$. Their original rational coefficients
+have the common factor $Y/[X^4(X+4)]$. After inserting their classical
+forms, the coefficients of $\Delta U$ and $\Delta V$ are in the exact
+ratio $-3:4$. Define $K(q)=4V(q)-3U(q)$ and use the polynomials in
+\eqref{eq:comp-root-compact-polynomials}.
+The six contributions then combine into
+\begin{equation}
+ \begin{aligned}
+ C_{\mathrm{six}}(X)=\frac{Y}{X^4(X+4)}\bigg\{&
+ -\frac32p_F\Delta\mathcal F+p_K\Delta K
+ -6p_W\Delta W-8p_Z\Delta Z\\
+ &+\left[3p_0\ln X-6p_W\ln\!\left(\frac{X+4}{4}\right)\right]
+       \mathcal G(X)\bigg\}.
+ \end{aligned}
+ \label{eq:comp-root-combined-coefficients}
+\end{equation}
+Thus four boundary differences suffice for this contribution. In
+particular, $U$ and $V$ need not be evaluated separately.
+There is also a cancellation inside $K$: the $8\mathcal J(q,1)$
+generated by $8\sum_d H_{d1}$ cancels its explicit
+$-8\mathcal J(q,1)$ term. This follows by expanding
+\eqref{eq:comp-root-mixed-functions}, before evaluating any special
+function. Equation~\eqref{eq:comp-root-combined-coefficients} is an exact
+coefficient collection of the six original terms in this diagram subset.
+The other virtual, soft, and real terms must still be added using
+the common-regulator assembly \eqref{eq:comp-assembly-common-regulator}.

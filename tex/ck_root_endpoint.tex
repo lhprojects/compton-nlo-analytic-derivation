@@ -1,0 +1,189 @@
+\subsection{Collection before the soft endpoint evaluation}
+The soft coefficient can be shortened further by collecting the rational
+integration-by-parts terms before expanding the logarithms into GPLs.
+This also removes separate divergent boundary terms. Keep $X=s-1>0$,
+$\beta=X/(X+2)$, and use the original angular variable $0<U<1$.
+Define
+\begin{align}
+ k&=\sqrt{\frac{1+XU^2}{s}},\qquad d=1-\beta^2U^2,\\
+ a&=\operatorname{artanh}(\beta U),\quad
+ L=\operatorname{artanh}U,\quad f=\operatorname{artanh}(U/k).
+\end{align}
+The square root is positive. Since $k^2-U^2=(1-U^2)/s>0$, both
+inverse hyperbolic tangents involving $U$ are real in the open interval.
+Their derivatives are
+\begin{equation}
+ a'=\frac{\beta}{d},\qquad L'=\frac1{1-U^2},\qquad
+ f'=\frac1{k(1-U^2)},\qquad k'=\frac{XU}{sk}.
+\end{equation}
+Primes here mean differentiation with respect to $U$.
+
+\paragraph{Rational integration by parts.} Let $\Phi(U)$ be the soft
+integrand after the pole removal in
+\eqref{eq:comp-ck-pole-removal}, including its common factor
+$4/(\beta E^2)$. Rational division and the derivatives above give
+\begin{equation}
+ \Phi(U)=\frac{\dd\mathcal B}{\dd U}+\sum_i T_i(U)f_i(U),
+ \qquad (f_i)=(aL,af,a,L,f,1),
+\end{equation}
+where the rational boundary can be chosen as
+\begin{equation}
+ \mathcal B=Q_{aL}aL+Q_{af}af+Q_a a+Q_L L+Q_1.
+\end{equation}
+Its coefficients are
+\begin{align}
+ Q_{aL}&=\frac{2U(X+2)}{X^3s}
+       \bigl(U^2X^3+X^3+24X^2+36X+16\bigr),\\
+ Q_{af}&=\frac{128s^2Uk}{X^3(X+4)d},\\
+ Q_a&=-\frac{2U^2(X+2)}s,\qquad
+ Q_L=\frac{U^2(X+2)^2}{Xs},\\
+ Q_1&=-\frac{U(X+2)^2}{Xs}.
+\end{align}
+For example, the root-dependent part follows directly from
+\begin{equation}
+ \frac{\dd}{\dd U}\frac{Uk}{d}
+ =\frac{1+(2X+\beta^2)U^2}{skd^2}.
+\end{equation}
+Matching its constant and $U^2$ coefficients removes the double pole
+from the coefficient of $af$. Substituting $f'$ then gives a rational
+coefficient of $a$, because the factor $k$ in $Q_{af}$ cancels.
+The other descendants follow by differentiating $aL$, $a$, and $L$.
+Each step is a rational identity after replacing $k^2$ by
+$(1+XU^2)/s$.
+
+\paragraph{Vanishing logarithmic boundaries.} Replace each of
+$Q_{aL},Q_{af},Q_a,Q_L$ by $Q_i(U)-Q_i(1)$ and add
+$Q_i(1)f_i'$ to the remainder. This leaves the full integrand unchanged.
+All these differences are $O(1-U)$. At the upper endpoint $a$ is finite,
+while $L$ and $f$ grow logarithmically. Every logarithmic boundary
+therefore vanishes. At $U=0$, all three logarithms vanish. The only
+integrated boundary is
+\begin{equation}
+ Q_1(1)-Q_1(0)=-\frac{(X+2)^2}{Xs}.
+\end{equation}
+The cancellation of the apparent pole in the coefficient of $a$ uses
+\begin{equation}
+ \frac{1/k-1}{1-U^2}=\frac{X}{sk(1+k)}.
+\end{equation}
+This identity follows by multiplying by $1+k$ and using the displayed
+expression for $k^2$. It also fixes the finite endpoint value without
+subtracting two separately divergent numerical quantities.
+
+Define the seven energy-dependent coefficients
+\begin{align}
+ A_L&=\frac{4(X+2)(X^3+12X^2+18X+8)}{X^3s},\\
+ A_f&=\frac{32s(X+2)^2}{X^3(X+4)},\\
+ P&=-\frac{16s(X^2-4X-6)}{X^2(X+2)},\\
+ B&=\frac{16s(X^4+2X^3-24X^2-80X-48)}{X^3(X+2)(X+4)},\\
+ C_L&=-\frac{4(X^3+14X^2+20X+8)}{X^2s},\\
+ M&=-\frac{32s(X+2)}{X^2(X+4)},\qquad
+ C_0=\frac{8(X+2)}{X^2}.
+\end{align}
+Here $A_L=Q_{aL}(1)$ and $A_f=Q_{af}(1)$.
+The resulting remainder is the short expression
+\begin{equation}
+\begin{aligned}
+ \widehat\Phi(U)={}&\frac1d\biggl[
+ PaL+\frac{Baf}{k}
+ +(A_L+A_f)\frac{1+\beta^2U}{1+U}a\\
+ &\hspace{12mm}+(C_LU+A_L\beta)L
+ +\left(\frac{MU}{k}+A_f\beta\right)f+C_0\beta\biggr]
+ +\frac{A_fXa}{sk(1+k)}.
+\end{aligned}
+\label{eq:comp-ck-regular-root-kernel}
+\end{equation}
+None of its rational coefficients has a pole on the closed physical
+interval. The logarithmic growth at $U=1$ is integrable. In particular,
+the constant-function term integrates immediately to
+\begin{equation}
+ \int_0^1\frac{C_0\beta}{d}\,\dd U
+ =C_0\operatorname{artanh}\beta
+ =\frac{4(X+2)}{X^2}\ln s.
+\end{equation}
+Thus the already integrated soft coefficient admits the exact
+reorganization
+\begin{equation}
+ \mathcal C_K(s)=-\frac{(X+2)^2}{Xs}
+ +\int_0^1\widehat\Phi(U)\,\dd U
+ -\frac{\operatorname{artanh}\beta}{\beta}\mathcal C_0(s).
+\label{eq:comp-ck-regular-root-identity}
+\end{equation}
+Equation~\eqref{eq:comp-ck-regular-root-identity} is an identity for
+collecting the existing analytic endpoint expression. Its remaining
+terms are evaluated with the logarithmic primitives of the preceding
+subsection. Under $U=(w-w^{-1})/(2\sqrt X)$, all their coefficients
+are proper rational functions with simple poles, so only the single-pole
+primitives are needed. The square root has not been expanded into
+additional energy-dependent letters at the collection step.
+
+\paragraph{Finite analytic endpoint sum.} The reorganized coefficient
+can also be stated without a remaining integral. Put
+\begin{equation}
+ W=\sqrt s+\sqrt X,\qquad Z=W-1,\qquad
+ r=\sqrt{1+X/\beta^2}-\frac{\sqrt X}{\beta}.
+\end{equation}
+Define three lists of pairs consisting of a letter and its weight,
+\begin{align}
+ \mathcal A&=\{(r,\tfrac12),(-r^{-1},\tfrac12),
+                  (r^{-1},-\tfrac12),(-r,-\tfrac12)\},\\
+ \mathcal L&=\{(W^{-1},\tfrac12),(-W,\tfrac12),
+                  (W,-\tfrac12),(-W^{-1},-\tfrac12)\},\\
+ \mathcal F&=\{(W^{-1},\tfrac12),(-W^{-1},\tfrac12),
+                  (W,-\tfrac12),(-W,-\tfrac12)\}.
+\end{align}
+For example, $a(w)=\sum_{(b,h)\in\mathcal A}
+h\ln[(w-b)/(1-b)]$. The other two lists give $L(w)$ and $f(w)$.
+Use $U=(w-w^{-1})/(2\sqrt X)$ and $k=(w+w^{-1})/(2\sqrt s)$
+in the five rational functions
+\begin{align}
+ R_{aL}&=U'\frac P d,\qquad R_{af}=U'\frac B{kd},\\
+ R_a&=U'\left[\frac{(A_L+A_f)(1+\beta^2U)}{(1+U)d}
+                      +\frac{A_fX}{sk(1+k)}\right],\\
+ R_L&=U'\frac{C_LU+A_L\beta}{d},\qquad
+ R_f=U'\frac{MU/k+A_f\beta}{d}.
+\end{align}
+Here $U'=\dd U/\dd w$. Each function is proper rational and has
+only simple poles. If $\mathcal P_R$ is its pole set, its coefficients
+are given by the finite algebraic limits
+\begin{equation}
+ R(w)=\sum_{c\in\mathcal P_R}\frac{\rho_c}{w-c},\qquad
+ \rho_c=\lim_{w\to c}(w-c)R(w).
+\end{equation}
+For a list $\mathcal B$ and two lists $\mathcal B,\mathcal D$, define
+the following finite sums of ordinary GPLs:
+\begin{align}
+ \mathcal S[R;\mathcal B]
+ &=\sum_{c\in\mathcal P_R}\sum_{(b,h)\in\mathcal B}
+       \rho_ch\,G(c-1,b-1;Z),\\
+ \mathcal S[R;\mathcal B,\mathcal D]
+ &=\sum_{c\in\mathcal P_R}
+   \sum_{(b,h)\in\mathcal B}\sum_{(e,j)\in\mathcal D}
+   \rho_chj\bigl[G(c-1,b-1,e-1;Z)
+                    +G(c-1,e-1,b-1;Z)\bigr].
+\end{align}
+These follow by substituting the partial fractions and using the shuffle
+identity for the product of the two logarithms. The soft coefficient is
+therefore
+\begin{equation}
+\begin{aligned}
+ \mathcal C_K(s)={}&-\frac{(X+2)^2}{Xs}
+ +\frac{4(X+2)}{X^2}\ln s
+ -\frac{\ln s}{2\beta}\mathcal C_0(s)\\
+ &+\mathcal S[R_{aL};\mathcal A,\mathcal L]
+  +\mathcal S[R_{af};\mathcal A,\mathcal F]\\
+ &+\mathcal S[R_a;\mathcal A]
+  +\mathcal S[R_L;\mathcal L]
+  +\mathcal S[R_f;\mathcal F].
+\end{aligned}
+\label{eq:comp-ck-collected-finite-gpl}
+\end{equation}
+All the residues in this expression are algebraic functions specified
+by the five short rational functions above. No endpoint extrapolation
+or numerical integration is part of its definition.
+The possible poles belong to
+$\{0,\pm r,\pm r^{-1},W^{-1},-W,-W^{-1}\}$.
+Since $0<r<W^{-1}<1<W<r^{-1}$, no outer letter lies on the
+integration interval. The inner letter $W$ produces only the
+integrable endpoint logarithms. Thus every GPL in this endpoint sum
+is finite separately, and all logarithms follow the real physical
+branch established above.

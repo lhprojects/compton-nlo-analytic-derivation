@@ -1,0 +1,153 @@
+% Local shared preamble for both standalone Compton entry points.
+% Initially copied from QFTBook; no parent repository is required.
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{physics}
+\usepackage{slashed}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{needspace}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usetikzlibrary{decorations.pathmorphing,decorations.markings}
+\tikzset{
+ qedrulediagram/.style={font=\small,baseline=(current bounding box.center)},
+ qedrulemomentum/.style={->,>=stealth,line width=0.45pt},
+ muonpairtree/.style={scale=1.5,font=\normalsize},
+ qedfermion/.style={line width=0.85pt,
+  postaction={decorate,decoration={markings,
+   mark=at position 0.27 with {\arrow{>}}}}},
+ qedfermionouter/.style={line width=0.85pt,
+  postaction={decorate,decoration={markings,
+   mark=at position 0.73 with {\arrow{>}}}}},
+ qedphoton/.style={line width=0.85pt,decorate,
+  decoration={snake,amplitude=1.25pt,segment length=5pt}},
+ qedvertex/.style={circle,fill=blue!55!black,inner sep=1.7pt},
+ qedblob/.style={circle,draw=blue!55!black,fill=blue!8,
+  minimum size=7mm,inner sep=1pt,font=\scriptsize},
+ qedcross/.style={red!65!black,line width=1pt}
+}
+
+% Flow diagrams for the classical Maxwell solutions.
+\tikzset{
+ photonrecovery/.style={font=\small},
+ photonrecoverybox/.style={draw=blue!55!black,fill=blue!3,
+  rounded corners=2pt,line width=0.7pt,text width=3.65cm,
+  minimum height=1.3cm,inner sep=5pt,align=center},
+ photonrecoveryarrow/.style={->,>=stealth,line width=0.9pt,
+  draw=blue!55!black},
+ photonrecoverytitle/.style={anchor=west,font=\small\bfseries}
+ ,photonrecoverycheck/.style={draw=blue!55!black,fill=blue!3,
+  rounded corners=2pt,line width=0.7pt,text width=12.5cm,
+  inner sep=8pt,align=center,font=\small}
+}
+
+\pgfplotsset{photonrecoveryaxis/.style={
+ width=12.8cm,height=5cm,scale only axis,
+ axis lines=middle,xmin=0,xmax=6.7,ymin=-1.4,ymax=1.5,
+ xlabel={$t$},ylabel={$C$},
+ xtick={0,3.141592654,6.283185307},
+ xticklabels={$t_0$,$t_0+T/2$,$t_0+T$},
+ ytick={-1,0,1},yticklabels={$-C_*$,$0$,$C_*$},
+ tick label style={font=\small},label style={font=\small},
+ legend style={at={(0.5,1.05)},anchor=south,draw=none,
+  font=\small,legend columns=1},clip=false
+}}
+
+% Matching groups in the Moller method and power-counting table.
+\definecolor{qedCountOne}{RGB}{31,90,180}
+\definecolor{qedCountTwo}{RGB}{160,85,0}
+\definecolor{qedCountFour}{RGB}{118,50,150}
+\definecolor{qedCountFive}{RGB}{0,112,106}
+\definecolor{qedCountSix}{RGB}{172,43,61}
+\pgfplotsset{compat=1.18}
+
+% Shared presentation of the tree and NLO Compton comparisons.
+\pgfplotsset{
+ comptoncomparison/.style={
+  width=12.8cm,height=7cm,
+  xmin=4.35,xmax=5.55,ymin=0.23,ymax=0.325,
+  xtick={4.4,4.6,4.8,5.0,5.2,5.4},
+  grid=major,grid style={gray!20},
+  tick label style={font=\small},label style={font=\small},
+  legend style={font=\small,draw=none,fill=white},
+  legend pos=north east,legend cell align=left},
+ comptontree/.style={red!75!black,thick},
+ comptonnlo/.style={teal!80!black,thick,dashed},
+ comptonfirst/.style={only marks,mark=*,mark size=1.8pt,blue!75!black},
+ comptonsecond/.style={only marks,mark=square*,mark size=1.6pt,black}
+}
+
+\usepackage[showseconds=false]{datetime2}
+\usepackage[a4paper,margin=30mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=green!45!black,urlcolor=blue!65!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{1em}
+
+\newcommand{\comptonprecisiontable}{\footnotesize\setlength{\tabcolsep}{4pt}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\Lag}{\mathcal{L}}
+\newcommand{\Ham}{\mathcal{H}}
+\newcommand{\Order}{\mathcal{O}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\vac}{\lvert 0\rangle}
+\newcommand{\fourint}{\int\!\frac{\dd^4p}{(2\pi)^4}}
+\newcommand{\threeint}{\int\!\frac{\dd^3\bm p}{(2\pi)^3}}
+\newcommand{\chaptergoal}[1]{\begin{quote}\small\textbf{Chapter goal.} #1\end{quote}}
+
+% Self-contained result summaries, kept together on one page.
+\newsavebox{\resultsummarybox}
+\newenvironment{resultbox}[1]{%
+  \par\addvspace{\medskipamount}%
+  \setlength{\fboxsep}{8pt}%
+  \begin{lrbox}{\resultsummarybox}%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}%
+  \textbf{#1}\par\smallskip
+}{%
+  \end{minipage}\end{lrbox}%
+  \noindent\fbox{\usebox{\resultsummarybox}}\par\addvspace{\medskipamount}%
+}
+
+% Extended self-contained summaries may continue across pages.
+\newenvironment{longresultbox}[1]{%
+ \begin{mdframed}[linewidth=0.4pt,linecolor=black,
+ backgroundcolor=white,innerleftmargin=8pt,innerrightmargin=8pt,
+ innertopmargin=8pt,innerbottommargin=8pt,
+ frametitle={#1},frametitlefont=\bfseries,
+ repeatframetitle=true,everyline=true,
+ skipabove=\medskipamount,skipbelow=\medskipamount]
+}{\end{mdframed}}
+
+% book.cls reserves only 2.3em/3.2em for the section/subsection number in
+% the table of contents, sized for single-digit chapter numbers. Once a
+% chapter number reaches two digits (chapters 10-11), labels like "10.11" or
+% "10.11.7" overflow that box and the title text runs into the number with
+% no visible gap. Widen both boxes so every chapter's contents entries are
+% spaced the same way regardless of chapter number width.
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.8em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{4.3em}{3.6em}}
+\makeatother
+
+
+% Chapter-local reference lists, shared by chapter and excerpt builds.
+\makeatletter
+\newcommand{\chapterreferencestitle}{References}
+\newenvironment{chapterreferences}{%
+  \section*{\chapterreferencestitle}%
+  \list{\@biblabel{\@arabic\c@enumiv}}{%
+    \settowidth\labelwidth{\@biblabel{99}}%
+    \leftmargin\labelwidth\advance\leftmargin\labelsep
+    \usecounter{enumiv}%
+    \let\p@enumiv\@empty
+    \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+}{\endlist}
+\makeatother

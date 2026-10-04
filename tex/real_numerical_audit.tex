@@ -1,0 +1,74 @@
+\section{Independent numerical check of the real contribution}
+The numerical check integrates the original six-diagram spin sum,
+using explicit $4\times4$ Dirac matrices and transverse photon
+polarizations. It does not evaluate the GPL primitives or insert
+the published total cross section. We use the ordered-photon,
+locally subtracted integral in
+\eqref{eq:comp-supp-real-subtracted}. Thus its output is precisely
+$\mathcal C_{\mathrm R}$ in
+\eqref{eq:comp-supp-independent-total}, including the
+$\mathcal A_{\mathrm{loc}}\ln\omega_*$ term. No finite photon-energy cut remains.
+
+To resolve the two electron directions, the angular sampling uses
+a normalized mixture of two positive densities. With
+$\beta=q/E$ and $\widehat{\bm v}_{i,f}$ the incoming and elastic
+outgoing electron directions, define
+\begin{equation}
+ g_{i,f}(\widehat{\bm n})=
+ \frac{\beta}{2\pi\ln s}
+ \frac1{1-\beta\widehat{\bm v}_{i,f}\cdot\widehat{\bm n}},
+ \qquad g=\tfrac12(g_i+g_f).
+\end{equation}
+Each density integrates to one because
+$\ln[(1+\beta)/(1-\beta)]=\ln s$. Each channel is mapped to a
+unit square by using the logarithm of
+$1-\beta\widehat{\bm v}_{i,f}\cdot\widehat{\bm n}$ and a uniform
+azimuth. The two channel contributions are averaged with weight
+$1/g$. The elastic polar angle uses the analogous logarithmic map
+for $E+qc_2$, and the last coordinate is $\omega/\omega_*$.
+The resulting finite four-dimensional integral is evaluated by
+adaptive cubature.
+
+At each energy we repeat the calculation with increasingly small
+requested tolerances. The numerical uncertainty assigned to the
+last result is twice the largest of the last two cubature error
+estimates and the change between those two results. It is an
+empirical convergence estimate, not a rigorous bound. A run that
+exhausts its evaluation budget is explicitly distinguished from a
+run satisfying the requested tolerance. For the low-energy endpoints and $s=2001$, the matrix and
+kinematic arithmetic use \texttt{long double}, while the cubature
+weights and accumulated results use double precision. At $s=200001$
+the double-precision calculation is also repeated independently with
+\texttt{long double} at the same requested tolerance.
+The saved audit records identify the source, compiler command,
+binary hash, requested tolerances, evaluation counts, and every
+refinement result.
+
+For comparison with the symmetric analytic regulator, if its real
+coefficient is $A/\eta+F$, the precise conversion is
+\begin{equation}
+ \mathcal C_{\mathrm R}=F-A\ln[2\sqrt{s}(s-1)].
+\end{equation}
+This follows from $xy\to2\sqrt{s}(s-1)\omega$ at a soft endpoint.
+The factor for the identical photons is already accounted for by
+the ordering. Consequently this numerical result can be added
+directly to the independently integrated
+$\mathcal C_{\mathrm{VS}}$, without importing an analytic finite
+constant from the total cross section.
+
+At the highest energy the successive real coefficients are
+\begin{equation}
+ 0.01360181858,\quad 0.01361650195,\quad
+ 0.01362436493,\quad 0.01362842773.
+\end{equation}
+The refinement changes decrease from $1.47\times10^{-5}$ to
+$7.86\times10^{-6}$ and then $4.06\times10^{-6}$. Accordingly the
+assigned uncertainty is $8.13\times10^{-6}$, larger than the final
+cubature error estimate. At the penultimate tolerance, the independent
+double-precision and \texttt{long double} runs each use
+$4\,157\,469$ evaluations and differ by $2.31\times10^{-15}$.
+The nodes were not recorded, so equal evaluation counts do not
+establish an identical adaptive grid. This precision comparison is
+consistent with integration convergence dominating the reported
+uncertainty. These numerical tolerances do not limit the precision
+of the independently evaluated analytic formula.

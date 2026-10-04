@@ -1,0 +1,1260 @@
+\subsection{Real radiation in invariant energy variables}
+\label{sec:comp-supp-real-invariants}
+The energy ordering used above is convenient for numerical checks.
+For analytic integration it is useful to integrate over both photon
+labels and include the identical-particle factor $1/2!$.
+All invariants in this section are again measured in units of $m^2$.
+In the center-of-mass frame define
+\begin{equation}
+ H=s-1,\qquad x=2\sqrt{s}\,\omega_1,\qquad
+ y=2\sqrt{s}\,\omega_2,\qquad z=x+y-H.
+\end{equation}
+Momentum conservation and the final electron mass shell give
+\begin{equation}
+ 2k_1\cdot k_2=z,\qquad
+ 2p'\cdot k_1=H-y,\qquad 2p'\cdot k_2=H-x.
+\end{equation}
+Since $0\leq1-\widehat{\bm n}_1\cdot\widehat{\bm n}_2\leq2$,
+$0\leq z\leq xy/s$. Thus the exact integration region is
+\begin{equation}
+ 0<x<H,\qquad H-x<y<\frac{s(H-x)}{s-x}.
+ \label{eq:comp-real-dalitz-region}
+\end{equation}
+This two-dimensional region in final-state energy invariants is
+called the Dalitz region. Its boundaries are rational functions. The limits $x=0$ and $y=0$
+are the two soft endpoints, while $z=0$ means that the final photons
+are parallel.
+
+To obtain the measure, first integrate the three-momentum delta
+function over the final electron momentum. Let
+$c_{12}=\widehat{\bm n}_1\cdot\widehat{\bm n}_2$ and let $\phi$
+be the azimuth of the second photon around the first. The remaining
+energy delta function gives
+\begin{align}
+ E'&=\sqrt{1+\omega_1^2+\omega_2^2+2\omega_1\omega_2c_{12}},\\
+ \dd\Phi_3&=\frac{\omega_1\omega_2}{8(2\pi)^5 E'}
+ \delta(\sqrt{s}-\omega_1-\omega_2-E')
+ \dd\omega_1\dd\omega_2\dd\Omega_1\dd\phi\dd c_{12}.
+\end{align}
+The absolute derivative of the delta-function argument with respect
+to $c_{12}$ is $\omega_1\omega_2/E'$. Its integral therefore
+cancels precisely the energy-dependent prefactor in this measure.
+A root exists with $-1\leq c_{12}\leq1$ exactly in the Dalitz region
+already derived.
+
+For fixed $x,y$, the relative angle is now fixed. Choose a frame
+attached to the two outgoing photon directions, and denote the incoming
+photon direction in that frame by $\widehat{\bm n}$. The orientation
+measure $\dd\Omega_1\dd\phi$ has total volume $8\pi^2$.
+Rotations about the incoming direction leave the unpolarized amplitude
+unchanged and integrate to $2\pi$, leaving $\dd\Omega_{\bm n}$.
+Finally $\dd\omega_1\dd\omega_2=\dd x\dd y/(4s)$, so
+\begin{equation}
+ \dd\Phi_3=\frac{\dd x\,\dd y}{128\pi^3s}
+                    \frac{\dd\Omega_{\bm n}}{4\pi}.
+ \label{eq:comp-real-dalitz-measure}
+\end{equation}
+For example, its massless limit integrates over a triangle of area
+$s^2/2$ and gives $\Phi_3=s/(256\pi^3)$.
+With $\mathcal R=\overline{|\mathcal M_{\gamma\gamma}|^2}/e_{\mathrm T}^6$,
+the real cross section is consequently
+\begin{equation}
+ \sigma_{\mathrm R}=\frac{\alpha_{\mathrm T}^3}{8sH m^2}
+ \int_0^H\dd x\int_{H-x}^{s(H-x)/(s-x)}\dd y\,
+ \langle\mathcal R\rangle_{\bm n},\qquad
+ \langle f\rangle_{\bm n}=\int\frac{\dd\Omega_{\bm n}}{4\pi}f.
+ \label{eq:comp-real-dalitz-cross-section}
+\end{equation}
+This formula requires the same infrared subtraction as the earlier
+real contribution. Its unsubtracted integral diverges at the soft
+endpoints.
+
+\subsection{Analytic direction integrals}
+Introduce three positive electron--photon invariants,
+\begin{align}
+ U&=2p\cdot k_1=\frac{x}{2s}
+       [s+1+H\widehat{\bm n}\cdot\widehat{\bm n}_1],\\
+ V&=2p\cdot k_2=\frac{y}{2s}
+       [s+1+H\widehat{\bm n}\cdot\widehat{\bm n}_2],\\
+ W&=2p'\cdot k=U+V-z.
+ \label{eq:comp-real-angular-denominators}
+\end{align}
+The labels $UV$, $UW$, and $VW$ below identify pairs of these
+directional denominators. In particular, $UV$ here does not mean
+ultraviolet. The six electron-line orderings have denominator products
+proportional to
+\begin{equation}
+ H(H-y),\quad H(H-x),\quad U(H-x),\quad V(H-y),
+ \quad UW,\quad VW.
+\end{equation}
+The signs of the individual propagators follow directly from
+$(p-k_i)^2-1=-2p\cdot k_i$ and
+$(p'-k)^2-1=-2p'\cdot k$.
+Thus all directional denominators of the spin-summed squared
+amplitude are powers of $U,V,W$. Its numerator is polynomial in
+these invariants, since all remaining scalar products follow from
+momentum conservation.
+
+Their affine relation gives a useful partial-fraction identity,
+\begin{equation}
+ \frac1{UVW}=\frac1z\left(\frac1{UW}+\frac1{VW}-\frac1{UV}\right).
+ \label{eq:comp-real-three-poles}
+\end{equation}
+Repeated application after multiplication by further inverse powers
+reduces every term with three denominator types to terms with at
+most two. This operation is valid for $z>0$. Any apparent pole at
+$z=0$ introduced by this reduction must be combined before taking
+that limit.
+
+The basic two-denominator direction integral has an elementary
+closed form. Write $A=a_0-\bm a\cdot\widehat{\bm n}$ and
+$B=b_0-\bm b\cdot\widehat{\bm n}$, where $a$ and $b$ are future
+timelike four-vectors. Define
+\begin{equation}
+ d=a\cdot b,\qquad \Delta=d^2-a^2b^2.
+\end{equation}
+The bounds $A\geq a_0-|\bm a|>0$ and
+$B\geq b_0-|\bm b|>0$ hold uniformly on the sphere. Their convex
+combinations are bounded below by
+$\min(a_0-|\bm a|,b_0-|\bm b|)>0$, so the Feynman parameter integral
+can be interchanged with the direction average.
+Direct polar integration of $[vA+(1-v)B]^{-2}$ gives
+$[va+(1-v)b]^{-2}$, where the latter square is a Minkowski square.
+Consequently,
+\begin{align}
+ J(a,b)&=\left\langle\frac1{AB}\right\rangle_{\bm n}
+ =\int_0^1\frac{\dd v}{v^2a^2+2v(1-v)d+(1-v)^2b^2}\\
+ &=\frac1{2\sqrt\Delta}\ln\frac{d+\sqrt\Delta}{d-\sqrt\Delta}.
+ \label{eq:comp-real-angular-master}
+\end{align}
+For $\Delta>0$, the substitution $u=v/(1-v)$ evaluates the parameter
+integral explicitly:
+\begin{equation}
+ J(a,b)=\int_0^\infty\frac{\dd u}{a^2u^2+2du+b^2}
+ =\left[\frac1{2\sqrt\Delta}
+ \ln\frac{a^2u+d-\sqrt\Delta}{a^2u+d+\sqrt\Delta}
+ \right]_{u=0}^{u=\infty}.
+\end{equation}
+Future timelike vectors obey $d>0$, $\Delta\geq0$, and
+$d>\sqrt\Delta$. Thus both logarithm arguments are positive, and
+the primitive tends to zero at infinity. These endpoint values fix
+the real logarithm and its constant. At $\Delta=0$ the quadratic
+denominator is $(\sqrt{a^2}u+\sqrt{b^2})^2$, whose integral is $1/d$.
+The positive bounds on $A$ and $B$ persist in a neighborhood of any
+fixed future timelike pair. The integrand and its derivatives of any
+finite order are then uniformly bounded on the sphere, which permits
+differentiation under the integral.
+Holding $\bm a,\bm b$ fixed, all higher denominator powers follow by
+differentiation,
+\begin{equation}
+ \left\langle A^{-r}B^{-t}\right\rangle_{\bm n}
+ =\frac{(-\partial_{a_0})^{r-1}(-\partial_{b_0})^{t-1}}
+             {(r-1)!(t-1)!}J(a,b),\qquad r,t\geq1.
+ \label{eq:comp-real-angular-powers}
+\end{equation}
+These derivatives are taken before substituting the physical
+invariants. They are finite algebraic differentiations of the
+logarithm in \eqref{eq:comp-real-angular-master}.
+For a single denominator the corresponding formula is
+\begin{equation}
+ \langle A^{-1}\rangle_{\bm n}
+ =\frac1{2|\bm a|}\ln\frac{a_0+|\bm a|}{a_0-|\bm a|},\qquad
+ \langle A^{-2}\rangle_{\bm n}=\frac1{a^2}.
+\end{equation}
+The physical vectors corresponding to $U,V,W$ satisfy
+\begin{align}
+ a_U^2&=x^2/s,\qquad a_V^2=y^2/s,\qquad a_W^2=H^2/s,\\
+ a_U\cdot a_V&=xy/s+H^2z/(2s),\\
+ a_U\cdot a_W&=xH/s+zH(H-x)/(2s),\\
+ a_V\cdot a_W&=yH/s+zH(H-y)/(2s).
+ \label{eq:comp-real-angular-Gram}
+\end{align}
+In particular they remain timelike throughout the interior of the
+Dalitz region. These identities make each scalar angular master a
+closed logarithm of $s,x,y$.
+
+The next section carries out this reduction for the full six-diagram
+trace and lists the resulting coefficients. The remaining $x,y$
+integrations still require the infrared subtraction.
+
+\subsection{Explicit completion of the direction integral}
+The preceding reduction can be carried out for the full six-diagram
+square. We describe the algebra and give its coefficients so that
+the result can be reconstructed without evaluating Dirac matrices.
+The ordered photon triples are
+\begin{equation}
+ (a,b,c)=(0,1,2),(0,2,1),(1,0,2),(1,2,0),(2,0,1),(2,1,0).
+\end{equation}
+Their signed denominator products are, in this order,
+\begin{equation}
+ d_i=\bigl(H(H-x),H(H-y),-U(H-x),UW,-V(H-y),VW\bigr)_i.
+\end{equation}
+Let $T_{ij}$ be the numerator trace for the interference of
+orders $i,j$, including the initial average $1/4$ and three
+polarization sums $-\eta_{\mu\nu}$. Then
+\begin{equation}
+ \mathcal R=\sum_{i\leq j}\frac{(2-\delta_{ij})T_{ij}}{d_i d_j}.
+\end{equation}
+There are 21 independent terms, including all 36 interferences.
+The trace reduction follows directly by moving the first contracted
+gamma matrix through the intervening string. For
+$\Gamma_n=\gamma^{\alpha_1}\cdots\gamma^{\alpha_n}$ in four dimensions,
+\begin{equation}
+ \gamma_\mu\Gamma_n\gamma^\mu
+ =4(-1)^n\Gamma_n+
+ 2\sum_{j=1}^n(-1)^{j-1}
+ \gamma^{\alpha_1}\cdots\widehat{\gamma^{\alpha_j}}\cdots
+ \gamma^{\alpha_n}\gamma^{\alpha_j}.
+\end{equation}
+The hat denotes omission. Apply this relation to the three photon
+index pairs, using cyclicity of the trace to bring each pair to
+the two ends. The remaining traces contain only slashed momenta
+and obey
+\begin{equation}
+ \operatorname{tr}(\slashed v_1\cdots\slashed v_{2n})
+ =\sum_{j=2}^{2n}(-1)^j(v_1\cdot v_j)
+ \operatorname{tr}(\slashed v_2\cdots
+       \widehat{\slashed v_j}\cdots\slashed v_{2n}),
+ \qquad \operatorname{tr}\mathbf1=4.
+\end{equation}
+All scalar products are fixed by the Gram matrix of $(p,k,k_1,k_2)$,
+\begin{equation}
+ G=\frac12\begin{pmatrix}
+ 2&H&U&V\\ H&0&x-U&y-V\\ U&x-U&0&z\\ V&y-V&z&0
+ \end{pmatrix}.
+\end{equation}
+Thus this is a finite polynomial calculation with no integration
+or input from a published correction factor.
+
+After applying \eqref{eq:comp-real-three-poles} and cancelling
+numerator factors, the result has 25 monomials,
+\begin{equation}
+ \mathcal R=\sum_{\bm e}C_{\bm e}U^{e_1}V^{e_2}W^{e_3},\qquad
+ \boxed{\langle\mathcal R\rangle_{\bm n}
+          =\sum_{\bm e}C_{\bm e}\mathfrak M_{\bm e}.}
+ \label{eq:comp-real-angle-completed}
+\end{equation}
+The coefficients are listed below. The moments $\mathfrak M$ in
+this formula are the following closed expressions, not unevaluated
+angular integrals.
+
+For two denominator types write $A=a_0-\bm a\cdot\widehat{\bm n}$,
+$B=b_0-\bm b\cdot\widehat{\bm n}$ and abbreviate
+$\alpha=a^2$, $\beta=b^2$, $d=a\cdot b$,
+$\Delta=d^2-\alpha\beta$. Here $\alpha,\beta$ are auxiliary
+kinematic symbols and are not the electromagnetic coupling.
+Let $J$ be the logarithm in \eqref{eq:comp-real-angular-master}.
+The required inverse-power moments are
+\begin{align}
+ \langle A^{-1}B^{-1}\rangle&=J,\\
+ \langle A^{-2}B^{-1}\rangle
+ &=\frac{(b_0d-a_0\beta)J+a_0d/\alpha-b_0}{\Delta},\\
+ \langle A^{-1}B^{-2}\rangle
+ &=\frac{(a_0d-b_0\alpha)J+b_0d/\beta-a_0}{\Delta},\\
+ \langle A^{-2}B^{-2}\rangle
+ &=\frac{Q_JJ+Q_0}{\Delta^2},\\
+ Q_J&=2a_0b_0(\alpha\beta+2d^2)
+       -d(\Delta+3\alpha b_0^2+3\beta a_0^2),\\
+ Q_0&=\Delta+(2\alpha\beta+d^2)
+          \left(\frac{a_0^2}{\alpha}+\frac{b_0^2}{\beta}\right)
+          -6a_0b_0d.
+\end{align}
+For positive powers of $A$ and one denominator type $B$, define
+\begin{align}
+ r^2&=b_0^2-\beta,\qquad
+ h=\frac{a_0b_0-d}{r^2},\qquad g=a_0-hb_0,\\
+ v_\perp^2&=a_0^2-\alpha-\frac{(a_0b_0-d)^2}{r^2},\qquad
+ L_B=\frac1{2r}\ln\frac{b_0+r}{b_0-r},\\
+ n_0&=g^2-\frac{\beta v_\perp^2}{2r^2},\qquad
+ n_1=2gh+\frac{b_0v_\perp^2}{r^2},\qquad
+ n_2=h^2-\frac{v_\perp^2}{2r^2}.
+\end{align}
+Integration over the azimuth about $\bm b$ first gives the
+polynomials $g+hB$ and $n_0+n_1B+n_2B^2$. Hence
+\begin{align}
+ \langle A/B\rangle&=gL_B+h,\qquad
+ \langle A/B^2\rangle=g/\beta+hL_B,\\
+ \langle A^2/B\rangle&=n_0L_B+n_1+n_2b_0,\\
+ \langle B^{-1}\rangle&=L_B,\qquad
+ \langle B^{-2}\rangle=1/\beta,\qquad
+ \langle A\rangle=a_0,\qquad\langle1\rangle=1.
+\end{align}
+These formulas cover every monomial in
+\eqref{eq:comp-real-angle-completed}. For the physical substitutions,
+\begin{equation}
+ (a_{U0},a_{V0},a_{W0})
+ =\left(\frac{x(s+1)}{2s},\frac{y(s+1)}{2s},
+                    \frac{(s-1)(2s-x-y)}{2s}\right).
+\end{equation}
+Their squares and scalar products are given in
+\eqref{eq:comp-real-angular-Gram}.
+When $\Delta$ or $r$ vanishes while the denominator vectors remain
+future timelike, the expressions mean their continuous limits.
+The same positive lower bounds justify taking these limits under
+the direction integral. Apparent inverse powers at these points
+are removable. Soft limits in which a denominator vector vanishes
+instead require the infrared subtraction.
+
+The direction integration is now complete analytically. The
+remaining real contribution is a two-dimensional Dalitz integral
+of explicit rational functions and logarithms, with its two soft
+endpoints still to be combined with the virtual correction.
+% BEGIN EXACT REAL ANGULAR COEFFICIENTS
+\subsubsection{Coefficients of the integrated direction moments}
+The following coefficients use $y=H-x+z$ to shorten the polynomials.
+Every exponent triple not displayed has zero coefficient.
+\begin{equation}
+C_{-2,0,-2}=-32.
+\end{equation}
+\begin{equation}
+C_{-2,0,-1}=\frac{8 \left(H^{2} - 2 H x - 4 H + x^{2} + 4 x - 8\right)}{- H + x}.
+\end{equation}
+\begin{equation}
+C_{-2,0,0}=- \frac{8 \left(- H z + 4 H + x z - 4 x + 4\right)}{\left(- H + x\right)^{2}}.
+\end{equation}
+\begin{equation}
+C_{-2,1,0}=\frac{8}{- H + x}.
+\end{equation}
+\begin{equation}
+C_{-1,-1,0}=\frac{P_{-1,-1,0}}{z^{2} \left(- H + x\right) \left(x - z\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+P_{-1,-1,0}={}& - 64 x^{2} + 32 z^{3} - 24 x z^{3} - 4 H z^{4} - 4 H^{3} z^{2} + 16 H z^{3} + 16 H^{2} z^{2}\\
+& + 24 x^{2} z^{2} + 32 H z^{2} + 32 H^{2} z + 64 H x + 64 x z - 32 H x z^{2} - 8 H^{2} x z + 8 H x^{2} z.
+\end{aligned}
+\end{equation}
+\begin{equation}
+C_{-1,0,-2}=\frac{8 \left(z^{2} + 4 z - 8\right)}{z}.
+\end{equation}
+\begin{equation}
+C_{-1,0,-1}=\frac{P_{-1,0,-1}}{H z^{2} \left(- H + x\right) \left(x - z\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+P_{-1,0,-1}={}& - 64 z^{3} + 32 z^{4} - 128 H z^{3} - 64 H^{2} x - 56 H^{2} z^{3} - 32 H^{3} z - 8 x z^{4} - 4 x z^{5}\\
+& - 4 H^{2} z^{4} - 4 H^{4} z^{2} - 4 x^{3} z^{3} + 4 H z^{5} + 4 H^{3} z^{3} + 8 x^{2} z^{3} + 32 x z^{3}\\
+& + 32 x^{2} z^{2} + 64 H x^{2} + 128 H z^{2} + 128 H^{2} z^{2} - 64 H x z - 64 H x z^{2}\\
+& - 56 H x^{2} z^{2} - 12 H^{2} x z^{3} - 12 H^{2} x^{2} z^{2} - 8 H^{2} x^{2} z + 4 H x z^{4}\\
+& + 4 H x^{3} z^{2} + 8 H^{3} x z + 12 H x^{2} z^{3} + 12 H^{3} x z^{2} + 48 H^{2} x z^{2} + 64 H x z^{3}.
+\end{aligned}
+\end{equation}
+\begin{equation}
+C_{-1,0,0}=\frac{P_{-1,0,0}}{H \left(- H + x\right)^{2} \left(x - z\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+P_{-1,0,0}={}& - 64 z - 16 x^{3} - 8 H^{4} - 4 x^{4} + 32 x^{2} + 64 H + 64 H^{3} + 160 H^{2} - 160 H x - 96 H^{2} x\\
+& - 64 H z - 24 H^{2} z - 24 H^{2} x^{2} - 8 H^{2} z^{2} - 4 H^{3} z - 4 x^{2} z^{2} + 16 H x^{3}\\
+& + 16 x^{2} z + 20 H^{3} x + 32 x z + 40 H x^{2} + 4 H x^{2} z + 12 H x z^{2} + 16 H x z.
+\end{aligned}
+\end{equation}
+\begin{equation}
+C_{-1,1,0}=- \frac{4 \left(2 H^{2} - H x + H z - 4 H + x z + 4 x - 2 z - 8\right)}{H \left(- H + x\right) \left(x - z\right)}.
+\end{equation}
+\begin{equation}
+C_{-1,2,0}=- \frac{4 \left(- 2 H + x\right)}{H \left(- H + x\right) \left(x - z\right)}.
+\end{equation}
+\begin{equation}
+C_{0,-2,-2}=-32.
+\end{equation}
+\begin{equation}
+C_{0,-2,-1}=- \frac{8 \left(x^{2} - 2 x z - 4 x + z^{2} + 4 z - 8\right)}{x - z}.
+\end{equation}
+\begin{equation}
+C_{0,-2,0}=\frac{8 \left(x z - 4 x - z^{2} + 4 z - 4\right)}{\left(x - z\right)^{2}}.
+\end{equation}
+\begin{equation}
+C_{0,-1,-2}=\frac{8 \left(z^{2} + 4 z - 8\right)}{z}.
+\end{equation}
+\begin{equation}
+C_{0,-1,-1}=\frac{P_{0,-1,-1}}{H z^{2} \left(- H + x\right) \left(x - z\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+P_{0,-1,-1}={}& - 64 z^{3} - 8 z^{6} + 96 z^{4} - 96 H z^{3} - 96 x z^{3} - 64 H^{2} x - 56 H^{2} z^{3} - 32 H^{3} z\\
+& - 16 H^{3} z^{2} - 12 x^{2} z^{4} - 8 x z^{4} + 4 x^{3} z^{3} + 8 H z^{5} + 8 x^{2} z^{3} + 16 H z^{4}\\
+& + 16 x z^{5} + 32 x^{2} z^{2} + 64 H x^{2} + 96 H^{2} z^{2} + 128 H z^{2} - 64 H x z - 56 H x^{2} z^{2}\\
+& - 16 H x z^{4} - 8 H^{2} x^{2} z - 4 H x^{3} z^{2} + 8 H^{3} x z + 12 H x^{2} z^{3} + 32 H x z^{3}\\
+& + 80 H^{2} x z^{2}.
+\end{aligned}
+\end{equation}
+\begin{equation}
+C_{0,-1,0}=\frac{P_{0,-1,0}}{H \left(- H + x\right) \left(x - z\right)^{2}}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+P_{0,-1,0}={}& - 64 H - 64 z^{2} - 32 H^{2} - 32 x^{2} - 16 x^{3} + 4 x^{4} + 8 H^{3} + 8 z^{4} + 64 z - 96 H x\\
+& - 64 H^{2} x - 40 H z^{2} - 24 x z^{3} - 16 x z^{2} - 16 x^{3} z - 8 H z^{3} - 8 H^{2} z^{2} - 4 H^{3} z\\
+& + 4 H^{3} x + 8 H x^{2} + 28 x^{2} z^{2} + 32 x^{2} z + 56 H^{2} z + 96 x z + 128 H z - 4 H x^{2} z\\
+& + 8 H^{2} x z + 12 H x z^{2} + 32 H x z.
+\end{aligned}
+\end{equation}
+\begin{equation}
+C_{0,0,-2}=-16.
+\end{equation}
+\begin{equation}
+C_{0,0,-1}=\frac{P_{0,0,-1}}{H \left(- H + x\right) \left(x - z\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+P_{0,0,-1}={}& - 32 z - 8 z^{2} + 4 z^{3} + 16 H^{2} + 32 H + 32 x^{2} - 32 H x - 32 x z - 12 H z^{2} + 4 x z^{2}\\
+& + 8 H^{2} z + 24 H z - 4 H x z.
+\end{aligned}
+\end{equation}
+\begin{equation}
+C_{0,0,0}=\frac{P_{0,0,0}}{H^{2} \left(- H + x\right)^{2} \left(x - z\right)^{2}}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+P_{0,0,0}={}& - 32 H^{2} - 32 H^{3} - 32 z^{2} - 16 x^{4} - 72 H^{2} z^{2} - 64 H z^{2} - 48 H^{3} x - 32 H^{2} x\\
+& - 32 x^{2} z - 24 x^{2} z^{2} - 20 H^{3} z^{2} - 8 H z^{3} - 4 H^{4} z - 4 H^{2} x^{3} + 4 H^{4} x\\
+& + 8 x z^{3} + 32 H x^{2} + 32 H x^{3} + 32 x z^{2} + 32 x^{3} z + 32 H^{2} x^{2} + 48 H^{3} z + 64 H z\\
+& + 96 H^{2} z - 120 H x^{2} z - 20 H^{2} x^{2} z - 4 H x^{2} z^{2} + 4 H x^{3} z + 20 H^{3} x z\\
+& + 24 H^{2} x z^{2} + 40 H^{2} x z + 96 H x z^{2}.
+\end{aligned}
+\end{equation}
+\begin{equation}
+C_{0,1,0}=\frac{4 \left(3 H x - 3 H z + 2 H - 2 z\right)}{H \left(- H + x\right) \left(x - z\right)^{2}}.
+\end{equation}
+\begin{equation}
+C_{1,-2,0}=- \frac{8}{x - z}.
+\end{equation}
+\begin{equation}
+C_{1,-1,0}=\frac{4 \left(- H^{2} - H x - H z + x z + 4 x - z^{2} - 2 z + 8\right)}{H \left(- H + x\right) \left(x - z\right)}.
+\end{equation}
+\begin{equation}
+C_{1,0,-1}=- \frac{4 \left(- H + z\right) \left(- H + 2 x - z\right)}{H \left(- H + x\right) \left(x - z\right)}.
+\end{equation}
+\begin{equation}
+C_{1,0,0}=\frac{4 \left(- 3 H^{2} + 3 H x - 2 H + 2 z\right)}{H \left(- H + x\right)^{2} \left(x - z\right)}.
+\end{equation}
+\begin{equation}
+C_{2,-1,0}=\frac{4 \left(H + x - z\right)}{H \left(- H + x\right) \left(x - z\right)}.
+\end{equation}
+% END EXACT REAL ANGULAR COEFFICIENTS
+
+\subsection{Rationalization of the remaining logarithms}
+After the completed angle average is collected, its functional
+basis is particularly small,
+\begin{equation}
+ \langle\mathcal R\rangle=R_0+R_U L_U+R_V L_V+R_W L_W
+                  +R_{UV}J_{UV}+R_{UW}J_{UW}+R_{VW}J_{VW}.
+\end{equation}
+Each $R$ is rational in $H,x,z$. The elementary single-denominator
+functions obey $L_U=s\ln s/(xH)$ and $L_V=s\ln s/(yH)$.
+The coefficients follow by inserting the moment formulas above in
+\eqref{eq:comp-real-angle-completed}. The square roots in the other
+four logarithms can each be rationalized before the remaining
+energy integrals. This operation is performed separately in each
+logarithmic term, with a common original integration domain.
+
+For the $UV$ term, the angular Gram determinant is
+\begin{equation}
+ \Delta_{UV}=\frac{H^2z(4xy+H^2z)}{4s^2}.
+\end{equation}
+Its logarithm is a hyperbolic angle. Defining its positive
+exponential $v$ fixes the substitution uniquely by $v\geq1$,
+\begin{align}
+ \frac{H^2z}{xy}&=\frac{(v-1)^2}{v},\qquad
+ D_v=H^2v-x(v-1)^2,\\
+ z&=\frac{x(H-x)(v-1)^2}{D_v},\qquad
+ y=\frac{H^2v(H-x)}{D_v},\\
+ \frac{\partial z}{\partial v}
+ &=\frac{x(H-x)H^2(v^2-1)}{D_v^2},\qquad
+ J_{UV}=\frac{2sv\ln v}{xy(v^2-1)}.
+\end{align}
+The exact upper Dalitz boundary gives $v=s$. Therefore
+\begin{equation}
+ 0<x<H,\quad1<v<s,\qquad
+ J_{UV}\dd z=\frac{2s\ln v}{D_v}\dd v.
+ \label{eq:comp-real-UV-rational}
+\end{equation}
+No square root remains. At fixed $v$, the coefficient multiplying
+$\ln v$ is a rational function of $x$.
+
+For the $UW$ term the corresponding determinant and substitution
+are
+\begin{align}
+ \Delta_{UW}&=\frac{H^2z(H-x)[4x+z(H-x)]}{4s^2},\\
+ z&=\frac{x(v-1)^2}{(H-x)v},\qquad
+ \frac{\partial z}{\partial v}=\frac{x(v^2-1)}{(H-x)v^2},\\
+ J_{UW}&=\frac{2sv\ln v}{Hx(v^2-1)},\qquad
+ J_{UW}\dd z=\frac{2s\ln v}{H(H-x)v}\dd v.
+\end{align}
+Its transformed domain is $1<v<s-x$. Exchanging the integration
+order gives
+\begin{equation}
+ 1<v<s,\qquad0<x<s-v.
+ \label{eq:comp-real-UW-rational}
+\end{equation}
+Again the inner integration is rational. The $VW$ sector follows
+by exchanging $x$ and $y$ before making the same transformation.
+
+Finally the logarithm $L_W$ contains
+$\sqrt{(s+1-z)^2-4s}$. Use the positive solution
+\begin{equation}
+ s+1-z=u+\frac{s}{u},\qquad\sqrt{s}\leq u\leq s.
+\end{equation}
+The original Dalitz bounds at fixed $z$ become
+\begin{equation}
+ s-u\leq x\leq s-\frac{s}{u},\qquad
+ L_W|\dd z|=\frac{s}{Hu}\ln\frac{u^2}{s}\dd u.
+ \label{eq:comp-real-W-rational}
+\end{equation}
+Thus every term has a rational inner integral with algebraic
+boundaries, followed by one logarithmic integration. The square
+roots and their signs have been fixed by positive physical energies
+throughout.
+
+These separated logarithmic terms must not be assigned unrelated
+endpoint cutoffs. For example, a common center-of-mass soft boundary
+$\omega_i>\varepsilon$ means $x,y>\delta$, where
+$\delta=2\sqrt{s}\,\varepsilon$. In
+\eqref{eq:comp-real-UV-rational} it becomes
+\begin{equation}
+ \delta<x<\frac{H^2v(H-\delta)}{H^2v-\delta(v-1)^2}.
+\end{equation}
+In \eqref{eq:comp-real-UW-rational} the same boundary is
+$x>\delta$ together with
+$H-x+x(v-1)^2/[(H-x)v]>\delta$.
+The finite terms generated by these transformed boundaries belong
+to the cross section. Replacing them by arbitrary small limits
+would change the finite answer. Apparent poles at $z=0$ introduced
+by the partial fractions must likewise cancel after the rational
+and logarithmic terms are combined. The transformations must therefore be combined with the local
+Gram subtraction and the common regulator matching developed below.
+
+\subsection{Removal of artificial Gram singularities}
+The original angular average is regular when $z=0$ at fixed
+$0<x<H$. Individual logarithmic coefficients contain $z^{-2}$
+because of the partial-fraction reduction. To remove these
+artificial singularities locally, write $a=H-x$ and define
+\begin{align}
+ T_{UV}(z)&=\frac{s}{xa}-\frac{s(6x+H^2)}{6x^2a^2}\,z,\\
+ T_{UW}(z)&=\frac{s}{xH}-\frac{sa}{6Hx^2}\,z,\\
+ T_{VW}(z)&=\frac{s}{aH}-\frac{s(x+6)}{6Ha^2}\,z.
+\end{align}
+These are the constant and linear Taylor terms of the corresponding
+$J$ functions, including $y=a+z$. They follow from
+\begin{equation}
+ \frac{\operatorname{arcosh}(1+q)}{\sqrt{(1+q)^2-1}}
+       =1-\frac q3+\mathcal O(q^2).
+\end{equation}
+Replace each $R_{ij}J_{ij}$ by
+$R_{ij}(J_{ij}-T_{ij})$, and add the subtracted pieces to
+\begin{equation}
+ R_0^{\mathrm{reg}}=R_0+
+             R_{UV}T_{UV}+R_{UW}T_{UW}+R_{VW}T_{VW}.
+\end{equation}
+This is an exact algebraic identity. Each difference $J-T$ is
+$\mathcal O(z^2)$. On substituting the explicit coefficients,
+the reduced rational denominator of $R_0^{\mathrm{reg}}$ has no
+factor $z$. Thus all these contributions can be integrated across
+$z=0$ without assigning separate unphysical endpoint cutoffs.
+This operation does not remove either physical soft endpoint.
+
+\subsection{Analytic regulation of the soft endpoints}
+A Bose-symmetric analytic regulator makes the remaining endpoint
+operations independent of frame-dependent energy boundaries.
+Multiply the real phase-space integrand by $(xy)^\eta$, initially
+with positive real $\eta$ large enough for convergence, and then
+continue meromorphically to $\eta=0$. Since $x,y>0$ in the physical
+region, the real logarithm defines this factor without a branch
+ambiguity. This is an intermediate integration device. The virtual
+amplitude and its infrared matching still use the photon mass
+$\lambda$.
+
+Define the dimensionless regulated real coefficient by
+\begin{equation}
+ \mathcal C_{\mathrm R}(\eta)=\frac1{8sH}
+ \int_0^H\dd x\int_{H-x}^{s(H-x)/(s-x)}\dd y\,
+     (xy)^\eta\langle\mathcal R\rangle
+ =\frac{A(s)}{\eta}+F(s)+\mathcal O(\eta).
+ \label{eq:comp-real-analytic-regulator}
+\end{equation}
+The regulator is applied to the complete trace, including the
+identical-photon factor already present in its normalization.
+At one soft endpoint $x=2\sqrt{s}\,\omega$ while $y\to H$.
+Consequently $(xy)^\eta\to(2\sqrt{s}H\omega)^\eta$.
+The other endpoint gives the same contribution. Each carries
+one half of the usual eikonal result because of $1/2!$, so together
+\begin{equation}
+ A(s)=\frac1s\int_{-1}^1\dd c\,
+             \mathcal B(s,c)[b_e(s,c)-1].
+ \label{eq:comp-real-pole-residue}
+\end{equation}
+The functions $\mathcal B$ and $b_e$ are the Born square and the
+relative-velocity factor defined earlier.
+
+This relation also fixes the finite matching constant, rather than
+only the pole. Put $C=2\sqrt{s}H$. Integration of the leading soft
+term below a center-of-mass energy $\varepsilon$ gives
+\begin{equation}
+ A(s)C^\eta\int_0^\varepsilon\omega^{\eta-1}\dd\omega
+ =\frac{A(s)}\eta+A(s)\ln(C\varepsilon)+\mathcal O(\eta).
+\end{equation}
+Thus the real coefficient above that energy boundary is
+$F(s)-A(s)\ln(C\varepsilon)+o(1)$.
+The photon-mass soft term derived previously is
+\begin{equation}
+ \mathcal C_{\mathrm{soft}}(\varepsilon,\lambda)
+ =A(s)\ln\frac{2\varepsilon}{\lambda}
+                  -\frac1s\int_{-1}^1\mathcal B K\,\dd c.
+\end{equation}
+Adding it to the virtual contribution
+$\mathcal C_{\mathrm{virt}}=(4s)^{-1}\int\operatorname{Re}\mathcal T\,\dd c$
+therefore gives
+\begin{equation}
+ \mathcal C_{\mathrm{total}}
+ =\mathcal C_{\mathrm{virt}}+F(s)
+   +A(s)\ln\frac1{\sqrt{s}H\lambda}
+   -\frac1s\int_{-1}^1\mathcal B K\,\dd c.
+ \label{eq:comp-real-regulator-matching}
+\end{equation}
+The coefficient of $\ln\lambda$ cancels the virtual coefficient
+$A(s)\ln\lambda$. Both the analytic pole and the temporary energy
+boundary have disappeared. Equation~\eqref{eq:comp-real-regulator-matching}
+fixes how the finite part $F(s)$ must be combined with the earlier
+photon-mass calculation. The following analytic primitives and endpoint formulas evaluate
+this finite part without phase-space quadrature.
+
+\subsection{A complete logarithmic-sector primitive}
+The part proportional to $L_W$ can be integrated further without
+any phase-space quadrature. Its rational coefficient has the simple
+partial-fraction form
+\begin{equation}
+ R_W=C_0(z)+C_1(z)\left(\frac1{x-z}-\frac1{x-H}\right),
+\end{equation}
+where, with $D_z=(H-z)^2-4z$,
+\begin{align}
+ C_0(z)&=-\frac8{HD_z}
+       [H^2z-4H^2-2Hz^2+12Hz+z^3-8z^2+16z],\\
+ C_1(z)&=\frac4{HD_z}\bigl[
+       -H^3z-4H^3+3H^2z^2+8H^2z-8H^2\\
+ &\hspace{25mm}{}-3Hz^3+2Hz^2+32Hz+z^4-6z^3+32z\bigr].
+\end{align}
+At fixed $z$, the exact limits are
+$x_\pm=(H+z\pm\sqrt{D_z})/2$. Their substitution into the
+rational primitive gives
+\begin{equation}
+ \int_{x_-}^{x_+}R_W\dd x
+ =C_0(z)\sqrt{D_z}+2C_1(z)
+       \ln\frac{H-z+\sqrt{D_z}}{H-z-\sqrt{D_z}}.
+\end{equation}
+Use $z=s+1-u-s/u$ as above. Define two rational functions
+\begin{equation}
+ A(u)=\frac{s}{Hu}C_0(s+1-u-s/u)(u-s/u),\qquad
+ B(u)=\frac{2s}{Hu}C_1(s+1-u-s/u).
+\end{equation}
+The remaining integrand of this sector is exactly
+\begin{equation}
+ A(u)\ln\frac{u^2}{s}
+ +B(u)\ln\frac{u^2}{s}\ln\frac{u(u-1)}{s-u},\qquad
+ \sqrt{s}<u<s.
+ \label{eq:comp-real-W-last-integrand}
+\end{equation}
+Only simple real logarithms occur. The real branches are fixed by
+$u>1$ and $s-u>0$.
+
+For a compact analytic primitive put $r=\sqrt{s}>1$. Denote by
+$G_r(a_1,\ldots,a_n;u)$ the generalized polylogarithm based at $r$,
+with derivative
+\begin{equation}
+ \frac{\dd}{\dd u}G_r(a_1,\ldots,a_n;u)
+ =\frac{G_r(a_2,\ldots,a_n;u)}{u-a_1},\qquad G_r(;u)=1.
+\end{equation}
+The integration path is the real interval from $r$ to $u$. At a
+basepoint letter $r$ use the continuous or combined tangential
+limit. All other letters below are $0,1,-r,s$, which lie outside
+the open interval. Thus the functions that occur are real there.
+In particular, suppressing $r,u$ in the notation,
+\begin{equation}
+ \ln(u^2/s)=2G(0),\qquad
+ \ln[u(u-1)/(s-u)]=G(0)+G(1)-G(s).
+\end{equation}
+Shuffle multiplication therefore reduces
+\eqref{eq:comp-real-W-last-integrand} to a finite weight-two
+integrand. Its primitive has weight at most three and is
+\begin{align}
+ \mathcal F_W={}&-\frac{16(r+1)^2}{r-1}
+       [G(-r,0)+G(-r,1)-G(-r,s)]\\
+ &+\frac{16(r-1)^2}{r+1}
+       [G(r,0)+G(r,1)-G(r,s)]\\
+ &-\frac{32r^2(2r^2+1)}{(r^2-1)^2}
+       [2G(0,0,0)+G(0,0,1)+G(0,1,0)-G(0,0,s)-G(0,s,0)]\\
+ &+A_{00}G(0,0)+A_{01}[G(0,1)-G(0,s)]
+        +A_{10}G(1,0)+A_{s0}G(s,0)\\
+ &+A_0G(0)+A_1[G(1)-G(s)]+A_{\mathrm c}.
+ \label{eq:comp-real-W-GPL-primitive}
+\end{align}
+The rational coefficients below are obtained by partial fractions
+and integration by parts. They contain no fitted constants.
+Differentiating this finite expression yields
+\eqref{eq:comp-real-W-last-integrand}.
+The upper soft endpoint must still be combined with the other
+sectors in the common analytic regulator. This primitive alone
+is not the finite inclusive real correction.
+% BEGIN REAL W GPL COEFFICIENTS
+\begin{equation}
+A_{00}=\frac{N_{00}}{u^{2} \left(r - 1\right)^{2} \left(r + 1\right)^{2} \left(r - u\right) \left(r + u\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+N_{00}={}& - 16 r^{8} + 64 u^{4} - 192 r^{2} u^{3} - 112 r^{4} u^{4} - 48 r^{6} u^{2} - 16 r^{2} u^{6}\\
+& - 8 r^{6} u^{4} + 8 r^{8} u^{2} + 32 r^{6} u + 32 r^{8} u + 32 r^{2} u^{5} + 32 r^{4} u^{5}\\
+& + 56 r^{4} u^{2} + 64 r^{4} u^{3} + 72 r^{2} u^{4}.
+\end{aligned}
+\end{equation}
+\begin{equation}
+A_{01}=\frac{N_{01}}{u^{2} \left(r - 1\right)^{2} \left(r + 1\right)^{2} \left(r - u\right) \left(r + u\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+N_{01}={}& - 8 r^{8} + 32 u^{4} - 96 r^{2} u^{3} - 88 r^{4} u^{4} - 8 r^{2} u^{6} + 8 r^{6} u^{2} + 16 r^{6} u\\
+& + 16 r^{8} u + 16 r^{2} u^{5} + 16 r^{4} u^{5} + 32 r^{4} u^{3} + 64 r^{2} u^{4}.
+\end{aligned}
+\end{equation}
+\begin{equation}
+A_{10}=\frac{N_{10}}{u^{2} \left(r - 1\right)^{2} \left(r + 1\right)^{2} \left(r - u\right) \left(r + u\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+N_{10}={}& - 8 r^{8} - 96 r^{2} u^{3} - 56 r^{4} u^{4} - 24 r^{6} u^{2} - 8 r^{2} u^{6} - 8 r^{8} u^{2}\\
+& + 8 r^{4} u^{2} + 8 r^{6} u^{4} + 16 r^{6} u + 16 r^{8} u + 16 r^{2} u^{5} + 16 r^{4} u^{5}\\
+& + 32 r^{2} u^{2} + 32 r^{4} u^{3} + 56 r^{2} u^{4}.
+\end{aligned}
+\end{equation}
+\begin{equation}
+A_{s0}=\frac{N_{s0}}{u^{2} \left(r - 1\right)^{2} \left(r + 1\right)^{2} \left(r - u\right) \left(r + u\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+N_{s0}={}& - 32 u^{4} + 8 r^{8} - 56 r^{4} u^{2} - 32 r^{4} u^{3} - 16 r^{6} u - 16 r^{8} u - 16 r^{2} u^{5}\\
+& - 16 r^{4} u^{5} - 8 r^{2} u^{4} - 8 r^{8} u^{2} + 8 r^{2} u^{6} + 8 r^{6} u^{4} + 24 r^{4} u^{4}\\
+& + 56 r^{6} u^{2} + 96 r^{2} u^{3}.
+\end{aligned}
+\end{equation}
+\begin{equation}
+A_{0}=\frac{12 r^{2} \left(r^{4} u + 2 r^{4} + 2 r^{2} u^{2} + 6 r^{2} + 6 u^{2} - u\right)}{u \left(r - 1\right)^{2} \left(r + 1\right)^{2}}.
+\end{equation}
+\begin{equation}
+A_{1}=\frac{N_{1}}{u^{2} \left(r - 1\right)^{2} \left(r + 1\right)^{2}}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+N_{1}={}& - 4 r^{6} - 32 r^{4} u^{2} - 12 r^{2} u^{2} - 12 r^{6} u^{2} - 4 r^{2} u^{4} + 16 r^{4} u + 16 r^{6} u\\
+& + 16 r^{2} u^{3} + 16 r^{4} u^{3}.
+\end{aligned}
+\end{equation}
+\begin{equation}
+A_{\mathrm c}=\frac{4 r^{2} \left(r - u\right) \left(r + u\right) \left(7 r^{2} + 17\right)}{u \left(r - 1\right)^{2} \left(r + 1\right)^{2}}.
+\end{equation}
+% END REAL W GPL COEFFICIENTS
+
+\subsection{The sector proportional to the energy logarithm}
+The single denominators $U,V$ give another sector that can be
+integrated completely in the interior. Substituting
+$L_U=s\ln s/(xH)$ and $L_V=s\ln s/(yH)$ first combines their
+coefficients into a rational function. At fixed $z$ its poles in
+$x$ are only $0,z,H,H+z$, with orders at most three. The exact
+limits $x_\pm$ therefore produce rational functions and the two
+logarithms
+\begin{equation}
+ \ln\frac{x_+}{x_-}
+   =\ln\frac{s(u-1)}{u(s-u)},\qquad
+ \ln\frac{x_+-z}{x_--z}
+   =\ln\frac{u(u-1)}{s-u}.
+\end{equation}
+After $z=s+1-u-s/u$, no square root remains. The final primitive
+can be written with the same basepoint $r=\sqrt{s}$ as above.
+Define the conjugate letters
+\begin{equation}
+ a_\pm=1\pm\ii\sqrt H,\qquad H=s-1>0.
+\end{equation}
+They are the roots of $u^2-2u+s$. Both lie off the real path,
+and complex conjugation exchanges their GPLs. Thus their sum
+below is manifestly real, with no choice based on numerical values.
+The primitive of this entire logarithmic sector is $\ln s$ times
+\begin{align}
+ \mathcal F_{\ln s}={}&\frac{96s^2}{H^2}G(0,0)
+ +\frac{32s(H^2-4H-6)}{H^2}[G(1,0)+G(s,0)]\\
+ &+\frac{32s(H^2-H-3)}{H^2}\biggl[
+ G(0,1)-G(0,s)\\
+ &\hspace{18mm}{}-\sum_{a=a_\pm}
+       \{G(a,0)+G(a,1)-G(a,s)\}\biggr]\\
+ &+P_0G(0)+P_1[G(1)-G(s)]+P_{\mathrm c}.
+ \label{eq:comp-real-log-s-primitive}
+\end{align}
+There are fourteen GPL words, all of weight at most two.
+The rational coefficients are displayed below. Exact symbolic
+differentiation of every GPL coefficient recovers the rational
+and logarithmic integrand after the $x$ integration. This is an
+independent check of the primitive, rather than a fit to a total
+cross section. As in the previous sector, its soft endpoint is to
+be combined in the common regulator before the finite part is taken.
+% BEGIN REAL LOGS GPL COEFFICIENTS
+\begin{equation}
+P_{0}=\frac{Q_{0}}{H^{2} u^{2} \left(H + 1\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+Q_{0}={}&12 - 48 u - 48 u^{3} - 32 u^{2} + 12 H^{4} + 12 u^{4} + 48 H + 48 H^{3} + 72 H^{2}\\
+& - 136 H u - 120 H^{2} u - 88 H u^{3} - 56 H u^{2} - 32 H^{2} u^{3} - 24 H^{3} u\\
+& + 8 H^{4} u + 8 H^{3} u^{3} + 12 H^{2} u^{4} + 24 H u^{4} + 28 H^{2} u^{2}\\
+& + 36 H^{4} u^{2} + 80 H^{3} u^{2}.
+\end{aligned}
+\end{equation}
+\begin{equation}
+P_{1}=\frac{Q_{1}}{H^{4} u^{2} \left(H + 1\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+Q_{1}={}& -112 - 1696 u^{2} - 796 H^{2} - 624 H^{3} - 480 H - 216 H^{4} - 112 u^{4} - 16 H^{5}\\
+& + 4 H^{6} + 960 u + 960 u^{3} - 7448 H^{2} u^{2} - 5856 H u^{2} - 4152 H^{3} u^{2}\\
+& - 932 H^{4} u^{2} - 256 H u^{4} - 172 H^{2} u^{4} - 112 H^{5} u^{2} - 36 H^{6} u^{2}\\
+& - 24 H^{3} u^{4} + 4 H^{4} u^{4} + 24 H^{6} u + 24 H^{5} u^{3} + 224 H^{4} u^{3}\\
+& + 248 H^{5} u + 1272 H^{3} u^{3} + 1496 H^{4} u + 2816 H u^{3} + 2928 H^{2} u^{3}\\
+& + 3776 H u + 4200 H^{3} u + 5744 H^{2} u.
+\end{aligned}
+\end{equation}
+\begin{equation}
+P_{\mathrm c}=\frac{Q_{\mathrm c}}{H^{3} u^{2} \left(H + 1\right)}.
+\end{equation}
+\begin{equation}
+\begin{aligned}
+Q_{\mathrm c}={}& -56 - 368 u^{3} - 272 H^{2} - 206 H - 144 H^{3} - 16 H^{4} + 6 H^{5} + 56 u^{4} + 368 u\\
+& - 880 H u^{3} - 660 H^{2} u^{3} - 136 H^{3} u^{3} - 6 H^{3} u^{4} - 4 H^{5} u\\
+& + 4 H^{4} u^{3} + 28 H^{2} u^{4} + 94 H u^{4} + 132 H^{4} u + 796 H^{3} u + 1248 H u\\
+& + 1540 H^{2} u.
+\end{aligned}
+\end{equation}
+% END REAL LOGS GPL COEFFICIENTS
+
+
+
+\subsection{Factorization of both soft endpoints in the pair sector}
+The $UW$ sector admits a rectangular domain in which the analytic
+regulator factorizes at both soft endpoints. Starting from
+\eqref{eq:comp-real-UW-rational}, put
+\begin{align}
+ a&=H-x,\qquad v=1+at,\qquad0<a<H,\quad0<t<1,\\
+ z&=\frac{a(H-a)t^2}{1+at},\qquad
+ y=\frac{a[1+Ht^2+at(1-t)]}{1+at},\qquad
+ \left|\frac{\partial(x,v)}{\partial(a,t)}\right|=a.
+\end{align}
+The product that regulates the two soft endpoints is therefore
+\begin{equation}
+ xy=a(H-a)f(a,t),\qquad
+ f(a,t)=\frac{1+Ht^2+at(1-t)}{1+at}>0.
+ \label{eq:comp-real-UW-reg-factor}
+\end{equation}
+Both endpoints are now ordinary powers of a single variable.
+The regulator introduces no new physical branch.
+
+Define two rational functions by the previously specified
+coefficient $R_{UW}$ and Taylor subtraction $T_{UW}$,
+\begin{align}
+ L(a,t)&=a\,R_{UW}(x,z)\frac{2s}{H(H-x)v}
+                  \bigg|_{x=H-a,\,v=1+at},\\
+ T(a,t)&=a\,R_{UW}(x,z)T_{UW}(z)
+                   \frac{\partial z}{\partial v}
+                  \bigg|_{x=H-a,\,v=1+at},\\
+ F(a,t)&=L(a,t)\ln(1+at)-T(a,t).
+\end{align}
+The subtraction sign in $F$ is fixed by the local removal of the
+artificial Gram singularity. The complementary rational term is
+already included in $R_0^{\mathrm{reg}}$.
+The only poles of $L,T$ in the complex $a$ plane are
+\begin{equation}
+ a=0,\quad H,\quad-1/t,\quad-2/t,\quad-1/[t(1-t)].
+\end{equation}
+For $0<t<1$, the last three are negative and lie outside the
+integration interval. Their orders are finite, at most five.
+There is no polynomial denominator of degree higher than one
+after partial fractions in $a$.
+
+For clarity, the endpoint conversion can be written without a
+hypergeometric expansion. Suppose
+\begin{equation}
+ F(a,t)=\frac{f_1(t)}a+\mathcal O(1),\qquad
+ F(H-b,t)=\frac{g_2(t)}{b^2}+\frac{g_1(t)}b+\mathcal O(1).
+\end{equation}
+For the explicit coefficients above, $f_1(t)=0$ identically.
+The Taylor subtraction has therefore also made the $a=0$ soft
+corner finite in this particular sector. The other endpoint has
+the stated maximum pole orders.
+Let $\operatorname{FP}_a\int_0^H F\dd a$ denote the constant term
+of the integral from $\delta$ to $H-\delta$ after all powers and
+logarithms of $\delta$ are subtracted. Expansion of
+\eqref{eq:comp-real-UW-reg-factor} at each endpoint gives
+\begin{align}
+ \int_0^H[xy]^\eta F(a,t)\dd a
+ ={}&\frac{f_1(t)+g_1(t)}\eta
+       +\operatorname{FP}_a\int_0^H F(a,t)\dd a\\
+ &+f_1(t)\ln[H(1+Ht^2)]+g_1(t)\ln H\\
+ &+g_2(t)\left[-\frac1H+\frac{t^2}{1+Ht}\right]
+       +\mathcal O(\eta).
+ \label{eq:comp-real-UW-eta-finite}
+\end{align}
+For example, the last term follows because the term linear in
+$b$ in the logarithm of the regulator's smooth factor is
+$-1/H+t^2/(1+Ht)$. Its multiplication by $\eta$ and a double
+endpoint pole produces a finite term. Dropping that term would
+change the answer even though the infrared pole remained correct.
+
+Every primitive required on the right-hand side is elementary or
+a real dilogarithm. To see this explicitly, define
+\begin{equation}
+ E_n(a;c)=\begin{cases}
+ \ln|a-c|,&n=1,\\
+ -(a-c)^{1-n}/(n-1),&n\geq2.
+ \end{cases}
+\end{equation}
+For a simple logarithmic pole, let $w=1+at$ and $d=1+ct$.
+When $c=-2/t$ or $c=-1/[t(1-t)]$, one has $d<0$, and a primitive is
+\begin{equation}
+ I_1(a;c)=\ln w\ln(1-w/d)+\operatorname{Li}_2(w/d).
+\end{equation}
+Both logarithms and the dilogarithm are real. For $c=H$ the same
+formula applies with $0<w/d<1$ in the interior. The exceptional
+values are
+\begin{equation}
+ I_1(a;0)=-\operatorname{Li}_2(-at),\qquad
+ I_1(a;-1/t)=\tfrac12\ln^2(1+at).
+\end{equation}
+In each case $\partial_a I_1=\ln(1+at)/(a-c)$.
+Higher poles follow by one integration by parts. With $b=-1/t$
+and $n\geq2$,
+\begin{align}
+ I_n(a;c)&=-\frac{\ln(1+at)}{(n-1)(a-c)^{n-1}}
+                  +\frac{Q_{n-1}(a;c,b)}{n-1},\\
+ Q_m(a;c,b)&=\frac{E_1(a;b)}{(b-c)^m}
+            -\sum_{j=1}^m\frac{E_j(a;c)}{(b-c)^{m-j+1}}
+                         \quad(c\ne b),\\
+ Q_m(a;b,b)&=E_{m+1}(a;b).
+\end{align}
+Thus partial fractions of the explicitly defined rational functions
+$L,T$ give the finite part in
+\eqref{eq:comp-real-UW-eta-finite} as a finite sum of boundary values
+of $I_n$ and $E_n$. No numerical integration enters this inner
+energy integration.
+
+The nontrivial negative dilogarithm argument at $a=H$ is
+$-(1-t)(1+Ht)/t$. Its complementary argument contains
+\begin{equation}
+ 1+Ht-Ht^2,
+ \qquad t_\pm=\frac12\left(1\pm\sqrt{1+4/H}\right).
+\end{equation}
+Here $t_-<0$ and $t_+>1$. The square root $\sqrt{H(H+4)}$
+therefore follows directly from the remaining integration alphabet.
+It has not been inferred from a published expression.
+The inner integration leaves one angular variable $t$. We first
+write its finite integrand explicitly, including its regulated
+endpoint terms, so that the remaining primitive can be constructed
+from its actual poles and logarithms.
+
+\paragraph{Closed inner finite part.} The following boundary formulas
+make the inner result a finite expression of logarithms and
+dilogarithms, with no integration operation left. Put
+$\ell=\ln(1+Ht)$ and write the partial fractions
+\begin{equation}
+ L=l_0+l_1a+\sum_{c,n}\frac{L_{cn}}{(a-c)^n},\qquad
+ T=\sum_{j=0}^3t_j a^j+\sum_{c,n}\frac{T_{cn}}{(a-c)^n}.
+\end{equation}
+The pole set is the five-element set displayed above.
+For a pole of order $m_c$, its coefficient is fixed algebraically,
+\begin{equation}
+ L_{cn}=\left.\frac1{(m_c-n)!}
+  \left(\frac{\partial}{\partial a}\right)^{m_c-n}
+       [(a-c)^{m_c}L(a,t)]\right|_{a=c},
+\end{equation}
+with the same formula for $T_{cn}$. The polynomial parts follow by
+ordinary polynomial division. Define $\mathcal I_n(c)$ and
+$\mathcal E_n(c)$ to be the finite boundary differences of the
+explicit primitives $I_n,E_n$ above. At a negative pole they are
+ordinary differences between $a=H$ and $a=0$. At the two physical
+endpoints the required values are
+\begin{align}
+ \mathcal E_1(0)&=\ln H,\qquad
+ \mathcal E_1(H)=-\ln H,\qquad
+ \mathcal E_2(0)=\mathcal E_2(H)=-H^{-1},\\
+ \mathcal I_1(0)&=-\operatorname{Li}_2(-Ht),\\
+ \mathcal I_2(0)&=-\ell/H+t\ln H-t\ell+t,\\
+ \mathcal I_1(H)&=-\ell\ln H-\operatorname{Li}_2(-Ht)-\ell^2/2,\\
+ \mathcal I_2(H)&=-\frac{t}{1+Ht}(\ln H+\ell+1).
+\end{align}
+The two polynomial logarithmic moments are
+\begin{align}
+ P_0&=\frac{(1+Ht)\ell-Ht}{t},\\
+ P_1&=\frac{[(1+Ht)^2/2-(1+Ht)]\ell
+              -(1+Ht)^2/4+(1+Ht)-3/4}{t^2}.
+\end{align}
+The exact inner coefficient of $\eta^0$ is consequently
+\begin{align}
+ F_{UW}(t)={}&l_0P_0+l_1P_1
+       -\sum_{j=0}^3\frac{t_jH^{j+1}}{j+1}
+       +\sum_{c,n}[L_{cn}\mathcal I_n(c)-T_{cn}\mathcal E_n(c)]\\
+ &+g_1(t)\ln H+g_2(t)\left[-H^{-1}+\frac{t^2}{1+Ht}\right].
+ \label{eq:comp-real-UW-inner-closed}
+\end{align}
+This formula uses only finite algebraic differentiations and the
+real functions already displayed. The corresponding $\eta^{-1}$
+coefficient is $g_1(t)$.
+
+For the last integration, every dilogarithm in this result has a
+fixed-letter GPL representation. Put $b=-1/H$, $d=-2/H$, and
+let $t_\pm$ be the two real roots above. With GPLs now based at zero,
+\begin{align}
+ \operatorname{Li}_2(-Ht)&=-G(0,b;t),\\
+ \operatorname{Li}_2(-1-Ht)+\frac{\pi^2}{12}
+       &=-\ln2\,G(b;t)-G(b,d;t).
+\end{align}
+\begin{equation}
+\begin{aligned}
+ &\operatorname{Li}_2\left(-\frac{(1-t)(1+Ht)}t\right)
+ -\operatorname{Li}_2\left(-\frac{1-t}t\right)\\
+ &\qquad=G(b,0;t)
+          -\sum_{c=t_\pm}[G(1,c;t)+G(b,c;t)-G(0,c;t)].
+\end{aligned}
+\end{equation}
+The last identity follows by differentiating both sides and using
+their common zero limit as $t\to0^+$. It fixes its integration
+constant as well as its branches. This gives a weight-two GPL
+integrand with rational coefficients for the final energy integral.
+
+\subsection{Closed construction for the regular rational sector}
+The rational term $R_0^{\mathrm{reg}}$ also has an analytic primitive
+after both Dalitz integrations. The compact construction below
+specifies its coefficients by finite algebraic operations, without
+introducing a new integral. At fixed $z$, its partial fractions are
+\begin{equation}
+ R_0^{\mathrm{reg}}=p_0(z)+
+          \sum_{\rho\in\mathcal P}\sum_{n=1}^{m_\rho}
+               \frac{c_{\rho n}(z)}{(x-\rho)^n},
+\end{equation}
+where there are sixteen nonzero pole terms and
+\begin{equation}
+ \mathcal P=\left\{0,z,H,H+z,
+              \frac{Hz}{z-4},\ H+z-\frac{Hz}{z-4}\right\}.
+\end{equation}
+Every order $m_\rho$ is at most three. A uniform formula, including
+vanishing coefficients when the actual order is smaller, is
+\begin{align}
+ c_{\rho n}(z)&=\left.\frac{1}{(3-n)!}
+   \frac{\partial^{3-n}}{\partial x^{3-n}}
+       [(x-\rho)^3R_0^{\mathrm{reg}}(x,z)]\right|_{x=\rho},
+       \quad n=1,2,3,\\
+ p_0(z)&=\lim_{x\to\infty}R_0^{\mathrm{reg}}(x,z).
+\end{align}
+The limit exists because its polynomial part is constant.
+This supplies an explicit algebraic definition from the twenty-five
+trace coefficients and the displayed Taylor subtractions.
+
+Let $z=s+1-u-s/u$, $x_-=s-u$, $x_+=s-s/u$, and
+$j=1-s/u^2$. Define four rational functions by
+\begin{align}
+ R(u)&=j\left[p_0(x_+-x_-)
+  +\sum_{\rho}\sum_{n=2}^{m_\rho}
+      \frac{c_{\rho n}}{1-n}
+       \{(x_+-\rho)^{1-n}-(x_--\rho)^{1-n}\}\right],\\
+ K_1(u)&=j[-c_{0,1}+c_{H+z,1}],\\
+ K_2(u)&=j[-c_{H,1}+c_{0,1}+c_{z,1}-c_{H+z,1}],\\
+ K_3(u)&=j[c_{Hz/(z-4),1}-c_{H+z-Hz/(z-4),1}].
+\end{align}
+All quantities on the right are evaluated at $z=s+1-u-s/u$.
+The exact $x$ boundary differences then give the final integrand
+\begin{equation}
+ R(u)+K_1(u)L_1(u)+K_2(u)L_2(u)+K_3(u)L_3(u),
+\end{equation}
+where
+\begin{align}
+ L_1&=\ln(u^2/s),\qquad
+ L_2=\ln[u(u-1)/(s-u)],\\
+ L_3&=\ln\frac{(u-1)(u+s)^2}{u(u+1)^2(s-u)}.
+\end{align}
+Each logarithm vanishes at $u=\sqrt{s}$. In terms of GPLs based
+there, the additional logarithm is
+\begin{equation}
+ L_3=G(1)+2G(-s)-G(0)-2G(-1)-G(s).
+\end{equation}
+
+For precision, define the finite algebraic operation
+$\mathcal P[R;w]$ on a rational function $R$ and an empty or
+one-letter word $w$. Decompose $R$ into polynomial and pole terms.
+On a simple pole its value is
+\begin{equation}
+ \mathcal P[c/(u-a);w]=cG(a,w;u).
+\end{equation}
+For a pole of order $n\geq2$ and an empty word it is
+$-c/[(n-1)(u-a)^{n-1}]$. For a one-letter word $(b)$ it is
+\begin{equation}
+ \mathcal P[c/(u-a)^n;(b)]
+ =-\frac{cG(b;u)}{(n-1)(u-a)^{n-1}}
+                  +\frac{cQ_{n-1}(u;a,b)}{n-1},
+\end{equation}
+where $Q_m$ is the finite elementary combination already given
+above, with logarithms interpreted as the same basepoint GPLs.
+Polynomial terms are fixed explicitly, for $k\geq0$, by
+\begin{align}
+ \mathcal P[u^k;()]&=\frac{u^{k+1}}{k+1},\\
+ \mathcal P[u^k;(b)]&=\frac{u^{k+1}-b^{k+1}}{k+1}G(b;u)
+  -\frac1{k+1}\sum_{j=0}^k
+        \frac{b^j u^{k+1-j}}{k+1-j}.
+\end{align}
+Linearity completes the definition for any rational coefficient.
+These operations terminate after one
+step because $w$ has length at most one. Thus $\mathcal P$ denotes
+a finite sum of specified GPLs and rational functions.
+
+The complete interior primitive of the regular rational sector is
+\begin{align}
+ \mathcal F_{\mathrm{reg}}={}&\mathcal P[R;()]
+ +\mathcal P[2K_1+K_2-K_3;(0)]
+ +\mathcal P[K_2+K_3;(1)]\\
+ &-\mathcal P[K_2+K_3;(s)]
+ +2\mathcal P[K_3;(-s)]-2\mathcal P[K_3;(-1)].
+ \label{eq:comp-real-rational-primitive}
+\end{align}
+Its expansion contains forty-eight GPL words of weight at most two.
+This form keeps the relatively long rational coefficient table
+specified by exact derivatives instead of reprinting it.
+
+A possible internal letter in this representation is removable.
+The quadratic $u^2-(s-3)u+s$ corresponds to $z=4$. The original
+angular denominator $4x+z(H-x)$ is strictly positive in the physical
+interior, so $z=4$ is not a singularity of the amplitude. The pole
+$x=Hz/(z-4)$ merely moves through infinity at that point.
+For $z<4$, the pole $Hz/(z-4)$ is negative and its partner
+$H+z-Hz/(z-4)$ exceeds $H+z$. For $z>4$, the first exceeds
+$H$ and the partner is smaller than $z$. Both therefore stay outside
+$z<x_-\leq x\leq x_+<H$ on either side of $z=4$.
+The original finite inner integral is analytic at this point.
+At either root of the quadratic, $L_3=0$. Consequently the
+combination $K_3L_3$ has a removable limit there, even when one root
+lies inside the real $u$ interval. The GPL combination must be
+formed before that limit is taken. Passing above or below the
+individual artificial letter gives the same complete expression,
+because its would-be discontinuity is proportional to this zero.
+This argument fixes the continuation from the original real
+integrand and does not add a physical threshold at $s=9$.
+
+\paragraph{Exchange symmetry after the local subtraction.}
+The full angular expression is invariant under the exchange of the
+identical final photons. This exchange sends $x$ to $y=H-x+z$ and
+leaves $z$ unchanged. The Taylor polynomials used to remove the Gram
+zero were instead expanded at fixed $x$. These operations do not
+commute beyond the order of the subtraction. In particular, direct
+substitution gives
+\begin{equation}
+ \begin{split}
+ T_{UW}(y,z)-T_{VW}(x,z)
+ ={}&-\frac{s z^2}{6H(x-H)^2(x-H-z)^2}\\
+ &\times[-H^2-6H+x^2-xz+6x-6z].
+ \end{split}
+\end{equation}
+Using the coefficient $R_{VW}$ of $J_{VW}$, define the rational
+exchange correction
+\begin{equation}
+ D(x,z)=R_{VW}(x,z)[T_{UW}(H-x+z,z)-T_{VW}(x,z)].
+\end{equation}
+The factor $z^2$ cancels the apparent Gram pole of $R_{VW}$.
+The symmetric regulator $(xy)^\eta$, the Dalitz domain, and its
+measure are all invariant under photon exchange. Changing variables
+in the subtracted $VW$ integral therefore proves
+\begin{equation}
+ I_{VW}^{\mathrm{sub}}(\eta)
+ =I_{UW}^{\mathrm{sub}}(\eta)+I_D(\eta).
+\end{equation}
+This identity holds first where the regulated integrals converge
+and then for their meromorphic continuations. It applies separately
+to the pole and finite Laurent coefficients. Consequently the real
+integral is assembled from the regular rational term, the two
+single-denominator logarithms, the $W$ logarithm, the $UV$ term,
+twice the $UW$ term, and $D$. Omitting $D$ would change both the
+infrared pole and the finite answer.
+
+\paragraph{Endpoint values of the primitives.}
+The preceding formulas specify finite combinations of GPLs rather
+than unevaluated phase-space integrals. Their endpoint subtraction
+can also be stated algebraically. Write $b=s-u$, let $f(u)$ denote
+one complete sector integrand, and let $\mathcal F'(u)=f(u)$.
+After combining all terms of that sector its expansion is
+\begin{equation}
+ f(s-b)=\frac{A}{b}
+   +\sum_{n=0}^{\infty}(c_n+d_n\ln b)b^n.
+ \label{eq:comp-real-endpoint-series}
+\end{equation}
+There are no higher negative powers or $\ln b/b$ terms in these
+three sectors. This follows by expanding the displayed rational
+coefficients and the logarithms before taking the endpoint. The
+coefficient $A$ vanishes for the $W$ sector. All series coefficients
+are obtained by polynomial division and the Taylor series of
+$\ln(1-b/a)$.
+
+Let $\mathcal F_0$ be the finite limit of the complete primitive at
+$u=\sqrt{s}$. It includes constant contributions from products of a
+vanishing GPL and a rational coefficient with a pole. They are
+obtained by multiplying their local series before setting
+$u=\sqrt{s}$.
+
+The lower endpoint constants simplify considerably. Direct local
+expansion of the finite GPL combinations gives
+\begin{align}
+ \mathcal F_{0,W}&=\mathcal F_{0,\ln s}=0,\\
+ \mathcal F_{0,\mathrm{reg}}
+ &=\frac{2s[-s^5-5s^4+18s^3+122s^2+151s-45]}
+              {3(s^2+2s-3)}.
+\end{align}
+For the $W$ primitive, the coefficients that have a simple pole at
+the basepoint multiply weight-two words. Those words vanish
+quadratically, so they do not contribute a constant. For the
+regular rational primitive the nonempty-word coefficients are
+regular there. Its lower endpoint constant is therefore the
+rational empty-word coefficient evaluated at $u=\sqrt{s}$.
+
+Since
+\begin{equation}
+ z=\frac{H}{s}b+O(b^2),
+\end{equation}
+the finite part defined by a cut on $z$ is exactly
+\begin{align}
+ F_z={}&\mathcal F(s-\delta)-\mathcal F_0
+       +A\ln\delta+A\ln(H/s)\\
+ &+\sum_{n=0}^{\infty}\delta^{n+1}
+  \left[\frac{c_n}{n+1}
+       +d_n\left(\frac{\ln\delta}{n+1}
+                         -\frac{1}{(n+1)^2}\right)\right].
+ \label{eq:comp-real-gpl-endpoint-finite}
+\end{align}
+Here $\delta>0$ lies inside the convergence disk of the endpoint
+series. The series is simply the analytic tail of the primitive.
+It is not a numerical phase-space integration. Equivalently,
+$F_z=\lim_{\epsilon\to0}[\int_{z>\epsilon}f\,du+A\ln\epsilon]$.
+The subsequent conversion to $(xy)^\eta$ must still be included.
+
+The artificial interior GPL letters can be bypassed during series
+continuation without choosing a new physical branch. For the
+regular rational sector the original finite $x$ integral is analytic
+at $z=4$: its denominators have no zero there for interior $x$.
+Differentiation of the specified primitive gives this same analytic
+function, including at the removable limit. Its integral around a
+small closed contour surrounding an artificial letter is therefore
+zero. Continuations above and below it agree when the entire GPL
+combination is formed. The starting value is fixed by
+$\mathcal F_0$ on the real interval. This proves path independence
+of the complete expression without dropping an imaginary part of
+an individual GPL.
+
+For $1<s<9$ the additional roots are complex and do not meet the
+integration interval. For $s>9$ the only root that can meet it is
+\begin{equation}
+ q_+=\frac{s-3+\sqrt{(s-1)(s-9)}}{2}.
+\end{equation}
+The root at $s=9$ coincides with the lower endpoint. The original
+$x$ integral remains regular there, and the coincident GPL words
+are combined before their basepoint series is evaluated. Thus the
+same analytic continuation covers both sides of $s=9$.
+
+Exact symbolic differentiation verifies the displayed GPL
+primitives for all three sectors.

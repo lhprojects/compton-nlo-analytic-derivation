@@ -1,0 +1,57 @@
+\subsection{Algebraic cancellation of the infrared logarithm}
+The explicit trace coefficients allow the infrared cancellation to
+be checked as an identity before any angular integration. Write
+$x=s-1$, $y=1-u$, $t=y-x$ and
+\begin{equation}
+ \mathcal B=2\left[\frac{x}{y}+\frac{y}{x}
+ -4\left(\frac1y-\frac1x\right)
+ +4\left(\frac1y-\frac1x\right)^2\right],\qquad
+ z_e=1+\frac{x-y}{2}.
+\end{equation}
+This is the Born spin average divided by $e_{\mathrm T}^4$.
+For comparison with the soft current, define
+\begin{equation}
+ b_e=\frac{z_e\operatorname{arcosh}z_e}{\sqrt{z_e^2-1}},
+ \qquad b_e\big|_{z_e=1}=1.
+\end{equation}
+The six vertex and self-energy insertions have total coefficient
+$\mathcal B$ multiplying $\widehat c_Z$ in their interference.
+Since $\widehat c_Z=-4-4\ln\lambda$, their infrared part is
+\begin{equation}
+ \left.\mathcal T_{\mathrm{vertex}+\Sigma}\right|_{\ln\lambda}
+ =-4\mathcal B\ln\lambda.
+\end{equation}
+In each spanning graph only the scalar triangle $C_t=C_{013}$ and
+scalar box $D_b=D_{0123}$ contain $\ln\lambda$. Their coefficients are respectively
+$g_0(t)$ and $g_0(t)/(Q^2-1)$. Let $c_{t,s}$ and $c_{b,s}$ denote
+the rational trace coefficients multiplying these two scalar
+integrals in the $s$ ordering, and use subscript $u$ for the crossed
+ordering. The explicit coefficients derived in the spanning
+calculation satisfy the rational identity
+\begin{equation}
+ c_{t,s}+\frac{c_{b,s}}x+c_{t,u}-\frac{c_{b,u}}y
+             =4\mathcal B z_e.
+ \label{eq:comp-supp-box-IR-identity}
+\end{equation}
+The script \nolinkurl{check_compton_infrared_analytic.py} checks
+this equation symbolically, giving an identically zero numerator.
+Thus the full interference has infrared part
+\begin{equation}
+ \left.\operatorname{Re}\mathcal T\right|_{\ln\lambda}
+ =4\mathcal B[z_e g_0(t)-1]\ln\lambda
+ =4\mathcal B(b_e-1)\ln\lambda.
+\end{equation}
+The last equality follows from
+$z_e=\cosh[2\operatorname{arsinh}(\sqrt{-t}/2)]$ and the explicit
+formula for $g_0(t)$. It is not an inference from numerical agreement.
+
+After angular integration, the coefficient of $\ln\lambda$ in
+$\mathcal C_{\mathrm{virt}}$ is therefore exactly
+\begin{equation}
+ A(s)=\frac1s\int_{-1}^1\mathcal B(b_e-1)\dd c.
+\end{equation}
+The soft calculation below evaluates this angular integral in
+closed form. Its real-emission matching contribution has coefficient
+$-A(s)\ln\lambda$, canceling the virtual term. This fixes the
+regulator-dependent part of the total before the remaining finite
+real-energy integrations are performed.

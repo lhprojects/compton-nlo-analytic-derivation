@@ -1,0 +1,222 @@
+\subsection{Cancellation between the four real sectors}
+Section~\ref{sec:comp-real-kernel-collection} has already removed the
+$b_\pm$ pole family directly from the common integrand. The following
+identities also recover that cancellation from the separately integrated
+sectors and reduce the remaining functions.
+The common primitive becomes shorter when the rational, $W$,
+energy-logarithm and Bose-restoring contributions are combined before
+reducing individual functions. Denote these primitives by
+$F_{R_0}$, $F_W$, $F_{\log}$ and $F_D$, respectively. The factor
+$\ln s$ multiplying the energy-logarithm primitive is included in
+$F_{\log}$. All $G$ functions in this subsection have the same
+basepoint $r=\sqrt{s}$ and the same final argument $u$.
+The subscript $R_0$ denotes the rational kernel. Taking its integrated
+finite part with the same cutoff $z>\zeta$ as in the sector assembly gives
+\begin{equation}
+ F_{R_0}^z=F_{\mathrm{rat}}^z.
+\end{equation}
+This is a change of notation for the same finite part, with no
+additional matching shift or normalization factor.
+
+Consider the pair of letters
+\begin{equation}
+ b_\pm=-1\pm\sqrt{1-s},\qquad
+ \sqrt{1-s}=\ii\sqrt{s-1},\qquad s>1.
+\end{equation}
+Their complete contribution to the rational primitive is
+\begin{align}
+ \left.F_{R_0}\right|_{b_\pm}
+ &=c_b(s)\sum_{b=b_+,b_-}
+       \bigl[G(b,0;u)-G(b,-s;u)+G(b,-1;u)\bigr],\\
+ c_b(s)&=\frac{4s\left(s^5+9s^4+116s^3+516s^2+307s-693\right)}
+                   {3(s-1)(s+3)^3}.
+\end{align}
+The independently integrated Bose-restoring primitive has exactly the
+opposite six coefficients:
+\begin{equation}
+ \left.F_D\right|_{b_\pm}=-\left.F_{R_0}\right|_{b_\pm},
+ \qquad \left.F_W\right|_{b_\pm}=\left.F_{\log}\right|_{b_\pm}=0.
+ \label{eq:comp-real-four-b-cancel}
+\end{equation}
+Thus neither letter is needed in the combined primitive. This is a
+cancellation of identical functions with identical paths, so it introduces
+no change of branches or boundary constants.
+
+The letters $r$ and $-r$ cancel between the rational and $W$ sectors.
+Define
+\begin{equation}
+ Q_c(u)=G(c,0;u)+G(c,1;u)-G(c,s;u).
+\end{equation}
+Their coefficients are
+\begin{align}
+ \left.F_{R_0}\right|_{\pm r}
+ &=-\frac{16(r-1)^2}{r+1}Q_r(u)
+       +\frac{16(r+1)^2}{r-1}Q_{-r}(u),\\
+ \left.F_W\right|_{\pm r}&=-\left.F_{R_0}\right|_{\pm r},
+ \qquad \left.F_{\log}\right|_{\pm r}=\left.F_D\right|_{\pm r}=0.
+\end{align}
+Combining all four sectors therefore removes twelve weight-two words
+with these four first letters. The remaining alphabet is
+\begin{equation}
+ \left\{0,1,-1,s,-s,1+\sqrt{1-s},1-\sqrt{1-s},q_+,q_-\right\},
+ \qquad q_\pm=\frac{s-3\pm\sqrt{(s-1)(s-9)}}2.
+\end{equation}
+The $q_\pm$ pair has the alternative representation derived above.
+It is not necessary to expand every remaining $G$ function to make
+these cancellations explicit.
+
+There are 44, 19, 14 and 28 nonzero GPL terms in the four separate
+primitive dictionaries. After collecting their coefficients, 37 distinct
+words remain. Three shuffle reductions leave 34 words and three products
+of weight-one functions, together with the rational term. The coefficient
+collection uses $H=s-1$ and $r^2=s$ before identifying equal letters.
+Both the change of variables in each coefficient and the shuffle
+reconstruction are checked as exact algebraic identities.
+This collection precedes the finite endpoint operation. The lower-limit
+rational constants, the moving-boundary finite shifts, and the soft
+contribution must still be combined to obtain a compact total cross
+section.
+
+\paragraph{The finite endpoint after collection.}
+Let $F(u)=F_{R_0}(u)+F_W(u)+F_{\log}(u)+F_D(u)$ and
+$b=s-u$. The collected primitive has only two rational coefficients
+with a pole at $b=0$: its constant coefficient $c_{\varnothing}$ and
+its coefficient $c_0$ multiplying $G(0;u)=\ln(u/\sqrt{s})$.
+Their residues are
+\begin{align}
+ c_{\varnothing}(s-b)&=\frac{d_0(s)}b+O(1),
+ &d_0(s)&=\frac{8s(s^3+6s^2-s-2)}3,\\
+ c_0(s-b)&=\frac{d_1(s)}b+O(1),
+ &d_1(s)&=-\frac{32s^2(s-5)}{3(s-1)}.
+\end{align}
+All other function coefficients are regular at $u=s$.
+The product with the first-order expansion of $G(0;u)$ is essential:
+\begin{equation}
+ G(0;s-b)=\tfrac12\ln s-\frac bs+O(b^2).
+\end{equation}
+It contributes the finite term
+\begin{equation}
+ T_{\mathrm{end}}(s)=-\frac{d_1(s)}s
+                 =\frac{32s(s-5)}{3(s-1)}.
+ \label{eq:comp-real-four-endpoint-Taylor}
+\end{equation}
+Thus substituting $u=s$ in the regular coefficients alone would miss a
+finite contribution. The coefficient of the double pole in the
+integrand is the coefficient of $1/b$ in its primitive:
+\begin{equation}
+ D_4(s)=d_0(s)+\tfrac12d_1(s)\ln s.
+ \label{eq:comp-real-four-double-pole}
+\end{equation}
+
+At the lower limit, every GPL vanishes. The coefficients of the
+products of two weight-one functions have at most a simple pole at
+$u=\sqrt{s}$, whereas the products vanish quadratically, so these terms
+also give zero. The rational term has the finite limit
+\begin{equation}
+ F(\sqrt{s})=-\frac{2(s+1)(s^4-3s^3-41s^2+27s-8)}{3(s-1)}.
+ \label{eq:comp-real-four-lower-limit}
+\end{equation}
+This combines the four lower limits before evaluating any polylogarithm.
+
+To state the remaining change of cutoff, define $A_4(s)$ by the
+integrand expansion
+\begin{equation}
+ F'(s-b)=\frac{D_4(s)}{b^2}+\frac{A_4(s)}b+O(\ln b).
+\end{equation}
+In particular the primitive contains $D_4/b-A_4\ln b$.
+Writing $\mathcal E_4(s)$ for its finite coefficient, including
+\eqref{eq:comp-real-four-endpoint-Taylor}, the four-sector finite part
+in the original $z$ convention is
+\begin{equation}
+ F_4^z=\mathcal E_4(s)-F(\sqrt{s})
+       +A_4(s)\ln\frac{s-1}{s}-\frac{D_4(s)}{s(s-1)}.
+ \label{eq:comp-real-four-zfinite}
+\end{equation}
+Indeed, $z=(s-1)b/s-b^2/s^2+O(b^3)$ gives
+\begin{equation}
+ \frac1b=\frac{s-1}{sz}-\frac1{s(s-1)}+O(z),
+ \qquad \ln b=\ln z+\ln\frac{s}{s-1}+O(z).
+\end{equation}
+The second-order boundary relation supplies the last finite term in
+\eqref{eq:comp-real-four-zfinite}. The finite shifts from the $z$
+convention to the common real-emission convention are subsequently
+added as in \eqref{eq:comp-matching-short}.
+\paragraph{Removing a conjugate pair at the endpoint.}
+The remaining letters $a_\pm=1\pm\ii\sqrt{s-1}$ occur only in the
+combination
+\begin{equation}
+ \mathcal A_{\mathrm{pair}}(u)=\sum_{a=a_+,a_-}
+       \bigl[G(a,0;u)+G(a,1;u)-G(a,s;u)\bigr].
+\end{equation}
+Their common coefficient in the four-sector primitive is
+\begin{equation}
+ \gamma_a(s)=-\frac{32s(s^2-3s-1)}{(s-1)^2}\ln s
+ -\frac{4(s^5+s^4-25s^3+47s^2-12s+12)}{3s(s-1)}.
+\end{equation}
+It is shorter to integrate the summed logarithmic derivative than to
+evaluate the six complex-letter GPLs separately. Put
+\begin{equation}
+ B(u)=\frac{u(u-1)}{s-u},\qquad
+ P(u)=u^2-2u+s=(u-a_+)(u-a_-).
+\end{equation}
+For $\sqrt{s}<u<s$, $B(u)>0$ and $B(\sqrt{s})=1$.
+The second-letter combination is exactly $\ln B(u)$, so
+\begin{equation}
+ \mathcal A_{\mathrm{pair}}'(u)=\frac{P'(u)}{P(u)}\ln B(u).
+\end{equation}
+The factorization $P(u)=(s-u)(1+B(u))$ gives
+\begin{equation}
+ \frac{P'(u)}{P(u)}=\frac{B'(u)}{1+B(u)}+\frac1{u-s}.
+\end{equation}
+Since the derivative of
+$\ln B\ln(1+B)+\operatorname{Li}_2(-B)$ is
+$\ln B\,B'/(1+B)$, the primitive is
+\begin{equation}
+ \begin{aligned}
+ \mathcal A_{\mathrm{pair}}(u)={}&\ln B(u)\ln(1+B(u))+\operatorname{Li}_2(-B(u))
+                      +\frac{\pi^2}{12}\\
+ &+G(s,0;u)+G(s,1;u)-G(s,s;u).
+ \end{aligned}
+\end{equation}
+The constant follows from $\mathcal A_{\mathrm{pair}}(\sqrt{s})=0$ and
+$\operatorname{Li}_2(-1)=-\pi^2/12$. All arguments in the explicit
+dilogarithm term are negative real, fixing its branch throughout the
+integration interval.
+
+The separate terms contain logarithms at the upper endpoint, but their
+sum has a finite limit. With $r=\sqrt{s}$ and $b=s-u$, the required
+expansions are
+\begin{align}
+ \ln B\ln(1+B)+\operatorname{Li}_2(-B)
+ &=\tfrac12\ln^2\!\left(\frac{s(s-1)}b\right)
+      -\frac{\pi^2}{6}+O(b|\ln b|),\\
+ G(s,0;s-b)&=\ln r\ln\frac b{s-r}
+           +\operatorname{Li}_2(1-1/r)+O(b),\\
+ G(s,1;s-b)&=\ln(r+1)\ln\frac b{s-r}
+           +\operatorname{Li}_2\!\left(\frac r{r+1}\right)+O(b),\\
+ G(s,s;s-b)&=\tfrac12\ln^2\frac b{s-r}.
+\end{align}
+Both powers of $\ln b$ cancel exactly. The limit first takes the form
+\begin{equation}
+ \mathcal A_{\mathrm{pair}}(s)=\operatorname{Li}_2(1-1/r)
+ +\operatorname{Li}_2\!\left(\frac r{r+1}\right)
+ +\tfrac12\ln^2[r(r+1)]-\frac{\pi^2}{12}.
+\end{equation}
+The reflection and inversion identities of the dilogarithm then give
+\begin{equation}
+ \boxed{\mathcal A_{\mathrm{pair}}(s)=\frac{\pi^2}{4}
+       +\operatorname{Li}_2(-1/\sqrt{s})
+       -\operatorname{Li}_2(1/\sqrt{s})
+       +\frac12\ln s\ln(s-1).}
+ \label{eq:comp-real-a-pair-endpoint}
+\end{equation}
+For example, use
+$\operatorname{Li}_2(r/(r+1))=-\operatorname{Li}_2(-r)
+-\tfrac12\ln^2(r+1)$ and
+$\operatorname{Li}_2(-r)+\operatorname{Li}_2(-1/r)
+=-\pi^2/6-\tfrac12\ln^2r$, together with the reflection identity
+for $\operatorname{Li}_2(1-1/r)$.
+The final two dilogarithm arguments lie in $(-1,1)$ for every $s>1$.
+Thus the complete contribution is
+$\gamma_a(s)\mathcal A_{\mathrm{pair}}(s)$, and the six complex-letter endpoint values
+are unnecessary.

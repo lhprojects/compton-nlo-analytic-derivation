@@ -1,0 +1,480 @@
+\section{Loop integration}
+The calculation proceeds from loop parameters to elastic angles, then to
+soft matching and real-emission energies. All boundary constants are
+fixed by the original integrals and their causal boundary values.
+
+\subsection{Analytic integration of the radial loop parameter}
+\label{sec:comp-supp-integrating}
+
+We now integrate the preceding amplitudes independently of the
+total cross section of Lee, Schwartz and Zhang
+\cite{qed-processes-lsz}. In this section all momenta and
+photon masses are divided by the electron mass, so $m=1$.
+The final correction is restored as
+$\sigma_1=\alpha_{\mathrm T}^3 C_{\mathrm{total}}(s)/m^2$, with the argument
+$s$ here denoting the dimensionless ratio $s_{\mathrm{phys}}/m^2$.
+Likewise $t$, $u$, and $\lambda$ in this chapter stand for
+$t_{\mathrm{phys}}/m^2$, $u_{\mathrm{phys}}/m^2$, and
+$\lambda_{\mathrm{phys}}/m$. Thus $s+t+u=2$ in elastic kinematics.
+The incident-energy variables $X$ and $H$ used below both equal $s-1$.
+Integration coordinates with a lowercase letter are defined locally
+and must not be identified with these external invariants.
+Remove the common factor $\alpha_{\mathrm T}/(4\pi)$ from the loop
+kernel and denote the resulting matrix by $\widehat R_1$.
+The notation $\mathcal C$ with a sector subscript denotes that sector's
+contribution to $C_{\mathrm{total}}$. The complete coefficient satisfies
+$C_{\mathrm{total}}(s)=C_1(s-1)$.
+Throughout this chapter the interference trace is
+$\mathcal T=\mathcal T(\widehat R_1,R_0)$, using
+\eqref{eq:comp-supp-trace-bilinear} with $m=1$.
+
+For the spanning graph write the three electron parameters as
+\begin{equation}
+ a_1=\rho(1-b)z,\qquad a_2=\rho b,\qquad
+ a_3=\rho(1-b)(1-z),\qquad a_0=1-\rho,
+ \quad 0\leq\rho,b,z\leq1.
+\end{equation}
+The simplex measure becomes $\rho^2(1-b)\dd\rho\dd b\dd z$.
+Let $Q$ be the internal electron momentum and define
+\begin{align}
+ D&=Q^2-1,\qquad \overline K=bQ+(1-b)[zp+(1-z)p'],\\
+ M_z&=1-tz(1-z),\qquad C=1-t(1-b)^2z(1-z),\\
+ A&=\overline K^2=C+bD,\qquad B=-bD,\qquad
+ \Delta=\rho(A\rho+B)+(1-\rho)\lambda^2.
+\end{align}
+Here $t=(p-p')^2\leq0$, and $C=A+B>0$.
+This last inequality makes the analytic continuation particularly
+simple. The internal $s$ ordering has $D>0$, while the $u$ ordering
+has $D<0$.
+
+Expand the numerator and its second derivative in $\rho$,
+\begin{equation}
+ N(\rho\overline K)=\sum_{n=0}^3\rho^n N_n,
+ \qquad (\Box_\ell N)(\rho\overline K)=L_0+\rho L_1.
+\end{equation}
+These coefficients are fixed without any integration by
+\begin{equation}
+ N_n=\frac{(\overline K\cdot\partial_\ell)^n}{n!}N(\ell)\big|_{\ell=0},
+ \qquad
+ L_n=\frac{(\overline K\cdot\partial_\ell)^n}{n!}
+       \Box_\ell N(\ell)\big|_{\ell=0}\quad(n=0,1).
+\end{equation}
+Only the $N_0$ term is infrared divergent. All the other terms may
+be integrated with $\lambda=0$. Their radial integrals are
+\begin{align}
+ F_n(A,B)&=\int_0^1\frac{\rho^n\dd\rho}{A\rho+B-\ii0},\qquad
+ R_n(A,B)=\int_0^1\frac{\rho^n\dd\rho}{(A\rho+B-\ii0)^2},\\
+ F_0&=\frac{\ln C-\ln(B-\ii0)}A,\qquad
+ F_n=\frac1{nA}-\frac BA F_{n-1}\quad(n\geq1),\\
+ R_0&=\frac1{BC},\qquad
+ R_n=\frac{F_{n-1}-BR_{n-1}}A\quad(n\geq1).
+ \label{eq:comp-supp-radial-moments}
+\end{align}
+Polynomial division gives the recurrence for $F_n$, and the identity
+$\rho=[(A\rho+B)-B]/A$ gives that for $R_n$.
+For $B<0$, use $\ln(B-\ii0)=\ln|B|-\ii\pi$.
+Keeping this term is essential for the physical cut.
+For $|A/B|<1$, expanding the denominator as a geometric series gives
+the following convergent representations. They also avoid cancellation
+when the recurrence divides a small difference by $A$,
+\begin{equation}
+ F_n=\frac1B\sum_{j=0}^\infty\frac{(-A/B)^j}{n+j+1},\qquad
+ R_n=\frac1{B^2}\sum_{j=0}^\infty
+                    \frac{(j+1)(-A/B)^j}{n+j+1}.
+\end{equation}
+
+\subsection{Evaluation of the infrared scalar box}
+The scalar coefficient of $N_0$ is
+\begin{equation}
+ D_0=\int_0^1\dd z\int_0^1\dd b\int_0^1\dd\rho\,
+ \frac{\rho^2(1-b)}{[\rho(A\rho+B)+(1-\rho)\lambda^2-\ii0]^2}.
+\end{equation}
+Its infrared endpoint is $b=\rho=0$. Introduce a temporary
+parameter boundary $\delta$ in $b$, with
+$\lambda\ll\delta\ll1$. In the region $b>\delta$ the radial
+integral can use $\lambda=0$, giving
+\begin{equation}
+ D_0^{>}=-\frac1D\int_0^1\dd z\int_\delta^1\dd b\,
+             \frac{1-b}{b[1+(M_z-1)(1-b)^2]}.
+\end{equation}
+For $b<\delta$, keep the photon mass in the endpoint denominator
+$M_z\rho^2-D b\rho+\lambda^2-\ii0$ and integrate $b$ first.
+The $b$ integral is elementary because its denominator is linear in
+$b$. Its leading endpoint contribution is
+\begin{equation}
+ D_0^{<}=\frac1D\int_0^1\dd z\int_0^1\rho\,\dd\rho
+ \left[\frac1{M_z\rho^2-D\delta\rho+\lambda^2-\ii0}
+       -\frac1{M_z\rho^2+\lambda^2-\ii0}\right].
+\end{equation}
+Equalities for this endpoint approximation omit terms vanishing in
+the ordered limits $\lambda\to0$ and then $\delta\to0$.
+First take $D<0$, so both radial denominators are positive.
+At fixed $\delta$, the first radial integral tends to
+$M_z^{-1}\ln[(M_z+|D|\delta)/(|D|\delta)]$.
+The second is exactly
+$(2M_z)^{-1}\ln[(M_z+\lambda^2)/\lambda^2]$.
+Subtracting them and then taking small $\delta$ fixes both the
+logarithm and its finite scale. Continuing $D$ with the original
+Feynman boundary value gives
+\begin{equation}
+ D_0^{<}=\frac1D\int_0^1\frac{\dd z}{M_z}
+       \ln\frac{\lambda\sqrt{M_z}}{\delta(-D-\ii0)}.
+\end{equation}
+The finite part of the remaining $b$ integral is elementary.
+With $h=M_z-1\geq0$ and $r=1-b$,
+\begin{align}
+ \int_0^1\dd b\left[\frac{1-b}{b[1+h(1-b)^2]}
+                       -\frac1{bM_z}\right]
+ &=\frac1{M_z}\int_0^1\frac{hr-1}{1+hr^2}\dd r\\
+ &=\frac1{M_z}\left[\frac12\ln M_z
+                  -\frac{\arctan\sqrt h}{\sqrt h}\right].
+\end{align}
+Adding the two regions cancels $\delta$. We obtain
+\begin{equation}
+ \boxed{D_0=\frac1D\left[g_0(t)\ln\frac\lambda{-D-\ii0}
+                              +g_a(t)\right]+o(1),}
+ \label{eq:comp-supp-box-integrated}
+\end{equation}
+where the remainder vanishes as $\lambda\to0$ at fixed nonzero
+$D$ and fixed $t$, and
+\begin{align}
+ g_0(t)&=\int_0^1\frac{\dd z}{M_z}
+ =\frac{4\operatorname{arsinh}(\sqrt{-t}/2)}{\sqrt{(-t)(4-t)}},\\
+ g_a(t)&=\int_0^1\frac{\dd z}{M_z}
+             \frac{\arctan\sqrt{M_z-1}}{\sqrt{M_z-1}}.
+ \label{eq:comp-supp-box-one-dimensional}
+\end{align}
+Both functions have value $1$ at $t=0$. The remaining integral is
+smooth and real, and can also be performed analytically. Define
+\begin{equation}
+ a=\frac{\sqrt{-t}}2,\qquad h_a=\sqrt{1+a^2},\qquad
+ \kappa=\frac{a}{h_a},\qquad 0\leq\kappa<1.
+\end{equation}
+Introduce an auxiliary angle $\vartheta$, set $z=(1+\cos\vartheta)/2$, and use reflection symmetry
+about $\vartheta=\pi/2$. Next set $\tan\vartheta=\tan\varphi/h_a$.
+These substitutions give
+\begin{align}
+ g_a(t)&=\frac1a\int_0^{\pi/2}
+       \frac{\arctan(a\sin\vartheta)}{1+a^2\sin^2\vartheta}\dd\vartheta
+       =\frac{J(\kappa)}{a h_a},\\
+ J(\kappa)&=\int_0^{\pi/2}\arcsin(\kappa\sin\varphi)\dd\varphi.
+\end{align}
+Differentiating the last expression gives an elementary integral,
+\begin{equation}
+ J'(\kappa)=\int_0^1\frac{\dd y}
+                  {\sqrt{1-\kappa^2+\kappa^2y^2}}
+             =\frac{\operatorname{artanh}\kappa}{\kappa}.
+\end{equation}
+The boundary condition $J(0)=0$ then fixes the answer in terms
+of the dilogarithm $\operatorname{Li}_2$,
+\begin{equation}
+ \boxed{g_a(t)=\frac{\operatorname{Li}_2(\kappa)
+                         -\operatorname{Li}_2(-\kappa)}{2a h_a}.}
+ \label{eq:comp-supp-box-dilog}
+\end{equation}
+The continuous limit at $a=0$ is $1$. All arguments in this formula
+are real and lie between $-1$ and $1$, so no branch continuation
+is needed for the physical spacelike momentum transfer.
+The imaginary part of $D_0$ for $D>0$ is
+$\pi g_0(t)/D$. This derivation fixes both the infrared logarithm
+and the finite part without importing a Compton correction factor.
+
+The complete spanning matrix, with its common coupling removed, is
+therefore
+\begin{equation}
+ \begin{aligned}
+ \widehat W={}&N_0D_0+\int_0^1\dd b\int_0^1\dd z\,(1-b)
+ \left[\sum_{n=1}^3N_nR_n-\frac14(L_0F_1+L_1F_2)\right].
+ \end{aligned}
+ \label{eq:comp-supp-spanning-integrated}
+\end{equation}
+The logarithmic $b=0$ endpoint of the finite terms is integrable.
+The matrices $N_n,L_n$ follow simply by multiplying the three
+linear electron numerators given above.
+
+\subsection{Integration of the self-energy and vertex}
+For the self-energy let $S=P^2$, and in the moments
+\eqref{eq:comp-supp-radial-moments} set $A=S$, $B=1-S$.
+Integrating the two logarithms in
+$\Delta_\Sigma=v[1-(1-v)S]$ gives, after removing the common
+ultraviolet constant,
+\begin{align}
+ \widehat a(S)&=-\frac12-2SF_1+SF_2,\qquad
+ \widehat b(S)=2+4SF_1,\\
+ \widehat c_m&=4,\qquad \widehat c_Z=-4-4\ln\lambda,\\
+ \widehat\Sigma_{\mathrm R}(P)
+ &=\widehat a(S)\slashed P+[\widehat b(S)-4]\mathbf1
+                         -(\slashed P-1)\widehat c_Z.
+\end{align}
+A hat means that $\alpha_{\mathrm T}/(4\pi)$ has been factored out.
+The expression is the photon-mass asymptotic value, including all
+terms that survive the zero-mass limit.
+
+At the vertex write $x=\rho v$, $y=\rho(1-v)$ and $z=1-\rho$.
+Because the external photon has $q^2=0$,
+\begin{equation}
+ \overline K=vP'+(1-v)P,\qquad
+ A=\overline K^2=vP'^2+(1-v)P^2,\qquad B=1-A.
+\end{equation}
+Expand $N(\rho\overline K)=N_0+\rho N_1+\rho^2N_2$.
+Integration by parts gives
+$\int_0^1\rho\ln(A\rho+B-\ii0)\dd\rho=-AF_2/2$,
+since $A+B=1$. The renormalized vertex becomes the single integral
+\begin{equation}
+ \widehat V_{\mathrm R}^{\mu}
+ =\int_0^1\dd v\left[-\sum_{n=0}^2N_n^{\mu}F_n
+                  +\gamma^\mu\left(-\frac32+AF_2\right)\right]
+                  +\widehat c_Z\gamma^\mu.
+ \label{eq:comp-supp-vertex-integrated}
+\end{equation}
+The constant $-3/2$ includes the finite terms from the
+$d$-dimensional numerator. These integrated matrices are inserted
+into the same eight-diagram sum derived earlier.
+
+\subsection{Closed evaluation of the vertex parameter}
+Each real-photon vertex has one on-shell electron momentum $P_a$
+and one off-shell momentum $P_b$. Put $P_a^2=1$, $P_b^2=S$,
+$D=S-1$, and choose $v$ to multiply the off-shell momentum.
+The change $v\mapsto1-v$ exchanges the original parameter ordering
+when necessary. Then
+\begin{equation}
+ \overline K=P_a+v(P_b-P_a),\qquad A=1+Dv,\qquad B=-Dv.
+\end{equation}
+Because the numerator is at most quadratic in $v$, only six
+scalar moments are needed,
+\begin{equation}
+ J_{nk}(S)=\int_0^1 v^k F_n(1+Dv,-Dv)\dd v,
+ \qquad (n,k)=(0,0),(1,0),(1,1),(2,0),(2,1),(2,2).
+\end{equation}
+Changing variable from $v$ to $A$ yields an analytic primitive,
+\begin{equation}
+ J_{nk}(S)=\frac{P_{nk}(S)-P_{nk}(1)}{(S-1)^{k+1}},
+ \qquad P'_{nk}(A)=(A-1)^k F_n(A,1-A).
+ \label{eq:comp-supp-vertex-closed-moments}
+\end{equation}
+The radial recurrences reduce this derivative to rational functions
+and rational functions times $\ln(1-A-\ii0)$. For example,
+$F_0=-\ln(1-A-\ii0)/A$ integrates to
+$\operatorname{Li}_2(A+\ii0)$. Integration by parts handles the
+higher inverse powers of $A$.
+
+Write $\ell=\ln(1-A-\ii0)$ and
+$d_2=\operatorname{Li}_2(A+\ii0)$. The six primitives are
+\begin{align}
+ P_{00}(A)&=d_2,\\
+ P_{10}(A)&=d_2+(1-A^{-1})\ell,\\
+ P_{11}(A)&=2A-2d_2+(-A+A^{-1})\ell-1,\\
+ P_{20}(A)&=d_2+\left(\frac32-\frac2A+\frac1{2A^2}\right)\ell
+                         +\frac1{2A},\\
+ P_{21}(A)&=\frac52A-3d_2
+  +\left(-A-\frac32+\frac3A-\frac1{2A^2}\right)\ell-1-\frac1{2A},\\
+ P_{22}(A)&=A^2-\frac{15}2A+6d_2
+  +\left(-\frac{A^2}2+4A-\frac4A+\frac1{2A^2}\right)\ell
+  +4+\frac1{2A}.
+\end{align}
+Their continuous boundary values are
+\begin{align}
+ (P_{00},P_{10},P_{11})(1)
+   &=\left(\frac{\pi^2}6,\frac{\pi^2}6,1-\frac{\pi^2}3\right),\\
+ (P_{20},P_{21},P_{22})(1)
+   &=\left(\frac12+\frac{\pi^2}6,1-\frac{\pi^2}2,-2+\pi^2\right).
+\end{align}
+Although individual terms have inverse powers of $A$, each
+primitive is regular at $A=0$. Its values there are respectively
+$0,1,-2,7/4,-15/4,31/4$. These limits allow the crossed channel to
+pass through $S=0$ without a spurious singularity. For $S>1$, the
+logarithm is $\ln(S-1)-\ii\pi$ and the dilogarithm is approached
+from the upper half-plane. For $S<1$, both functions are real.
+The point $S=1$ is an infrared endpoint and requires the regulator
+before taking the limit.
+
+The branch choices follow directly from the loop denominator.
+After the momentum integration its quadratic form is
+$\Delta-\ii0$. At fixed $0<\rho,v<1$, taking
+$S\to S+\ii\eta$, with $\eta>0$, gives
+\begin{equation}
+ \Delta=\rho[\rho-(S-1)v(1-\rho)],\qquad
+ \operatorname{Im}\Delta=-\eta\rho v(1-\rho)<0.
+\end{equation}
+Thus the continuation approaches the physical cut from the same
+side as the original Feynman denominators. In the radial result
+this is $A\to A+\ii0$ and $1-A\to1-A-\ii0$. For $A>1$,
+the latter quantity approaches the negative real axis from below,
+fixing its argument to $-\pi$. Finally,
+\begin{equation}
+ \frac{\dd}{\dd A}\operatorname{Li}_2(A+\ii0)
+      =-\frac{\ln(1-A-\ii0)}{A},\qquad
+ \operatorname{Im}\operatorname{Li}_2(A+\ii0)=\pi\ln A
+ \quad(A>1).
+\end{equation}
+The imaginary part follows by integration from $A=1$, where it
+vanishes. It is therefore fixed by the causal boundary condition,
+not by selecting a sign to match a reference value.
+
+To assemble the vertex, expand the numerator coefficients as
+\begin{equation}
+ N_1^\mu(v)=U_0^\mu+vU_1^\mu,\qquad
+ N_2^\mu(v)=V_0^\mu+vV_1^\mu+v^2V_2^\mu.
+\end{equation}
+These matrices are obtained by inserting
+$\slashed{\overline K}=\slashed P_a+v(\slashed P_b-\slashed P_a)$
+in the numerator of \eqref{eq:comp-supp-vertex-integrated}.
+The fully integrated vertex is
+\begin{equation}
+ \begin{aligned}
+ \widehat V_{\mathrm R}^\mu={}&-N_0^\mu J_{00}
+ -U_0^\mu J_{10}-U_1^\mu J_{11}
+ -V_0^\mu J_{20}-V_1^\mu J_{21}-V_2^\mu J_{22}\\
+ &+\gamma^\mu\left[-\frac32+J_{20}+D J_{21}+\widehat c_Z\right].
+ \end{aligned}
+ \label{eq:comp-supp-vertex-closed}
+\end{equation}
+Thus no vertex parameter integral remains. The counterterm
+$\widehat c_Z=-4-4\ln\lambda$ supplies the on-shell subtraction
+in the same convention as the self-energy above.
+
+\input{box_analytic}
+\input{virtual_angular}
+\input{infrared_analytic}
+
+\section{Soft subtraction and its normalization}
+\subsection{Local subtraction in the real phase space}
+Work in the center-of-mass frame, and define
+\begin{equation}
+ E=\frac{s+1}{2\sqrt s},\qquad q=\frac{s-1}{2\sqrt s},\qquad
+ p=(E,0,0,-q),\qquad k=(q,0,0,q).
+\end{equation}
+Order the outgoing photons by energy. Let $k_1=\omega n_1$ be
+the lower-energy photon, $k_2=\omega_2 n_2$, and
+$n_i=(1,\widehat{\bm n}_i)$. Restricting to $\omega<\omega_2$
+accounts for identical photons without a factor $1/2!$.
+Put $c_{12}=\widehat{\bm n}_1\cdot\widehat{\bm n}_2$ and
+\begin{align}
+ D_\gamma&=\sqrt s-\omega(1-c_{12}),\qquad
+ \omega_2=\frac{s-1-2\sqrt s\,\omega}{2D_\gamma},\\
+ \omega_*&=\frac{s-1}{2\sqrt s+
+                 \sqrt{4s-2(1-c_{12})(s-1)}},\qquad 0<\omega<\omega_*.
+\end{align}
+The on-shell condition for $p'=p+k-k_1-k_2$ determines $\omega_2$.
+The upper limit follows by setting $\omega=\omega_2$.
+Integrating the electron momentum delta function gives
+\begin{equation}
+ \dd\Phi_3=\frac{\omega\omega_2}{8(2\pi)^5D_\gamma}
+                \dd\omega\dd\Omega_1\dd\Omega_2.
+\end{equation}
+Rotational symmetry about the incoming photon integrates the
+azimuth of $n_2$ to $2\pi$. Denote its remaining polar cosine by
+$c_2$ and the relative azimuth of $n_1$ by $\phi$.
+
+Let $\mathcal R=\overline{|\mathcal M_{\gamma\gamma}|^2}/e_{\mathrm T}^6$
+be computed from the six diagrams, and
+$\mathcal B=\overline{|\mathcal M_0|^2}/e_{\mathrm T}^4$.
+The elastic electron paired with direction $n_2$ is
+$p'_B=(E,-q\widehat{\bm n}_2)$. Define
+\begin{equation}
+ j_n=\frac{p'_B}{p'_B\cdot n_1}-\frac p{p\cdot n_1},\qquad
+ \mathcal A_{\mathrm{loc}}=\mathcal B(-j_n^2)\frac q{\sqrt s}.
+\end{equation}
+Then $(\omega\omega_2/D_\gamma)\mathcal R\to\mathcal A_{\mathrm{loc}}/\omega$.
+Subtract this term at every phase-space point, rather than
+integrating two separately large soft contributions. With
+$u=\omega/\omega_*$, the finite real part is
+\begin{equation}
+ \begin{aligned}
+ \mathcal C_{\mathrm R}=
+ \frac1{4\pi(s-1)}\int_{-1}^1\dd c_2\int\dd\Omega_1
+ \bigg\{\int_0^1\dd u\left[
+ \frac{\omega_*^2u\,\omega_2}{D_\gamma}\mathcal R
+          -\frac{\mathcal A_{\mathrm{loc}}}{u}\right]
+       +\mathcal A_{\mathrm{loc}}\ln\omega_*\bigg\}.
+ \end{aligned}
+ \label{eq:comp-supp-real-subtracted}
+\end{equation}
+The logarithms have dimensionless arguments because energies are
+measured in units of $m$. The subtracted integral is finite at
+$u=0$. Both hard recoil and all spin-dependent emission terms remain.
+
+\subsection{A finite integral for the total correction}
+For the elastic momenta let $z_e=p\cdot p'_B=1-t/2$ and
+$b_e=z_e\operatorname{arcosh}(z_e)/\sqrt{z_e^2-1}$.
+The soft angular integrals in the center-of-mass frame reduce to
+one real parameter integral. Define
+\begin{align}
+ M_x&=1-tx(1-x),\quad v_x=\sqrt{1-M_x/E^2},\quad \beta=q/E,\\
+ K&=z_e\int_0^1\frac{\dd x}{M_x}
+              \frac{\operatorname{artanh}v_x}{v_x}
+                   -\frac{\operatorname{artanh}\beta}{\beta}.
+\end{align}
+Let $\varepsilon$ be an auxiliary soft-photon energy boundary in
+this frame, with $\lambda\ll\varepsilon$ and $\varepsilon$ small
+relative to the hard energies. The massive-photon radial integral is
+\begin{equation}
+ \int_0^{\sqrt{\varepsilon^2-\lambda^2}}
+ \frac{r^2\dd r}{\sqrt{r^2+\lambda^2}(M_xr^2+E^2\lambda^2)}
+ =\frac1{M_x}\left[
+ \operatorname{arcosh}\frac\varepsilon\lambda
+ -\frac{\operatorname{artanh}(v_x\sqrt{1-\lambda^2/\varepsilon^2})}{v_x}
+ \right].
+\end{equation}
+Thus $\delta_{\mathrm s}/\alpha_{\mathrm T}
+=2[(b_e-1)\ln(2\varepsilon/\lambda)-K]/\pi$ in the
+zero-mass limit. Let
+$\mathcal T=\mathcal T(\widehat R_1,R_0)$ be the spin-averaged
+bilinear in \eqref{eq:comp-supp-trace-bilinear}, with $m=1$. Combining the soft integral
+with the analytic subtraction in
+\eqref{eq:comp-supp-real-subtracted} cancels $\varepsilon$ before
+the remaining integrations. The result is
+\begin{align}
+ \mathcal C_{\mathrm{VS}}
+ &=\frac1s\int_{-1}^1\dd c_2\left[
+ \frac14\operatorname{Re}\mathcal T
+ +\mathcal B\left\{(b_e-1)\ln\frac2\lambda-K\right\}\right],\\
+ \sigma_1&=\boxed{\frac{\alpha_{\mathrm T}^3}{m^2}
+             (\mathcal C_{\mathrm{VS}}+\mathcal C_{\mathrm R}).}
+ \label{eq:comp-supp-independent-total}
+\end{align}
+In the normalization used here, the soft part of the virtual
+interference obeys
+\begin{equation}
+ \left.\operatorname{Re}\mathcal T\right|_{\ln\lambda}
+      =4\mathcal B(b_e-1)\ln\lambda.
+\end{equation}
+It cancels the coefficient of $\ln\lambda$ in
+$\mathcal C_{\mathrm{VS}}$ point by point in the elastic angle.
+There is no photon-energy acceptance cut or numerical soft separator
+in this final expression. Its ingredients are the independently
+derived amplitudes and the displayed integrations. The analytic
+total in Equation (6) of Lee, Schwartz and Zhang
+\cite{qed-processes-lsz} supplies a separate final comparison.
+
+\input{soft_analytic}
+\section{Real-emission integration}
+\input{real_analytic}
+\input{real_inner}
+\section{Matching the real-energy endpoints}
+\input{real_soft_matching}
+\input{soft_matching_check}
+\input{real_kernel_collection}
+\section{Completion of the pair sectors}
+\input{soft_uv_check}
+
+\input{total_assembly}
+
+\subsection{Scope of the analytic reduction}
+The complete virtual amplitude has been evaluated in closed scalar
+functions. The vertex and self-energy angular integrals are given
+explicitly in \eqref{eq:comp-vt-integrated}. The spanning and finite
+soft angular integrals have finite multiple-polylogarithm endpoint
+expressions, with explicit boundary constants. The coefficient
+of the infrared logarithm cancels by the rational identity
+\eqref{eq:comp-supp-box-IR-identity}. No published Compton
+total-cross-section coefficient is used in these reductions.
+
+The real-energy integrations reduce to finite GPL primitives, with
+explicit endpoint constants and a common infrared definition.
+Their assembly with the virtual and soft terms is
+\eqref{eq:comp-assembly-sigma}. The separate finite pieces depend on
+the subtraction convention, while their sum does not.
+Independent numerical integration checks the result without
+replacing the analytic primitives. The final verification chapter states the scope and estimated
+numerical accuracy of these checks.

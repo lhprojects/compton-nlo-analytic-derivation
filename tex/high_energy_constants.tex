@@ -1,0 +1,170 @@
+In this calculation put $\ell=\ln X$, $s=1+X$, and
+$\beta=X/(X+2)$. The letter $r$ denotes the positive square-root kernel. The functions used in the soft master are
+\begin{align}
+ k&=\sqrt{\frac{1+XU^2}{s}},\qquad d=1-\beta^2U^2,\\
+ a(U)&=\operatorname{artanh}(\beta U),\qquad
+ f(U)=\operatorname{artanh}(U/k),\qquad 0<U<1.
+\end{align}
+Here $d$ is a scalar function, unrelated to the spacetime dimension.
+The symbol $a$ without an argument in the unit-circle identities
+below denotes a complex number, not the function $a(U)$.
+
+\paragraph{Root-of-unity endpoints.} Let $\theta=\pi/3$,
+$a=\exp(\ii\theta)$, and define the real Clausen constant
+\begin{equation}
+ \mathcal C=\operatorname{Im}\operatorname{Li}_2(a)
+           =\sum_{n=1}^{\infty}\frac{\sin(n\pi/3)}{n^2}.
+\end{equation}
+The rationalized root primitives have endpoints $q=1$ and $q=0$.
+Their unit-circle values are obtained from
+\begin{align}
+ \operatorname{Li}_2(e^{\ii t})
+ &=\frac{\pi^2}{6}-\frac{\pi|t|}{2}+\frac{t^2}{4}
+       +\ii\operatorname{Cl}_2(t),\\
+ \operatorname{Im}\operatorname{Li}_3(e^{\ii t})
+ &=\frac{\pi^2t}{6}-\frac{\pi t|t|}{4}+\frac{t^3}{12},
+                         \qquad -2\pi\leq t\leq2\pi.
+\end{align}
+Here $\operatorname{Cl}_2(t)=\sum_{n\geq1}\sin(nt)/n^2$ is the
+Clausen function. These Fourier identities follow by integrating the geometric-series
+logarithm, with constants fixed at $t=0$. Splitting the defining
+series into residue classes also gives
+\begin{equation}
+ \operatorname{Re}\operatorname{Li}_3(a)=\frac{\zeta(3)}3,
+ \quad \operatorname{Re}\operatorname{Li}_3(a^2)=-\frac{4\zeta(3)}9,
+ \quad \operatorname{Cl}_2(2\theta)=\frac23\mathcal C.
+\end{equation}
+For explicit endpoint bookkeeping, write
+\begin{equation}
+ J_{mn}=(\ii m\theta)^2\ln(1-a^{m-n})
+       +2\ii m\theta\operatorname{Li}_2(a^{m-n})
+       -2\operatorname{Li}_3(a^{m-n}),\qquad J_{00}=-2\zeta(3).
+\end{equation}
+This is the earlier logarithm-squared primitive at a unit-circle
+endpoint. All phases are the continuous ones inherited from $0<q<1$.
+For $m=\pm1,\pm2$, the principal phases give those same endpoint
+values. With $S_3=\operatorname{Li}_3(a)+\operatorname{Li}_3(a^{-1})$,
+the constants of the corresponding primitives are
+\begin{align}
+ P_A&=2J_{-1,0}+2J_{1,0}-J_{-2,0}+J_{-2,2}-2S_3,\\
+ M_n&=\frac12\left[-2\zeta(3)+(-\ii n\theta)^2(-2\ii n\theta)
+                  -4\ii n\theta\zeta(2)+J_{n,2n}\right],\quad n=\pm1,\\
+ P_c&=2(M_1+M_{-1})-S_3+4\zeta(3),\\
+ P_f&=-J_{1,0}-J_{-1,0}+S_3+2\zeta(3).
+\end{align}
+Evaluating the $q\to0$ end of the same primitives gives
+\begin{equation}
+ K_a=3\zeta(3)+\operatorname{Li}_3(a^{-2})+\frac{P_A}{2},\quad
+ K_c=-2S_3-P_c,\quad K_f=-4\zeta(3)-2S_3+P_f.
+\end{equation}
+The imaginary terms cancel in each final constant. The shuffle
+identity gives $K_b=-K_c-K_f$.
+
+For the outer letter $-4$, the only additional dilogarithmic value is
+\begin{equation}
+ \operatorname{Im}\operatorname{Li}_2(2a)
+          =\frac56\mathcal C+\frac\pi2\ln2.
+\end{equation}
+One way to establish it is to use
+$D(z)=\operatorname{Im}\operatorname{Li}_2(z)+\arg(1-z)\ln|z|$.
+Its differential is
+$\dd D=\ln|z|\,\dd\arg(1-z)-\ln|1-z|\,\dd\arg z$.
+Integration gives one half of the sum of $\operatorname{Cl}_2$ at
+twice the three angles of the triangle with vertices $0,1,z$.
+For $z=2a$ those angles are $\pi/3,\pi/2,\pi/6$, and
+$\arg(1-2a)=-\pi/2$. This yields the displayed value with its
+branch fixed. In the paired endpoint primitives all
+$\operatorname{Li}_3(2a)$ and $\operatorname{Li}_3(2a^{-1})$ terms
+cancel. The remaining pair contributes
+\begin{equation}
+ -4\theta\pi\ln2+8\theta\operatorname{Im}\operatorname{Li}_2(2a)
+     =\frac{20}{3}\theta\mathcal C.
+\end{equation}
+Together with $J(2,1)=-7\zeta(3)/4$, this fixes $K_e$.
+The value of $J(2,1)$ follows from trilogarithm inversion and
+$\operatorname{Li}_3(1/2)=7\zeta(3)/8-\pi^2\ln2/12+\ln^32/6$.
+
+\paragraph{The remaining constant from the soft master.} The exact
+energy equation \eqref{eq:comp-ck-I2-energy} determines $K_d$ once
+the finite high-energy constant of $I_2$ is known. It can be extracted
+without root-valued endpoint functions. At large $X$, use
+\begin{equation}
+ I_2^{\rm app}(X)=\int_0^1\frac{a}{Ud}
+       \left[\frac12\ln X+\ln2+\ln U-\frac12\ln(1-U^2)\right]\dd U,
+ \qquad I_2-I_2^{\rm app}=o(1).
+\end{equation}
+In this expression $a=\operatorname{artanh}(\beta U)$ and
+$d=1-\beta^2U^2$ keep their exact $X$ dependence. To justify the
+error estimate, split the interval at $U=X^{-1/4}$. The lower
+pieces of both integrals are $O(X^{-1/4}\ln X)$. In the upper piece,
+use the exact identity
+\begin{equation}
+ f=\ln\frac{(k+U)\sqrt s}{\sqrt{1-U^2}},\qquad
+ \frac{k}{U}=\sqrt{1+\frac{1-U^2}{sU^2}}.
+\end{equation}
+Expanding these positive quantities bounds the integrated difference
+by $O(X^{-3/4}\ln^2X)+O(X^{-1}\ln^2X)$. Thus the approximation
+has the same finite constant. No approximation has been made to the
+endpoint-regulating factor $d$.
+
+Partial fractions and the fixed-letter differential reduction give
+\begin{equation}
+\begin{aligned}
+ I_2^{\rm app}={}&\frac\ell4G(0,-1)-\frac\ell8G(-1,-1)
+ +\frac12G(-2,0,-1)+\frac12G(0,-2,-1)\\
+ &-\frac14G(-2,-1,-1)-\frac14G(0,-1,-1)
+ -\frac14G(-1,-2,-1)\\
+ &-\frac14G(-1,0,-1)+\frac14G(-1,-1,-1).
+\end{aligned}
+\end{equation}
+Every endpoint is $X$. The few additional rational-letter constants
+can be evaluated by elementary parameter differentiation. Let
+$k_{012}(b)$ be the finite large-$X$ constant of $G(0,-1,-b;X)$.
+Differentiating its defining integrals with respect to $b$ gives
+\begin{equation}
+ \partial_bG(0,-1,-b;X)
+ =-\frac{\operatorname{Li}_2(-X)}{b(b-1)}
+       +\frac{\operatorname{Li}_2(-X/b)}{b-1},
+\end{equation}
+so dilogarithm inversion yields
+\begin{equation}
+ k_{012}'(b)=-\frac{\ln^2b}{2(b-1)}-\frac{\zeta(2)}b.
+\end{equation}
+Since $k_{012}(1)=\zeta(3)$ and
+$\int_1^2\ln^2b\,\dd b/(b-1)=\zeta(3)/4$, one obtains
+$k_{012}(2)=7\zeta(3)/8-\zeta(2)\ln2$. The latter definite
+integral follows from the trilogarithm value at one half stated above.
+Explicitly it is
+$2\zeta(3)-2\operatorname{Li}_3(1/2)-\pi^2\ln2/6+\ln^32/3$.
+For $G(-2,-1,-1;X)$, shifting the integration variable by one and
+then inverting it gives the constant
+\begin{equation}
+ -\frac12\int_1^\infty\frac{\ln^2v}{v(1+v)}\,\dd v
+ =-\frac12\int_0^1\frac{\ln^2t}{1+t}\,\dd t
+ =-\frac34\zeta(3).
+\end{equation}
+The last equality follows by integrating the alternating geometric
+series. The shuffle product $G(-1)G(-2,-1)$ then fixes the constant
+of $G(-1,-2,-1)$ to $3\zeta(3)/2$. Finally the shuffle identity
+fixes the sum of the constants of $G(-2,0,-1)$ and $G(0,-2,-1)$
+to $-7\zeta(3)/8$. Therefore
+\begin{equation}
+ I_2=\frac{5\ell^3}{48}+\frac{\pi^2\ell}{16}
+                         -\frac38\zeta(3)+o(1).
+\end{equation}
+Only this constant is extracted with the approximation. The sharper
+inverse-power remainder of the cross section follows from its exact
+GPL kernels, rather than from the approximation error bound.
+
+Collecting the endpoint evaluations gives
+\begin{align}
+ K_a&=\frac59\zeta(3)-\frac{4\pi}{9}\mathcal C,&
+ K_b&=\frac23\zeta(3),\\
+ K_c&=\frac23\zeta(3)-\frac{4\pi}{3}\mathcal C,&
+ K_d&=\frac1{12}\zeta(3)+\frac\pi3\mathcal C,\\
+ K_e&=\frac{16}{9}\zeta(3)-\frac{8\pi}{9}\mathcal C,&
+ K_f&=-\frac43\zeta(3)+\frac{4\pi}{3}\mathcal C.
+ \label{eq:comp-high-root-constants}
+\end{align}
+For $K_d$, the constant term of the exact $I_2$ identity is
+$3(K_f+2K_a-K_e)/8+(K_d+K_c)/2=-3\zeta(3)/8$.

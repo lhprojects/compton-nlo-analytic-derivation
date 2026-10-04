@@ -1,0 +1,282 @@
+\textbf{The analytic Compton total cross section at next-to-leading
+order is already known from the work of Roman~N.~Lee, Matthew~D.~Schwartz and
+Xiaoyuan Zhang~\cite{qed-processes-lsz}. Our purpose is an independent
+recalculation and verification of their result.}
+We derive the virtual and real amplitudes from the Feynman rules and
+integrate them with exact electron-mass dependence. The resulting
+expression in logarithms and polylogarithms contains no unevaluated
+loop-parameter or phase-space integral. This chapter states the
+observable, conventions, and complete result before the detailed
+derivation. The published coefficients are used only for the final
+comparison, never as boundary data or inputs to the integration.
+
+\section{Observable and conventions}
+We consider unpolarized scattering on a free electron,
+\begin{equation}
+ e^-(p)+\gamma(k)\longrightarrow e^-(p')+\gamma(k'),
+ \qquad
+ e^-(p)+\gamma(k)\longrightarrow e^-(p')+\gamma(k_1)+\gamma(k_2).
+\end{equation}
+The electron pole mass is $m$, its charge is $-e_{\mathrm T}$, and
+$\alpha_{\mathrm T}=e_{\mathrm T}^2/(4\pi)$ is defined in the Thomson
+limit. We average over the two incoming electron spins and two photon
+polarizations and sum over all final polarizations. All allowed photon
+energies and directions are integrated. The distinct pair-production
+channel $e^-\gamma\to e^-e^-e^+$ is excluded. This is the same
+observable as the photonic total of Reference~\cite{qed-processes-lsz}.
+The massive polarized calculation of Denner and Dittmaier also treats
+pair production separately~\cite{qed-processes-denner}.
+
+We use natural units $\hbar=c=1$ and the metric
+$\eta_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1)$.
+Define the physical invariants and the
+rest-frame photon energy $\omega$ by
+\begin{align}
+ s_{\mathrm{phys}}&=(p+k)^2=m^2+2m\omega,\qquad
+ t=(p-p')^2,\qquad u=(p-k')^2,\\
+ X&=\frac{s_{\mathrm{phys}}}{m^2}-1=\frac{2\omega}{m}>0,\qquad
+ Y=\sqrt{\frac{X}{X+4}},\qquad
+ q=\frac{\sqrt{X+4}-\sqrt X}{\sqrt{X+4}+\sqrt X}.
+ \label{eq:comp-overview-variables}
+\end{align}
+The variable $q$ is unrelated to electric charge. All displayed square
+roots are positive. For the two-body process,
+$s_{\mathrm{phys}}+t+u=2m^2$.
+
+Ultraviolet integrals are regulated in $d=4-2\epsilon_{\rm UV}$
+dimensions with scale $\mu$. A photon mass $0<\lambda\ll m$ regulates
+virtual soft momenta and the matching real soft integral. In Feynman
+gauge the propagators and electron vertex are
+\begin{equation}
+ S_F(P)=\frac{\ii(\slashed P+m)}{P^2-m^2+\ii0},\qquad
+ D_{\rho\sigma}(\ell)=\frac{-\ii\eta_{\rho\sigma}}
+ {\ell^2-\lambda^2+\ii0},\qquad
+ +\ii\mu^{\epsilon_{\rm UV}}e_{\mathrm T}\gamma^\rho.
+\end{equation}
+Here $\slashed P=\gamma^\mu P_\mu$, with
+$\{\gamma^\mu,\gamma^\nu\}=2\eta^{\mu\nu}$.
+The photon symbol omits $F$ but uses the same Feynman boundary
+conditions. External hard photons are massless. Terms vanishing as
+$\lambda/m\to0$ are omitted only after the singular terms have been
+identified. The real and virtual contributions are combined before
+removing the infrared regulator.
+
+\paragraph{Dimensional and integration variables.} Chapters 1 and 2 use
+dimensional momenta and photon mass. In the integration chapters,
+$s=s_{\mathrm{phys}}/m^2$, $t=t_{\mathrm{phys}}/m^2$,
+$u=u_{\mathrm{phys}}/m^2$, and $\lambda=\lambda_{\mathrm{phys}}/m$.
+The external energy variables satisfy $H=X=s-1$. In formulas for
+elastic angular integration, $c$ denotes the center-of-mass photon
+scattering cosine. The laboratory angle is denoted by $\theta$. Lowercase integration
+coordinates are defined locally and are not identified with $X$.
+The final evaluator uses $C_1(X)$, while the sector assembly uses
+$C_{\mathrm{total}}(s)=C_1(s-1)$, in both cases multiplying
+$\alpha_{\mathrm T}^3/m^2$. The labels $UV$, $UW$, and $VW$ in the
+real-emission calculation name pairs of angular denominators.
+They do not denote ultraviolet counterterms.
+
+\section{On-shell renormalization constants}
+The renormalized electron propagator has its pole at $m$ with unit
+residue. The transverse photon residue is normalized at zero momentum
+squared, and the charge is fixed by the zero-momentum-transfer electron
+vertex. These are the QED on-shell conditions of the general formalism
+reviewed in Section 3 of Denner~\cite{compton-overview-denner-renormalization}.
+For one electron species, use the bare-to-renormalized definitions
+\begin{align}
+ \psi_0&=Z_2^{1/2}\psi,\qquad A_{0\mu}=Z_3^{1/2}A_\mu,\qquad
+ m_0=Z_m m,\\
+ e_0&=\mu^{\epsilon_{\rm UV}}Z_e e_{\mathrm T},\qquad
+ Z_1=Z_eZ_2Z_3^{1/2},\qquad Z_j=1+\delta_j+\Order(\alpha_{\mathrm T}^2).
+\end{align}
+Here $Z_1$ multiplies the electron--photon interaction vertex.
+Thus $Z_m$ relates the bare mass to the pole mass, while the mass coefficient in the
+Lagrangian is $Z_2Z_m$. Define
+\begin{equation}
+ U_m=\frac1{\epsilon_{\rm UV}}-\gamma_E+\ln4\pi
+                   +\ln\frac{\mu^2}{m^2},\qquad
+ C=\frac{\alpha_{\mathrm T}}{4\pi}.
+\end{equation}
+Here $\gamma_E$ is Euler's constant. In the photon-mass convention the
+one-loop constants are
+\begin{align}
+ \delta_m&=-C(3U_m+4)+\alpha_{\mathrm T}o(1),\\
+ \delta_2&=-C\left[U_m+4+2\ln\frac{\lambda^2}{m^2}\right]
+                           +\alpha_{\mathrm T}o(1),\\
+ \delta_1&=\delta_2,\qquad
+ \delta_3=-\frac{\alpha_{\mathrm T}}{3\pi}U_m,\qquad
+ \delta_e=\frac{\alpha_{\mathrm T}}{6\pi}U_m.
+ \label{eq:comp-overview-z}
+\end{align}
+The $o(1)$ terms vanish as $\lambda/m\to0$ at fixed $\mu/m$.
+The Ward identity gives $Z_1=Z_2$ and hence $Z_e=Z_3^{-1/2}$.
+The field constants above refer to Feynman gauge. They are not
+separately observable quantities.
+These constants agree with the one-electron QED specialization of
+Denner's on-shell formulas, Equations (3.19), (3.20), and (3.32) of
+Reference~\cite{compton-overview-denner-renormalization}.
+His photon field counterterm $\delta Z_{AA}$ is our $\delta_3$,
+and in QED his charge relation reduces to $\delta_e=-\delta_3/2$.
+
+The signs can be checked directly against the subtraction constants
+used later. With $\Sigma(P)=a(P^2)\slashed P+mb(P^2)$, let
+\begin{equation}
+ c_m=m[a(m^2)+b(m^2)],\qquad
+ c_Z=a(m^2)+2m^2[a'(m^2)+b'(m^2)].
+\end{equation}
+Primes differentiate the squared argument. The counterterm insertion
+is $\ii[\delta_2(\slashed P-m)-m\delta_m]$, so
+\begin{equation}
+ m\delta_m=-c_m,\qquad \delta_2=c_Z,\qquad
+ \Sigma_R=\Sigma-c_m-(\slashed P-m)c_Z.
+ \label{eq:comp-overview-subtractions}
+\end{equation}
+In this convention the subtraction constants are
+$c_m/m=C(3U_m+4)+\alpha_{\mathrm T}o(1)$ and
+$c_Z=-C[U_m+4+2\ln(\lambda^2/m^2)]+\alpha_{\mathrm T}o(1)$.
+The vertex counterterm is $c_Z\gamma^\rho$ after factoring out the
+charge. No further external-electron residue is applied to amplitudes
+already normalized this way. For the two external photons the charge
+and photon factors obey $Z_e^2Z_3=1$. There is no internal Born photon
+on which to insert vacuum polarization in Compton scattering.
+
+\section{The complete total cross section}
+Let $\mathcal M_0$, $\mathcal M_1$, and $\mathcal M_{\gamma\gamma}$
+denote the Born, renormalized one-loop, and double-Compton amplitudes.
+Their contributions have the normalization
+\begin{equation}
+ \begin{aligned}
+ \sigma_0+\sigma_1=\frac1{4p\cdot k}\lim_{\lambda\to0}\biggl\{&
+ \int\dd\Phi_2\left[\overline{|\mathcal M_0|^2}
+       +2\operatorname{Re}\overline{\mathcal M_0^*\mathcal M_1}\right]\\
+ &+\frac1{2!}\int\dd\Phi_3\overline{|\mathcal M_{\gamma\gamma}|^2}
+ \biggr\}.
+ \end{aligned}
+\end{equation}
+The bar denotes the spin and polarization average and sum specified
+above, $\dd\Phi_n$ is Lorentz-invariant $n$-body phase space, and the
+real soft region uses the same photon-mass convention as the virtual
+term. The factor $1/2!$ accounts for the identical final photons.
+For the coefficient $A(s)$ of the virtual infrared logarithm, with
+$s=1+X=s_{\mathrm{phys}}/m^2$,
+\begin{equation}
+ \frac{m^2\sigma_{1,V}}{\alpha_{\mathrm T}^3}
+ =A(1+X)\ln\frac\lambda m+V_{\rm fin}(X),\qquad
+ \frac{m^2\sigma_{1,R}}{\alpha_{\mathrm T}^3}
+ =-A(1+X)\ln\frac\lambda m+R_{\rm fin}(X).
+\end{equation}
+Here $V_{\rm fin}$ and $R_{\rm fin}$ are finite coefficients in the
+same convention, and terms vanishing with $\lambda$ are understood.
+The finite terms refer to a common photon-mass regulator. Their sum has the form
+\begin{equation}
+ \boxed{\sigma_{\mathrm{inc}}^{\mathrm{NLO}}(X)
+ =\frac{\pi\alpha_{\mathrm T}^2}{m^2}B(X)
+  +\frac{\alpha_{\mathrm T}^3}{m^2}C_1(X)
+  +\frac1{m^2}O(\alpha_{\mathrm T}^4).}
+ \label{eq:comp-overview-total}
+\end{equation}
+The subscript $\rm inc$ denotes the sum over the one-photon and
+two-photon final states specified above. The remainder is at fixed
+$X>0$. Put $r_\omega=X/2$. The Born coefficient is
+\begin{equation}
+ \begin{aligned}
+ B(X)=2\bigg[&\frac{1+r_\omega}{r_\omega^2}
+ \left(\frac{2(1+r_\omega)}{1+2r_\omega}
+       -\frac{\ln(1+2r_\omega)}{r_\omega}\right)\\
+ &+\frac{\ln(1+2r_\omega)}{2r_\omega}
+       -\frac{1+3r_\omega}{(1+2r_\omega)^2}\bigg].
+ \end{aligned}
+ \label{eq:comp-overview-born}
+\end{equation}
+This is the integrated Klein--Nishina result, also written in
+Equation (5) of Reference~\cite{qed-processes-lsz}.
+
+To state the entire NLO coefficient, let $w$ denote an ordered list
+of kernel labels, called a word, and let $\varnothing$ denote the
+empty list. Define the generalized polylogarithms (GPLs) recursively by
+\begin{align}
+ G(a,w;X)&=\int_0^X\dd t\,f_a(t)G(w;t),\qquad G(\varnothing;X)=1,\\
+ f_a(t)&=\frac1{t-a}\quad(a=0,1,-1,-2,-4),\qquad
+ f_r(t)=\frac1{\sqrt{t(t+4)}},\\
+ G(\underbrace{0,\ldots,0}_{n};X)&=\frac{\ln^nX}{n!}.
+\end{align}
+The last line fixes the logarithmically singular all-zero case.
+The length of a word is its weight. Products of these integrals obey
+shuffle identities: interleave the two lists in all ways preserving
+the order within each list, counting multiplicities. This follows by
+partitioning the product of their ordered integration domains.
+The letter $r$ labels a square-root kernel, not a number to substitute
+for $a$. The integrals follow the positive real axis. In the words
+containing $1$, the apparent singularity is removable because the
+inner factor is $\ln t/(t-1)$, with limit one at $t=1$.
+All other nonzero letters lie outside the integration path.
+Classical polylogarithms are defined by
+$\operatorname{Li}_n(z)=\sum_{k=1}^{\infty}z^k/k^n$ for $|z|<1$
+and continuation elsewhere. Their real boundary values below agree
+with these real iterated integrals.
+
+\begingroup
+\def\comptonproductlabel{eq:comp-overview-product}
+\input{total_energy_product_body}
+\endgroup
+At $X=1$ the elementary quotient $\ln X/(X-1)$ is assigned its
+continuous value one. These definitions specify the full physical
+function for every $X>0$.
+Equation~\eqref{eq:comp-overview-product} follows from our integrated
+sectors by shuffle identities and rational coefficient collection.
+After conversion to a common basis, it agrees coefficient by coefficient
+with Equation (6) of Lee, Schwartz and Zhang~\cite{qed-processes-lsz}.
+This equality is a result of the recalculation, not an input to it.
+
+\section{Asymptotic limits}
+The following limits are taken in the complete infrared-finite result.
+For $X\to0^+$,
+\begin{equation}
+ \sigma_0=\frac{\pi\alpha_{\mathrm T}^2}{m^2}
+ \left[\frac83-\frac83X+\frac{52}{15}X^2-\frac{133}{30}X^3
+ +\Order(X^4)\right],
+\end{equation}
+\begin{equation}
+ \begin{aligned}
+ \sigma_1=\frac{\alpha_{\mathrm T}^3}{m^2}\biggl\{&
+ X^2\left[-\frac{16}{9}\ln X+\frac7{15}\right]
+ +X^3\left[\frac43\ln X-\frac{113}{90}\right]\\
+ &+X^4\left[-\frac{25}{9}\ln X+\frac{203}{125}\right]
+ +\Order\!\left(X^5|\ln X|\right)\biggr\}.
+ \end{aligned}
+ \label{eq:comp-overview-low}
+\end{equation}
+The correction vanishes, leaving the Thomson cross section
+$8\pi\alpha_{\mathrm T}^2/(3m^2)$. This is consistent with Thirring's
+low-energy theorem, whose all-orders formulation and generalizations
+are discussed by Dittmaier~\cite{compton-overview-thirring}.
+The $X^2\ln X$ and $X^2$ coefficients agree with Equation (10) of
+Lee, Schwartz and Zhang~\cite{qed-processes-lsz}. The two further orders
+shown here follow from the full expression stated above.
+
+For $X\to\infty$, write $\ell=\ln X$. Then
+\begin{equation}
+ \sigma_0=\frac{\pi\alpha_{\mathrm T}^2}{m^2}
+ \left[\frac{2\ell+1}{X}+\frac{18-8\ell}{X^2}
+ +\Order\!\left(\frac\ell{X^3}\right)\right],
+\end{equation}
+\begin{equation}
+ \sigma_1=\frac{\alpha_{\mathrm T}^3}{m^2}\biggl\{
+ \frac1X\left[\frac{\ell^3}{3}-\frac{\ell^2}{2}
+ +\frac{17\ell}{4}-\frac{75}{8}-\frac{\pi^2}{2}+4\zeta(3)\right]
+ +\Order\!\left(\frac{\ell^3}{X^2}\right)\biggr\}.
+ \label{eq:comp-overview-high}
+\end{equation}
+Here $\zeta(3)=\sum_{n=1}^{\infty}n^{-3}$.
+All logarithmic coefficients and the finite constant agree with
+Equation (11) of Reference~\cite{qed-processes-lsz}.
+Replacing $X$ by $s_{\mathrm{phys}}/m^2=1+X$ in its leading high-energy
+term changes only the stated remainder. The finite constant is fixed by the endpoint values of our integrated GPLs.
+In particular,
+\begin{equation}
+ \frac{\sigma_1}{\sigma_0}
+ =\frac{\alpha_{\mathrm T}}{6\pi}\ell^2
+ +\Order(\alpha_{\mathrm T}\ell).
+\end{equation}
+Infrared cancellation therefore leaves an energy-dependent radiative
+correction. These are fixed-order results, with no resummation of the
+large energy logarithms.

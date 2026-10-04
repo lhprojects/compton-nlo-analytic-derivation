@@ -1,0 +1,184 @@
+{
+  "symbols": "H=s-1,x=2P.k1,y=2P.k2,U=2p.k1,V=2p.k2",
+  "orders": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      2
+    ],
+    [
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      1
+    ],
+    [
+      2,
+      1,
+      0
+    ]
+  ],
+  "terms": [
+    {
+      "i": 0,
+      "j": 0,
+      "multiplicity": 1,
+      "numerator": "-4*(H**2*V - H**2*y + 6*H**2 + 2*H*U - H*V*x + H*x*y - 6*H*x + 2*H*y + 8*H - 2*x*y - 4*x + 8)",
+      "denominator": "H**2*(H - x)**2"
+    },
+    {
+      "i": 0,
+      "j": 1,
+      "multiplicity": 2,
+      "numerator": "4*(-H**3 - H**2*U - H**2*V + H**2*x + H**2*y + 2*H**2 - H*x - H*y - 8*H + 2*x + 2*y - 8)",
+      "denominator": "H**2*(H - x)*(H - y)"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "multiplicity": 2,
+      "numerator": "-4*(H**2*V - H**2 + H*U - 2*H*V*x + H*x + 6*H - U*x - 2*U + V*x**2 - 4*x + 8)",
+      "denominator": "-H*U*(H - x)**2"
+    },
+    {
+      "i": 0,
+      "j": 3,
+      "multiplicity": 2,
+      "numerator": "2*(2*H**3 - H**2*V - 3*H**2*x - 2*H**2*y + 2*H**2 - 2*H*U**2 - 2*H*U*V + 2*H*U*x + 2*H*U*y + 4*H*U - 2*H*V**2 + 3*H*V*x + 3*H*V*y + 4*H*V + H*x**2 + H*x*y - 4*H*y - 12*H - 4*U**2 - U*V*y - 2*U*V - U*x*y + 2*U*x + 4*U*y + 8*U + V**2*x - V*x**2 - 2*V*x*y + 2*V*y + 4*V - 2*x**2 - 2*x*y + 8*x - 2*y**2 + 4*y - 16)",
+      "denominator": "-H*U*(H - x)*(-H - U - V + x + y)"
+    },
+    {
+      "i": 0,
+      "j": 4,
+      "multiplicity": 2,
+      "numerator": "-2*(H**3 - H**2*U - H**2*V - H**2*x - 2*H**2*y + 8*H**2 - 2*H*U**2 + 3*H*U*x + 2*H*U*y + 2*H*U + 2*H*V**2 + 2*H*V*x - H*V*y - 8*H*V + H*x*y - 6*H*x + H*y**2 - 6*H*y + 12*H + U**2*y - U*V*x + U*V*y - 2*U*V - 2*U*x*y - 2*U*x - U*y**2 - 8*U - V**2*x - V*x*y + 6*V*x + 2*V*y - 4*V + 2*x**2 + 2*x*y + 4*x + 2*y**2 - 4*y + 16)",
+      "denominator": "-H*V*(H - x)*(H - y)"
+    },
+    {
+      "i": 0,
+      "j": 5,
+      "multiplicity": 2,
+      "numerator": "-4*(H**2*U - H**2*x + 3*H**2 - H*U**2 - H*U*V - H*U*y + 2*H*U + H*V*x + 2*H*V + H*x**2 + H*x*y - 6*H*x - 2*H*y + 6*H + U**2*x + U**2*y + U**2 + U*V*x + U*V*y + 2*U*V - U*x**2 - U*x*y - 4*U*x - 2*U*y - 6*U + 2*V**2 - V*x**2 - V*x*y - 2*V*x - 2*V*y + 4*x**2 + 4*x*y + y**2 - 6*y + 8)",
+      "denominator": "-H*V*(H - x)*(-H - U - V + x + y)"
+    },
+    {
+      "i": 1,
+      "j": 1,
+      "multiplicity": 1,
+      "numerator": "-4*(H**2*U - H**2*x + 6*H**2 - H*U*y + 2*H*V + H*x*y + 2*H*x - 6*H*y + 8*H - 2*x*y - 4*y + 8)",
+      "denominator": "H**2*(H - y)**2"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "multiplicity": 2,
+      "numerator": "-2*(H**3 - H**2*U - H**2*V - 2*H**2*x - H**2*y + 8*H**2 + 2*H*U**2 - H*U*x + 2*H*U*y - 8*H*U - 2*H*V**2 + 2*H*V*x + 3*H*V*y + 2*H*V + H*x**2 + H*x*y - 6*H*x - 6*H*y + 12*H - U**2*y + U*V*x - U*V*y - 2*U*V - U*x*y + 2*U*x + 6*U*y - 4*U + V**2*x - V*x**2 - 2*V*x*y - 2*V*y - 8*V + 2*x**2 + 2*x*y - 4*x + 2*y**2 + 4*y + 16)",
+      "denominator": "-H*U*(H - x)*(H - y)"
+    },
+    {
+      "i": 1,
+      "j": 3,
+      "multiplicity": 2,
+      "numerator": "-4*(H**2*V - H**2*y + 3*H**2 - H*U*V + H*U*y + 2*H*U - H*V**2 - H*V*x + 2*H*V + H*x*y - 2*H*x + H*y**2 - 6*H*y + 6*H + 2*U**2 + U*V*x + U*V*y + 2*U*V - U*x*y - 2*U*x - U*y**2 - 2*U*y + V**2*x + V**2*y + V**2 - V*x*y - 2*V*x - V*y**2 - 4*V*y - 6*V + x**2 + 4*x*y - 6*x + 4*y**2 + 8)",
+      "denominator": "-H*U*(H - y)*(-H - U - V + x + y)"
+    },
+    {
+      "i": 1,
+      "j": 4,
+      "multiplicity": 2,
+      "numerator": "-4*(H**2*U - H**2 - 2*H*U*y + H*V + H*y + 6*H + U*y**2 - V*y - 2*V - 4*y + 8)",
+      "denominator": "-H*V*(H - y)**2"
+    },
+    {
+      "i": 1,
+      "j": 5,
+      "multiplicity": 2,
+      "numerator": "-2*(-2*H**3 + H**2*U + 2*H**2*x + 3*H**2*y - 2*H**2 + 2*H*U**2 + 2*H*U*V - 3*H*U*x - 3*H*U*y - 4*H*U + 2*H*V**2 - 2*H*V*x - 2*H*V*y - 4*H*V - H*x*y + 4*H*x - H*y**2 + 12*H - U**2*y + U*V*x + 2*U*V + 2*U*x*y - 2*U*x + U*y**2 - 4*U + 4*V**2 + V*x*y - 4*V*x - 2*V*y - 8*V + 2*x**2 + 2*x*y - 4*x + 2*y**2 - 8*y + 16)",
+      "denominator": "-H*V*(H - y)*(-H - U - V + x + y)"
+    },
+    {
+      "i": 2,
+      "j": 2,
+      "multiplicity": 1,
+      "numerator": "-4*(H**2*U + 2*H**2 - 2*H*U*x - H*U*y - 4*H*U + 2*H*V - 4*H*x - 2*H*y + 4*H + U*x**2 + U*x*y + 6*U*x - 4*U - 2*V*x + 2*x**2 + 2*x*y - 4*x + 8)",
+      "denominator": "U**2*(H - x)**2"
+    },
+    {
+      "i": 2,
+      "j": 3,
+      "multiplicity": 2,
+      "numerator": "-4*(-H*U**2 + U**2*y - U**2 - U*V + U*y - 6*U - 2*V + 2*y + 8)",
+      "denominator": "U**2*(H - x)*(-H - U - V + x + y)"
+    },
+    {
+      "i": 2,
+      "j": 4,
+      "multiplicity": 2,
+      "numerator": "-4*(-H*U*V + H*U*y - 2*H*U + H*V*x - 2*H*V - H*x*y + U**2*V - U**2*y + U**2 + U*V**2 - U*V*x - U*V*y - 2*U*V + U*x*y + 2*U*y - 6*U - V**2*x + V**2 + V*x*y + 2*V*x - 6*V + x**2 - 2*x*y + 6*x + y**2 + 6*y + 8)",
+      "denominator": "U*V*(H - x)*(H - y)"
+    },
+    {
+      "i": 2,
+      "j": 5,
+      "multiplicity": 2,
+      "numerator": "2*(H**2*U - H**2*x + H**2*y + 2*H*U**2 - 2*H*U*V - 3*H*U*x - H*U*y - 2*H*U - 2*H*V**2 + 2*H*V*y + H*x**2 + 2*H*x - H*y**2 + 2*H*y - U**2*y - 4*U**2 + 3*U*V*x - 6*U*V + U*x*y + 2*U*x + U*y**2 + 4*U*y + 16*U + 2*V**2*x - 4*V**2 - V*x**2 - V*x*y - 2*V*x + 6*V*y + 8*V - 2*x**2 - 2*x*y - 8*x - 2*y**2 - 4*y - 16)",
+      "denominator": "U*V*(H - x)*(-H - U - V + x + y)"
+    },
+    {
+      "i": 3,
+      "j": 3,
+      "multiplicity": 1,
+      "numerator": "-4*(2*H**2 + H*U**2 - H*U*x + 10*H*U + 2*H*V - 4*H*x - 2*H*y - 4*H + U**3 + U**2*V - 2*U**2*x - U**2*y + 8*U**2 - U*V*x + 6*U*V + U*x**2 + U*x*y - 10*U*x - 8*U*y - 8*U - 2*V*x - 4*V + 2*x**2 + 2*x*y + 4*x + 4*y + 8)",
+      "denominator": "U**2*(-H - U - V + x + y)**2"
+    },
+    {
+      "i": 3,
+      "j": 4,
+      "multiplicity": 2,
+      "numerator": "-2*(-H**2*V - H**2*x + H**2*y + 2*H*U**2 + 2*H*U*V - 2*H*U*x - 2*H*V**2 + H*V*x + 3*H*V*y + 2*H*V + H*x**2 - 2*H*x - H*y**2 - 2*H*y - 2*U**2*y + 4*U**2 - 3*U*V*y + 6*U*V + U*x*y - 6*U*x + U*y**2 + 2*U*y - 8*U + V**2*x + 4*V**2 - V*x**2 - V*x*y - 4*V*x - 2*V*y - 16*V + 2*x**2 + 2*x*y + 4*x + 2*y**2 + 8*y + 16)",
+      "denominator": "U*V*(H - y)*(-H - U - V + x + y)"
+    },
+    {
+      "i": 3,
+      "j": 5,
+      "multiplicity": 2,
+      "numerator": "4*(H**3 + 2*H**2*U + 2*H**2*V - 2*H**2*x - 2*H**2*y + H*U**2 + 2*H*U*V - 2*H*U*x - 2*H*U*y + H*U + H*V**2 - 2*H*V*x - 2*H*V*y + H*V + H*x**2 + 2*H*x*y + H*y**2 + 4*H + U**2 + 2*U*V - U*x - U*y + 6*U + V**2 - V*x - V*y + 6*V - 4*x - 4*y - 8)",
+      "denominator": "U*V*(-H - U - V + x + y)**2"
+    },
+    {
+      "i": 4,
+      "j": 4,
+      "multiplicity": 1,
+      "numerator": "-4*(H**2*V + 2*H**2 + 2*H*U - H*V*x - 2*H*V*y - 4*H*V - 2*H*x - 4*H*y + 4*H - 2*U*y + V*x*y + V*y**2 + 6*V*y - 4*V + 2*x*y + 2*y**2 - 4*y + 8)",
+      "denominator": "V**2*(H - y)**2"
+    },
+    {
+      "i": 4,
+      "j": 5,
+      "multiplicity": 2,
+      "numerator": "-4*(-H*V**2 - U*V - 2*U + V**2*x - V**2 + V*x - 6*V + 2*x + 8)",
+      "denominator": "V**2*(H - y)*(-H - U - V + x + y)"
+    },
+    {
+      "i": 5,
+      "j": 5,
+      "multiplicity": 1,
+      "numerator": "-4*(2*H**2 + 2*H*U + H*V**2 - H*V*y + 10*H*V - 2*H*x - 4*H*y - 4*H + U*V**2 - U*V*y + 6*U*V - 2*U*y - 4*U + V**3 - V**2*x - 2*V**2*y + 8*V**2 + V*x*y - 8*V*x + V*y**2 - 10*V*y - 8*V + 2*x*y + 4*x + 2*y**2 + 4*y + 8)",
+      "denominator": "V**2*(-H - U - V + x + y)**2"
+    }
+  ]
+}

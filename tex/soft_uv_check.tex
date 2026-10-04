@@ -1,0 +1,823 @@
+\subsection{The final coordinate of the UV difference}
+\label{sec:comp-uv-final-coordinate}
+Throughout this calculation the electron mass is the unit of energy,
+$s=P^2>1$, $P=p+k_{\mathrm{in}}$ is the incoming total momentum,
+with $k_{\mathrm{in}}$ the incident photon momentum, and $H=s-1$ is
+fixed and positive. The original Dalitz variables are
+\begin{equation}
+ x=2P\cdot k_1,\qquad y=2P\cdot k_2,\qquad
+ z=x+y-H=2k_1\cdot k_2.
+\end{equation}
+The final electron is on shell. Positive final energies and the
+three-body kinematic boundary give
+\begin{equation}
+ 0<x<H,\qquad 0<z<\frac{x(H-x)}{s-x},\qquad y=H-x+z.
+\end{equation}
+The hyperbolic angle in the $UV$ angular function is rationalized by
+its positive exponential $v$. Explicitly,
+\begin{align}
+ D_v&=H^2v-x(v-1)^2,\qquad
+ z=\frac{x(H-x)(v-1)^2}{D_v},\\
+ y&=\frac{H^2v(H-x)}{D_v},\qquad
+ \left|\frac{\partial(x,z)}{\partial(x,v)}\right|
+ =\frac{x(H-x)H^2(v^2-1)}{D_v^2}.
+\end{align}
+At fixed $x$, the lower and upper Dalitz boundaries map to $v=1$ and
+$v=s$. The Jacobian is positive in the interior. Thus the new domain
+is the rectangle $0<x<H$, $1<v<s$. This is why the inner energy
+integration can be completed before the final $v$ integration.
+In particular,
+\begin{equation}
+ xy=\frac{x(H-x)}{1-kx/H},\qquad k=\frac{(v-1)^2}{Hv},
+ \qquad 0\leq k\leq\frac Hs<1.
+\end{equation}
+The analytic regulator therefore has the positive real value
+$[x(H-x)]^\eta(1-kx/H)^{-\eta}$. The denominator is at least $1/s$
+on the closed rectangle. No logarithmic branch is inferred from a
+numerical result.
+
+After the inner energy integration, the $UV$ angular difference sector
+is a finite sum of terms
+\begin{equation}
+ R_{ab}(H,v)\ln^a v\ln^b(1-k),\qquad
+ k=\frac{(v-1)^2}{Hv},\qquad 1\leq v\leq H+1.
+\end{equation}
+Here $H=s-1>0$, and the $R_{ab}$ are the rational functions obtained
+from the real-emission amplitude. Their coefficients may include
+$\ln H$, which is constant in this integration. The pole and finite
+parts of the analytic regulator are treated separately.
+
+\paragraph{The endpoint Laurent coefficients.}
+The separated rational energy kernels have poles of at most second
+order at $x=0,H$. Other poles are at $x=H/k>H$ and hence outside the
+integration path. Start with $\operatorname{Re}\eta>1$, where these
+endpoint integrals converge absolutely. Subtract the constant and linear
+Taylor terms of the smooth endpoint factor before analytically continuing
+to a neighborhood of $\eta=0$. This operation gives an ordinary convergent
+remainder and explicit Mellin integrals for the removed terms.
+For example, near $x=0$ the smooth factor obeys
+\begin{equation}
+ (H-x)^\eta(1-kx/H)^{-\eta}
+ =H^\eta\left[1+\eta\frac{k-1}{H}x+O(x^2)\right].
+\end{equation}
+The kernel $x^{-2}$ consequently has the finite coefficient
+$-1/H+(k-1)/H=(k-2)/H$. The first term is the finite part of the
+unregulated double pole. The second follows from $\eta x$ multiplying
+$x^{-2+\eta}$. Although that term vanishes pointwise as $\eta\to0$,
+its endpoint integral has a nonzero limit.
+At $x=H$, write $b=H-x$. The corresponding expansion is
+\begin{equation}
+ x^\eta(1-kx/H)^{-\eta}
+ =\left(\frac H{1-k}\right)^\eta
+ \left[1-\frac{\eta b}{H(1-k)}+O(b^2)\right].
+\end{equation}
+Including the signs in $(x-H)^{-1}=-b^{-1}$ gives the complete rules
+\begin{align}
+ \int_0^H\frac{[x(H-x)]^\eta}{x(1-kx/H)^\eta}\,\dd x
+ &=\frac1\eta+2\ln H+O(\eta),\\
+ \int_0^H\frac{[x(H-x)]^\eta}{x^2(1-kx/H)^\eta}\,\dd x
+ &=\frac{k-2}{H}+O(\eta),\\
+ \int_0^H\frac{[x(H-x)]^\eta}{(x-H)(1-kx/H)^\eta}\,\dd x
+ &=-\frac1\eta+\ln(1-k)-2\ln H+O(\eta),\\
+ \int_0^H\frac{[x(H-x)]^\eta}{(x-H)^2(1-kx/H)^\eta}\,\dd x
+ &=-\frac{2-k}{H(1-k)}+O(\eta).
+\end{align}
+The displayed integrals near $\eta=0$ mean their analytic continuations
+from the convergence half-plane. The other energy kernels are bounded
+on $0\leq x\leq H$ and can be integrated at $\eta=0$ for their finite
+coefficient. These rules explain every regulator-generated constant used
+in the inner integration. They do not discard power-divergent endpoint
+terms by hand.
+
+Put $\zeta=v-1$ for the final polylogarithm coordinate. This $\zeta$ is
+distinct from the original Dalitz variable $z$. The two roots of $1-k$ are
+\begin{equation}
+ r_\pm=\frac{H+2\pm\sqrt{H(H+4)}}2,\qquad
+ r_+r_-=1,\qquad 0<r_-<1<H+1<r_+.
+\end{equation}
+Factorization, together with the value at $\zeta=0$, gives
+\begin{align}
+ \ln v&=G(-1;\zeta),\\
+ \ln(1-k)&=G(r_+-1;\zeta)+G(r_--1;\zeta)-G(-1;\zeta).
+\end{align}
+The normalization of the multiple polylogarithms is
+\begin{align}
+ G(\varnothing;\zeta)&=1,\qquad
+ G(a,\boldsymbol b;\zeta)
+ =\int_0^\zeta\frac{\dd u}{u-a}G(\boldsymbol b;u),\\
+ G(\underbrace{0,\ldots,0}_{n};\zeta)&=\frac{\ln^n\zeta}{n!}.
+\end{align}
+For words with a convergent lower endpoint, the path is the real segment.
+The last line fixes the normalization for logarithmic lower endpoints.
+All logarithms are real on $0\leq \zeta\leq H$. Their letters lie outside
+this interval. Products are expanded by the shuffle identity, and the
+rational factors are integrated by partial fractions and the finite
+polylogarithmic reduction already described for the soft angular term.
+
+\paragraph{A removable origin.}
+Individual rational coefficients can have poles at $\zeta=0$, even though
+their sum multiplied by the logarithms is regular. An origin pole must
+therefore be handled before setting the lower endpoint to zero. For an
+analytic word write
+\begin{equation}
+ G(\boldsymbol a;\zeta)=\sum_{j\geq1}g_j(\boldsymbol a)\zeta^j.
+\end{equation}
+Normalize each primitive to have zero finite part at $\zeta=0$, meaning
+zero constant term after separating its negative powers and logarithms.
+For $\boldsymbol a=(b,\boldsymbol c)$ and $n\geq2$, integration by
+parts then gives
+\begin{align}
+ \mathfrak T[\zeta^{-n};b,\boldsymbol c](\zeta)
+ &=-\frac{G(b,\boldsymbol c;\zeta)}{(n-1)\zeta^{n-1}}
+ +\frac{g_{n-1}(b,\boldsymbol c)}{n-1}\\
+ &\quad+\frac1{n-1}\mathfrak T\!\left[
+ \frac1{\zeta^{n-1}(\zeta-b)};\boldsymbol c\right](\zeta).
+\end{align}
+The displayed constant is essential. It subtracts the finite part of
+the boundary term and is absent in the simpler case of a nonzero pole.
+For the empty word the origin rules are
+\begin{equation}
+ \mathfrak T[\zeta^{-1};\varnothing](\zeta)=\ln \zeta,\qquad
+ \mathfrak T[\zeta^{-n};\varnothing](\zeta)=\frac{\zeta^{1-n}}{1-n}
+ \quad(n\geq2).
+\end{equation}
+Linearity then makes the normalized primitive of the full regular
+integrand vanish at zero. Negative powers and $\ln \zeta$ must cancel in
+the complete expression. This is a check on the independently derived
+rational coefficients, not a choice of a finite subtraction constant.
+
+An elementary example displays the role of the constant without any
+numerical evaluation,
+\begin{equation}
+ \int_0^Z\frac{\ln(1+\zeta)-\zeta+\zeta^2/2}{\zeta^3}\,\dd\zeta
+ =\left(\frac12-\frac1{2Z^2}\right)\ln(1+Z)
+ +\frac1{2Z}-\frac14.
+\end{equation}
+The right-hand side differentiates to the integrand and tends to zero
+as $Z\to0^+$. The $-1/4$ is the finite-part normalization constant.
+
+The script \texttt{compton\_soft\_uv\_check.py} implements this reduction.
+It reads the two independently generated inner-energy coefficient files,
+forms their difference, and evaluates the resulting ordinary multiple
+polylogarithms by convergent power series and analytic continuation.
+The original coordinate integral is used only as a separate check.
+For general $H>0$, direct expansion of the rational coefficients gives
+\begin{align}
+ \mathcal P_{\mathrm{UV}}(H,1+\zeta)
+ &=-\frac{256(H+1)(H+5)}{15H^2}\zeta+O(\zeta^2),\\
+ \mathcal F_{\mathrm{UV}}(H,1+\zeta)
+ &=-\frac{256(H+1)}{15H^3}
+ \bigl[2H(H+5)\ln H-H^2-5H-15\bigr]\zeta
+ +O(\zeta^2).
+\end{align}
+These follow by expanding $\ln(1+\zeta)$ and
+$\ln[1-\zeta^2/(H(1+\zeta))]$ before multiplying the rational Laurent
+series. The coefficients of $\zeta^{-4},\ldots,\zeta^{-1},\zeta^0$
+vanish identically in both sums. Only finitely many Taylor coefficients
+are required to prove these cancellations, since the highest rational
+origin pole is fourth order.
+Thus the apparent origin poles cancel for every $H>0$.
+\subsubsection{Constant letters for the UV contribution}
+The moving letters of the integrated $UV$ contribution can be removed
+without using the total cross section.  Introduce
+\begin{equation}
+ q=\frac{\sqrt{H+4}-\sqrt H}{\sqrt{H+4}+\sqrt H},\qquad
+ H=\frac{(1-q)^2}{q},\qquad 0<q<1.
+\end{equation}
+Write $z=v-1$.  Its upper endpoint is $H$, and the two logarithms of the
+inner Laurent coefficient become
+\begin{align}
+ \ln v&=G(-1;z),\\
+ \ln(1-k)&=G(q-1;z)+G(q^{-1}-1;z)-G(-1;z),
+ \qquad k=\frac{z^2}{H(1+z)}.
+\end{align}
+This follows by factoring $1-k$ and matching its value one at $z=0$.
+All factors are positive on $0\leq z\leq H$: the negative letter $q-1$
+is outside the interval, and $q^{-1}-1>H$.  Rational partial fractions
+and integration by parts therefore produce GPL words with letters
+$0,-1,q-1,q^{-1}-1$ and rational coefficients in $q,z$.
+
+To replace their moving endpoint and letters by constants, differentiate
+the whole word with respect to $q$.  For a word $w=(a_1,\ldots,a_n)$,
+let $w\setminus j$ mean deletion of its $j$th entry.  The total differential
+is
+\begin{align}
+ \dd G(w;H)={}&G(w\setminus1;H)\,\dd\ln(H-a_1)
+ -G(w\setminus n;H)\,\dd\ln(-a_n)\\
+ &+\sum_{j=1}^{n-1}
+ [G(w\setminus(j+1);H)-G(w\setminus j;H)]
+                      \,\dd\ln(a_j-a_{j+1}).
+\end{align}
+The last endpoint term is absent when $a_n=0$.  Adjacent equal letters
+are treated by continuity, with their paired difference equal to zero.
+Factoring each logarithmic differential gives only constant simple poles.
+In this case the complete alphabet is
+\begin{equation}
+ \left\{0,1,-1,\frac{1+\ii\sqrt3}{2},
+                    \frac{1-\ii\sqrt3}{2}\right\}.
+\end{equation}
+For example, $H+1=(q^2-q+1)/q$ explains the complex-conjugate pair.
+Its appearance does not change the real physical boundary value.
+
+The recursive integration uses basepoint $q=1$ approached from below.
+For every nonzero moving letter, $H/a_j\to0$ there.  Thus every original
+word containing a nonzero letter vanishes, including powers of logarithms
+multiplying that vanishing limit.  Pure-zero words instead have
+\begin{equation}
+ G(\underbrace{0,\ldots,0}_{n};H)=\frac{\ln^nH}{n!},\qquad
+ \ln H=2\ln(1-q)-\ln q.
+\end{equation}
+These relations fix all integration constants.  The recursion checks that
+pure powers of $\ln(1-q)$ cancel for every nonzero-letter original word.
+
+The lower endpoint of the angular primitive supplies an additional finite
+constant, even though the combined integral is convergent.  With
+\begin{align}
+ P(q)&=3q^8+18q^7+12q^6-1874q^5+1666q^4
+                         -1874q^3+12q^2+18q+3,\\
+ Q(q)&=-25q^8+238q^7-436q^6+2274q^5-4294q^4
+                         +2274q^3-436q^2+238q-25,
+\end{align}
+the constants to subtract from the upper primitive are
+\begin{align}
+ b_{UV,-1}&=-\frac{(q^2-q+1)P(q)}{9q^3(q-1)^4},\\
+ b_{UV,0}&=-\frac{q^2-q+1}{18q^3(q-1)^4}
+                         [4P(q)\ln H+Q(q)].
+\end{align}
+The subscripts label the pole and finite Laurent coefficients, respectively.
+These constants follow from the Taylor coefficients of each GPL multiplied
+by its rational prefactor at $z=0$.  Setting every GPL to zero before
+multiplying by the prefactor would lose them.
+
+The resulting pole and finite coefficients contain respectively seven and
+41 constant-letter words of weight at most three, before multiplication
+by $1/(8sH)$. The script \nolinkurl{compton_soft_uv_constant_basis.py}
+generates their explicit coefficient lists,
+\nolinkurl{soft_uv_constant_basis_pole.json} and
+\nolinkurl{soft_uv_constant_basis_finite.json}, in
+\nolinkurl{build/intermediate/}.
+The reduction script uses only the independent inner Laurent coefficients.
+The primitive follows the exact rational integration recurrence above.
+The primitive is checked by differentiating each independent kernel
+term before summing. If its coefficient dictionary is $Q_w(y)$,
+the derivative follows from
+\begin{equation}
+ \frac{\mathrm d}{\mathrm dy}\bigl[Q_w(y)G(w;y)\bigr]
+ =Q'_w(y)G(w;y)+\frac{Q_w(y)}{y-a}G(\widehat w;y),
+ \qquad w=(a,\widehat w).
+\end{equation}
+For the empty word only the first term occurs. Subtracting the input
+kernel leaves a rational coefficient for each GPL word.
+Every coefficient vanishes exactly, for both pole and finite parts.
+The calculation holds the external parameter $q$ and $\ln H$ fixed
+while differentiating in $y=v-1$.
+Canceling rational factors before differentiation makes this test finite
+in size. Linearity then proves the derivative identity for their sum.
+The reproducible checks are in
+\texttt{compton\_uv\_primitive\_certificate.py}.
+Evaluation against the earlier moving-letter expression provides
+a separate numerical check of the conversion.
+
+
+\subsection{The UW endpoint matching}
+Use the original Dalitz coordinates defined above, and set
+$a=H-x$. The positive angular variable satisfies $1<v<1+a$, so
+$t=(v-1)/a$ places its two endpoints at zero and one. The complete map is
+\begin{align}
+ x&=H-a,\qquad v=1+at,\qquad
+ z=\frac{a(H-a)t^2}{1+at},\\
+ y&=\frac{a[1+Ht^2+at(1-t)]}{1+at},\\
+ \left|\frac{\partial(x,z)}{\partial(a,t)}\right|
+ &=\frac{a(H-a)t(2+at)}{(1+at)^2}>0.
+\end{align}
+The new domain is exactly $0<a<H$, $0<t<1$. Both the sign of the
+Jacobian and the range of $t$ follow from the positive solution for $v$.
+In these rectangular coordinates the analytic
+regulator is $[a(H-a)f(a,t)]^\eta$, with
+\begin{equation}
+ f(a,t)=\frac{1+Ht^2+at(1-t)}{1+at},\qquad
+ 0<a<H,\quad 0<t<1.
+\end{equation}
+The useful alternative form $f=1+(H-a)t^2/(1+at)$ shows that
+$1\leq f\leq1+H$ on the rectangle. Its logarithm and endpoint derivatives
+are real and bounded for fixed $H>0$. For a fixed interior $t$, start
+again at $\operatorname{Re}\eta>1$ and continue analytically only after
+subtracting the endpoint Taylor terms.
+Write the unregulated difference as
+$F(a,t)=L(a,t)\ln(1+at)-T(a,t)$, where $L$ and $T$ are the rational
+coefficient and Taylor subtraction obtained after including the Jacobian.
+At the upper endpoint put $b=H-a$ and expand
+\begin{equation}
+ L=\frac{L_2}{b^2}+\frac{L_1}{b}+O(1),\qquad
+ T=\frac{T_2}{b^2}+\frac{T_1}{b}+O(1).
+\end{equation}
+These coefficients are fixed algebraically, for example
+$L_2=[b^2L]_{b=0}$ and $L_1=[\partial_b(b^2L)]_{b=0}$.
+Because $\ln[1+(H-b)t]=\ell-bt/(1+Ht)+O(b^2)$, the complete singular
+coefficients are
+\begin{align}
+ g_2&=L_2\ell-T_2,\qquad \ell=\ln(1+Ht),\\
+ g_1&=L_1\ell-\frac{L_2t}{1+Ht}-T_1.
+\end{align}
+In particular, the derivative of the logarithm contributes to the simple
+pole and cannot be omitted. Thus $F=g_2/b^2+g_1/b+O(1)$.
+Since $f(H,t)=1$, direct expansion gives
+\begin{equation}
+ a^\eta f(a,t)^\eta
+ =H^\eta\left[1+\eta b\left(-\frac1H+\frac{t^2}{1+Ht}\right)
+ +O(b^2)\right].
+\end{equation}
+The ordinary finite part used for comparison is defined explicitly by
+\begin{equation}
+ \operatorname{FP}\int_0^H F(a,t)\,\dd a
+ =\lim_{\delta\to0^+}\left[
+ \int_0^{H-\delta}F(a,t)\,\dd a-\frac{g_2}{\delta}
+ +g_1\ln\delta\right].
+\end{equation}
+After the two singular terms are subtracted, the remainder is bounded
+at $b=0$. Its integral is analytic in $\eta$ near zero. The removed terms
+are integrated before expansion using
+\begin{equation}
+ \int_0^H b^{\eta-2}\,\dd b=\frac{H^{\eta-1}}{\eta-1},
+ \qquad
+ \int_0^H b^{\eta-1}\,\dd b=\frac{H^\eta}{\eta},
+\end{equation}
+first in their convergence half-planes and then by continuation.
+The double-pole kernel therefore does not by itself produce a pole at
+$\eta=0$. Its term proportional to $\eta b$, however, multiplies the
+second integral and supplies a finite constant. The simple pole produces
+$g_1/\eta$. Relative to the ordinary finite
+part of the $a$ integral, the finite matching contribution is
+\begin{equation}
+ g_1\ln H+g_2\left(-\frac1H+\frac{t^2}{1+Ht}\right).
+\end{equation}
+The second term arises because the factor $\eta b$ multiplying
+$b^{-2+\eta}$ leaves a finite limit after integration. It must not be
+lost by setting $\eta=0$ before integrating. The finite part of the
+unregulated integral already includes $-g_2/H$ and $g_1\ln H$.
+The matching term is additional to those terms. At $a=0$ the possible
+simple-pole coefficient cancels in the complete angular difference.
+Explicitly, $\ln(1+at)=at+O(a^2)$ implies
+\begin{equation}
+ \lim_{a\to0}aF(a,t)
+ =t\lim_{a\to0}a^2L(a,t)-\lim_{a\to0}aT(a,t)=0.
+\end{equation}
+The last equality is an exact identity of the rational coefficients.
+Therefore there is no matching term from that endpoint.
+
+The cancellation at the other boundary can also be seen before numerical
+evaluation. Expanding $\ln(1+Ht)$ and the explicit rational endpoint
+coefficients gives, for every fixed $H>0$,
+\begin{align}
+ g_2(H,t)&=\frac{64H^2(H+1)}{15}t+O(t^2),\\
+ g_1(H,t)&=-\frac{64H(H+1)}5t+O(t^2).
+\end{align}
+All the coefficients of $t^{-4},t^{-3},t^{-2},t^{-1},t^0$ vanish in
+these complete combinations. Thus the functions entering the pole and
+finite endpoint matching are integrable at the lower angular boundary.
+This algebraic cancellation, rather than their numerical values at a
+few points, justifies treating that boundary as removable.
+
+The remaining $t$ integral of $g_1$ is rational times $\ln(1+Ht)$.
+The same finite-part polylogarithmic reduction gives seven terms.
+\paragraph{Logarithmic lower endpoints.}
+For the finite coefficient, the inner integral also contains $\ln t$
+and weight-two functions. A word ending in zero can be rewritten by
+shuffle identities. In particular,
+\begin{equation}
+ G(a,0;t)=\ln t\,G(a;t)-G(0,a;t).
+\end{equation}
+For a longer word the same identity recursively removes its trailing
+zeros. The result is a polynomial in $\ln t$ whose coefficients are
+regular-origin polylogarithms. In the repeated-pole primitive, the
+finite-part constant is the coefficient of $t^{n-1}(\ln t)^0$.
+Terms containing $\ln t$ are therefore included in the reduction rather
+than incorrectly treated as ordinary Taylor coefficients.
+For example, the shuffle identity gives the exact check
+\begin{equation}
+ \int_0^1\frac{\ln t}{1+t}\,\dd t
+ =G(-1,0;1)=-G(0,-1;1)=\operatorname{Li}_2(-1)
+ =-\frac{\pi^2}{12}.
+\end{equation}
+Differentiation proves the primitive, and its lower endpoint vanishes.
+
+For the finite inner result, use the following names for its eight
+logarithmic and dilogarithmic functions:
+\begin{align}
+ \ell&=\ln(1+Ht),\qquad l_H=\ln H,\qquad
+ l_2=\ln(2+Ht),\\
+ l_P&=\ln(1+Ht-Ht^2),\qquad l_t=\ln t,\\
+ d_1&=\operatorname{Li}_2(-Ht),\qquad
+ d_2=\operatorname{Li}_2(-1-Ht)+\frac{\pi^2}{12},\\
+ d_3&=\operatorname{Li}_2\!\left(-\frac{(1-t)(1+Ht)}t\right)
+       -\operatorname{Li}_2\!\left(-\frac{1-t}t\right).
+\end{align}
+All logarithm arguments are positive for $H>0$ and $0<t<1$.
+The dilogarithm arguments are nonpositive, so their real branches
+follow from the original physical interval. Expanding the boundary
+formulas in \eqref{eq:comp-real-UW-inner-closed} in these functions
+gives thirteen monomials. Write $R_f(H,t)$ for the rational coefficient
+of a monomial $f$, including $R_1$ for the constant monomial.
+
+In the complete $UW$ finite sum, the coefficient of
+$\ell\ln t$, with $\ell=\ln(1+Ht)$, is exactly the negative of the
+coefficient of the dilogarithm difference $d_3$.
+This is an identity of the rational coefficients for arbitrary $H$ and
+$t$, not a numerical cancellation. It groups these terms into
+$d_3-\ell\ln t$. Writing $a=-1/H$ and
+$t_\pm=(1\pm\sqrt{1+4/H})/2$, the group is
+\begin{equation}
+ d_3-\ell\ln t
+ =-\sum_{r=t_\pm}\left[G(1,r;t)+G(a,r;t)-G(0,r;t)\right]
+ -G(0,a;t).
+\end{equation}
+Every word on the right has a regular lower endpoint. This identity
+also explains why the apparent $\ln t$ terms disappear from the
+complete lower-endpoint expansion. The general finite-part rules remain
+useful when these terms are integrated separately.
+
+\paragraph{The finite UW coordinate integral.}
+Write the inner finite result as a finite sum
+$\sum_j R_j(t)M_j(t)$, where the $R_j$ are its explicit rational
+coefficients and each $M_j$ is a monomial in the eight logarithmic or
+dilogarithmic functions. Translating these functions to ordinary
+polylogarithms and applying shuffle products gives finite coefficients
+$c_{j\boldsymbol a}$ such that
+\begin{equation}
+ M_j(t)=\sum_{\boldsymbol a}c_{j\boldsymbol a}
+ G(\boldsymbol a;t).
+\end{equation}
+The final coordinate integral is therefore the finite endpoint expression
+\begin{equation}
+ \mathcal F_{UW}(H)=\lim_{Z\to1^-}
+ \sum_{j,\boldsymbol a}c_{j\boldsymbol a}
+ \mathfrak T[R_j;\boldsymbol a](Z).
+ \label{eq:comp-real-UW-final-primitive}
+\end{equation}
+All rational integrations in this formula are eliminated by the terminating
+partial-fraction rules, including the origin constants described above.
+The functions with a first letter equal to one are combined before the
+endpoint limit. Their separate logarithmic divergences need not cancel
+within a single term.
+
+For evaluation, the complete inner finite function is analytic at $t=1$.
+Indeed, its logarithm arguments are nonzero there and the two arguments
+in the dilogarithm difference both tend to zero. The apparent rational
+poles cancel in the summed expression. With $d=1-t$, the remaining tail
+is consequently obtained algebraically,
+\begin{equation}
+ \mathcal F_{UW}^{\mathrm{inner}}(H,1-d)=\sum_{n\geq0}c_n d^n,
+ \qquad
+ \int_{1-\delta}^1\mathcal F_{UW}^{\mathrm{inner}}(H,t)\,\dd t
+ =\sum_{n\geq0}\frac{c_n\delta^{n+1}}{n+1}.
+\end{equation}
+The coefficients are generated by rational power-series division and the
+Taylor series of the displayed logarithms and dilogarithms. No phase-space
+quadrature enters this endpoint evaluation. Individual terms near $t=0$ require powers of $t$ multiplied by
+powers of $\ln t$. The combined function is analytic there, as follows
+from the cancellation of $\ln t$ established above.
+The generated finite expression requires 52 nonempty polylogarithm words.
+\paragraph{The order of the limiting operations.}
+All endpoint statements here concern a fixed $H>0$. They do not justify
+interchanging the photon-mass limit or the regulator expansion with the
+threshold limit $H\to0$. The analytic regulator is first introduced in
+a common convergence half-plane. Only after the endpoint Taylor terms
+have been isolated are their Mellin integrals continued to $\eta=0$.
+The bounded remainders can then be expanded under the integral.
+
+There is also a uniform reason for the removable angular origins. The
+hyperbolic function entering each angular integral is analytic at
+$q=0$, where
+\begin{equation}
+ q=\cosh(\ln v)-1=\frac{(v-1)^2}{2v}.
+\end{equation}
+Together with the Taylor expansion of its rational prefactors, its
+constant and linear terms give precisely the terms removed in $J-T$. For the $UV$ map, $q=\zeta^2/[2(1+\zeta)]$ is independent
+of the inner energy coordinate. For the $UW$ map,
+$q=a^2t^2/[2(1+at)]$ is uniformly small as $t\to0$ for $0\leq a\leq H$.
+Taylor's remainder is therefore uniform after the explicit soft endpoint
+powers have been factored out. Those powers are at most second order,
+and are controlled by $\operatorname{Re}\eta>1$ before continuation.
+The local Mellin subtractions above preserve this uniform angular
+behavior because their coefficient functions and the regulator shape
+factors are analytic in the same angular neighborhood.
+This gives the reason for taking the Laurent coefficients before the
+last angular integration. A pointwise expansion of the un-subtracted
+endpoint integrand would not give that justification.
+
+At the upper $UW$ boundary, the logarithm arguments are positive and
+the two $d_3$ dilogarithm arguments tend to zero. At nonzero electron mass, the original hard angular denominators have
+no pole on the integration sphere for positive photon energies. The
+soft endpoint factors have already been isolated explicitly. Thus the
+complete soft-subtracted energy integral has an analytic neighborhood
+of $t=1$, even when a particular angular partial-fraction representation
+becomes singular there.
+The largest apparent rational pole in the separated coefficient list is
+fifth order. To determine the tail through order $d^n$, the atom series
+are therefore expanded through at least order $d^{n+5}$ before summing.
+All negative powers are canceled before the endpoint value is used.
+The resulting convergent power series may be integrated term by term
+inside its disk of convergence. These arguments establish the endpoint
+operations. The numerical verification chapter
+tests their implementation independently of these analytic arguments.
+
+\subsubsection{Exact removal of the finite UW endpoint poles}
+\label{sec:comp-UW-upper-certificate}
+The cancellation of the apparent poles at $t=1$ can be checked for
+arbitrary $H>0$, without evaluating the remaining integral numerically.
+Write $d=1-t$, $E=\ln(1+H)$, and $C=(H+1)/H$ in this subsection.
+Here $E$ is a logarithm, not an electron energy.
+Denote the rational coefficient multiplying an atom $f$ in the
+thirteen-term inner result by $R_f$.  Only six terms can have a pole
+at this endpoint:
+\begin{equation}
+ R_1+R_{d_3}d_3+R_{l_P}l_P
+       +R_\ell\ell+R_{\ell l_t}\ell l_t+R_{\ell l_P}\ell l_P.
+\end{equation}
+Their rational pole orders are respectively $4,3,5,2,3,3$.
+The remaining seven terms have rational denominators nonzero at $t=1$
+and analytic atoms there.  Thus they cannot contribute a negative power
+of $d$.
+
+The required Taylor coefficients follow from
+\begin{align}
+ \ell&=E-\sum_{n=1}^4\frac1n
+                   \left(\frac{H}{1+H}\right)^n d^n+O(d^5),\\
+ l_t&=-\sum_{n=1}^4\frac{d^n}{n}+O(d^5),\\
+ l_P&=\sum_{n=1}^4\frac{(-1)^{n+1}}n
+                         (Hd-Hd^2)^n+O(d^5),\\
+ d_3&=\sum_{n=1}^4\frac{z_1^n-z_2^n}{n^2}+O(d^5),
+ \qquad z_1=-\frac{d(1+H-Hd)}{1-d},\quad z_2=-\frac d{1-d}.
+\end{align}
+Terms of degree above four in the last two finite sums are simply omitted
+when constructing the Taylor polynomial.  The two dilogarithm arguments
+vanish at $d=0$, so their ordinary convergent series applies.  All these
+statements are at fixed $H>0$ in a sufficiently small neighborhood of
+$d=0$.  There is no continuation through a dilogarithm cut.
+
+For completeness, the rational expansion requires only polynomial
+arithmetic.  If $R_f(1-d)=(-d)^{-m}N(d)/D(d)$ with $D(0)\ne0$, write
+$N=\sum N_jd^j$, $D=\sum D_jd^j$.  Its regular quotient coefficients obey
+\begin{equation}
+ r_0=\frac{N_0}{D_0},\qquad
+ r_n=\frac{N_n-\sum_{j=1}^nD_jr_{n-j}}{D_0}.
+\end{equation}
+Multiplying this finite quotient series by the atom series determines
+every negative power.  The largest pole is fifth order, so degree four
+is sufficient.  No infinite-series truncation error enters a coefficient
+of a negative power.
+
+Let $\operatorname{PP}_{d=0}$ denote the sum of strictly negative powers
+in a Laurent expansion.  Substituting the actual rational coefficients
+of the inner result gives the particularly simple pair
+\begin{align}
+ \operatorname{PP}_{d=0}(R_1+R_{l_P}l_P)
+ &=C\left[-\frac{16}{d^2}+\frac{4(H-10)}d\right],\\
+ \operatorname{PP}_{d=0}(R_{d_3}d_3)
+ &=C\left[\frac{16}{d^2}-\frac{4(H-10)}d\right].
+\end{align}
+The apparent fourth- and third-order poles have already canceled within
+the first line.  The fifth-order coefficient vanishes because $l_P(0)=0$.
+For the other three terms, divide their principal parts by $8C$.
+The coefficients of $d^{-2}$ and $d^{-1}$ are
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Term & $[d^{-2}]/(8C)$ & $[d^{-1}]/(8C)$\\
+\midrule
+$R_\ell\ell$ & $2E(H+1)/H$ & $-E(H-4-7/H)-2$\\
+$R_{\ell l_t}\ell l_t$ & $-2E/H$ & $-7E/H+2/(H+1)$\\
+$R_{\ell l_P}\ell l_P$ & $-2E$ & $E(H-4)+2H/(H+1)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Each column sums to zero as a rational identity in $H,E$.  Their
+third-order coefficients vanish because $l_t(0)=l_P(0)=0$.
+Combining the two cancellations proves
+\begin{equation}
+ [d^{-j}]F_{UW}(H,1-d)=0,\qquad j=1,\ldots,5,\qquad H>0.
+\end{equation}
+Here $F_{UW}(H,t)$ denotes the finite inner integrand before the final
+$t$ integration.  Since each atom is analytic at the endpoint and the
+rational factors have finite pole order, the disappearance of their
+complete principal part proves that this endpoint is removable.
+It is an identity for the finite integrand, not only for its infrared pole.
+
+The independent script
+\nolinkurl{compton_soft_uv_uw_endpoint_certificate.py} reads the thirteen
+rational coefficients, computes the six contributing expansions, and
+checks every coefficient of $E$ separately using exact arithmetic.
+\nolinkurl{uw_endpoint_certificate.json} records the individual terms
+as well as the zero sums.  This certificate establishes endpoint
+regularity.  It does not provide a bound on the entire omitted numerical
+Taylor tail used when evaluating the final special functions.
+
+\subsubsection{Exact removal of the finite UW origin poles}
+\label{sec:comp-UW-lower-certificate}
+The lower endpoint also admits an exact certificate for every fixed
+$H>0$.  The only explicit $\ln t$ in the thirteen-term expression comes
+from $d_3$ and the product $\ell\ln t$.  Their rational coefficients
+satisfy
+\begin{equation}
+ R_{d_3}+R_{\ell l_t}=0.
+\end{equation}
+It is therefore essential to combine these two terms first.  Define
+\begin{equation}
+ \mathcal D(t)=d_3(t)-\ell(t)\ln t,\qquad \ell(t)=\ln(1+Ht).
+\end{equation}
+The logarithm cancels exactly, rather than merely becoming integrable.
+
+Its boundary constant follows from the real inversion identity
+\begin{equation}
+ \operatorname{Li}_2(-z)=-\frac{\pi^2}{6}-\frac12\ln^2z
+                              -\operatorname{Li}_2(-1/z),\qquad z>0.
+\end{equation}
+Apply it to $z=(1-t)(1+Ht)/t$ and $z=(1-t)/t$.  Both are positive on
+$0<t<1$, so the same negative-real-axis boundary value is used in both
+terms.  The exact result is
+\begin{align}
+ \mathcal D(t)={}&-\ell\ln(1-t)-\frac12\ell^2
+ -\operatorname{Li}_2\!\left(-\frac{t}{(1-t)(1+Ht)}\right)
+ +\operatorname{Li}_2\!\left(-\frac{t}{1-t}\right).
+\end{align}
+Every term on this line is analytic at $t=0$ and vanishes there.
+This proves $\mathcal D(0)=0$ independently of any numerical evaluation.
+Differentiating either this expression or the original pair gives
+\begin{equation}
+ \mathcal D'(t)=\frac{l_P}{1-t}-\frac{Hl_P}{1+Ht}
+                         +\frac{l_P-\ell}{t},\qquad
+ l_P=\ln(1+Ht-Ht^2).
+\end{equation}
+The apparent $1/t$ is removable because $l_P(0)=\ell(0)=0$.
+The resulting series starts as
+\begin{equation}
+ \mathcal D(t)=-\frac{H^2}{2}t^2
+ +\frac{H^2(H+1)}2t^3
+ -\left(\frac{11H^4}{24}+\frac{2H^3}{3}\right)t^4+O(t^5).
+\end{equation}
+In particular, $d_3=Ht\ln t+O(t^2[1+|\ln t|])$ has a zero constant,
+fixed by the inversion identity, not chosen to enforce cancellation.
+
+After this combination the entire kernel contains only atoms analytic
+at the origin.  Its rational factors have poles of order at most five.
+Using the finite quotient recurrence of the preceding subsection,
+expand the atom series through degree six.  This determines all negative
+powers, the constant, and the coefficient of $t$ exactly.
+The cancellation can be displayed without a long list of individual
+rational coefficients.  Define the three groups
+\begin{align}
+ \mathcal B_0&=R_1+R_{l_2}l_2+R_{l_P}l_P+R_\ell\ell,\\
+ \mathcal B_1&=R_{d_3}\mathcal D+R_{\ell l_P}\ell l_P+R_{\ell^2}\ell^2,\\
+ \mathcal B_H&=\ln H\,[R_{l_H}+R_{\ell l_H}\ell].
+\end{align}
+Their expansions obtained from the explicit coefficient table are
+\begin{align}
+ \mathcal B_0={}&(H+1)\left[-\frac{128}{H^2t^2}+
+ \frac{64}{Ht}+\frac{4(3H^2-67H-72)}{3H}\right]+O(t),\\
+ \mathcal B_1={}&(H+1)\left[\frac{128}{H^2t^2}-
+ \frac{64}{Ht}-\frac{4(3H^2-67H-72)}{3H}\right]+O(t),\\
+ \mathcal B_H={}&O(t).
+\end{align}
+Their fifth-, fourth-, and third-order poles have already canceled
+inside these groups.  The remaining three atom terms are individually
+$O(t)$ because their rational coefficients are regular and their atoms
+vanish.  Thus all negative powers and the constant cancel in the full
+finite kernel.  The first surviving coefficient is
+\begin{equation}
+ F_{UW}(H,t)=-\frac{32H(H+1)}{15}(12\ln H-1)t+O(t^2),
+                    \qquad t\to0^+,\quad H>0\text{ fixed}.
+\end{equation}
+There is no residual $\ln t$ in this combined expression.  The origin is
+an ordinary analytic endpoint, so the finite lower boundary of the GPL
+primitive equals the lower limit of the convergent integral.
+
+The script \nolinkurl{compton_soft_uv_uw_origin_certificate.py} first
+checks the exact rational coefficient identity removing $\ln t$.
+It then treats $\ln H$ and $\ln2$ as independent symbols and checks
+the coefficients of $t^{-5},\ldots,t^{-1},t^0$ separately in exact
+arithmetic.  Their values and the nonzero coefficient of $t$ are stored
+in \nolinkurl{uw_origin_certificate.json}.  Together with the upper
+certificate, this establishes both finite endpoints for arbitrary
+$H>0$.  A rigorous error bound for the numerical special-function
+series is a separate issue.
+
+\subsection{An exact certificate for the integrated pole sum}
+This additional algebraic check tests the separately implemented sector
+primitives for every $H>0$.  The physical soft factorization was established
+earlier.  No numerical comparison or published total enters this check.
+The $UV$ pole density already uses $1<v<H+1$.  In the $UW$ pole density,
+set $v=1+Ht$, including $\dd t=\dd v/H$.  The physical infrared angular
+integral has the same range after the substitution
+\begin{align}
+ T&=-t_{\mathrm{elastic}}=\frac{(v-1)^2}{v},
+ &y_B&=H-T,\\
+ b_e&=\frac{v^2+1}{v^2-1}\ln v,
+ &\left|\frac{\dd c}{\dd v}\right|
+ &=\frac{2(H+1)}{H^2}\left(1-\frac1{v^2}\right).
+\end{align}
+Here $y_B=1-u_{\mathrm{elastic}}$ distinguishes the elastic invariant
+from the real-emission Dalitz variable. Let
+$\mathcal B(v)=\overline{|\mathcal M_0|^2}/e_{\mathrm T}^4$ be the
+Born square with its coupling factor removed, evaluated at $x=H$ and
+$y=y_B$. The target density for $8H\mathcal C_{\mathrm{IR}}$
+is consequently
+\begin{equation}
+ P(v)=\frac{16(H+1)}H\mathcal B(v)
+ \left[\frac{v^2+1}{v^2}\ln v-1+\frac1{v^2}\right].
+\end{equation}
+Subtract this density from the sum of the $UV$ density and twice the
+transformed $UW$ density.  The result is $L(v)\ln v+Q(v)$, with rational
+$L$ and $Q$ fixed directly by the sector coefficient tables.  Integration by parts separates rational total derivatives from
+simple-pole remainders. This operation, called rational Hermite reduction,
+provides a short certificate for its integral.
+Define
+\begin{align}
+ D(v)&=v^2-(H+2)v+1,\\
+ p&=H^3-5H^2-28H-24,\qquad d=H^2+6H+4,\\
+ j_0&=H^5+4H^4-12H^3+48H^2-32H-384,\\
+ j_1&=2H^4+16H^3-40H^2+64H-192,\\
+ j_2&=3H^4-16H^3-184H^2-736H-480.
+\end{align}
+Two rational functions suffice:
+\begin{align}
+ \mathcal R(v)&=\frac{H+1}{H^3}\left\{
+ \frac{128H^2}{(v-1)^2}+16Hv^2
+ +\frac{128H(H+2)(v-1)}{D(v)}
+ +\frac{32H(3H-4)}{v-1}\right.\\
+ &\hspace{14mm}\left.
+ -\frac{16H}{v^2}-32dv
+ +\frac{192(H+2)^2}{(v+1)^2}
+ -\frac{128(H+2)^2}{(v+1)^3}
+ +\frac{32p}{v+1}+\frac{32d}{v}\right\},\\
+ \mathcal J(v)&=\frac{H+1}{3H^3}\left\{
+ \frac{H^3(H+2)(H+6)(H^2-4H+8)[(H+2)v-1]}{D(v)^2}
+ +\frac{H^2(j_0+j_1v)}{D(v)}\right.\\
+ &\hspace{12mm}
+ -\frac{384H^2}{v-1}-72Hv^2-\frac{72H}{v^2}
+ -(6H^4-368H^2-1472H-960)v\\
+ &\hspace{12mm}\left.
+ -\frac{1152(H+2)^2}{v+1}
+ +\frac{1152(H+2)^2}{(v+1)^2}-\frac{2j_2}{v}\right\}.
+\end{align}
+The four constant coefficients needed below are
+\begin{align}
+ C&=\frac{32(H+1)(H^2-4H-6)}{H^2},\\
+ c_1&=\frac{2(H+1)}{3H^3}
+ (3H^5-24H^4-112H^3+608H^2+2368H+1920),\\
+ c_+&=\frac{256(H+1)p}{3H^3},\qquad
+ c_D=-\frac{2(H+1)(H^3-8H^2-8H+48)}H.
+\end{align}
+Direct differentiation and rational cancellation give the two identities
+\begin{align}
+ L&=\mathcal R'+\frac Cv,\\
+ Q-\frac{\mathcal R}{v}
+ &=\mathcal J'+\frac{c_1}{v}+\frac{c_+}{v+1}
+                      +c_D\frac{D'}D.
+\end{align}
+Thus an elementary primitive of the full difference is
+\begin{equation}
+ \Phi(v)=\mathcal R(v)\ln v+\frac C2\ln^2v+\mathcal J(v)
+             +c_1\ln v+c_+\ln(v+1)+c_D\ln[-D(v)].
+\end{equation}
+There is no unresolved branch in this expression.  On $1\leq v\leq H+1$
+the convex quadratic $D$ is negative, since its endpoint values both
+ equal $-H$.  All displayed logarithm arguments are positive.
+In particular, the $c_D$ logarithm has identical endpoint values.
+
+The apparent pole at $v=1$ must be combined before taking its limit.
+If the coefficients of $(v-1)^{-2}$ and $(v-1)^{-1}$ in $\mathcal R$
+are $r_{-2}$ and $r_{-1}$, the constant from
+$\mathcal R\ln v$ is $r_{-1}-r_{-2}/2$.  Adding the constant from
+$\mathcal J$ gives
+\begin{align}
+ j_-&=-\frac{H+1}{3H^3}
+       (H^5+24H^4-28H^3-624H^2-1936H-768),\\
+ j_+&=\frac{1}{3H^3(H+1)}
+ \left(H^9+6H^8-18H^7-36H^6+351H^5\right.\\
+ &\hspace{35mm}\left.+2912H^4+6572H^3+6800H^2+3472H+768\right),\\
+ r_+&=-\frac{16(H^5+20H^4+78H^3+114H^2+72H+16)}{H^3(H+1)}.
+\end{align}
+Here $j_+=\mathcal J(H+1)$ and $r_+=\mathcal R(H+1)$.
+With $L_s=\ln(H+1)$ and $L_2=\ln[(H+2)/2]$, the integrated difference is
+\begin{equation}
+ E(H)=j_+-j_-+(r_++c_1)L_s+\frac C2L_s^2+c_+L_2.
+\end{equation}
+The remaining rational, single-logarithm, and Bose-restoration pole
+expressions contain only the additional logarithms
+\begin{equation}
+ \ln\frac1{H+1}=-L_s,\qquad
+ \ln\left(1+\frac{H^2}{4(H+1)}\right)=2L_2-L_s.
+\end{equation}
+Substitution and polynomial collection in the two independent symbols
+$L_s,L_2$ gives zero for every rational coefficient in
+$E+A_{\mathrm{rat}}+A_{\log}+A_D$.  Therefore
+\begin{equation}
+ A_{\mathrm{rat}}+A_{\log}+A_{UV}+2A_{UW}+A_D
+              =8H\mathcal C_{\mathrm{IR}},\qquad H>0.
+\end{equation}
+The script \nolinkurl{compton_soft_uv_pole_certificate.py} verifies both
+rational derivative identities, the endpoint constants, and the final
+zero polynomial using exact arithmetic.  It also verifies that the
+combined $UV$ and $UW$ pole densities start at order $v-1$, so their
+lower endpoints are ordinary convergent integrals.  The machine-readable
+certificate is \nolinkurl{soft_pole_certificate.json} in this supplement.

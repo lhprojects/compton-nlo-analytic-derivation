@@ -1,0 +1,682 @@
+The principal results in Chapter 1 summarize the calculation. They are
+not assumptions in the derivation that starts here. This chapter derives
+the Compton amplitudes and their parameter integrals
+from the QED vertices. The loop, energy, and angular integrations are performed on these
+amplitudes. The total in Equation (6) of Lee, Schwartz and
+Zhang~\cite{qed-processes-lsz} is reserved for a final comparison. No coefficient from that total is used
+to determine an integral or its integration constant here.
+
+\section{Conventions and diagram counting}
+Let $p,k$ denote incoming electron and photon momenta, and $p',k'$
+the outgoing momenta. The electron mass is $m$, its charge is
+$-e_{\mathrm T}$, and $\alpha_{\mathrm T}=e_{\mathrm T}^2/(4\pi)$
+is the Thomson coupling. Use the mostly-minus metric, the vertex
+$+\ii e_{\mathrm T}\gamma^\mu$, and
+\begin{align}
+ p+k&=p'+k',\qquad p^2=p'^2=m^2,\qquad k^2=k'^2=0,\\
+ s&=(p+k)^2,\qquad t=(p-p')^2,\qquad u=(p-k')^2.
+\end{align}
+We write $\epsilon=\epsilon_{\rm UV}$ and regulate ultraviolet integrals in $d=4-2\epsilon$ dimensions,
+with coupling $\mu^\epsilon e_{\mathrm T}$, and soft photons by a
+mass $\lambda$. The propagators are
+\begin{equation}
+ S_F(P)=\ii S_0(P),\qquad S_0(P)=\frac{\slashed P+m}{P^2-m^2+\ii0},
+ \qquad D_{\rho\sigma}(\ell)=\frac{-\ii\eta_{\rho\sigma}}
+                                      {\ell^2-\lambda^2+\ii0}.
+\end{equation}
+The photon symbol omits $F$ but has Feynman boundary conditions.
+External photons remain massless.
+The Born amplitude is
+\begin{equation}
+ \mathcal M_0=-e_{\mathrm T}^2\epsilon_\mu\epsilon_\nu'^*
+ \bar u(p')R_0^{\nu\mu}u(p),\qquad
+ R_0^{\nu\mu}=\gamma^\nu S_0(p+k)\gamma^\mu
+                         +\gamma^\mu S_0(p-k')\gamma^\nu.
+\end{equation}
+At one loop the electron line has four photon vertices. Choosing
+the positions of the two external photons gives six choices and
+ordering those photons gives two choices. Of these twelve diagrams,
+four are external-electron self-energy diagrams. On-shell external
+normalization accounts for those four. The remaining eight are two
+internal self-energies, four vertices and two spanning photons.
+There is no exchanged Born photon on which to insert a vacuum
+polarization. The physical charge and real-photon normalization
+account for the photon two-point function at zero momentum squared.
+
+\section{Tensor loop integration}
+Define an integral whose factor $1/\ii$ removes the Minkowski loop
+factor. Here $\Gamma$ denotes Euler's gamma function.
+\begin{equation}
+ I_n(\Delta)=\frac{\mu^{2\epsilon}}{\ii}
+ \int\frac{\dd^dL}{(2\pi)^d}\frac1{(L^2-\Delta+\ii0)^n}
+ =\frac{(-1)^n\mu^{2\epsilon}}{(4\pi)^{d/2}}
+ \frac{\Gamma(n-d/2)}{\Gamma(n)}(\Delta-\ii0)^{d/2-n}.
+ \label{eq:comp-supp-master}
+\end{equation}
+To derive the last expression, first take $\Delta>0$ and
+$\operatorname{Re}n>\operatorname{Re}d/2$. A Wick rotation supplies
+$\ii(-1)^n$, and the Euclidean angular integral followed by
+$v=L_E^2$ gives
+\begin{equation}
+ I_n(\Delta)=\frac{(-1)^n\mu^{2\epsilon}}
+ {(4\pi)^{d/2}\Gamma(d/2)}
+ \int_0^\infty\frac{v^{d/2-1}\dd v}{(v+\Delta)^n}.
+\end{equation}
+Scaling $v=\Delta z$ reduces the remaining integral to Euler's identity
+\begin{equation}
+ \int_0^\infty\frac{z^{a-1}\dd z}{(1+z)^{a+b}}
+ =\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)},
+ \qquad \operatorname{Re}a,\operatorname{Re}b>0,
+\end{equation}
+with $a=d/2$ and $b=n-d/2$. Analytic continuation in $d$ and in
+$\Delta-\ii0$ then gives \eqref{eq:comp-supp-master} with its causal
+boundary value. Odd powers of $L$ vanish. Rotational invariance of the
+regulated integral gives
+\begin{align}
+ \int\dd^dL\,L_\rho L_\sigma f(L^2)
+ &=\frac{\eta_{\rho\sigma}}d\int\dd^dL\,L^2f(L^2),\\
+ \frac{L^2}{(L^2-\Delta)^n}
+ &=\frac1{(L^2-\Delta)^{n-1}}
+                  +\frac{\Delta}{(L^2-\Delta)^n}.
+\end{align}
+The scalar integral therefore also determines the quadratic
+numerators. Combine $n$ denominators $D_j$ with
+\begin{equation}
+ \frac1{\prod_{j=1}^nD_j}
+ =\Gamma(n)\int_{a_j\geq0}\prod_j\dd a_j\,
+ \frac{\delta(1-\sum_j a_j)}{(\sum_j a_jD_j)^n}.
+ \label{eq:comp-supp-feynman-parameters}
+\end{equation}
+The simplex measure is normalized to $1/(n-1)!$.
+This normalization is needed when checking pole coefficients.
+
+\section{Self-energy and residue subtraction}
+The insertion $-\ii\Sigma(P)$ yields
+\begin{equation}
+ \Sigma(P)=\frac{e_{\mathrm T}^2\mu^{2\epsilon}}{\ii}
+ \int\frac{\dd^d\ell}{(2\pi)^d}
+ \frac{\gamma^\rho(\slashed P-\slashed\ell+m)\gamma_\rho}
+ {[(P-\ell)^2-m^2+\ii0](\ell^2-\lambda^2+\ii0)}.
+\end{equation}
+Use $v$ for the electron denominator. Completing the square gives
+\begin{equation}
+ v[(P-\ell)^2-m^2]+(1-v)(\ell^2-\lambda^2)
+ = (\ell-vP)^2-\Delta_\Sigma,
+ \quad \Delta_\Sigma=vm^2+(1-v)\lambda^2-v(1-v)P^2.
+\end{equation}
+After the shift $L=\ell-vP$, the gamma identities
+$\gamma^\rho\gamma^\alpha\gamma_\rho=(2-d)\gamma^\alpha$
+and $\gamma^\rho\gamma_\rho=d$ leave
+\begin{equation}
+ \Sigma(P)=\frac{e_{\mathrm T}^2\mu^{2\epsilon}}{(4\pi)^{d/2}}
+ \Gamma(\epsilon)\int_0^1\dd v\,
+ \frac{(2-d)(1-v)\slashed P+dm}{(\Delta_\Sigma-\ii0)^\epsilon}
+ =a(P^2)\slashed P+mb(P^2).
+\end{equation}
+For an explicit expansion define
+\begin{equation}
+ C=\frac{\alpha_{\mathrm T}}{4\pi},\qquad
+ \mathcal L(\Delta)=\frac1\epsilon-\gamma_E+\ln4\pi
+                         +\ln\frac{\mu^2}{\Delta-\ii0},
+\end{equation}
+where $\gamma_E$ is Euler's constant. Through the finite terms,
+\begin{align}
+ a(P^2)&=C\int_0^1\dd v\,
+       [-2(1-v)\mathcal L(\Delta_\Sigma)+2(1-v)],\\
+ b(P^2)&=C\int_0^1\dd v\,[4\mathcal L(\Delta_\Sigma)-2].
+\end{align}
+The last terms come from multiplying $d-4$ by the ultraviolet pole.
+They would be lost by doing the numerator algebra in four dimensions
+before subtraction.
+
+To determine the pole and its residue, regard $\slashed P$ as a
+variable $w$ near $m$. Then
+\begin{equation}
+ \begin{aligned}
+ a(w^2)w+mb(w^2)={}&m[a(m^2)+b(m^2)]\\
+ &+(w-m)\{a(m^2)+2m^2[a'(m^2)+b'(m^2)]\}\\
+ &+\Order((w-m)^2).
+ \end{aligned}
+\end{equation}
+Here the primes differentiate the scalar squared argument. Subtract
+the first two coefficients,
+\begin{align}
+ c_m&=m[a(m^2)+b(m^2)],\qquad
+ c_Z=a(m^2)+2m^2[a'(m^2)+b'(m^2)],\\
+ \Sigma_{\mathrm R}(P)&=\Sigma(P)-c_m-(\slashed P-m)c_Z.
+\end{align}
+The renormalized propagator has a pole at $m$ with unit residue.
+Writing $\Delta_0=v^2m^2+(1-v)\lambda^2$ gives explicit subtraction
+integrals,
+\begin{align}
+ c_m&=mC\int_0^1\dd v\,[2(1+v)\mathcal L(\Delta_0)-2v],\\
+ c_Z&=C\int_0^1\dd v\,
+ \left[-2(1-v)\mathcal L(\Delta_0)+2(1-v)
+       +\frac{4m^2v(1-v)(1+v)}{\Delta_0}\right].
+ \label{eq:comp-supp-cz}
+\end{align}
+At fixed $\lambda>0$ these are ordinary one-dimensional parameter
+integrals. The last term in $c_Z$ displays the logarithmic soft
+sensitivity as $\lambda\to0$.
+
+\subsection{Evaluation of the on-shell constants}
+The logarithmic integrals in the mass subtraction are integrable at
+$v=0$, whereas the rational term in the residue subtraction is not
+integrable there after setting the photon mass to zero. To separate
+these two cases, put
+\begin{equation}
+ r_\lambda=\frac{\lambda}{m},\qquad
+ d_0(v)=v^2+(1-v)r_\lambda^2,\qquad
+ U_m=\frac1\epsilon-\gamma_E+\ln4\pi+\ln\frac{\mu^2}{m^2}.
+\end{equation}
+Then $\mathcal L(\Delta_0)=U_m-\ln d_0(v)$. For the logarithmic
+terms the limit can be taken under the integral, giving
+\begin{align}
+ \frac{c_m}{mC}
+ &=3U_m-4\int_0^1(1+v)\ln v\,\dd v-1+o(1)\\
+ &=3U_m+4+o(1).
+\end{align}
+For the regular part of $c_Z/C$, define and evaluate
+\begin{align}
+ I_{\rm reg}&=\int_0^1[-2(1-v)\mathcal L(\Delta_0)+2(1-v)]\,\dd v\\
+ &=-U_m+4\int_0^1(1-v)\ln v\,\dd v+1+o(1)\\
+ &=-U_m-2+o(1).
+\end{align}
+Here $o(1)$ means a term vanishing as $r_\lambda\to0$ at fixed
+$\mu/m$. The elementary moments used are
+$\int_0^1\ln v\,\dd v=-1$ and
+$\int_0^1v\ln v\,\dd v=-1/4$.
+
+The remaining term must be integrated before this limit. Replacing
+$d_0(v)$ by $v^2+r_\lambda^2$ changes its integral by $O(r_\lambda)$.
+For example, split the interval at $v=r_\lambda$ and $v=1/2$.
+The denominator difference is $v r_\lambda^2$, so the absolute
+integrand difference is bounded by a constant times
+$r_\lambda^2v^2/(v^2+r_\lambda^2)^2$ on the first two intervals
+and by a constant times $r_\lambda^2$ on the last. Its integral
+therefore vanishes. Consequently,
+\begin{align}
+ 4\int_0^1\frac{v(1-v^2)}{d_0(v)}\,\dd v
+ &=4\int_0^1\frac{v-v^3}{v^2+r_\lambda^2}\,\dd v+o(1)\\
+ &=2(1+r_\lambda^2)\ln\frac{1+r_\lambda^2}{r_\lambda^2}-2+o(1)\\
+ &=-4\ln r_\lambda-2+o(1).
+\end{align}
+Combining the regular and singular parts fixes the finite constant
+as well as the infrared logarithm,
+\begin{equation}
+ c_Z=-C[U_m+4+4\ln r_\lambda]+C\,o(1).
+\end{equation}
+
+To relate these subtractions to the Lagrangian, write
+$Z_j=1+\delta_j+O(\alpha_{\mathrm T}^2)$,
+$\psi_0=Z_2^{1/2}\psi$, and $m_0=Z_m m$. The electron quadratic
+counterterm is
+\begin{equation}
+ \delta\mathcal L_e=
+ \overline\psi[\delta_2(\ii\slashed\partial-m)-m\delta_m]\psi.
+\end{equation}
+Its insertion is $\ii[\delta_2(\slashed P-m)-m\delta_m]$.
+Combining it with $-\ii\Sigma$ gives
+$\Sigma_R=\Sigma-\delta_2(\slashed P-m)+m\delta_m$.
+Comparison with the pole and residue subtractions thus determines
+\begin{equation}
+ \delta_m=-\frac{c_m}{m},\qquad \delta_2=c_Z.
+\end{equation}
+This also explains why the field counterterm multiplies both the
+kinetic term and the renormalized mass term.
+
+These mass and field counterterms agree with the diagonal QED limit
+of Denner's on-shell expressions, Equation (3.20) of
+Reference~\cite{compton-overview-denner-renormalization}.
+In his self-energy convention the left- and right-chiral scalar
+coefficients both equal $-a$, and the mass coefficient equals $-b$.
+His additive mass counterterm therefore equals $-m(a+b)=m\delta_m$,
+and either diagonal field counterterm equals
+$a+2m^2(a'+b')=\delta_2$. This comparison is made after evaluating
+our parameter integrals.
+
+\section{The off-shell vertex}
+At a photon insertion let the electron momenta be $P$ and $P'$,
+with $q=P'-P$. The correction to the dimensionless vertex is
+\begin{equation}
+ V^\rho(P',P)=\frac{e_{\mathrm T}^2\mu^{2\epsilon}}{\ii}
+ \int\frac{\dd^d\ell}{(2\pi)^d}
+ \frac{\gamma^\alpha S_0(P'-\ell)\gamma^\rho
+                         S_0(P-\ell)\gamma_\alpha}
+      {\ell^2-\lambda^2+\ii0}.
+\end{equation}
+Introduce $x,y,z\geq0$, $x+y+z=1$, for the two electron lines and
+the photon. With $\int_{\mathcal S_2}=\int_0^1\dd x\int_0^{1-x}\dd y$,
+\begin{equation}
+ K=xP'+yP,\qquad
+ \Delta=(x+y)m^2+z\lambda^2-xzP'^2-yzP^2-xyq^2.
+\end{equation}
+Let $A=\slashed P'-\slashed K+m$ and $B=\slashed P-\slashed K+m$.
+After shifting $\ell=L+K$, the numerator is
+\begin{equation}
+ N^\rho(L+K)=\gamma^\alpha(A-\slashed L)\gamma^\rho
+ (B-\slashed L)\gamma_\alpha
+ \longrightarrow N^\rho(K)+\frac{(d-2)^2}{d}L^2\gamma^\rho.
+\end{equation}
+The arrow denotes symmetric loop integration. Equations
+\eqref{eq:comp-supp-master} and \eqref{eq:comp-supp-feynman-parameters}
+then give
+\begin{equation}
+ V^\rho=\frac{e_{\mathrm T}^2\mu^{2\epsilon}}{(4\pi)^{d/2}}
+ \int_{\mathcal S_2}
+ \left[-\frac{\Gamma(1+\epsilon)N^\rho(K)}{(\Delta-\ii0)^{1+\epsilon}}
+ +\frac{(d-2)^2\Gamma(\epsilon)\gamma^\rho}
+ {2(\Delta-\ii0)^\epsilon}\right].
+\end{equation}
+Equivalently, its finite expansion is
+\begin{equation}
+ V^\rho=C\int_{\mathcal S_2}
+ \left[-\frac{N^\rho_4(K)}{\Delta-\ii0}
+             +\gamma^\rho\{2\mathcal L(\Delta)-4\}\right].
+ \label{eq:comp-supp-vertex-finite}
+\end{equation}
+The subscript $4$ permits four-dimensional gamma algebra in the
+nondivergent numerator term. Add the counterterm
+$V_{\mathrm R}^\rho=V^\rho+c_Z\gamma^\rho$.
+The pole of $V$ is $C\gamma^\rho/\epsilon$, since the simplex has
+area $1/2$. The pole of $c_Z$ is $-C/\epsilon$. Their cancellation
+also removes the common ultraviolet scale dependence.
+
+The relative sign follows independently from
+\begin{equation}
+ S_0(A)(\slashed A-\slashed B)S_0(B)=S_0(B)-S_0(A),
+ \qquad q_\rho V^\rho(P',P)=\Sigma(P)-\Sigma(P').
+\end{equation}
+On adding the counterterms,
+\begin{equation}
+ q_\rho V_{\mathrm R}^\rho(P',P)
+ =\Sigma_{\mathrm R}(P)-\Sigma_{\mathrm R}(P').
+ \label{eq:comp-supp-ward}
+\end{equation}
+A decomposition into only the on-shell Dirac and Pauli form factors
+cannot satisfy this off-shell identity for general $P,P'$.
+
+\subsection{Photon normalization and the charge counterterm}
+The off-shell Ward identity fixes the vertex counterterm to the same
+$c_Z$ as the electron field counterterm. In the notation
+$Z_j=1+\delta_j+O(\alpha_{\mathrm T}^2)$ this gives
+\begin{equation}
+ \delta_1=\delta_2=c_Z.
+\end{equation}
+To determine the charge counterterm, define
+$A_{0\mu}=Z_3^{1/2}A_\mu$ and
+$e_0=\mu^\epsilon Z_e e_{\mathrm T}$. Substituting these and the
+bare electron field into the interaction gives
+\begin{equation}
+ Z_1=Z_e Z_2 Z_3^{1/2},\qquad
+ \delta_1=\delta_e+\delta_2+\tfrac12\delta_3,
+ \qquad \delta_e=-\tfrac12\delta_3.
+\end{equation}
+Thus only the photon residue remains to be calculated.
+
+For one electron species, the closed electron loop contributes
+\begin{equation}
+ \ii\Pi^{\mu\nu}(q)=-e_{\mathrm T}^2\mu^{2\epsilon}
+ \int\frac{\dd^d\ell}{(2\pi)^d}
+ \frac{\operatorname{tr}[\gamma^\mu(\slashed\ell+m)
+           \gamma^\nu(\slashed\ell+\slashed q+m)]}
+ { (\ell^2-m^2+\ii0)[(\ell+q)^2-m^2+\ii0]}.
+\end{equation}
+The sign includes the minus sign of a closed fermion loop. The trace is
+\begin{equation}
+ 4\{\ell^\mu(\ell+q)^\nu+\ell^\nu(\ell+q)^\mu
+       -\eta^{\mu\nu}[\ell\cdot(\ell+q)-m^2]\}.
+\end{equation}
+Combine the denominators with a parameter $v$ and shift
+$L=\ell+vq$. Their quadratic form is
+$L^2-\Delta_\gamma+\ii0$, where
+$\Delta_\gamma=m^2-v(1-v)q^2$.
+Odd terms vanish, and symmetric integration replaces
+$L^\mu L^\nu$ by $\eta^{\mu\nu}L^2/d$. The remaining terms
+proportional to the metric are reduced using
+\begin{equation}
+ 0=\int\dd^dL\,\frac{\partial}{\partial L^\rho}
+       \frac{L^\rho}{L^2-\Delta_\gamma+\ii0}
+ =\int\dd^dL\left[\frac{d}{L^2-\Delta_\gamma+\ii0}
+       -\frac{2L^2}{(L^2-\Delta_\gamma+\ii0)^2}\right].
+\end{equation}
+This identity follows in a convergent domain of dimensional
+regularization and extends by analytic continuation. Together with
+the scalar loop integral it gives the transverse form
+\begin{align}
+ \ii\Pi^{\mu\nu}(q)
+ &=\ii(q^\mu q^\nu-q^2\eta^{\mu\nu})\Pi_\gamma(q^2),\\
+ \Pi_\gamma(q^2)
+ &=8C\int_0^1v(1-v)\mathcal L(\Delta_\gamma)\,\dd v
+       +O(\epsilon),\\
+ \Pi_\gamma(0)&=\frac{4C}{3}U_m.
+\end{align}
+There is no soft photon in this loop, so its zero-momentum value
+has no photon-mass logarithm. With this sign convention the transverse
+quadratic action has coefficient $1+\delta_3+\Pi_\gamma(q^2)$.
+Unit residue at $q^2=0$ therefore requires
+\begin{equation}
+ \delta_3=-\Pi_\gamma(0)=-\frac{\alpha_{\mathrm T}}{3\pi}U_m,
+ \qquad
+ \delta_e=\frac{\alpha_{\mathrm T}}{6\pi}U_m.
+\end{equation}
+These relations agree with the QED limit of Denner's photon and
+charge counterterms, Equations (3.19) and (3.32) of
+Reference~\cite{compton-overview-denner-renormalization}.
+For a Compton amplitude the two charge factors and the two external
+photon field factors combine to $Z_e^2Z_3=1$ at this order.
+This cancellation accounts for photon normalization even though
+there is no internal photon propagator in the Born amplitude.
+
+\section{The spanning photon integral}
+Put $Q=p+k$. The remaining $s$-ordered matrix is
+\begin{equation}
+ W_s^{\nu\mu}=\frac{e_{\mathrm T}^2}{\ii}
+ \int\frac{\dd^4\ell}{(2\pi)^4}
+ \frac{N^{\nu\mu}(\ell)}
+ {D_0D_1D_2D_3},
+\end{equation}
+where
+\begin{align}
+ (D_0,D_1,D_2,D_3)&=(\ell^2-\lambda^2,
+ (p-\ell)^2-m^2,(Q-\ell)^2-m^2,(p'-\ell)^2-m^2)+\ii0,\\
+ N^{\nu\mu}(\ell)&=\gamma^\alpha(\slashed p'-\slashed\ell+m)
+ \gamma^\nu(\slashed Q-\slashed\ell+m)
+ \gamma^\mu(\slashed p-\slashed\ell+m)\gamma_\alpha.
+\end{align}
+Each component of the denominator tuple carries $+\ii0$.
+The loop is ultraviolet convergent by power counting. For simplex
+parameters $a_0,\ldots,a_3$ define
+\begin{equation}
+ K=a_1p+a_2Q+a_3p',\qquad
+ \Delta=K^2+a_0\lambda^2+a_2(m^2-s),\qquad
+ \sum_j a_jD_j=(\ell-K)^2-\Delta+\ii0.
+\end{equation}
+Expand the cubic numerator about $K$. Only its constant and second
+derivative contribute,
+\begin{equation}
+ N(L+K)\longrightarrow N(K)+\frac{L^2}{8}\Box_\ell N(K),
+ \qquad \Box_\ell=\frac{\partial}{\partial\ell^\rho}
+                       \frac{\partial}{\partial\ell_\rho}.
+\end{equation}
+The factor $1/8$ is the Taylor factor $1/2$ times the tensor
+average $1/4$. More explicitly, with $A_1=\slashed p-\slashed K+m$,
+$A_2=\slashed Q-\slashed K+m$, $A_3=\slashed p'-\slashed K+m$,
+\begin{equation}
+ \begin{aligned}
+ \Box_\ell N(K)=2\gamma^\alpha\big[&
+ \gamma^\rho\gamma^\nu\gamma_\rho\gamma^\mu A_1
+ +\gamma^\rho\gamma^\nu A_2\gamma^\mu\gamma_\rho\\
+ &+A_3\gamma^\nu\gamma^\rho\gamma^\mu\gamma_\rho
+ \big]\gamma_\alpha.
+ \end{aligned}
+\end{equation}
+There are three ways to differentiate two different electron
+numerators. All have a positive sign because each derivative brings
+a minus sign. The needed scalar integrals at $d=4$ are
+\begin{equation}
+ 3! I_4=\frac1{16\pi^2\Delta^2},\qquad
+ 3!(I_3+\Delta I_4)=\frac{-2}{16\pi^2\Delta}.
+\end{equation}
+Thus the complete parameter representation is
+\begin{equation}
+ W_s^{\nu\mu}=C\int_{\mathcal S_3}\dd^4a
+ \left[\frac{N^{\nu\mu}(K)}{(\Delta-\ii0)^2}
+       -\frac{\Box_\ell N^{\nu\mu}(K)}{4(\Delta-\ii0)}\right],
+ \qquad \int_{\mathcal S_3}\dd^4a=
+ \int_0^1\prod_{j=0}^3\dd a_j\,\delta(1-\sum_j a_j).
+\end{equation}
+Physical $s$-channel cuts require the displayed complex boundary
+value. Replacing it by a positive real denominator would remove
+physical absorptive terms.
+
+\section{Assembly and external Ward identities}
+The $s$ ordering is
+\begin{equation}
+ \begin{aligned}
+ R_{1,s}^{\nu\mu}={}&V_{\mathrm R}^\nu(p',Q)S_0(Q)\gamma^\mu
+ +\gamma^\nu S_0(Q)V_{\mathrm R}^\mu(Q,p)\\
+ &+\gamma^\nu S_0(Q)\Sigma_{\mathrm R}(Q)S_0(Q)\gamma^\mu
+ +W_s^{\nu\mu}.
+ \end{aligned}
+\end{equation}
+Interchange $(\mu,k)$ and $(\nu,-k')$ to obtain $R_{1,u}$, and
+set $R_1=R_{1,s}+R_{1,u}$. Its amplitude is
+$\mathcal M_1=-e_{\mathrm T}^2\epsilon_\mu\epsilon_\nu'^*
+\bar u(p')R_1^{\nu\mu}u(p)$.
+For the incoming Ward identity, write $\doteq$ for equality between
+external on-shell spinors. The four $s$-ordered terms contract to
+\begin{align}
+ k_\mu V_{\mathrm R}^\nu S_0(Q)\gamma^\mu
+ &\doteq V_{\mathrm R}^\nu(p',Q),\\
+ k_\mu\gamma^\nu S_0(Q)V_{\mathrm R}^\mu(Q,p)
+ &\doteq-\gamma^\nu S_0(Q)\Sigma_{\mathrm R}(Q),\\
+ k_\mu\gamma^\nu S_0(Q)\Sigma_{\mathrm R}(Q)S_0(Q)\gamma^\mu
+ &\doteq\gamma^\nu S_0(Q)\Sigma_{\mathrm R}(Q),\\
+ k_\mu W_s^{\nu\mu}&=V^\nu(p',p)-V^\nu(p',Q).
+\end{align}
+Their sum is $V_{\mathrm R}^\nu(p',p)$. The $u$ ordering yields
+its negative. Hence $k_\mu R_1^{\nu\mu}\doteq0$. The outgoing
+identity $k'_\nu R_1^{\nu\mu}\doteq0$ follows in the same way.
+In particular, omitting the spanning graph spoils the cancellation.
+
+Define $\overline A=\gamma^0A^\dagger\gamma^0$ and the bilinear
+\begin{equation}
+ \mathcal T(A,B)=\frac14\eta_{\mu\mu'}\eta_{\nu\nu'}
+ \operatorname{tr}[(\slashed p'+m)A^{\nu\mu}
+ (\slashed p+m)\overline B^{\nu'\mu'}].
+ \label{eq:comp-supp-trace-bilinear}
+\end{equation}
+The factor $1/4$ averages over the two incoming electron spins and
+photon polarizations. For amplitudes satisfying both external Ward
+identities, the two physical polarization sums can be replaced by
+$-\eta_{\mu\mu'}$ and $-\eta_{\nu\nu'}$. Their product gives the
+positive metric contraction displayed here. The virtual interference
+is $V=2e_{\mathrm T}^4\operatorname{Re}\mathcal T(R_1,R_0)$,
+where the factor two comes from the two cross terms in the squared
+amplitude. Explicitly,
+\begin{align}
+ V&=\frac{e_{\mathrm T}^4}{2}\operatorname{Re}
+ \eta_{\mu\mu'}\eta_{\nu\nu'}\operatorname{tr}
+ [(\slashed p'+m)R_1^{\nu\mu}(\slashed p+m)
+                         \overline R_0^{\nu'\mu'}],\\
+ B_{\mathrm{amp}}&=2e_{\mathrm T}^4
+ \left(\frac{\omega}{\omega'}+\frac{\omega'}{\omega}-\sin^2\theta\right),
+ \qquad \omega'=\frac{\omega}{1+(\omega/m)(1-\cos\theta)},\\
+ \frac{\dd\sigma_{\mathrm{Born+virt}}}{\dd\Omega}
+ &=\frac1{64\pi^2m^2}\left(\frac{\omega'}{\omega}\right)^2(B_{\mathrm{amp}}+V).
+\end{align}
+The rest-frame incident energy is $\omega=k^0$, and $\theta$
+is the angle between the incoming and outgoing photons in that frame.
+Here $B_{\mathrm{amp}}=\overline{|\mathcal M_0|^2}$ is the Born squared amplitude,
+including its coupling factors.
+These expressions average over both initial spin and initial photon
+polarization. No square of $R_1$ belongs at this order.
+
+\subsection{Integration of the Born cross section}
+The Born total follows directly from the preceding differential cross
+section. Define $X=2\omega/m$ and $y_B=2\omega'/m$ in the electron
+rest frame. Energy conservation and the angular Jacobian give
+\begin{equation}
+ \frac{X}{1+X}\leq y_B\leq X,\qquad
+ 1-\cos\theta=2\left(\frac1{y_B}-\frac1X\right),\qquad
+ \frac{\dd\cos\theta}{\dd y_B}=\frac2{y_B^2}.
+\end{equation}
+Thus the dimensionless squared amplitude and the cross section are
+\begin{align}
+ \mathcal B(X,y_B)&=\frac{B_{\mathrm{amp}}}{e_{\mathrm T}^4}
+ =2\left[\frac X{y_B}+\frac{y_B}X
+ -4\left(\frac1{y_B}-\frac1X\right)
+ +4\left(\frac1{y_B}-\frac1X\right)^2\right],\\
+ \frac{\dd\sigma_0}{\dd y_B}&=
+ \frac{\pi\alpha_{\mathrm T}^2}{m^2X^2}\mathcal B(X,y_B).
+\end{align}
+A primitive of $\mathcal B/2$ is
+\begin{equation}
+ P_X(y)=\frac{y^2}{2X}
+ +\left(\frac4X+\frac4{X^2}\right)y
+ +\left(X-4-\frac8X\right)\ln y-\frac4y.
+\end{equation}
+Substitution of the two physical endpoints gives
+\begin{equation}
+ \sigma_0=\frac{\pi\alpha_{\mathrm T}^2}{m^2}B(X),\qquad
+ B(X)=\frac2{X^2}\left[P_X(X)-P_X\!\left(\frac X{1+X}\right)\right].
+\end{equation}
+Expanding this endpoint difference yields the Born function stated in
+Chapter 1. Its normalization has therefore been obtained from the
+amplitude and phase space.
+
+\section{Real emission and phase space}
+Let $k_1,k_2$ be outgoing photon momenta. Put
+$\kappa=(k,-k_1,-k_2)$ and
+$E=(\slashed\epsilon,\slashed\epsilon_1^*,\slashed\epsilon_2^*)$.
+The six electron-line orders give
+\begin{equation}
+ \mathcal M_{\gamma\gamma}=e_{\mathrm T}^3\bar u(p')\mathcal K u(p),
+ \qquad
+ \mathcal K=\sum_{(a,b,c)\in\mathfrak S_3}
+ E_c S_0(p+\kappa_a+\kappa_b)E_b S_0(p+\kappa_a)E_a.
+ \label{eq:comp-supp-double-amplitude}
+\end{equation}
+Here $\mathfrak S_3$ permutes $(0,1,2)$. To evaluate its unpolarized
+square, sum over the two transverse polarizations of each photon,
+\begin{equation}
+ \overline{|\mathcal M_{\gamma\gamma}|^2}
+ =\frac{e_{\mathrm T}^6}{4}\sum_{\epsilon,\epsilon_1,\epsilon_2}
+ \operatorname{tr}[(\slashed p'+m)\mathcal K
+                             (\slashed p+m)\overline{\mathcal K}].
+\end{equation}
+The factor $1/4$ averages the initial electron and photon states.
+This trace includes all 36 interferences, rather than six separate
+squares. Replacing any one polarization by its momentum telescopes
+the six permutations to zero. Relabelling $1\leftrightarrow2$ simply
+permutes the sum.
+
+For $P=p+k$, introduce $Q=k_1+k_2$ and the standard invariant
+phase space
+\begin{align}
+ \dd\Phi_n(P)&=(2\pi)^4\delta^{(4)}(P-\textstyle\sum_j p_j)
+             \prod_j\frac{\dd^3\bm p_j}{(2\pi)^3 2p_j^0},\\
+ \dd\Phi_3(P;p',k_1,k_2)&=\frac{\dd Q^2}{2\pi}
+       \dd\Phi_2(P;p',Q)\dd\Phi_2(Q;k_1,k_2),\\
+ \dd\Phi_2(P;a,b)&=\frac{\sqrt{\Lambda(P^2,a^2,b^2)}}
+                          {32\pi^2P^2}\dd\Omega,
+ \qquad\Lambda(x,y,z)=x^2+y^2+z^2-2xy-2xz-2yz.
+\end{align}
+The solid angle is in the rest frame of its decaying momentum.
+For two massless photons this gives
+\begin{equation}
+ \dd\Phi_3=\frac{\sqrt{\Lambda(s,m^2,Q^2)}}{2048\pi^5s}
+             \dd Q^2\dd\Omega_Q\dd\Omega_*,\qquad
+ 0\leq Q^2\leq(\sqrt s-m)^2.
+\end{equation}
+Integrating both labelled photons requires the factor $1/2!$ in
+the cross section. Restricting to one photon ordering instead would
+remove that divisor.
+
+\section{The soft subtraction in the electron rest frame}
+When one outgoing photon is soft with momentum $\ell$, only the
+external-line denominators generate an inverse power of its energy.
+For example, before mass regularization,
+\begin{equation}
+ \overline u(p')\gamma^\rho
+ \frac{\slashed p'+\slashed\ell+m}{(p'+\ell)^2-m^2}
+ =\frac{p'^\rho}{p'\cdot\ell}\overline u(p')+O((\ell^0)^0).
+\end{equation}
+The on-shell Dirac equation and
+$\gamma^\rho\slashed p'=2p'^\rho-\slashed p'\gamma^\rho$
+give the numerator $2p'^\rho$ at leading order. Emission from the
+incoming leg similarly gives $-p^\rho/(p\cdot\ell)$ because its
+denominator is $-2p\cdot\ell$. The other insertions are finite in
+this limit. Their sum therefore gives
+\begin{equation}
+ \mathcal M_{\gamma\gamma}\longrightarrow
+ e_{\mathrm T}\epsilon^*(\ell)\cdot J(\ell)\mathcal M_0,
+ \qquad J=\frac{p'}{p'\cdot\ell}-\frac{p}{p\cdot\ell},
+ \qquad \ell\cdot J=0.
+\end{equation}
+A common sign does not affect the rate. Define the relative soft
+correction by
+\begin{equation}
+ \delta_{\mathrm s}(\varepsilon,\lambda)
+ =e_{\mathrm T}^2\int_{E_\ell<\varepsilon}
+ \frac{\dd^3\bm\ell}{(2\pi)^3\,2E_\ell}[-J(\ell)^2],
+ \qquad E_\ell=\sqrt{|\bm\ell|^2+\lambda^2}.
+\end{equation}
+Here $\varepsilon$ is an auxiliary photon-energy boundary satisfying
+$\lambda\ll\varepsilon$ and small compared with the hard energies.
+Current conservation $\ell\cdot J=0$ removes longitudinal terms
+from the photon polarization sum. The expression is exact in
+$\lambda$ within the leading soft current. Terms beyond that current
+vanish when the soft-energy boundary is removed.
+In the rest frame of $p$,
+choose the polar axis along $\bm p'$. Set
+$E'=p'^0$, $v=|\bm p'|/E'$, $q=|\bm\ell|$,
+$E_\ell=\sqrt{q^2+\lambda^2}$, $\beta=q/E_\ell$, and
+$c=\widehat{\bm p'}\cdot\widehat{\bm\ell}$. Then
+\begin{equation}
+ -J^2=\frac1{E_\ell^2}
+ \left[\frac2{1-v\beta c}-1
+                  -\frac{1-v^2}{(1-v\beta c)^2}\right].
+\end{equation}
+The azimuthal integral is $2\pi$. For $a=v\beta$ the two polar
+integrals are
+\begin{equation}
+ \int_{-1}^1\frac{\dd c}{1-ac}
+ =\frac{2\operatorname{artanh}a}{a},\qquad
+ \int_{-1}^1\frac{\dd c}{(1-ac)^2}=\frac{2}{1-a^2}.
+\end{equation}
+Their values at $a=0$ are understood by continuity. Substituting them
+and $e_{\mathrm T}^2=4\pi\alpha_{\mathrm T}$ gives
+\begin{equation}
+ \begin{aligned}
+ \delta_{\mathrm s}(\varepsilon,\lambda)
+ =\frac{\alpha_{\mathrm T}}{2\pi}
+ \int_0^{\sqrt{\varepsilon^2-\lambda^2}}
+ \frac{q^2\dd q}{E_\ell^3}
+ \left[\frac4{v\beta}\operatorname{artanh}(v\beta)
+       -2-\frac{2(1-v^2)}{1-v^2\beta^2}\right].
+ \end{aligned}
+ \label{eq:comp-supp-soft-exact}
+\end{equation}
+This one-dimensional integral supplies the finite terms as well as
+the logarithm. For $q\gg\lambda$ its bracket approaches $4(b-1)$,
+where $b=\operatorname{artanh}(v)/v$ and
+$v=\sqrt{1-m^4/(p\cdot p')^2}$. Therefore
+\begin{equation}
+ \delta_{\mathrm s}=
+ \frac{2\alpha_{\mathrm T}}\pi(b-1)\ln\frac\varepsilon\lambda
+ +\text{finite terms}.
+\end{equation}
+The soft region of the virtual graph has the same two eikonal
+lines. Its interference has the opposite coefficient of
+$\ln\lambda$,
+\begin{equation}
+ V=B_{\mathrm{amp}}\frac{2\alpha_{\mathrm T}}\pi(b-1)\ln\frac\lambda m
+                   +V_{\mathrm{finite}}.
+\end{equation}
+Consequently $V+B_{\mathrm{amp}}\delta_{\mathrm s}$ is independent of $\lambda$
+in its zero-mass limit. The finite remainder can be evaluated with
+the parameter integrals above and \eqref{eq:comp-supp-soft-exact}.
+
+For dimensionless measurement functions $F_2,F_3$, evaluated on
+the two-body and three-body events respectively, require symmetry
+under exchange of the two final photons
+and $F_3\to F_2$ as either photon becomes soft. The observable is
+\begin{equation}
+ \begin{aligned}
+ \sigma^{\mathrm{NLO}}[F]=\frac1{4p\cdot k}
+ \lim_{\varepsilon\to0}\Bigg\{&\int\dd\Phi_2F_2
+ [B_{\mathrm{amp}}+\lim_{\lambda\to0}(V+B_{\mathrm{amp}}\delta_{\mathrm s})]\\
+ &+\frac12\int_{\min(k_1^0,k_2^0)>\varepsilon}
+ \dd\Phi_3 F_3\overline{|\mathcal M_{\gamma\gamma}|^2}\Bigg\}
+ +\frac1{m^2}\Order(\alpha_{\mathrm T}^4).
+ \end{aligned}
+\end{equation}
+The total considered in this document has $F_2=F_3=1$.
+All separator energies in this expression are in the same electron
+rest frame. The two soft corners cancel the divisor $2!$ in the
+soft part. The hard integral cancels the separator logarithm.
+At a fixed nonzero separator, there are power corrections from
+replacing the soft event by its two-body limit. Both limits are
+needed before interpreting the result as an inclusive observable.

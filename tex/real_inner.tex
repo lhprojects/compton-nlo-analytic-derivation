@@ -1,0 +1,73 @@
+\subsection{Analytic soft-endpoint terms in the inner energy integral}
+The $UV$ logarithmic sector illustrates why the regulator must be
+kept until both endpoints have been integrated. Put
+\begin{equation}
+ k=\frac{(v-1)^2}{Hv},\qquad u=\frac{x}{H},\qquad
+ y=\frac{H(1-u)}{1-ku},\qquad
+ (xy)^\eta=H^{2\eta}u^\eta(1-u)^\eta(1-ku)^{-\eta}.
+\end{equation}
+For $1<v<s=1+H$, $0<k<H/s<1$. Thus the third pole
+$x=H/k$ is outside the entire inner interval $0<x<H$.
+The rational coefficient of $\ln v$ has precisely the form
+\begin{equation}
+ R(x,v)=C_0+\frac{C_{01}}x+\frac{C_{02}}{x^2}
+ +\frac{C_{H1}}{x-H}+\frac{C_{H2}}{(x-H)^2}
+ +\frac{C_{a1}}{x-H/k}+\frac{C_{a2}}{(x-H/k)^2}.
+\end{equation}
+The coefficients are obtained by ordinary partial fractions of the
+explicit $R_{UV}$ above after the change of variables.
+The script \nolinkurl{compton_real_inner_analytic.py} performs this
+algebra and verifies exact reconstruction of the original rational
+function. No kinematic fitting is involved.
+
+Each integral is an Euler beta function times a Gauss
+hypergeometric function. For example, for sufficiently large
+$\operatorname{Re}\eta$,
+\begin{align}
+ \int_0^H\frac{(xy)^\eta}{x^n}\dd x
+ &=H^{1-n+2\eta}B(1+\eta-n,1+\eta)
+ {}_2F_1(\eta,1+\eta-n;2+2\eta-n;k),\\
+ \int_0^H\frac{(xy)^\eta}{(x-H)^n}\dd x
+ &=(-1)^nH^{1-n+2\eta}B(1+\eta,1+\eta-n)
+ {}_2F_1(\eta,1+\eta;2+2\eta-n;k),\\
+ \int_0^H\frac{(xy)^\eta}{(x-H/k)^n}\dd x
+ &=(-H/k)^{-n}H^{1+2\eta}B(1+\eta,1+\eta)
+ {}_2F_1(n+\eta,1+\eta;2+2\eta;k).
+\end{align}
+Here $B(a,b)=\Gamma(a)\Gamma(b)/\Gamma(a+b)$. The Gauss function is
+\begin{equation}
+ {}_2F_1(a,b;c;k)=\sum_{n=0}^{\infty}
+ \frac{(a)_n(b)_n}{(c)_n n!}k^n,\qquad |k|<1,
+ \qquad (a)_n=\frac{\Gamma(a+n)}{\Gamma(a)},\quad (a)_0=1.
+\end{equation}
+Expanding $(1-ku)^{-a}$ and integrating each power against
+$u^{b-1}(1-u)^{c-b-1}$ gives the displayed beta integrals in their
+convergence domain. These expressions
+then uniquely define the continuation to $\eta=0$. Their Laurent
+expansion gives, at fixed $v$ in the interior,
+\begin{align}
+ \int_0^H (xy)^\eta R(x,v)\dd x
+ &=\frac{C_{01}-C_{H1}}\eta+F_{UV}(v)+\Order(\eta),\\
+ F_{UV}(v)&=H C_0+\frac{k-2}{H}C_{02}
+ -\frac{2-k}{H(1-k)}C_{H2}
+ +2(C_{01}-C_{H1})\ln H\\
+ &\quad +(C_{H1}+C_{a1})\ln(1-k)
+ +\frac{k^2}{H(1-k)}C_{a2}.
+ \label{eq:comp-real-UV-inner-finite}
+\end{align}
+The double-pole terms have finite limits but no $1/\eta$ pole.
+Their finite constants cannot be obtained by simply setting
+$\eta=0$ in the integrand. For example,
+\begin{equation}
+ (1-u)^\eta(1-ku)^{-\eta}
+ =1+\eta(k-1)u+\Order(u^2),\qquad
+ \int_0^1u^{\eta-2}\dd u=\frac1{\eta-1}.
+\end{equation}
+The linear term contributes $\eta(k-1)/\eta=k-1$, which combines
+with $-1$ from the first term to give $k-2$.
+This explicitly accounts for the finite endpoint contribution.
+
+Equation~\eqref{eq:comp-real-UV-inner-finite} still has to be
+combined with the local $z=0$ subtraction and integrated over $v$.
+It must not be integrated as an isolated term across a spurious
+Gram pole before those cancellations have been made.

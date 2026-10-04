@@ -1,0 +1,126 @@
+\subsection{Integrating the crossed rational subgroup first}
+\label{sec:comp-crossed-first}
+Before integrating the crossed box in the rationalized angle, separate
+the scalar terms whose coefficients and function arguments are rational
+in the original invariant $y$.
+Transforming those terms to the angle variable would introduce an auxiliary root $\rho_u=\sqrt{(x-1)/(x+3)}$, whose
+apparent threshold at $x=1$ is absent from the original scalar
+integral. This root is introduced by applying the spacelike
+variable $v$ to a subgroup that is already rational in the
+original invariant $y$.
+This subgroup can be integrated before that change of variable.
+Here $x=s-1>0$ and $x/(1+x)\leq y\leq x$, in the mass units
+used for the box calculation.
+
+For this subgroup write $A=\overline A_1$, $B_s=\overline B_{02}$,
+and $C_s=C_{012}$, evaluated at the crossed invariant $S=1-y$.
+The subscript $s$ in these local scalar names does not label the
+photon ordering. Include also the explicit constant in the crossed-box
+trace. The scalar functions are
+\begin{equation}
+ A=1,\qquad B_s=2+\frac{y\ln y}{1-y},\qquad
+ C_s=\frac{\operatorname{Li}_2(1-y)-\pi^2/6}{y}.
+\end{equation}
+Define the two GPLs
+\begin{equation}
+ F(y)=G(1,0;y)=\frac{\pi^2}{6}-\operatorname{Li}_2(1-y),
+ \qquad W(y)=G(0,1,0;y).
+\end{equation}
+Their differential equations are
+$F'(y)=\ln y/(y-1)$ and $W'(y)=F(y)/y$.
+In particular, $F$ is real and analytic for every $y>0$.
+The apparent pole of its derivative at $y=1$ is removable.
+These statements fix the continuation of the GPL combination
+without assigning separate imaginary parts at an artificial pole.
+
+The selected crossed-box integrand is
+\begin{equation}
+ I_{\mathrm{rat}}(x,y)=R(x,y)+Q(x,y)\ln y-D(x,y)F(y),
+\end{equation}
+where exact partial fractions of the trace coefficients give
+\begin{align}
+ R={}&\frac{16(x-2)}{y^2}+\frac{28x+12}{x}
+       +\frac4{x(y-1)}-\frac{8(2x^2+x-4)}{xy},\\
+ Q={}&\frac{8(x-2)}y+\frac{4(x-6)}{x(y-1)}
+       -\frac{12x+4}{x}-\frac4{x(y-1)^2},\\
+ D={}&-\frac{8y}x+\frac{8x-8}x-\frac{4(x^2-8)}{xy}.
+\end{align}
+The only apparent double pole is integrated with its accompanying
+simple pole. The exact identity
+\begin{equation}
+ \frac1{y-1}-\frac{\ln y}{(y-1)^2}
+ =\frac{\dd}{\dd y}\frac{\ln y}{y-1}+\frac1y
+\end{equation}
+shows explicitly why no isolated $\ln(1-y)$ is needed.
+Integration by parts of the two polynomial coefficients of $F$
+then gives the finite primitive
+\begin{align}
+ P(x,y)={}&-\frac{16(x-2)}y+\frac{(32x+28)y+y^2}{x}\\
+ &+\frac{-16x^2-8x+36-(4x+16)y-2y^2}{x}\ln y
+       +4(x-2)\ln^2y\\
+ &+\frac4x\frac{\ln y}{y-1}
+       +\frac4x[y^2+(2-2x)y+3x-9]F(y)\\
+ &+\frac{4(x^2-8)}xW(y).
+\end{align}
+Direct differentiation, using the two displayed GPL differential
+equations, gives $\partial_yP=I_{\mathrm{rat}}$ as a rational
+identity in the independent symbols $\ln y,F,W$.
+The contribution to the unnormalized crossed angular integral is
+therefore exactly
+\begin{equation}
+ J_{u,\mathrm{rat}}(x)=P(x,x)-P\left(x,\frac{x}{1+x}\right).
+\end{equation}
+Since $\dd c=2s\,\dd y/x^2$ and the interference contributes
+$(4s)^{-1}\int\operatorname{Re}\mathcal T\,\dd c$, this subgroup
+enters the cross-section coefficient as $J_{u,\mathrm{rat}}/(2x^2)$.
+At $x=1$ the upper endpoint quotient is assigned
+its analytic value $\ln y/(y-1)=1$, so the same expression covers
+the apparent root collision there.
+
+The lower endpoint introduces no new alphabet. Write
+$f(x)=x/(1+x)$. The first identity below follows directly from
+the logarithm of this quotient. For the other two, differentiation
+and the boundary values $F(0)=W(0)=0$ prove
+\begin{align}
+ \ln f(x)&=G(0;x)-G(-1;x),\\
+ F(f(x))&=-G(-1,0;x)+G(-1,-1;x),\\
+ W(f(x))&=-G(0,-1,0;x)+G(0,-1,-1;x)\\
+        &\quad+G(-1,-1,0;x)-G(-1,-1,-1;x).
+\end{align}
+Thus this entire subgroup has constant letters $\{-1,0,1\}$.
+The remaining crossed masters are
+$B_a=\overline B_{01}$, $B_t=\overline B_{13}$,
+$C_t=C_{013}$, $C_m=C_{123}$, and $D_b=D_{0123}$.
+Their rational trace coefficients have denominators built only
+from $x$, $y$, and $x-y+4$. In particular none has a pole at
+$y=1$. After the spacelike substitution their words involve
+$0,\pm1,\pm\sqrt{x/(x+4)}$ and do not involve $\rho_u$.
+Consequently $\rho_u$ disappears within the crossed box itself,
+before adding soft or real-radiation contributions. This removes an auxiliary root within the virtual calculation.
+
+There is also no remaining positive interior letter in the angular
+remainder. If $V=x/(x+2)$ and $z=\sqrt{x/(x+4)}$, then
+\begin{equation}
+ z^2-V^2=\frac{4x}{(x+4)(x+2)^2}>0.
+\end{equation}
+Thus $0<V<z<1$. The remainder can be integrated along the real
+$v$ interval without detouring around an artificial crossed root.
+
+To fix the lower boundary in the subsequent function-basis
+conversion, the series at positive $x\to0$ follows from
+\begin{align}
+ F(y)&=\sum_{n=1}^{\infty}y^n
+             \left(\frac1{n^2}-\frac{\ln y}{n}\right),\\
+ W(y)&=\sum_{n=1}^{\infty}y^n
+             \left(\frac2{n^3}-\frac{\ln y}{n^2}\right).
+\end{align}
+They give
+\begin{align}
+ J_{u,\mathrm{rat}}(x)
+ ={}&x(32\ln x-32)+x^2\left(\frac{92}{3}-24\ln x\right)\\
+ &+x^3\left(\frac{88}{3}\ln x-\frac{236}{9}\right)
+             +O(x^4\ln x).
+\end{align}
+In particular this unnormalized subgroup vanishes at the lower
+boundary. The series fixes the boundary constant from the derived
+integrand itself, without numerical fitting or a literature value.

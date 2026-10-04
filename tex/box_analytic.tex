@@ -1,0 +1,584 @@
+\subsection{Closed evaluation of the spanning matrix}
+\label{sec:comp-supp-box-tensor}
+The finite two-parameter terms in
+\eqref{eq:comp-supp-spanning-integrated} can be integrated without
+constructing a separate primitive for each numerator coefficient.
+The numerator is a polynomial of degree three in the loop momentum.
+Differences of propagator denominators therefore reduce its tensor
+integrals to a small set of scalar integrals. We derive this reduction
+before listing the scalar answers. All momenta remain in units of the
+electron mass.
+
+Write the four denominators as
+\begin{equation}
+ d_i=(\ell-q_i)^2-m_i^2+\ii0,\qquad
+ (q_0,q_1,q_2,q_3)=(0,p,Q,p'),\qquad
+ (m_0^2,m_1^2,m_2^2,m_3^2)=(0,1,1,1).
+\end{equation}
+The photon mass is kept in the infrared-divergent scalar integrals.
+Setting it to zero in the algebraic coefficients omits only terms
+that vanish as $\lambda\to0$. For an ordered subset $I$ of denominator
+indices define
+\begin{equation}
+ T_I^{\mu_1\cdots\mu_r}
+ =\frac{e^{\gamma_E\epsilon}\mu^{2\epsilon}}{\ii\pi^{d/2}}
+   \int\dd^d\ell\,
+   \frac{\ell^{\mu_1}\cdots\ell^{\mu_r}}
+        {\prod_{i\in I}d_i},\qquad d=4-2\epsilon.
+ \label{eq:comp-supp-box-tensor-definition}
+\end{equation}
+The factor $e^{\gamma_E\epsilon}$ fixes the normalization so that
+the common pole is $U=1/\epsilon$, without an accompanying
+$-\gamma_E$. Since the full box is ultraviolet finite, this common
+factor does not change its four-dimensional value. We choose
+$\mu=m$ in the dimensionless finite parts below.
+
+\paragraph{Contractions from denominator differences.}
+Choose an index $a\in I$ as the origin and put
+$L=\ell-q_a$. Let $v_i=q_i-q_a$ for $i\in I\setminus\{a\}$.
+Define the Gram matrix, its dual vectors and the transverse projector
+by
+\begin{equation}
+ G_{ij}=v_i\cdot v_j,\qquad
+ w_i^\mu=\sum_j(G^{-1})_{ij}v_j^\mu,\qquad
+ P^{\mu\nu}=\eta^{\mu\nu}-\sum_iw_i^\mu v_i^\nu.
+ \label{eq:comp-supp-box-projector}
+\end{equation}
+These formulas first apply when the vectors $v_i$ are linearly
+independent and $\det G\ne0$. Singular limits are taken in the
+combined tensor, not in isolated inverse-Gram coefficients.
+Thus $w_i\cdot v_j=\delta_{ij}$ and
+$P^\mu{}_{\mu}=d-(|I|-1)$. The two required identities are
+\begin{equation}
+ 2L\cdot v_i=d_a-d_i+f_i,\qquad
+ L^2=d_a+m_a^2,\qquad
+ f_i=v_i^2+m_a^2-m_i^2.
+ \label{eq:comp-supp-box-denominator-differences}
+\end{equation}
+For the following formulas every tensor uses the numerator $L$.
+A pinched tensor uses this same $L$, even when its denominator set
+no longer contains $a$. This convention avoids an implicit shift
+of the numerator in the reduction.
+
+Suppressing the set $I$, the first identity gives
+\begin{equation}
+ V_i^{\mu_2\cdots\mu_r}
+ \equiv v_{i\mu_1}T^{\mu_1\cdots\mu_r}
+ =\frac12\left[
+ T_{I\setminus\{a\}}^{\mu_2\cdots\mu_r}
+ -T_{I\setminus\{i\}}^{\mu_2\cdots\mu_r}
+ +f_iT_I^{\mu_2\cdots\mu_r}\right].
+ \label{eq:comp-supp-box-pinch-recurrence}
+\end{equation}
+The loop rank falls by one on the right-hand side. Define
+\begin{equation}
+ H_i=V_i,\qquad
+ H_{ij}=v_{j\nu}V_i^\nu,\qquad
+ H_{ijk}=v_{j\nu}v_{k\rho}V_i^{\nu\rho},\qquad
+ n=|I|-1.
+\end{equation}
+Rotations in the space transverse to all $v_i$ then determine
+ranks one through three completely,
+\begin{align}
+ T^\mu&=\sum_iw_i^\mu H_i,\\
+ T^{\mu\nu}&=\sum_{ij}w_i^\mu w_j^\nu H_{ij}
+                      +P^{\mu\nu}Z,\\
+ Z&=\frac{T_{I\setminus\{a\}}+m_a^2T_I
+                   -\sum_{ij}(G^{-1})_{ij}H_{ij}}{d-n},\\
+ T^{\mu\nu\rho}&=\sum_{ijk}w_i^\mu w_j^\nu w_k^\rho H_{ijk}
+       +\sum_i\left(P^{\mu\nu}w_i^\rho
+                   +P^{\mu\rho}w_i^\nu
+                   +P^{\nu\rho}w_i^\mu\right)Z_i,\\
+ Z_i&=\frac{v_{i\mu}
+       (T_{I\setminus\{a\}}^\mu+m_a^2T_I^\mu)
+                 -\sum_{jk}(G^{-1})_{jk}H_{ijk}}{d-n}.
+ \label{eq:comp-supp-box-rank-three}
+\end{align}
+The equations for $Z$ and $Z_i$ follow by taking a Lorentz trace
+and using the second identity in
+\eqref{eq:comp-supp-box-denominator-differences}.
+To change the origin in a pinched integral, expand each factor
+$L=\widetilde L+(q_b-q_a)$ in its numerator. This is a finite
+binomial expansion of tensors of lower or equal rank.
+Consequently a rank-three box requires only rank-two triangles,
+rank-one bubbles and scalar tadpoles.
+
+Although the original box is ultraviolet finite, some pinched
+integrals are not. Their poles must be carried through the
+recurrence before taking $d=4$. In particular,
+\begin{equation}
+ \frac{x_{-1}/\epsilon+x_0}{c-2\epsilon}
+ =\frac{x_{-1}}{c\epsilon}+\frac{x_0}{c}
+                          +\frac{2x_{-1}}{c^2}
+                          +\mathcal O(\epsilon).
+ \label{eq:comp-supp-box-rational-finite}
+\end{equation}
+The last term is needed for the finite box. This also specifies
+how the calculation handles the rational terms without assuming
+that a four-dimensional tensor reduction is sufficient.
+
+\paragraph{Scalar integrals.}
+Let $S=Q^2$, $D=S-1$, $T=-t\geq0$, and define
+\begin{equation}
+ a=\frac{\sqrt T}{2},\qquad h=\sqrt{1+a^2},\qquad
+ r=\operatorname{arsinh}a,\qquad \kappa=\frac ah.
+\end{equation}
+For clarity, denote scalar integrals by
+$A_i=T_{\{i\}}$, $B_{ij}=T_{\{i,j\}}$,
+$C_{ijk}=T_{\{i,j,k\}}$ and $D_{0123}=T_{\{0,1,2,3\}}$.
+The tadpoles and bubbles are
+\begin{align}
+ A_0&=0,\qquad A_1=A_2=A_3=U+1,\\
+ B_{01}&=B_{03}=U+2,\qquad B_{12}=B_{23}=U,\\
+ B_{02}&=U+2+\frac{1-S}{S}\ln(1-S-\ii0),\\
+ B_{13}&=U+2-\frac{2h}{a}r.
+ \label{eq:comp-supp-box-bubbles}
+\end{align}
+The continuous values at $S=0$ and $T=0$ are used.
+These expressions follow by integrating
+\begin{equation}
+ B_{ij}=U-\int_0^1\dd x\,
+ \ln\!\left[xm_i^2+(1-x)m_j^2
+                    -x(1-x)(q_i-q_j)^2-\ii0\right].
+\end{equation}
+For equal masses the rank-one bubble is exactly
+$(q_i+q_j)^\mu B_{ij}/2$. This formula is also valid when
+$(q_i-q_j)^2=0$, where a one-vector Gram inverse would be
+singular. For unequal masses use
+\begin{equation}
+ T_{\{i,j\}}^\mu=q_i^\mu B_{ij}
+ +(q_j-q_i)^\mu
+ \frac{A_j-A_i+[(q_j-q_i)^2+m_i^2-m_j^2]B_{ij}}
+      {2(q_j-q_i)^2}.
+\end{equation}
+For $i=0$, $m_j=1$, the coefficient in the second term approaches
+$U/2+1/4$ as $(q_j-q_0)^2\to0$.
+
+The four triangles reduce to three distinct functions,
+\begin{align}
+ C_{012}=C_{023}
+ &=-\frac{\operatorname{Li}_2(S+\ii0)-\pi^2/6}{S-1},\\
+ C_{123}&=-\frac{2r^2}{T},\\
+ C_{013}&=\frac r{ah}\ln\lambda-\frac12\mathcal H(T),\\
+ \mathcal H(T)&=
+ \frac{2r\ln(2h)-r^2-\operatorname{Li}_2(-e^{-2r})
+                        +\operatorname{Li}_2(-1)}{ah}.
+ \label{eq:comp-supp-box-triangles}
+\end{align}
+The overall minus signs in the finite triangles follow from
+$\int\dd^d\ell/(\ii\pi^{d/2})$ with three Feynman denominators.
+The first line is the previously integrated vertex moment $-J_{00}$.
+For the pure-electron triangle, integrate its simplex denominator
+$1+T xz$ to obtain $2r^2/T$ before applying this sign.
+The infrared triangle follows by writing the sum of its two
+electron parameters as $\rho$,
+\begin{align}
+ C_{013}&=-\int_0^1\dd z\int_0^1
+ \frac{\rho\dd\rho}{\rho^2[1+Tz(1-z)]+(1-\rho)\lambda^2-\ii0}\\
+ &=g_0(t)\ln\lambda-\frac12\int_0^1
+          \frac{\ln[1+Tz(1-z)]}{1+Tz(1-z)}\dd z+o(1).
+\end{align}
+To evaluate the last integral, set $2z-1=y$ and then
+$\kappa y=\tanh u$. Its upper boundary is $u=r$, giving
+\begin{align}
+ \mathcal H(T)&=\frac1{ah}
+ \left[2r\ln h-2\int_0^r\ln\cosh u\,\dd u\right],\\
+ \int_0^r\ln\cosh u\,\dd u
+ &=\frac{r^2}{2}-r\ln2
+  +\frac{\operatorname{Li}_2(-e^{-2r})-\operatorname{Li}_2(-1)}2.
+\end{align}
+This proves the last line of
+\eqref{eq:comp-supp-box-triangles}. Its boundary values are
+$C_{123}\to-1/2$ and $\mathcal H(T)\to0$ at $T=0$.
+Finally the scalar box is the result already derived in
+\eqref{eq:comp-supp-box-dilog},
+\begin{equation}
+ D_{0123}=\frac1D\left[
+ \frac r{ah}\ln\frac{\lambda}{-D-\ii0}
+ +\frac{\operatorname{Li}_2(\kappa)-\operatorname{Li}_2(-\kappa)}{2ah}
+ \right]+o(1).
+\end{equation}
+No parameter integral remains in this list.
+
+\paragraph{Physical boundary values.}
+The parameter denominators have the boundary value
+$\Delta-\ii0$ inherited from the original propagators.
+For $S>1$ this gives
+$\ln(1-S-\ii0)=\ln(S-1)-\ii\pi$.
+Since $\dd\operatorname{Li}_2(S)/\dd S=-\ln(1-S)/S$,
+the corresponding dilogarithm is approached from the upper
+half-plane. This fixes its imaginary part by continuation from
+$S<1$, without choosing a sign from a numerical comparison.
+The functions of $T\geq0$ in the other lines are real.
+In particular $-e^{-2r}\in[-1,0)$ and $\kappa\in[0,1)$,
+so they do not cross a dilogarithm cut.
+
+\paragraph{Assembly of the matrix.}
+Expand the original numerator as
+\begin{equation}
+ N(\ell)=\sum_{r=0}^3
+   \mathcal N_{\mu_1\cdots\mu_r}
+           \ell^{\mu_1}\cdots\ell^{\mu_r}
+ =\gamma^\alpha(\slashed p'-\slashed\ell+1)
+ B(\slashed Q-\slashed\ell+1)A
+ (\slashed p-\slashed\ell+1)\gamma_\alpha,
+\end{equation}
+where $A$ and $B$ are the incident and outgoing photon vertex
+matrices in the chosen electron ordering. The complete closed
+spanning matrix is then
+\begin{equation}
+ \boxed{\widehat W=\sum_{r=0}^3
+       \mathcal N_{\mu_1\cdots\mu_r}
+       \left.T_{\{0,1,2,3\}}^{\mu_1\cdots\mu_r}
+       \right|_{\epsilon^0}.}
+ \label{eq:comp-supp-box-closed-matrix}
+\end{equation}
+Equations~\eqref{eq:comp-supp-box-pinch-recurrence}--
+\eqref{eq:comp-supp-box-triangles} give every coefficient through
+finite algebra and logarithms or dilogarithms.
+The ultraviolet poles cancel in each box tensor.
+At exactly forward or backward kinematics the three-vector Gram
+matrix is singular. The physical answer is the continuous limit
+of the closed result at interior scattering angles.
+This completes the loop-parameter integrations of the spanning
+matrix. The subsequent spin interference and elastic-angle
+integration are separate steps toward the total cross section.
+
+\section{Virtual interference and angular integration}
+\subsection{Closed interference coefficients for the box}
+\label{sec:comp-supp-box-interference}
+For the angular integration, introduce positive variables
+$x=s-1$ and $y=1-u$, so $t=y-x$. Contract each external photon
+pair with $-\eta_{\mu\nu}$ and average over the two initial electron
+spins and two initial photon polarizations. Individual diagram
+groups do not satisfy the photon Ward identity. The same covariant
+polarization contraction must therefore be used for the box,
+vertex and self-energy groups before they are added.
+
+Let $\mathcal T_{\mathrm{box},s}$ denote the bilinear between
+the $s$-ordered spanning matrix and the full Born matrix, with
+$\alpha_{\mathrm T}/(4\pi)$ removed from the former. Define finite
+scalar parts $\overline A_1=A_1-U$ and
+$\overline B_{ij}=B_{ij}-U$. Direct Clifford traces and the preceding
+reduction give
+\begin{equation}
+ \mathcal T_{\mathrm{box},s}
+ =f_A\overline A_1+f_a\overline B_{01}
+ +f_b\overline B_{02}+f_t\overline B_{13}
+ +f_c C_{012}+f_d C_{013}+f_e C_{123}
+ +f_DD_{0123}+f_0.
+ \label{eq:comp-supp-box-interference-closed}
+\end{equation}
+The coefficients are real rational functions,
+\begin{align}
+ f_A&=\frac{4(xy-x+y)}{xy(x+1)},\\
+ f_a&=-\frac{8P_a}{x^2y(x-y+4)},\\
+ f_b&=\frac{4P_b}{x^2y(x+1)},\\
+ f_t&=-\frac{4(x-y)(xy-x+y)}{xy(x-y+4)},\\
+ f_c&=\frac{4(2x^2-2xy-2x+y^2-8)}{y},\\
+ f_d&=-\frac{2(2x^3-4x^2y+2x^2+xy^2-6xy-12x+y^3-4y)}{xy},\\
+ f_e&=-\frac{2(x-y)(2x^2-2xy-2x+y^2-2y-4)}{xy},\\
+ f_D&=\frac{2P_D}{xy},\qquad
+ f_0=\frac{4(xy-x+y)}{xy}.
+\end{align}
+Here the polynomials in the longer coefficients are
+\begin{align}
+ P_a={}&x^3y-2x^2y^2+6x^2y+xy^3-5xy^2-2xy
+                +8x+y^3-2y^2-8y,\\
+ P_b={}&3x^3y-x^3-2x^2y^2+3x^2y+4x^2
+                -4xy^2-4xy+4x-2y^2-4y,\\
+ P_D={}&2x^4-4x^3y+3x^2y^2+2x^2y-24x^2
+                -xy^3-2xy^2+24xy-16x-8y^2+16y.
+\end{align}
+The $u$-ordered coefficient of each corresponding scalar integral
+is obtained by the simultaneous replacement
+$(x,y)\mapsto(-y,-x)$. In that ordering the off-shell invariant
+in $\overline B_{02}$, $C_{012}$ and $D_{0123}$ is $S=1-y$.
+This relation follows from exchanging the two photon insertions
+in the original numerator. It also follows by independent trace
+evaluation of that ordering.
+
+The calculation of these coefficients uses only the Clifford
+identity $\{\gamma^\mu,\gamma^\nu\}=2\eta^{\mu\nu}$ and the tensor
+recurrences above. For example, the scalar trace numerator is
+at most cubic in $\ell$. Each factor of $\ell^2$ cancels $d_0$,
+and each contraction of $\ell$ with an external momentum is
+reduced using \eqref{eq:comp-supp-box-denominator-differences}.
+There are seventeen scalar monomials before this reduction in
+each photon ordering. The coefficients multiplying $U$ cancel
+exactly. Thus \eqref{eq:comp-supp-box-interference-closed} is an
+explicit finite expression, including its infrared logarithm.
+
+\subsection{A rational variable for the elastic angle}
+For fixed $x>0$ the physical interval is
+$x/(1+x)\leq y\leq x$. The substitution
+\begin{equation}
+ v=\sqrt{\frac{x-y}{x-y+4}},\qquad
+ y=\frac{x-(x+4)v^2}{1-v^2},\qquad
+ 0\leq v\leq\frac{x}{x+2},\qquad
+ -\dd y=\frac{8v}{(1-v^2)^2}\dd v
+ \label{eq:comp-supp-box-angle-rationalization}
+\end{equation}
+removes the square root from every spacelike scalar integral.
+In particular $r=\operatorname{artanh}v$ and
+$ah=v/(1-v^2)$. This substitution follows directly from the
+quadratic $T(T+4)$ in the scalar box, and its upper boundary follows
+from the backward-scattering value $T=x^2/(1+x)$.
+
+The generalized polylogarithms (GPLs) used here are defined recursively by
+\begin{align}
+ G(\varnothing;v)&=1,\\
+ G(a_1,\ldots,a_n;v)
+ &=\int_0^v\frac{\dd t}{t-a_1}G(a_2,\ldots,a_n;t),\\
+ G(\underbrace{0,\ldots,0}_{n};v)&=\frac{\ln^n v}{n!}.
+\end{align}
+The last line specifies the logarithmically singular lower boundary
+rather than an ordinary convergent integral. The ordered list
+$(a_1,\ldots,a_n)$ is called a word, its entries are letters, and its
+weight is its length $n$. The alphabet is the finite set of letters
+needed by a given expression. These terms describe the iterated
+integrals, not additional physical assumptions.
+For a real letter outside the integration interval,
+$G(a;v)=\ln(1-v/a)$. Letters on the path inherit their displacement
+from the original Feynman denominators, as specified for the crossed
+triangle below.
+
+At a logarithmic endpoint, a regularized value means the constant
+term after explicitly separating powers of the endpoint logarithm.
+This choice is also called a tangential base point. At the origin
+it is fixed by the all-zero formula above and by the vanishing limit
+of words containing a nonzero letter. A full convergent combination
+is formed before taking an endpoint limit. Define
+\begin{equation}
+ R(v)=\frac{G(-1;v)-G(1;v)}2,
+ \qquad Z=\sqrt{\frac{x}{x+4}}.
+\end{equation}
+Then the needed logarithms and spacelike functions have the
+explicit word representations
+\begin{align}
+ \ln y&=\ln x+G(Z;v)+G(-Z;v)-G(1;v)-G(-1;v),\\
+ g_0(t)&=\frac{1-v^2}{v}R(v),\\
+ g_a(t)&=\frac{1-v^2}{2v}\left[G(0,-1;v)-G(0,1;v)\right],\\
+ \mathcal H(T)&=\frac{1-v^2}{2v}
+ \left[G(1,1;v)-G(1,-1;v)+G(-1,1;v)-G(-1,-1;v)\right],\\
+ C_{123}&=-\frac{1-v^2}{2v^2}R(v)^2,\qquad
+ \overline B_{13}=2-\frac{2R(v)}v.
+\end{align}
+Products of words are reduced by interleaving their letters while
+preserving the order within each word. This identity follows by
+partitioning the product of their ordered integration domains.
+For example $G(a)G(b)=G(a,b)+G(b,a)$.
+These relations turn the closed box interference into rational
+functions of $v$ multiplying words of weight at most two. They
+provide the starting point for its remaining elastic-angle integral.
+
+\input{real_equivalence}
+
+\subsection{Angular primitives and endpoint assembly}
+The preferred construction applies the finite primitive rules below to
+the direct box and to the seventeen-word crossed remainder, adding the
+rational subgroup boundary obtained above. For an independent algebraic
+representation, one may instead transform the entire crossed integrand.
+This introduces twenty-nine words. We give its continuation explicitly
+so that both representations have a fully specified physical branch.
+
+The crossed real-photon triangle is also a weight-two expression.
+Put $\eta^2=(x-1)/(x+3)$ and define coefficients
+\begin{equation}
+ (c_Z,c_{-Z},c_1,c_{-1})=(1,1,-1,-1),\qquad
+ (d_\eta,d_{-\eta},d_1,d_{-1})=(-1,-1,1,1).
+\end{equation}
+Differentiating its dilogarithm gives
+\begin{equation}
+ \frac{\dd}{\dd v}\operatorname{Li}_2(1-y(v)+\ii0)
+ =\frac{y'(v)}{1-y(v)+\ii0}\ln(y(v)-\ii0),\qquad
+ \frac{y'}{1-y}=\sum_{a\in\{\eta,-\eta,1,-1\}}\frac{d_a}{v-a}.
+\end{equation}
+Integrating each simple kernel therefore gives the explicit result
+\begin{equation}
+ \begin{aligned}
+ \operatorname{Li}_2(1-y(v)+\ii0)-\frac{\pi^2}{6}
+ ={}&\operatorname{Li}_2(1-x)-\frac{\pi^2}{6}\\
+ &+\sum_a d_a\left[\ln x\,G(a;v)
+                +\sum_b c_bG(a,b;v)\right].
+ \end{aligned}
+ \label{eq:comp-supp-box-crossed-triangle-words}
+\end{equation}
+The sums have exactly the four entries listed above.
+For $x>1$ the root $\eta>0$ lies inside the angular interval.
+Indeed, with $v_{\max}=x/(x+2)$,
+\begin{equation}
+ v_{\max}^2-\eta^2=\frac{4}{(x+2)^2(x+3)}>0,\qquad
+ Z^2-v_{\max}^2=\frac{4x}{(x+4)(x+2)^2}>0.
+\end{equation}
+Thus the only positive auxiliary root crossed before the endpoint
+is $\eta$, while the zero $Z$ of $y$ is outside the path.
+It is an intermediate zero of $1-y$, not a singularity of the
+triangle: $\ln y$ vanishes there. Its displacement follows from
+$1-y+\ii0=0$. Since $y'(\eta)<0$, the positive root is below
+the real axis and the negative root is above it. More explicitly,
+\begin{equation}
+ y'(v)=-\frac{8v}{(1-v^2)^2},\qquad
+ v_{\rm pole}=\eta+\frac{\ii\varepsilon}{y'(\eta)}
+                   +O(\varepsilon^2),\qquad \varepsilon>0.
+\end{equation}
+Here $\varepsilon$ is the infinitesimal Feynman displacement, not
+a soft-energy separator. The GPL terms
+in \eqref{eq:comp-supp-box-crossed-triangle-words} use those
+boundary values together. Their apparent singularity cancels.
+For $x<1$ the two roots are off the real integration interval.
+The value at $x=1$ is obtained by continuity of the combined
+expression. The reality of the combined result can also be proved
+without evaluating any GPL. Throughout the path $y>0$, hence
+$1-y<1$ is on the real branch of the dilogarithm. At $y=1$,
+$\ln y/(1-y)\to-1$, so its displayed derivative is regular.
+That derivative and the real initial value at $v=0$ uniquely fix
+a real function on the full interval. Consequently the imaginary
+parts introduced by the separated GPL terms must cancel.
+
+\paragraph{Finite integration of the words.}
+The remaining rational coefficients need no new special functions.
+For a rational function $F(v)$, separate its polynomial and pole
+parts,
+\begin{equation}
+ F(v)=\sum_{k\geq0}p_kv^k
+       +\sum_a\sum_{j=1}^{m_a}\frac{r_{aj}}{(v-a)^j}
+       =P'(v)+\sum_a\frac{r_{a1}}{v-a},
+\end{equation}
+where all sums are finite and
+\begin{equation}
+ P(v)=\sum_{k\geq0}\frac{p_kv^{k+1}}{k+1}
+       -\sum_a\sum_{j=2}^{m_a}
+                    \frac{r_{aj}}{(j-1)(v-a)^{j-1}}.
+\end{equation}
+The coefficients $r_{aj}$ are fixed algebraically by derivatives
+of $(v-a)^{m_a}F(v)$ at $v=a$. This form is the rational
+Hermite reduction, written here as partial fractions.
+It gives the following finite primitive for the empty word and
+for words of lengths one and two,
+\begin{align}
+ \Phi_{\varnothing}[F](v)
+   &=P(v)+\sum_\alpha r_{\alpha1}G(\alpha;v),\\
+ \Phi_a[F](v)
+   &=P(v)G(a;v)+\sum_\alpha r_{\alpha1}G(\alpha,a;v)
+                            -\Phi_{\varnothing}[P/(v-a)](v),\\
+ \Phi_{a,b}[F](v)
+   &=P(v)G(a,b;v)+\sum_\alpha r_{\alpha1}G(\alpha,a,b;v)
+                            -\Phi_b[P/(v-a)](v).
+ \label{eq:comp-supp-box-gpl-primitive}
+\end{align}
+Each recursive use shortens the word. The displayed formulas
+therefore terminate after at most three algebraic steps.
+Differentiating them gives
+$\Phi_w'[F](v)=F(v)G(w;v)$, since the derivative of a nonempty
+word removes its first letter and divides by its kernel denominator.
+Thus these formulas describe closed GPL expressions of weight
+at most three, not a residual parameter quadrature.
+
+\paragraph{Endpoint expression for the box contribution.}
+For each photon ordering $j\in\{s,u\}$, the preceding explicit
+scalar formulas uniquely specify the finite set of rational
+coefficients $F_{jw}(v;x)$ through
+\begin{equation}
+ \frac{8v}{(1-v^2)^2}
+       \operatorname{Re}\mathcal T_{\mathrm{box},j}(x,y(v))
+       =\sum_{|w|\leq2}F_{jw}(v;x)G(w;v).
+\end{equation}
+There are nine input words in the $s$ ordering and twenty-nine
+in the $u$ ordering when products have been interleaved as above.
+Apply \eqref{eq:comp-supp-box-gpl-primitive} to these rational
+coefficients and define the resulting finite GPL sums by
+\begin{equation}
+ \mathcal F_j(v;x)=\sum_w\Phi_w[F_{jw}](v).
+\end{equation}
+All partial-fraction coefficients used here have the explicit
+algebraic definition
+\begin{equation}
+ r_{aj}=\frac1{(m_a-j)!}
+ \left.\left(\frac{\dd}{\dd v}\right)^{m_a-j}
+                  [(v-a)^{m_a}F(v)]\right|_{v=a}.
+\end{equation}
+Thus a coefficient need not be expanded into a long quotient of
+polynomials and square roots in order to define or evaluate the
+closed answer.
+
+The lower boundary is also determined by finite algebra.
+Write the rational coefficient of a word in $\mathcal F_j$ as
+$f_w(v)$, with pole order $p_w$ at zero. For a word that does not
+end in zero, let $g_{w,n}$ be its Taylor coefficient of $v^n$.
+The coefficients required at this boundary follow from
+\begin{align}
+ g_{\varnothing,n}&=\delta_{n0},\qquad g_{aw,0}=0,\\
+ g_{aw,n}&=-\frac1n\sum_{k=0}^{n-1}
+                   \frac{g_{w,k}}{a^{n-k}}\quad(a\ne0),\\
+ g_{0w,n}&=\frac{g_{w,n}}n\quad(n\geq1).
+\end{align}
+Only coefficients up to $n=p_w$ are needed. The single logarithm
+$G(0;v)=\ln v$ has zero constant term. Its divergent coefficient
+cancels in the combined primitive, as required by the regular
+original integrand at forward scattering. Define
+\begin{equation}
+ \mathcal L_j(x)=\sum_w\sum_{n=0}^{p_w}
+ \frac{g_{w,n}}{(p_w-n)!}
+ \left.\left(\frac{\dd}{\dd v}\right)^{p_w-n}
+                    [v^{p_w}f_w(v)]\right|_{v=0}.
+\end{equation}
+This is an explicit finite sum of derivatives of rational functions.
+It does not require an integration or a numerical endpoint limit.
+The integrated box contribution to
+$\sigma_1=\alpha_{\mathrm T}^3\mathcal C/m^2$ is
+\begin{equation}
+ \boxed{\mathcal C_{\mathrm{box}}(x;\lambda)
+ =\frac1{2x^2}\sum_{j=s,u}
+ \left[\mathcal F_j\!\left(\frac{x}{x+2};x\right)
+                         -\mathcal L_j(x)\right].}
+ \label{eq:comp-supp-box-angular-closed}
+\end{equation}
+The factor $1/(2x^2)$ follows from
+$\dd c=2(x+1)\dd y/x^2$ and the interference normalization
+$\mathcal C_{\mathrm{virt}}=(4s)^{-1}
+\int\dd c\,\operatorname{Re}\mathcal T$.
+For the preferred shorter construction let $\mathcal F_{u,\mathrm{rem}}$
+be the same finite primitive operation applied only to the remainder
+specified in Section~\ref{sec:comp-crossed-first}, and let
+$\mathcal L_{u,\mathrm{rem}}$ be its lower boundary computed by the
+same finite series rule. The full crossed boundary difference obeys
+\begin{equation}
+ \begin{aligned}
+ \mathcal F_u(v_{\max};x)-\mathcal L_u(x)
+ ={}&P(x,x)-P\!\left(x,\frac{x}{1+x}\right)\\
+ &+\mathcal F_{u,\mathrm{rem}}(v_{\max};x)
+       -\mathcal L_{u,\mathrm{rem}}(x).
+ \end{aligned}
+\end{equation}
+Here $P(x,y)$ is the rational-subgroup primitive derived above.
+The equality follows by differentiating the two constructions and using
+the same original angular endpoints. It reduces the crossed angular
+input from twenty-nine to seventeen words and avoids an internal
+$\rho_u$ pole in this construction.
+
+The expression still contains the infrared logarithm. It is combined
+with the other virtual diagrams and the real contribution before
+removing the photon mass.
+
+\paragraph{Continuation through the apparent crossed-channel pole.}
+For $x>1$, the positive roots obey $\eta<v_{\max}<Z$ because
+\begin{equation}
+ v_{\max}^2-\eta^2=\frac4{(x+2)^2(x+3)}>0,\qquad
+ Z^2-v_{\max}^2=\frac{4x}{(x+4)(x+2)^2}>0.
+\end{equation}
+The original triangle requires the root $\eta-\ii0$.
+An equivalent GPL evaluation starts at zero and deforms the path
+into the upper half-plane before returning to $v_{\max}$.
+In particular,
+\begin{equation}
+ G(\eta-\ii0;v_{\max})
+ =\ln\!\left(\frac{v_{\max}}\eta-1\right)-\ii\pi.
+\end{equation}
+This follows by writing the weight-one integral as
+$\log(v_{\max}-\eta+\ii0)-\log(-\eta+\ii0)$: the
+first argument has phase zero and the second has phase $+\pi$.
+Discarding this imaginary part term by term would change the
+analytic continuation. Instead all words use the same deformed
+path. Their imaginary parts cancel in the complete real
+crossed-channel interference.

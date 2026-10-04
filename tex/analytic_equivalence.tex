@@ -1,0 +1,149 @@
+\section{Analytic comparison with the published total}
+\label{sec:compton-analytic-equivalence}
+
+Agreement at finitely many energies is a useful numerical check, but does
+not prove that two analytic functions coincide.  This section compares the complete independent result in
+Equation~\eqref{eq:comp-total-energy-collected} with Equation (6) of Lee, Schwartz and
+Zhang~\cite{qed-processes-lsz}.  The published coefficients enter only this
+comparison and are not used to construct the independent amplitude integral.
+
+\paragraph{Observable and normalization.}
+Write $s=s_{\mathrm{phys}}/m^2$ and $X=s-1$.  The comparison concerns
+unpolarized $e^-\gamma\to e^-\gamma$ together with
+$e^-\gamma\to e^-\gamma\gamma$, integrated over the complete photon phase
+space.  It excludes the separate charged-pair final state.  Both
+calculations use the on-shell mass and physical low-energy charge.  The
+published calculation uses dimensional regularization, whereas the
+independent construction combines photon-mass and auxiliary Mellin
+regulators before removing them.  The comparison is between their finite
+sums, not their individual real or virtual finite parts.
+The precise normalization is
+\begin{equation}
+ \sigma_1=\frac{\alpha_{\mathrm T}^3}{m^2}C_{\mathrm{total}}(s),\qquad
+ C_{\mathrm{LSZ}}(s)=\frac{\mathcal H_{\mathrm{LSZ}}(X)}{X^3},\qquad X=s-1.
+\end{equation}
+Here $\mathcal H_{\mathrm{LSZ}}(X)=\mathcal H(X)$ is the numerator defined in the preceding section.  It is
+not the energy variable denoted by $H$ in the independent integration.
+
+\paragraph{Classical functions in one iterated-integral basis.}
+Let $G$ have the kernels defined in the preceding reference section.
+Several changes of basis remove apparent differences immediately:
+\begin{align}
+ \ln X&=G(0;X),\qquad \ln(1+X)=G(-1;X),\\
+ \operatorname{Li}_2(-X)&=-G(0,-1;X),\\
+ \operatorname{Li}_2(1-X)-\frac{\pi^2}{6}&=-G(1,0;X),\\
+ \operatorname{Li}_3(X^2)-\ln X\operatorname{Li}_2(X^2)
+ &=2G(0,1,0;X)+2G(0,-1,0;X).
+ \label{eq:compton-equivalence-classical}
+\end{align}
+For the last identity, apply
+$\operatorname{Li}_n(X^2)=2^{n-1}[\operatorname{Li}_n(X)+
+\operatorname{Li}_n(-X)]$ and the shuffle product
+\begin{equation}
+ G(0;X)G(0,a;X)=2G(0,0,a;X)+G(0,a,0;X).
+\end{equation}
+Alternatively, differentiating both sides of
+\eqref{eq:compton-equivalence-classical} gives the same expression, and
+both sides vanish at $X=0$.  These arguments initially apply for
+$0<X<1$ and extend continuously through $X=1$.  Indeed, the inner kernel
+of $G(1,0;X)$ is $\ln X/(X-1)$, which is finite at one.  Thus the
+right-hand side is real on the whole positive axis.  On the left-hand
+side the imaginary parts cancel when both polylogarithms are continued
+on the same side of their cut.  No choice of an imaginary part based on
+numerical agreement is required.
+
+After reducing products by shuffle identities, the complete reference
+is a linear combination of words of weight at most three with letters
+\begin{equation}
+ \{0,1,-1,-2,-4,r\},\qquad
+ \omega_{r}=\frac{\mathrm{d}X}{\sqrt{X(X+4)}}.
+\end{equation}
+The letter $1$ is needed for the classical combinations above, although
+it is absent from the thirteen nonclassical words displayed separately
+in the published formula.
+
+\paragraph{Comparison in the constant alphabet.}
+Section~\ref{sec:comp-virtual-energy-basis} derives the constant-letter
+representation of the complete virtual contribution from its own
+angular primitives. Applying the kernel map
+\eqref{eq:compton-equivalence-pullback} to the published total gives
+exactly the same set of 116 words. Both expressions use basepoint
+$q=1$ and the logarithmic convention fixed there.
+
+The comparison is performed on the complete infrared-finite sums.
+No difference between the published total and a partial contribution is
+used to reconstruct the remaining sectors.
+
+\paragraph{Equality of the complete finite sum.}
+The finite soft reduction in Section~\ref{sec:comp-ck-energy-formula},
+the integrated $UW$ term in Equation~\eqref{eq:comp-uw-integrated-compact},
+and the other real-emission sectors complete the independent result.
+Their sum is Equation~\eqref{eq:comp-total-energy-collected}.
+In particular, the intermediate radical $\sqrt{s}$ no longer appears
+in its kernels or coefficients. The only square root in the energy
+representation is $Y=\sqrt{X/(X+4)}$, with its positive value for $X>0$.
+This cancellation follows from the sector reductions before the
+published expression is compared.
+
+Let $\mathcal W_{23}$ denote the twenty-three words listed in
+Equation~\eqref{eq:comp-total-energy-collected}, including the empty word.
+Expanding the published expression with the classical identities above
+and the shuffle rule gives exactly the same word set. Thus
+\begin{equation}
+ C_1(X)-C_{\mathrm{LSZ}}(1+X)
+ =\sum_{w\in\mathcal W_{23}}\Delta_w(X,Y)G(w;X),\qquad
+ \Delta_w=c_w^{\mathrm{ind}}-c_w^{\mathrm{LSZ}}.
+\end{equation}
+All twenty-three differences vanish as rational functions of $X$ and $Y$.
+No numerical value of $X$, expansion around an endpoint, or relation
+between distinct GPL words is used for this final subtraction.
+For example, the common coefficients of three words are
+\begin{align}
+ c_{(1,0)}&=-\frac{X^2-X+2}{X^3},\\
+ c_{(0,-1,0)}=c_{(0,1,0)}&=\frac{2(X^2+2X-6)}{X^3},\\
+ c_{(r,r,-1)}&=\frac{3(3X^2-8)}{X^3}.
+\end{align}
+The coefficient comparison includes the empty word, so a residual
+additive constant is also excluded. Linear independence of the words
+is unnecessary: equality of each coefficient is sufficient.
+
+It remains to identify their definitions on the physical axis.
+The root weight in Equations (7)--(8) of the reference is
+$Y\,\mathrm dX/X=\mathrm dX/\sqrt{X(X+4)}$, exactly the kernel
+$\omega_{r}$ above. Both definitions start at zero, use
+$G(0;X)=\ln X$, and integrate along positive real $X$.
+All other nonzero letters are negative, except for the two classical
+combinations containing the letter $1$.
+For those combinations $\ln X/(X-1)$ has a removable singularity.
+Their continuous real values were established above by differentiation
+and the zero-endpoint boundary values.
+The apparently singular elementary term at $X=1$ is likewise fixed by
+$\lim_{X\to1}\ln X/(X-1)=1$.
+Consequently the coefficient identity gives
+\begin{equation}
+ \boxed{C_1(X)=C_{\mathrm{LSZ}}(1+X),\qquad X>0,}
+\end{equation}
+including $X=1$ by continuity. No integration constant or physical
+branch has been adjusted to enforce this equality.
+
+The comparison can be reproduced by
+\texttt{compton\_total\_reference\_identity.py}.
+It reads the independent coefficient dictionary and separately expands
+the transcription of Equation (6) of the reference.
+The report records every coefficient difference and hashes of both
+inputs. The transcription was checked term by term against the published
+equation, including its overall $X^{-3}$ normalization and root weight.
+The independent calculation does not import that transcription.
+
+\paragraph{A shorter product representation.}
+Equality with the published formula does not require keeping its
+organization. Section~\ref{sec:comp-total-energy-product} applies further
+shuffle identities to the independently obtained coefficients.
+Three weight-three words are replaced by products involving lower-weight
+functions, and two equal-coefficient words are combined into
+$\mathcal P(X)$. The result has an elementary logarithmic polynomial
+and thirteen remaining grouped functions. Expanding its products
+recovers all twenty-three coefficients exactly.
+This reduction decreases the number of separate special-function terms,
+although some coefficients then contain elementary logarithms.
+It makes no claim that thirteen is a minimal function count.

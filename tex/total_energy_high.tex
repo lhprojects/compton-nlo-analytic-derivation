@@ -1,0 +1,73 @@
+\section{The collected total at high energy}
+\label{sec:comp-total-energy-high}
+The complete analytic coefficient gives the high-energy expansion
+\begin{equation}
+\begin{aligned}
+ \sigma_1=\frac{\alpha_{\mathrm T}^3}{m^2}\biggl\{
+ \frac1X\biggl[&\frac{\ln^3X}{3}-\frac{\ln^2X}{2}
+ +\frac{17}{4}\ln X-\frac{75}{8}-\frac{\pi^2}{2}+4\zeta(3)\biggr]
+ +O\!\left(\frac{\ln^3X}{X^2}\right)\biggr\},\quad X\to\infty.
+\end{aligned}
+\label{eq:comp-collected-total-high}
+\end{equation}
+Here $X=s_{\mathrm{phys}}/m^2-1$. This expansion is taken after all
+virtual and real contributions have been integrated and combined.
+The finite constant in the square brackets is determined below from
+our GPL primitives, independently of a comparison cross section.
+
+\paragraph{Terms needed from the kernels.} Set $\ell=\ln X$.
+Most coefficients in the collected expression are $O(1/X)$, so their
+GPLs are needed through the finite constant. Three weight-two
+functions multiply coefficients of order one and require an
+additional inverse-power term:
+\begin{align}
+ G(-1,-1;X)&=\frac{\ell^2}{2}+\frac{\ell}{X}
+                         +O\!\left(\frac{\ell}{X^2}\right),\\
+ G(0,-1;X)&=\frac{\ell^2}{2}+\frac{\pi^2}{6}-\frac1X
+                         +O(X^{-2}),\\
+ G(r,-1;X)&=\frac{\ell^2}{2}-\frac{\pi^2}{18}
+                +\frac{2\ell+1}{X}
+                         +O\!\left(\frac{\ell}{X^2}\right).
+\end{align}
+The first two follow from logarithmic expansion and dilogarithm
+inversion. The third follows from \eqref{eq:comp-ir-short-function}
+with $q=X^{-1}-2X^{-2}+O(X^{-3})$. Keeping these subleading terms
+is essential because the order-one contributions cancel in the sum.
+
+For the six remaining root words, define the constants by
+\begin{align}
+ G(r,-1,-1;X)&=\ell^3/6+K_a+O(\ell^2/X),\\
+ G(r,-1,0;X)&=\ell^3/6-\pi^2\ell/6+K_b+O(\ell^2/X),\\
+ G(r,0,-1;X)&=\ell^3/6+\pi^2\ell/6+K_c+O(\ell^2/X),\\
+ G(r,-2,-1;X)&=\ell^3/6-\pi^2\ell/12+K_d+O(\ell^2/X),\\
+ G(-4,r,-1;X)&=\ell^3/6-\pi^2\ell/18+K_e+O(\ell^2/X),\\
+ G(0,r,-1;X)&=\ell^3/6-\pi^2\ell/18+K_f+O(\ell^2/X).
+\end{align}
+The logarithmic terms follow by integrating their defining kernels at
+large $X$. Rational-letter functions follow by the same recursion,
+with constants fixed by their classical polylogarithmic expressions.
+Before evaluating the six constants, collecting every term gives
+\begin{equation}
+\begin{aligned}
+ C_1(X)=\frac1X\biggl[&\frac{\ell^3}{3}-\frac{\ell^2}{2}
+ +\frac{17\ell}{4}-\frac{75}{8}-\frac{\pi^2}{2}+13\zeta(3)\\
+ &+15K_a-6K_b-8K_c-16K_d-6K_e-3K_f\biggr]
+ +O(\ell^3/X^2).
+\end{aligned}
+\end{equation}
+
+Using the endpoint constants already evaluated in
+\eqref{eq:comp-high-root-constants}, we obtain
+\begin{equation}
+ 15K_a-6K_b-8K_c-16K_d-6K_e-3K_f=-9\zeta(3).
+\end{equation}
+The Clausen constant cancels exactly. Substitution proves
+\eqref{eq:comp-collected-total-high}, including its finite constant.
+The rational kernels have inverse-power expansions at infinity, so
+the next order is bounded by $O(\ln^3X/X^2)$.
+
+Only now do we compare with Lee, Schwartz and Zhang,
+Equation (11)~\cite{qed-processes-lsz}. Replacing $X$ by
+$s_{\mathrm{phys}}/m^2$ inside the leading term changes only the displayed
+remainder. All three logarithmic coefficients and the finite
+coefficient agree with that published expression.

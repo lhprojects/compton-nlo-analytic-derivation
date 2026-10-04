@@ -1,0 +1,205 @@
+{
+  "source": "/home/liangh/projects/2026_QFTBook/scripts/12_qed_processes/compton_real_integral.cpp",
+  "source_sha256": "317efdb6136691e85348395b62e4bc0c4469b6de7a28fef7a315267cd19458d1",
+  "engine": "/tmp/qft-compton-real-audit",
+  "engine_sha256": "80aa777f439332b0fe2ba6ffdf2f71cfa299bcd3ded95f3dfd797b68cdd0ca63",
+  "cuba_library_sha256": "d82ff7395bfab50430800688bd0596cf800080ef5ce762ebcf2fce32577d1dc3",
+  "compile_command": [
+    "g++",
+    "-O3",
+    "-std=c++17",
+    "-I/tmp/Cuba-4.2.2",
+    "/home/liangh/projects/2026_QFTBook/scripts/12_qed_processes/compton_real_integral.cpp",
+    "/tmp/Cuba-4.2.2/libcuba.a",
+    "-lm",
+    "-o",
+    "/tmp/qft-compton-real-audit"
+  ],
+  "meaning": "CM soft-subtracted real coefficient R_sub = F_eta - A log(2 sqrt(s) (s-1)); sigma_R=alpha^3 R_sub/m^2",
+  "cubacores": 1,
+  "energies": {
+    "1.6": {
+      "levels": [
+        {
+          "s_over_m2": 1.6,
+          "real_subtracted": -0.34065074500826914,
+          "error": 3.3992705e-06,
+          "neval": 156213,
+          "fail": 0,
+          "requested_relative_tolerance": 1e-05,
+          "requested_absolute_tolerance": 1.0000000000000001e-07,
+          "maxeval": 15000000,
+          "elapsed_seconds": 6.956602334976196,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "1.6",
+            "1e-05",
+            "15000000"
+          ]
+        },
+        {
+          "s_over_m2": 1.6,
+          "real_subtracted": -0.34065517081770325,
+          "error": 3.4051488e-07,
+          "neval": 438345,
+          "fail": 0,
+          "requested_relative_tolerance": 1e-06,
+          "requested_absolute_tolerance": 1e-08,
+          "maxeval": 15000000,
+          "elapsed_seconds": 9.49834418296814,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "1.6",
+            "1e-06",
+            "15000000"
+          ],
+          "change_from_previous": -4.425809434105421e-06
+        },
+        {
+          "s_over_m2": 1.6,
+          "real_subtracted": -0.34065520104089014,
+          "error": 3.4060336e-08,
+          "neval": 909891,
+          "fail": 0,
+          "requested_relative_tolerance": 1e-07,
+          "requested_absolute_tolerance": 1e-09,
+          "maxeval": 15000000,
+          "elapsed_seconds": 20.12246584892273,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "1.6",
+            "1e-07",
+            "15000000"
+          ],
+          "change_from_previous": -3.022318689760439e-08
+        }
+      ],
+      "value": -0.34065520104089014,
+      "estimated_error": 6.8102976e-07,
+      "error_rule": "2 max(last two reported Cuhre errors, last refinement change)",
+      "all_requested_tolerances_met": true
+    },
+    "10": {
+      "levels": [
+        {
+          "s_over_m2": 10,
+          "real_subtracted": -0.5851912988545889,
+          "error": 5.8452194e-06,
+          "neval": 510867,
+          "fail": 0,
+          "requested_relative_tolerance": 1e-05,
+          "requested_absolute_tolerance": 1.0000000000000001e-07,
+          "maxeval": 15000000,
+          "elapsed_seconds": 14.744791746139526,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "10",
+            "1e-05",
+            "15000000"
+          ]
+        },
+        {
+          "s_over_m2": 10,
+          "real_subtracted": -0.5851926921638354,
+          "error": 5.8485328e-07,
+          "neval": 1160199,
+          "fail": 0,
+          "requested_relative_tolerance": 1e-06,
+          "requested_absolute_tolerance": 1e-08,
+          "maxeval": 15000000,
+          "elapsed_seconds": 29.01370072364807,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "10",
+            "1e-06",
+            "15000000"
+          ],
+          "change_from_previous": -1.3933092465334695e-06
+        },
+        {
+          "s_over_m2": 10,
+          "real_subtracted": -0.5851929902756923,
+          "error": 5.8515015e-08,
+          "neval": 2308311,
+          "fail": 0,
+          "requested_relative_tolerance": 1e-07,
+          "requested_absolute_tolerance": 1e-09,
+          "maxeval": 15000000,
+          "elapsed_seconds": 61.40339756011963,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "10",
+            "1e-07",
+            "15000000"
+          ],
+          "change_from_previous": -2.9811185686678954e-07
+        }
+      ],
+      "value": -0.5851929902756923,
+      "estimated_error": 1.16970656e-06,
+      "error_rule": "2 max(last two reported Cuhre errors, last refinement change)",
+      "all_requested_tolerances_met": true
+    },
+    "100": {
+      "levels": [
+        {
+          "s_over_m2": 100,
+          "real_subtracted": 0.590462322552642,
+          "error": 5.9009917e-06,
+          "neval": 936513,
+          "fail": 0,
+          "requested_relative_tolerance": 1e-05,
+          "requested_absolute_tolerance": 1.0000000000000001e-07,
+          "maxeval": 15000000,
+          "elapsed_seconds": 23.9203040599823,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "100",
+            "1e-05",
+            "15000000"
+          ]
+        },
+        {
+          "s_over_m2": 100,
+          "real_subtracted": 0.5904585598362316,
+          "error": 5.9033712e-07,
+          "neval": 2529855,
+          "fail": 0,
+          "requested_relative_tolerance": 1e-06,
+          "requested_absolute_tolerance": 1e-08,
+          "maxeval": 15000000,
+          "elapsed_seconds": 68.98797392845154,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "100",
+            "1e-06",
+            "15000000"
+          ],
+          "change_from_previous": -3.762716410338207e-06
+        },
+        {
+          "s_over_m2": 100,
+          "real_subtracted": 0.590458777994119,
+          "error": 5.9039989e-08,
+          "neval": 6146775,
+          "fail": 0,
+          "requested_relative_tolerance": 1e-07,
+          "requested_absolute_tolerance": 1e-09,
+          "maxeval": 15000000,
+          "elapsed_seconds": 165.39386200904846,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "100",
+            "1e-07",
+            "15000000"
+          ],
+          "change_from_previous": 2.1815788742163278e-07
+        }
+      ],
+      "value": 0.590458777994119,
+      "estimated_error": 1.18067424e-06,
+      "error_rule": "2 max(last two reported Cuhre errors, last refinement change)",
+      "all_requested_tolerances_met": true
+    }
+  }
+}

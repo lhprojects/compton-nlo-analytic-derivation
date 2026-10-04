@@ -1,0 +1,55 @@
+\section{Combining the finite regulator conversions}
+The three finite shifts in \eqref{eq:comp-simplified-real-remainder}
+can be combined before evaluating the real contribution. Define
+\begin{equation}
+ M(X)=\Delta_{\mathrm{rat}}+\Delta_{\log}+\Delta_D,
+ \qquad L=\ln(1+X),\quad J=\ln(1+X/2),\quad X>0.
+\end{equation}
+The shifts include the finite displacement of the double-pole
+boundary in the Bose-restoring term. Combining their independently
+integrated endpoint moments gives
+\begin{equation}
+ \begin{aligned}
+ M(X)={}&-\frac{P_0}{3X}
+ +\frac{2P_1}{X(1+X)}\operatorname{Li}_2(-X)
+ -\frac{8(1+X)(X^2-4X-6)}{X^2}L^3\\
+ &+\frac{16(1+X)(X^2-4X-6)}{X^2}L\operatorname{Li}_2(-X)
+ -\frac{256(1+X)(X+2)^2}{X^3}J\\
+ &+\frac{128(1+X)P_2}{3X^3}
+ \left[\operatorname{Li}_2\!\left(-\frac{X^2}{4(1+X)}\right)-2JL\right]
+ -\frac{P_3L^2+P_4L}{3X^3(1+X)}.
+ \end{aligned}
+ \label{eq:comp-matching-short}
+\end{equation}
+Here the polynomials are
+\begin{align}
+ P_0&=X^5-X^4-8X^3+196X^2+1104X+864,\\
+ P_1&=X^5-6X^4-43X^3-32X^2+32X+32,\\
+ P_2&=X^3-5X^2-28X-24,\\
+ P_3&=3X^7-18X^6-233X^5-96X^4
+                 +3008X^3+8240X^2+8000X+2688,\\
+ P_4&=X^9+6X^8-18X^7-24X^6+363X^5
+                 +1652X^4+412X^3-3984X^2-4704X-1536.
+\end{align}
+In particular, the explicit $\ln X$ cancels in this sum.
+The reduction uses positive-real logarithm identities and
+\begin{equation}
+ \operatorname{Li}_2\!\left(\frac{X}{1+X}\right)
+ =-\operatorname{Li}_2(-X)-\frac12\ln^2(1+X).
+\end{equation}
+The last identity follows by differentiating both sides and fixing
+the zero value at $X=0$. Both sides are real for $X>0$.
+The remaining dilogarithm arguments in
+\eqref{eq:comp-matching-short} are negative, so their real branches
+are fixed throughout the physical interval. Coefficient collection
+then requires only rational identities in $X$. Thus the real remainder
+can be written more compactly as
+\begin{equation}
+ \mathcal R_{\mathrm{rem}}(X)
+ =F_{\mathrm{rat}}^z+F_W^z+F_{\log}^z+F_D^z
+                  +2F_{UW}^{\eta}+M(X).
+\end{equation}
+The script \nolinkurl{compton_matching_simplify.py} constructs this
+sum from the separate endpoint moments and verifies the rational
+coefficients exactly. The overall factor $1/[8X(1+X)]$ is still
+applied only in \eqref{eq:comp-simplified-master}.

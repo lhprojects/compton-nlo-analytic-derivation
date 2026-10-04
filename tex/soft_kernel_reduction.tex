@@ -1,0 +1,81 @@
+\paragraph{Reducing the kernel before integration.}
+Put $X=x=s-1$ in this paragraph. An integration by parts removes the
+poles at $w=\pm\ii$ before any polylogarithmic primitive is constructed.
+It combines the elementary and root-dependent parts of the original
+soft kernel, so no integrated cross section is needed.
+
+Keep $X=s-1$, $\beta=X/(X+2)$ and $E^2=(X+2)^2/(4s)$, and define
+\begin{equation}
+ k^2=\frac{1+XU^2}{s},\qquad d=1-\beta^2U^2,\qquad
+ a=\operatorname{artanh}(\beta U),\qquad
+ f=\operatorname{artanh}(U/k).
+\end{equation}
+In this section $d$ denotes this rational function, rather than the
+spacetime dimension.  On $0<U<1$, all square roots are positive and
+both functions are real.  Separate the elementary part of $H$ as
+\begin{align}
+ h_0&=\overline h_0+\frac{2(X+2)U}{Xk^2},\\
+ \overline h_0&=U\left[\frac{X^2+2X+4}{2s}
+ -\frac{X^3}{4s^2}-\frac{3X^3(1-U^2)}{8s^2}\right],\\
+ h_k&=\frac{b_1}{k}+\frac{2(X+2)(1-U^2)}{Xsk^3},\qquad
+ b_1=\frac{X^3-2X^2-16X-8}{X^2}.
+\end{align}
+The identities
+\begin{equation}
+ \frac{\dd f}{\dd U}=\frac1{k(1-U^2)},\qquad
+ p(U)=\frac{2(X+2)U(1-U^2)}X
+\end{equation}
+give the exact integration-by-parts relation
+\begin{equation}
+ \begin{aligned}
+ \frac a d\left[\frac{2(X+2)U}{Xk^2}+h_kf\right]
+ ={}&\frac{\dd}{\dd U}\left(\frac{apf}{dk}\right)\\
+ &+\frac f k\left[
+ a\left(\frac{b_1}d+\frac{16sU^2}{X(X+2)d^2}\right)
+ -\frac{2U(1-U^2)}{d^2}\right].
+ \end{aligned}
+ \label{eq:comp-ck-pole-removal}
+\end{equation}
+Its boundary term vanishes at both ends.  At $U=0$, $a$ and $f$
+vanish linearly.  At $U\to1$, $p=O(1-U)$ while $f$ grows only as
+$\ln(1-U)$, and $d\to1-\beta^2>0$.  There is therefore no boundary
+constant to supply from a different calculation.
+
+Use the previous rational variable
+$U=(w-w^{-1})/(2\sqrt X)$.  The remaining root factor cancels from
+its differential,
+\begin{equation}
+ \frac{\dd U}{k}=\sqrt{\frac sX}\frac{\dd w}{w}.
+\end{equation}
+Writing $z=w-1$, define four rational kernels
+\begin{align}
+ \widetilde R_0&=\frac4{\beta E^2}\frac{U'\overline h_0}{d},&
+ \widetilde R_1&=\frac4{\beta E^2}\frac{U'h_1}{d},\\
+ \widetilde R_k&=\frac4{\beta E^2}\sqrt{\frac sX}\frac1w
+ \left[\frac{b_1}d+\frac{16sU^2}{X(X+2)d^2}\right],&
+ \widetilde R_f&=-\frac8{\beta E^2}\sqrt{\frac sX}
+ \frac{U(1-U^2)}{wd^2}.
+\end{align}
+Here $U'=\dd U/\dd z$ and
+\begin{equation}
+ h_1=-\frac{X^3-6X^2-16X-8}{X^2}
+ +\frac{(1-k^2)(X^2+2X+4)}{2X}
+ -\frac{3X}{8}(1-k^2)^2.
+\end{equation}
+The logarithms are $L_\beta=\operatorname{artanh}(\beta U)$,
+$L_1=\operatorname{artanh}U$, and $L_k=\operatorname{artanh}(U/k)$.
+The transformed integrand is
+\begin{equation}
+ \widetilde R_0 L_\beta+\widetilde R_1L_\beta L_1
+ +\widetilde R_kL_\beta L_k+\widetilde R_f L_k.
+\end{equation}
+Every denominator now factors into powers of $w$ and
+\begin{equation}
+ Q_w=-Xw^4+(4X^2+18X+16)w^2-X.
+\end{equation}
+The roots of $Q_w$ are the four real poles
+$\pm r,\pm r^{-1}$, where
+$r=\sqrt{1+X/\beta^2}-\sqrt X/\beta$.
+The factor $1+w^2$ is absent.
+Thus the entire GPL expression, including the letters introduced by
+partial fractions, has only real letters.

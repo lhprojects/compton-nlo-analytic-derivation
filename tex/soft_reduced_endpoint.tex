@@ -1,0 +1,39 @@
+\paragraph{The reduced soft endpoint.}
+For an explicit closed endpoint expression, apply the finite
+primitive operator $\mathfrak T$ just defined to the four reduced
+kernels and the logarithm lists $\mathcal A_\beta,\mathcal A_1,\mathcal A_k$. The notation $\mathfrak T[R;L_aL_b]$ means the finite
+sum over their weights after applying
+$G(a)G(b)=G(a,b)+G(b,a)$.  Put
+\begin{equation}
+ \begin{aligned}
+ \widetilde\Psi(z)={}&
+ \mathfrak T[\widetilde R_0;L_\beta](z)
+ +\mathfrak T[\widetilde R_1;L_\beta L_1](z)\\
+ &+\mathfrak T[\widetilde R_k;L_\beta L_k](z)
+ +\mathfrak T[\widetilde R_f;L_k](z).
+ \end{aligned}
+\end{equation}
+Each primitive is normalized to vanish at $z=0$.  The simplified
+answer is
+\begin{equation}
+ \boxed{\mathcal C_K(s)=
+ \lim_{z\to Z^-}\widetilde\Psi(z)
+ -\frac{\operatorname{artanh}\beta}{\beta}\mathcal C_0(s),
+ \qquad Z=\sqrt s+\sqrt X-1.}
+ \label{eq:comp-ck-simplified-endpoint}
+\end{equation}
+The combined endpoint is finite.  All terms are GPLs of weight at
+most three with algebraic endpoint coefficients.  There are two further exact residue cancellations.  If
+$P_1$ denotes the primitive of the higher-order pole part of
+$\widetilde R_1$ at $w=0$, then
+\begin{equation}
+ \operatorname*{Res}_{w=0}\widetilde R_1=0,\qquad
+ \operatorname*{Res}_{w=0}\left[
+ \widetilde R_0-P_1\frac{\dd L_1}{\dd w}\right]=0.
+\end{equation}
+The first identity removes 32 weight-three words introduced by a
+vanishing simple-pole coefficient.  The second removes four
+weight-two words.  They follow by substituting the displayed rational
+kernels, so no small numerical coefficient is discarded.
+After these cancellations, the finite rule produces 190 terms instead
+of 306, and removes both imaginary letters.  The same physical interval fixes all logarithms.

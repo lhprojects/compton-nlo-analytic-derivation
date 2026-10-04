@@ -1,0 +1,47 @@
+\documentclass[11pt,oneside]{book}
+\input{common/preamble}
+\providecommand{\comptondocumenttitle}{Compton scattering at one loop: A detailed derivation}
+\title{\comptondocumenttitle}
+\author{}
+\date{4 October 2026}
+\begin{document}
+\hypersetup{pageanchor=false}
+\maketitle
+\clearpage
+\hypersetup{pageanchor=true}
+\frontmatter
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{abstract}
+\tableofcontents
+\mainmatter
+\chapter{Physical setup and principal results}
+\label{chap:comp-overview}
+\input{overview}
+\chapter{From the Feynman rules to the NLO integrands}
+\input{amplitudes}
+\chapter{Integration of the amplitudes}
+\input{integration}
+\chapter{Simplified analytic cross section}
+\input{total_simplification}
+\chapter{Asymptotic expansions}
+\input{asymptotic_virtual}
+\input{asymptotic_soft}
+\input{asymptotic_real}
+\input{total_energy_high}
+\input{asymptotic_summary}
+\chapter{Comparison with the published analytic total}
+\label{chap:comp-supp-reference-total}
+\input{total_cross_section}
+\input{analytic_equivalence}
+\chapter{Numerical verification}
+\input{verification}
+\begin{chapterreferences}
+\input{references}
+\input{overview_references}
+\end{chapterreferences}
+\backmatter
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\input{acknowledgements}
+\end{document}

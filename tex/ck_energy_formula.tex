@@ -1,0 +1,175 @@
+\subsection{The soft coefficient in the energy variable}
+\label{sec:comp-ck-energy-formula}
+The auxiliary endpoint letters of the preceding soft expression can be
+removed entirely. The result uses the same energy variable $X$ and the
+same root kernel as the virtual contribution. Throughout this subsection
+$G(a_1,\ldots,a_n)$ means $G(a_1,\ldots,a_n;X)$, with
+\begin{equation}
+ \omega_a=\frac{\dd X}{X-a}\quad(a=0,-1,-2,-4),\qquad
+ \omega_r=\frac{\dd X}{\sqrt{X(X+4)}}.
+\end{equation}
+The root is positive for $X>0$, and every function is continued from
+$X=0$ along the positive real axis. Set $s=1+X$ and
+$Y=\sqrt{X/(X+4)}$ as above. Define the combinations
+\begin{align}
+ \mathcal D&=G(0,-1)+G(-2,-1),\\
+ \mathcal V&=G(-1,-1,-1)-G(-1,-2,-1)-G(-1,0,-1),\\
+ \mathcal R&=3G(0,r,-1)-3G(-1,r,-1)-3G(-4,r,-1)
+              +4G(r,-2,-1)+4G(r,0,-1).
+\end{align}
+Then the complete finite soft coefficient is
+\begin{equation}
+ \boxed{\mathcal C_K(1+X)=c_0+c_1G(-1)+c_{11}G(-1,-1)
+           +c_D\mathcal D+c_V\mathcal V+c_rG(r,-1)+c_R\mathcal R.}
+ \label{eq:comp-ck-energy-compact}
+\end{equation}
+The seven coefficients are
+\begin{align}
+ c_0&=-\frac{(X+2)^2}{Xs},\\
+ c_1&=-\frac{(X+2)(X^3+14X^2+28X+16)}{X^3s},\\
+ c_{11}&=-\frac{(X+2)(7X^4+32X^3+24X^2-16X-16)}{X^4s},\\
+ c_D&=\frac{2(X+2)(X^4+24X^3+98X^2+120X+48)}{X^3s(X+4)},\\
+ c_V&=\frac{4s(X^2-4X-6)}{X^3},\\
+ c_r&=-\frac{24Ys(X+2)^3}{X^4(X+4)},\\
+ c_R&=\frac{2Ys(X^4+2X^3-24X^2-80X-48)}{X^4(X+4)}.
+\end{align}
+This formula contains fourteen GPL words when the three combinations
+are expanded, including the constant term. All coefficients are
+rational in $X$ and $Y$. In particular, the auxiliary root $\sqrt s$
+and all separate $\ln2$ terms have disappeared. In the total coefficient
+\eqref{eq:comp-simplified-master}, this expression enters as
+$-\mathcal C_K(s)/s$.
+
+\paragraph{Reduction of the lower-weight integrals.} Use the functions
+$a,L,f,k,d$ in the preceding subsection and define
+\begin{align}
+ I_1&=\int_0^1\frac{aL}{d}\,\dd U,&
+ I_2&=\int_0^1\frac{af}{kd}\,\dd U,\\
+ I_3&=\int_0^1\frac{a(1+\beta^2U)}{(1+U)d}\,\dd U,&
+ I_4&=\int_0^1\frac{a}{k(1+k)}\,\dd U,\\
+ I_5&=\int_0^1\frac{UL}{d}\,\dd U,&
+ I_6&=\int_0^1\frac{L}{d}\,\dd U,\\
+ I_7&=\int_0^1\frac{Uf}{kd}\,\dd U,&
+ I_8&=\int_0^1\frac{f}{d}\,\dd U.
+\end{align}
+These integrals organize the derivation of the closed expression, rather
+than define functions that remain to be integrated. Put
+$a_*=a(1)=\tfrac12\ln s$. Since
+$(f-L)'=X/[sk(1+k)]$, integration by parts gives
+\begin{equation}
+ \frac Xs I_4+\beta I_8=a_*^2+\beta I_6.
+ \label{eq:comp-ck-lower-root-cancellation}
+\end{equation}
+At $U=0$ the boundary vanishes. At $U=1$ the finite difference
+$f-L$ tends to $\tfrac12\ln s=a_*$, because
+$1-U/k=(1-U)/s+O((1-U)^2)$. This determines the finite boundary
+constant in \eqref{eq:comp-ck-lower-root-cancellation}.
+
+The rational-letter integrals are
+\begin{align}
+ \beta I_1&=-\tfrac14\mathcal V,\\
+ I_3&=\tfrac12G(0,-1)-\tfrac12\ln2\,G(-1)
+       -\tfrac12G(-1,-2)-\tfrac14G(-1,-1)+\tfrac12G(-2,-1),\\
+ \beta^2 I_5&=\tfrac14G(-1,-1),\\
+ \beta I_6&=\tfrac12\ln2\,G(-1)-\tfrac14G(-1,-1)
+                    +\tfrac12G(-1,-2).
+\end{align}
+To obtain these expressions, factor $d$ into its two linear factors
+and write $a$ and $L$ as differences of logarithms. The resulting GPLs
+have endpoint one and letters $\pm1/\beta,\pm1$. Their total
+differentials with respect to $X$ contain only the logarithmic
+differentials of $X$, $X+1$, and $X+2$. Integration of those
+differentials gives the displayed energy-variable words. Every word
+containing a moving letter vanishes as $X\to0$, which fixes its
+integration constant. An arbitrary tangential constant for the inner
+letter one cancels before the result is collected. Thus no value is
+assigned to a divergent logarithm in obtaining these identities.
+
+\paragraph{Energy equations for the root integrals.} The two remaining
+integrals $I_2$ and $I_7$ can be integrated by differentiating with
+respect to $X$. At fixed $U$,
+\begin{equation}
+ \partial_X a=\frac{2U}{(X+2)^2d},\qquad
+ \partial_X f=\frac{U}{2sk},\qquad
+ \partial_X k^2=\frac{U^2-1}{s^2}.
+\end{equation}
+For any compact positive interval of $X$, these derivatives have at
+most integrable logarithmic endpoint behavior. Differentiation under
+the integral is therefore allowed. Introduce
+\begin{align}
+ Q_7&=p_7\frac{k}{d}+h_7\frac1k,&
+ p_7&=\frac{2(X+2)}{X^2(X+4)},&
+ h_7&=-\frac{(X+2)^2}{2X^2s(X+4)},\\
+ Q_2&=U\left(p_2\frac{k}{d}+h_2\frac1k\right),&
+ p_2&=\frac2{(X+2)(X+4)},&
+ h_2&=\frac{(X+2)^2}{2Xs(X+4)}.
+\end{align}
+Direct differentiation gives the two rational identities
+\begin{align}
+ \partial_X\frac{U}{kd}
+ &=\partial_UQ_7-\frac{2(X+6)}{X(X+2)(X+4)}\frac{U}{kd},\\
+ \partial_X\frac1{kd}
+ &=\partial_UQ_2-\frac4{X(X+2)(X+4)}\frac1{kd}.
+\end{align}
+They are verified by substituting $k^2=(1+XU^2)/s$ and matching
+rational coefficients. For the first equation, integrate the total
+derivative against $f$ using $Q_7-Q_7(1)$, so its boundary vanishes.
+The remaining rational terms and the integral of $f'-L'$ give
+\begin{equation}
+ I_7'=-\frac{2(X+6)}{X(X+2)(X+4)}I_7
+       +\frac{3(X+2)^2}{2X^2(X+4)}a_*.
+\end{equation}
+The integrating factor is $X\sqrt{X(X+4)}/(X+2)^2$, hence
+\begin{equation}
+ \frac{\dd}{\dd X}
+ \left[\frac{X\sqrt{X(X+4)}}{(X+2)^2}I_7\right]
+ =\frac34\frac{\ln(1+X)}{\sqrt{X(X+4)}}.
+\end{equation}
+At $X=0$, $I_7\to\int_0^1U\operatorname{artanh}U\,\dd U=1/2$,
+so the product on the left vanishes. Therefore
+\begin{equation}
+ I_7=\frac{3(X+2)^2}{4X\sqrt{X(X+4)}}G(r,-1).
+ \label{eq:comp-ck-I7-energy}
+\end{equation}
+
+For the second equation the endpoint cancellation is implemented by
+subtracting $Q_2(1)a_*$ from $Q_2a$ before multiplying by $f'$.
+Define the two lower-weight integrals
+\begin{equation}
+ J_{Ua}=\int_0^1\frac{Ua}{d}\,\dd U,\qquad
+ J=\int_0^1\frac{a_*-Ua}{1-U^2}\,\dd U.
+\end{equation}
+The subtracted numerator in $J$ vanishes at the upper endpoint.
+The differential equation becomes
+\begin{equation}
+\begin{aligned}
+ I_2'={}&-\frac4{X(X+2)(X+4)}I_2
+ -\frac{X-2}{2s(X+4)}I_7\\
+ &+\frac X{(X+2)(X+4)}J_{Ua}
+ +\frac{X+2}{X(X+4)}(J+a_*^2).
+\end{aligned}
+\end{equation}
+The rational-letter reductions give
+\begin{align}
+ \beta^2J_{Ua}&=-\tfrac14G(-1,-1)+\tfrac12G(-2,-1),\\
+ J&=\tfrac12G(0,-1)-\tfrac14G(-1,-1),\\
+ \beta^2J_{Ua}+J+a_*^2&=\tfrac12\mathcal D.
+\end{align}
+Using \eqref{eq:comp-ck-I7-energy} and the integrating factor
+$\gamma=\sqrt{X(X+4)}/(X+2)$ now yields
+\begin{equation}
+ \frac{\dd(\gamma I_2)}{\dd X}
+ =\frac38\left(\frac1X-\frac1{X+1}-\frac1{X+4}\right)G(r,-1)
+       +\frac{\mathcal D}{2\sqrt{X(X+4)}}.
+\end{equation}
+Each term is a defining GPL differential. Since $I_2=O(X)$ at small
+$X$, the constant at $X=0$ is zero, and
+\begin{equation}
+ \gamma I_2=\frac18\mathcal R.
+ \label{eq:comp-ck-I2-energy}
+\end{equation}
+Substituting these evaluated integrals into
+\eqref{eq:comp-ck-regular-root-identity} proves
+\eqref{eq:comp-ck-energy-compact}. The two terms proportional to
+$A_f$ in \eqref{eq:comp-ck-lower-root-cancellation} cancel the
+remaining $G(-1,-2)$ and $\ln2$ terms exactly.

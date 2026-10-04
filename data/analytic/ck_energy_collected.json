@@ -1,0 +1,110 @@
+{
+  "source": "independent soft energy equations and fixed-letter differential reduction",
+  "definition": "CK(1+x), Y=sqrt(x/(x+4)), root kernel dz/sqrt(z*(z+4))",
+  "terms": [
+    {
+      "word": [
+        "-1",
+        "-1",
+        "-1"
+      ],
+      "coefficient": "4*(x + 1)*(x**2 - 4*x - 6)/x**3"
+    },
+    {
+      "word": [
+        "-1",
+        "-2",
+        "-1"
+      ],
+      "coefficient": "-4*(x + 1)*(x**2 - 4*x - 6)/x**3"
+    },
+    {
+      "word": [
+        "-1",
+        "0",
+        "-1"
+      ],
+      "coefficient": "-4*(x + 1)*(x**2 - 4*x - 6)/x**3"
+    },
+    {
+      "word": [
+        "0",
+        "-1"
+      ],
+      "coefficient": "2*(x + 2)*(x**4 + 24*x**3 + 98*x**2 + 120*x + 48)/(x**3*(x + 1)*(x + 4))"
+    },
+    {
+      "word": [
+        "-1"
+      ],
+      "coefficient": "-(x + 2)*(x**3 + 14*x**2 + 28*x + 16)/(x**3*(x + 1))"
+    },
+    {
+      "word": [
+        "-1",
+        "-1"
+      ],
+      "coefficient": "-(x + 2)*(7*x**4 + 32*x**3 + 24*x**2 - 16*x - 16)/(x**4*(x + 1))"
+    },
+    {
+      "word": [
+        "-2",
+        "-1"
+      ],
+      "coefficient": "2*(x + 2)*(x**4 + 24*x**3 + 98*x**2 + 120*x + 48)/(x**3*(x + 1)*(x + 4))"
+    },
+    {
+      "word": [],
+      "coefficient": "-(x + 2)**2/(x*(x + 1))"
+    },
+    {
+      "word": [
+        "r",
+        "-1"
+      ],
+      "coefficient": "-24*Y*(x + 1)*(x + 2)**3/(x**4*(x + 4))"
+    },
+    {
+      "word": [
+        "0",
+        "r",
+        "-1"
+      ],
+      "coefficient": "6*Y*(x + 1)*(x**4 + 2*x**3 - 24*x**2 - 80*x - 48)/(x**4*(x + 4))"
+    },
+    {
+      "word": [
+        "-1",
+        "r",
+        "-1"
+      ],
+      "coefficient": "-6*Y*(x + 1)*(x**4 + 2*x**3 - 24*x**2 - 80*x - 48)/(x**4*(x + 4))"
+    },
+    {
+      "word": [
+        "-4",
+        "r",
+        "-1"
+      ],
+      "coefficient": "-6*Y*(x + 1)*(x**4 + 2*x**3 - 24*x**2 - 80*x - 48)/(x**4*(x + 4))"
+    },
+    {
+      "word": [
+        "r",
+        "-2",
+        "-1"
+      ],
+      "coefficient": "8*Y*(x + 1)*(x**4 + 2*x**3 - 24*x**2 - 80*x - 48)/(x**4*(x + 4))"
+    },
+    {
+      "word": [
+        "r",
+        "0",
+        "-1"
+      ],
+      "coefficient": "8*Y*(x + 1)*(x**4 + 2*x**3 - 24*x**2 - 80*x - 48)/(x**4*(x + 4))"
+    }
+  ],
+  "word_count": 14,
+  "certificate": "all ln(2) coefficients and (-1,-2) word cancel exactly after the root-lower-weight identity"
+}

@@ -1,0 +1,145 @@
+\section{Limits of the independent virtual contribution}
+This section and the following soft and real-radiation sections expand
+the separate contributions to the same total cross section. None of
+the separate contributions is the physical total. They are combined
+with the finite regulator conversion in
+\eqref{eq:comp-assembly-common-regulator}, so that the photon-mass
+logarithm cancels before a limit of the total is interpreted.
+Define
+\begin{equation}
+ X=\frac{s_{\mathrm{phys}}}{m^2}-1=\frac{2\omega}{m},\qquad
+ L=\ln X,\qquad \ell_\lambda=\ln\frac{\lambda_{\mathrm{phys}}}{m}.
+\end{equation}
+The contribution considered here includes the complete virtual amplitude,
+with the on-shell subtractions, but excludes real emission.  Its
+normalization is
+\begin{equation}
+ \sigma_{\mathrm{virt},1}=\frac{\alpha_{\mathrm T}^3}{m^2}C_V(1+X,\lambda_{\mathrm{phys}}/m).
+\end{equation}
+Thus its photon-mass logarithm has not yet canceled.  All coefficients
+below are obtained from the independently integrated amplitude.
+
+\paragraph{A smaller exact basis.}
+The 116 constant-letter coefficients of the independent virtual answer
+can be transformed back to 23 words in $X$, with letters
+$0,1,-1,-2,-4,r$.  Inverting the constant kernel-map matrix and
+substituting the result verifies all 116 original coefficient equations
+exactly.  The resulting prefactors have the form
+\begin{equation}
+ R_w(X)+\sqrt{\frac{X}{X+4}}\,S_w(X),
+\end{equation}
+where $R_w$ and $S_w$ are rational functions, also linear in
+$\ell_\lambda$.  Only the change-of-basis matrix is used in this inversion.
+The published cross-section coefficients are not inputs.
+
+\subsection{Low energy}
+The defining kernels have convergent expansions near zero:
+\begin{align}
+ \frac{1}{X-a}&=-\sum_{n=0}^\infty\frac{X^n}{a^{n+1}}
+ \quad(a\ne0),\\
+ \frac{1}{\sqrt{X(X+4)}}
+ &=\frac{1}{2\sqrt X}\sum_{n=0}^\infty
+   \binom{-\tfrac12}{n}\frac{X^n}{4^n}.
+\end{align}
+These expansions, together with $G(0;X)=\ln X$, recursively determine
+all required words as powers and logarithms.  At each integration step,
+for $p>-1$, one uses
+\begin{equation}
+ \int_0^X t^p\ln^k t\,\mathrm{d}t
+ =X^{p+1}\sum_{j=0}^k
+ \frac{(-1)^j k!}{(k-j)!(p+1)^{j+1}}\ln^{k-j}X.
+\end{equation}
+The all-zero words are fixed separately by
+$G(0,\ldots,0;X)=\ln^nX/n!$.
+Multiplication by the exact rational prefactors and expansion of the
+remaining square root produce only rational coefficients and
+$\ell_\lambda$.  All negative powers and all half-integer powers cancel
+in the sum.  The result is
+\begin{align}
+ C_V={}&X^2\left[-\frac83\ln X+\frac89\ell_\lambda+\frac{22}{9}\right]
+ \\
+ &+X^3\left[\frac{16}{5}\ln X-\frac{28}{15}\ell_\lambda-\frac{16}{3}\right]
+ +O\!\left(X^4|\ln X|\right).
+ \label{eq:compton-independent-virtual-low}
+\end{align}
+This expands the leading small-photon-mass expression obtained at
+fixed $X>0$, with $\ell_\lambda$ kept symbolic. The omitted
+power corrections in the photon mass are not uniform as $X\to0$.
+It is therefore not a threshold expansion of the exact amplitude at
+fixed nonzero photon mass. The regulator logarithm cancels when
+this expression is combined with the real contribution.
+It supplies a direct check on the infrared coefficient:
+\begin{equation}
+ A(1+X)=\frac89X^2-\frac{28}{15}X^3+O(X^4).
+\end{equation}
+
+\subsection{High energy}
+The leading rational prefactor of every word is $O(1/X)$, so only the
+logarithmic polynomial and constant of each word at infinity are needed.
+The rational-letter words reduce to classical polylogarithms and shuffle
+products.  Their inversion formulas fix, for example,
+\begin{align}
+ G(-1,0;X)&=\tfrac12L^2-\tfrac{\pi^2}{6}+O(L/X),\\
+ G(0,-1;X)&=\tfrac12L^2+\tfrac{\pi^2}{6}+O(L/X),\\
+ G(1,0;X)&=\tfrac12L^2+\tfrac{\pi^2}{3}+O(L/X).
+\end{align}
+For the root word, its independently established dilogarithmic form gives
+\begin{equation}
+ G(r,-1;X)=\tfrac12L^2-\tfrac{\pi^2}{18}+O(L/X).
+\end{equation}
+Consequently the coefficient of the photon-mass logarithm is fixed
+completely at this order:
+\begin{equation}
+ A(1+X)=\frac{4L^2-2L-2\pi^2/3-5}{X}
+ +O\!\left(\frac{L^2}{X^2}\right).
+ \label{eq:compton-independent-ir-high}
+\end{equation}
+
+The logarithmic terms of the finite virtual contribution have also been
+obtained.  Its leading expansion can be written as
+\begin{equation}
+ C_V=\frac1X\left[
+ -\frac23L^3+(4\ell_\lambda+1)L^2
+ +\left(-2\ell_\lambda+\frac{5\pi^2}{3}\right)L
+ -\left(\frac{2\pi^2}{3}+5\right)\ell_\lambda+B_V
+ \right]+O\!\left(\frac{L^3}{X^2}\right).
+\end{equation}
+To evaluate $B_V$, define the finite endpoint constants
+\begin{align}
+ K_a&=\lim_{X\to\infty}\left[G(r,-1,-1;X)-L^3/6\right],\\
+ K_b&=\lim_{X\to\infty}\left[G(r,-1,0;X)-L^3/6+\pi^2L/6\right],\\
+ K_c&=\lim_{X\to\infty}\left[G(r,0,-1;X)-L^3/6-\pi^2L/6\right],\\
+ K_d&=\lim_{X\to\infty}\left[G(r,-2,-1;X)-L^3/6+\pi^2L/12\right],\\
+ K_e&=\lim_{X\to\infty}\left[G(-4,r,-1;X)-L^3/6+\pi^2L/18\right],\\
+ K_f&=\lim_{X\to\infty}\left[G(0,r,-1;X)-L^3/6+\pi^2L/18\right].
+\end{align}
+The remaining finite constant is
+\begin{equation}
+ B_V=9K_a-18K_b-6K_c-8K_d-12K_e-9K_f
+ -\frac{19}{2}-\frac{2\pi^2}{3}+19\zeta(3).
+\end{equation}
+We evaluate these six limits directly from the root primitives before
+substituting them into $B_V$.
+
+\input{high_energy_constants}
+
+Substitution of these constants into $B_V$ cancels the Clausen terms
+and gives
+\begin{equation}
+ B_V=- \frac{19}{2} - \frac{2 \pi^{2}}{3} - 2 \zeta\left(3\right).
+\end{equation}
+This determines the finite virtual constant without fitting numerical
+values or using the published high-energy total.
+
+\subsection{The Born term}
+For comparison, direct expansion of the Klein--Nishina total gives
+\begin{align}
+ \sigma_0&=\frac{\pi\alpha_{\mathrm T}^2}{m^2}
+ \left[\frac83-\frac83X+\frac{52}{15}X^2-\frac{133}{30}X^3+O(X^4)\right],\\
+ \sigma_0&=\frac{\pi\alpha_{\mathrm T}^2}{m^2}
+ \left[\frac{2\ln X+1}{X}
+ +\frac{18-8\ln X}{X^2}
+ +O\!\left(\frac{\ln X}{X^3}\right)\right].
+\end{align}
+These formulas use the same $X$ in both limits and keep the cross-section
+dimension explicit.

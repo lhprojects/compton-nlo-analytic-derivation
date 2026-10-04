@@ -1,0 +1,167 @@
+\section{The analytic total of Lee, Schwartz and Zhang}
+The formula reproduced in this section is Equation (6) of
+Lee, Schwartz and Zhang's \emph{The Compton Scattering Total Cross
+Section at Next-to-Leading Order}~\cite{qed-processes-lsz}.
+It provides a reference for checking the independent integration
+of the amplitudes developed above.
+
+Their observable includes $\gamma e^-\to\gamma e^-$ and
+$\gamma e^-\to\gamma\gamma e^-$ with all photon energies accepted.
+It excludes the distinct pair-production channel
+$\gamma e^-\to e^-e^+e^-$. Define
+\begin{equation}
+ X=\frac{s_{\mathrm{phys}}-m^2}{m^2}=\frac{2\omega}{m},\qquad
+ Y=\sqrt{\frac{X}{X+4}},\qquad M=\ln X,\qquad L=\ln(1+X).
+\end{equation}
+Here $s_{\mathrm{phys}}=(p+k)^2$ is dimensionful. These are the same $X,Y$ as in the independent derivation. The
+reference denotes them by lowercase $x,y$. The correction,
+as distinct from Born plus correction, is
+\begin{equation}
+ \sigma_1=\frac{\alpha_{\mathrm T}^3}{m^2X^3}\mathcal H(X),\qquad
+ \sigma_{\mathrm{inc}}^{\mathrm{NLO}}=\sigma_0+\sigma_1,
+ \qquad \mathcal H=\mathcal H_{\mathrm{cl}}+\mathcal H_{\mathrm{rat}}+\mathcal H_{\mathrm{root}}.
+ \label{eq:comp-supp-total}
+\end{equation}
+This is Equation (6) of Lee, Schwartz and Zhang
+\cite{qed-processes-lsz}, regrouped into classical polylogarithms,
+iterated rational kernels and a square-root kernel.
+Their notation $\sigma_{\mathrm{NLO}}$ denotes the correction
+$\sigma_1$, not the sum in \eqref{eq:comp-supp-total}.
+The function $\mathcal H(X)$ is the published numerator. We reserve
+$H=s-1$ for the energy variable used in the independent integration.
+The following numbered terms specify the entire function.
+
+Define the classical polylogarithm by
+$\operatorname{Li}_n(z)=\sum_{j=1}^\infty z^j/j^n$ for $|z|<1$
+and analytic continuation elsewhere. Then
+\begin{align}
+ \mathcal H_{\mathrm{cl}}={}&\sum_{j=1}^{9}C^{\mathrm{ref}}_j,\\
+ C^{\mathrm{ref}}_1={}&-\frac{X(273X^3-982X^2-2960X-1744)}{24(X+1)^2},\\
+ C^{\mathrm{ref}}_2={}&\frac{37X^4-54X^3-339X^2-428X-184}{4(X+1)^2}\,L,\\
+ C^{\mathrm{ref}}_3={}&\frac{X^2(14X^4+17X^3-17X^2-22X-8)}{2(1+X)^3}
+                                      \frac{M}{1-X},\\
+ C^{\mathrm{ref}}_4={}&-\frac{4X^6+35X^5-31X^4-755X^3-1765X^2-1506X-440}
+                    {2(X+1)^2(X+4)}\,L^2,\\
+ C^{\mathrm{ref}}_5={}&-\frac{X^6+7X^5-28X^4-239X^3-449X^2-338X-88}
+                    {(X+1)^2(X+4)}\operatorname{Li}_2(-X),\\
+ C^{\mathrm{ref}}_6={}&-\frac{X^2-16X-23}{3}\,L^3,\\
+ C^{\mathrm{ref}}_7={}&(X^2-X+2)\left[\operatorname{Li}_2(1-X)-\frac{\pi^2}{6}\right],\\
+ C^{\mathrm{ref}}_8={}&\frac{X^4+7X^3+X^2-3X-2}{(X+1)^2}\,LM,\\
+ C^{\mathrm{ref}}_9={}&(X^2+2X-6)
+       [\operatorname{Li}_3(X^2)-M\operatorname{Li}_2(X^2)].
+\end{align}
+The quotient $M/(1-X)$ has the continuous value $-1$ at $X=1$.
+For $X>1$ the two polylogarithms in $C^{\mathrm{ref}}_9$ individually have
+imaginary parts. On a common branch they cancel in this
+combination, which is real for positive $X$.
+
+To define the remaining functions, let $\bm b$ denote an ordered
+list of letters and put
+\begin{align}
+ G(a,\bm b;X)&=\int_0^X\dd z\,w_a(z)G(\bm b;z),
+ \qquad G(\varnothing;X)=1,\\
+ w_a(z)&=\frac1{z-a}\quad(a=0,-1,-2,-4),\qquad
+ w_{r}(z)=\frac1{\sqrt{z(z+4)}},\\
+ G(\underbrace{0,\ldots,0}_{n};X)&=\frac{\ln^n X}{n!}.
+\end{align}
+The letter $r$ is a kernel label. It corresponds to the
+letter denoted $y$ in Reference~\cite{qed-processes-lsz}, and is not
+the value $Y$ held constant inside an integration.
+The purely rational-kernel terms are
+\begin{align}
+ \mathcal H_{\mathrm{rat}}={}&\sum_{j=1}^{5}R_j,\\
+ R_1={}&-\frac{4(X^5+26X^4+146X^3+316X^2+288X+96)}
+                       {(X+1)^2(X+4)}G(-2,-1;X),\\
+ R_2={}&8(X^2-4X-6)G(-1,-2,-1;X),\\
+ R_3={}&4(2X^2-X-6)G(-1,-1,0;X),\\
+ R_4={}&2(2X^2-7X-12)G(-1,0,-1;X),\\
+ R_5={}&-(5X^2+32X-8)G(0,-1,-1;X).
+\end{align}
+Finally the square-root-kernel terms are
+\begin{align}
+ \mathcal H_{\mathrm{root}}={}&\sum_{j=1}^{7}T_j,\\
+ T_1={}&-3(X-2)(X+4)Y
+            [G(0,r,-1;X)+2G(r,-1,0;X)],\\
+ T_2={}&-\frac{8Y(X^4+3X^3-18X^2-68X-24)}{(X+4)X}
+                                     G(r,0,-1;X),\\
+ T_3={}&\frac{3Y(5X^4+14X^3-96X^2-352X-128)}{(X+4)X}
+                                     G(r,-1,-1;X),\\
+ T_4={}&-\frac{16Y(X^4+2X^3-24X^2-80X-48)}{(X+4)X}
+                                     G(r,-2,-1;X),\\
+ T_5={}&\frac{3X^4+18X^3+44X^2-8X-64}{X}\,YG(r,-1;X),\\
+ T_6={}&-\frac{6Y(X^3-12X-8)}{X}G(-4,r,-1;X),\\
+ T_7={}&3(3X^2-8)G(r,r,-1;X).
+\end{align}
+All $G$ functions displayed here are real for positive $X$.
+The exact formula includes the mass dependence of both phase
+spaces. The logarithmic soft factor alone does not determine its finite
+real-emission contribution.
+
+\section{Elementary reductions}
+\label{sec:comp-reference-elementary}
+Several nested integrals can be checked without solving a numerical
+system. Direct integration gives
+\begin{align}
+ G(-1;X)&=L,\qquad G(0,-1;X)=-\operatorname{Li}_2(-X),\\
+ G(-1,0;X)&=LM+\operatorname{Li}_2(-X),\qquad
+ G(-1,-1;X)=\tfrac12 L^2,\\
+ G(-2,-1;X)&=\operatorname{Li}_2(-1-X)+L\ln(X+2)+\frac{\pi^2}{12},\\
+ G(-1,-2,-1;X)&=2\operatorname{Li}_3(-1-X)
+       -L\operatorname{Li}_2(-1-X)+\frac{\pi^2L}{12}
+       +\frac32\zeta(3).
+\end{align}
+For example, differentiating the third line gives $L/(X+2)$,
+and its value at $X=0$ is zero. This verifies both its kernel and
+integration constant.
+
+For the square root choose
+\begin{equation}
+ z=\frac{1-Y}{1+Y}
+   =\frac4{(\sqrt{X+4}+\sqrt X)^2},\qquad
+ X=\frac{(1-z)^2}{z},\qquad
+ \frac{\dd X}{\sqrt{X(X+4)}}=-\frac{\dd z}{z}.
+\end{equation}
+The rationalized expression for $z$ avoids subtraction of nearly
+equal numbers at large $X$. Since
+$1+X=(1+z^3)/[z(1+z)]$, the integral of the logarithm reduces to
+dilogarithms. With the integration constant fixed at $z=1$,
+\begin{align}
+ G(r,-1;X)&=\frac13\operatorname{Li}_2(-z^3)
+       -\operatorname{Li}_2(-z)+\frac12\ln^2z-\frac{\pi^2}{18},\\
+ G(r,r,-1;X)&=\operatorname{Li}_3(-z)
+ -\frac19\operatorname{Li}_3(-z^3)-\frac16\ln^3z
+ +\frac{\pi^2}{18}\ln z+\frac23\zeta(3).
+\end{align}
+The second line follows by a further integration with $-\dd z/z$.
+These are checks on the iterated-integral evaluation, independent
+of its differential-equation solver.
+
+\section{Limits of the integrated result}
+The low-energy expansion of Lee, Schwartz and Zhang's total cross
+section is given in Equation (10) of Reference~\cite{qed-processes-lsz}.
+Its order-$\alpha_{\mathrm T}^3$ term is
+\begin{equation}
+ \sigma_1=\frac{\alpha_{\mathrm T}^3}{m^2}X^2
+ \left[-\frac{16}{9}\ln X+\frac7{15}+\Order(X\ln X)\right].
+\end{equation}
+The Born Thomson limit therefore remains fixed by the physical
+low-energy charge. With the same variable $X=(s_{\mathrm{phys}}-m^2)/m^2$ and
+normalization $\alpha_{\mathrm T}^3/m^2$, our independently assembled
+result \eqref{eq:comp-independent-total-low} agrees with both displayed
+NLO coefficients in their Equation (10): $-16/9$ for $X^2\ln X$
+and $7/15$ for $X^2$. The cited equation writes the higher terms as
+an ellipsis. The explicit remainder order above follows from our
+separate virtual, real, and soft expansions. Agreement of these two
+coefficients is a low-energy check, not a proof of equality of the
+complete cross sections at arbitrary energy.
+
+At large $s_{\mathrm{phys}}/m^2$, with $L=\ln(s_{\mathrm{phys}}/m^2)$,
+Equation (11) of the same reference gives
+\begin{equation}
+ \sigma_1=\frac{\alpha_{\mathrm T}^3}{s_{\mathrm{phys}}}
+ \left[\frac{L^3}3-\frac{L^2}2+\frac{17L}4
+                  -\frac{75}8-\frac{\pi^2}2+4\zeta(3)
+                  +\Order\!\left(\frac{m^2}{s_{\mathrm{phys}}}L^3\right)\right].
+\end{equation}
+This expansion tests the high-energy magnitude and logarithmic
+structure. The exact expression is used for the data comparison.

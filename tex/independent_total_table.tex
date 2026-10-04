@@ -1,0 +1,45 @@
+\begin{table}[!htbp]
+\centering
+\comptonprecisiontable
+\begin{tabular}{rll}
+\toprule
+$\omega/m$ & Calculation & Coefficient or difference\\
+\midrule
+$0.000100$ & Our analytic & $0.00000062423288400014031134169341516503703552376453828153$ \\
+ & Numerical difference & $5.30\times10^{-15}\;\pm\;2.0\times10^{-12}$ \\
+ & Reference difference & $-4.03\times10^{-80}\;\pm\;5.6\times10^{-58}$ \\
+\addlinespace[3pt]
+$0.0100$ & Our analytic & $0.0029187564665568768995602481244244431628302067748237$ \\
+ & Numerical difference & $1.11\times10^{-10}\;\pm\;2.0\times10^{-8}$ \\
+ & Reference difference & $2.37\times10^{-86}\;\pm\;6.4\times10^{-65}$ \\
+\addlinespace[3pt]
+$0.300$ & Our analytic & $0.39497522084295373429747165489072725825168951498178$ \\
+ & Numerical difference & $2.72\times10^{-9}\;\pm\;6.8\times10^{-7}$ \\
+ & Reference difference & $8.37\times10^{-90}\;\pm\;1.1\times10^{-69}$ \\
+\addlinespace[3pt]
+$4.50$ & Our analytic & $0.77515165401174580343102580969237768056470578000273$ \\
+ & Numerical difference & $5.71\times10^{-8}\;\pm\;1.2\times10^{-6}$ \\
+ & Reference difference & $2.40\times10^{-91}\;\pm\;3.7\times10^{-72}$ \\
+\addlinespace[3pt]
+$49.5$ & Our analytic & $0.35308838117224168652124506257313479270540259204215$ \\
+ & Numerical difference & $-3.86\times10^{-8}\;\pm\;1.2\times10^{-6}$ \\
+ & Reference difference & $-6.91\times10^{-89}\;\pm\;1.0\times10^{-71}$ \\
+\addlinespace[3pt]
+$1.00\times10^{3}$ & Our analytic & $0.070463896610137198990117049003399503906848383360028$ \\
+ & Numerical difference & $3.33\times10^{-6}\;\pm\;1.5\times10^{-5}$ \\
+ & Reference difference & $-4.10\times10^{-87}\;\pm\;6.7\times10^{-71}$ \\
+\addlinespace[3pt]
+$1.00\times10^{5}$ & Our analytic & $0.0028704528832006358222188994983077446681129388945786$ \\
+ & Numerical difference & $-1.34\times10^{-6}\;\pm\;8.1\times10^{-6}$ \\
+ & Reference difference & $-9.38\times10^{-87}\;\pm\;5.5\times10^{-70}$ \\
+\bottomrule
+\end{tabular}
+\caption{Three independent evaluations of the NLO Compton correction
+$\sigma_1=(\alpha_{\mathrm T}^3/m^2)C_1$, from low to high incident
+energy in the electron rest frame. Our analytic coefficient $C_1$ is
+evaluated from the collected formula and printed to 50 significant digits. Each difference subtracts this
+coefficient from the indicated calculation. The $\pm$ entries estimate
+numerical error, not experimental uncertainty. The reference is
+Equation (6) of Lee, Schwartz and Zhang~\cite{qed-processes-lsz}.}
+\label{tab:comp-independent-total-50}
+\end{table}

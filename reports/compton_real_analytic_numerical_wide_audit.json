@@ -1,0 +1,338 @@
+{
+  "source": "/home/liangh/projects/2026_QFTBook/scripts/12_qed_processes/compton_real_analytic_numerical_longdouble.cpp",
+  "source_sha256": "a535e9b821217ff66656c1d4c7f91c4def0e51b5221d2c7b70c483baca82ad74",
+  "engine_sha256": "4130d8625bf74c128c07a36ac26453a96bacf75dc17aea291fe9cf60264c2c64",
+  "energies": {
+    "1.0002": {
+      "levels": [
+        {
+          "s_over_m2": 1.0002,
+          "real_subtracted": -3.768027986427703e-07,
+          "error": 5.4492749e-10,
+          "neval": 1071,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "1.0002",
+            "1e-07",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 1e-07,
+          "requested_absolute_tolerance": 1e-09,
+          "elapsed_seconds": 0.16012096405029297
+        },
+        {
+          "s_over_m2": 1.0002,
+          "real_subtracted": -3.768018985866311e-07,
+          "error": 7.9075226e-11,
+          "neval": 1989,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "1.0002",
+            "1e-08",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 1e-08,
+          "requested_absolute_tolerance": 1e-10,
+          "elapsed_seconds": 0.2671222686767578,
+          "change_from_previous": 9.000561392086533e-13
+        },
+        {
+          "s_over_m2": 1.0002,
+          "real_subtracted": -3.768026722314908e-07,
+          "error": 4.0953464e-12,
+          "neval": 2295,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "1.0002",
+            "1e-09",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 1e-09,
+          "requested_absolute_tolerance": 1.0000000000000001e-11,
+          "elapsed_seconds": 0.3300490379333496,
+          "change_from_previous": -7.736448597335279e-13
+        },
+        {
+          "s_over_m2": 1.0002,
+          "real_subtracted": -3.7680263294732843e-07,
+          "error": 9.9775511e-13,
+          "neval": 127449,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "1.0002",
+            "1e-10",
+            "2000000"
+          ],
+          "requested_relative_tolerance": 1e-10,
+          "requested_absolute_tolerance": 1e-12,
+          "elapsed_seconds": 21.76060914993286,
+          "change_from_previous": 3.9284162384040214e-14
+        },
+        {
+          "s_over_m2": 1.0002,
+          "real_subtracted": -3.768025798993713e-07,
+          "error": 9.997439e-14,
+          "neval": 382041,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "1.0002",
+            "1e-11",
+            "2000000"
+          ],
+          "requested_relative_tolerance": 1e-11,
+          "requested_absolute_tolerance": 9.999999999999999e-14,
+          "elapsed_seconds": 57.15229272842407,
+          "change_from_previous": 5.30479571330879e-14
+        }
+      ],
+      "value": -3.768025798993713e-07,
+      "estimated_error": 1.99551022e-12,
+      "all_requested_tolerances_met": true,
+      "arithmetic": "long double amplitudes, double Cuba weights and accumulation"
+    },
+    "1.02": {
+      "levels": [
+        {
+          "s_over_m2": 1.02,
+          "real_subtracted": -0.002046213563601692,
+          "error": 4.2380027e-08,
+          "neval": 2295,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "1.02",
+            "1e-05",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 1e-05,
+          "requested_absolute_tolerance": 1.0000000000000001e-07,
+          "elapsed_seconds": 0.3475990295410156
+        },
+        {
+          "s_over_m2": 1.02,
+          "real_subtracted": -0.002046212070418275,
+          "error": 9.9914977e-09,
+          "neval": 152235,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "1.02",
+            "1e-06",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 1e-06,
+          "requested_absolute_tolerance": 1e-08,
+          "elapsed_seconds": 25.488605499267578,
+          "change_from_previous": 1.4931834171894032e-09
+        },
+        {
+          "s_over_m2": 1.02,
+          "real_subtracted": -0.002046212808700818,
+          "error": 9.9757959e-10,
+          "neval": 366741,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "1.02",
+            "1e-07",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 1e-07,
+          "requested_absolute_tolerance": 1e-09,
+          "elapsed_seconds": 59.8355073928833,
+          "change_from_previous": -7.382825431730133e-10
+        }
+      ],
+      "value": -0.002046212808700818,
+      "estimated_error": 1.99829954e-08,
+      "all_requested_tolerances_met": true,
+      "arithmetic": "long double amplitudes, double Cuba weights and accumulation"
+    },
+    "2001": {
+      "levels": [
+        {
+          "s_over_m2": 2001,
+          "real_subtracted": 0.25825481804878786,
+          "error": 2.5808401e-05,
+          "neval": 608787,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "2001",
+            "0.0001",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 0.0001,
+          "requested_absolute_tolerance": 1.0000000000000002e-06,
+          "elapsed_seconds": 98.54473614692688
+        },
+        {
+          "s_over_m2": 2001,
+          "real_subtracted": 0.25820634337180715,
+          "error": 7.7437312e-06,
+          "neval": 1237923,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "2001",
+            "3e-05",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 3e-05,
+          "requested_absolute_tolerance": 3.0000000000000004e-07,
+          "elapsed_seconds": 204.62254929542542,
+          "change_from_previous": -4.847467698071428e-05
+        },
+        {
+          "s_over_m2": 2001,
+          "real_subtracted": 0.2581991030910122,
+          "error": 2.5815498e-06,
+          "neval": 2322999,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-longdouble",
+            "2001",
+            "1e-05",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 1e-05,
+          "requested_absolute_tolerance": 1.0000000000000001e-07,
+          "elapsed_seconds": 362.52233386039734,
+          "change_from_previous": -7.240280794962306e-06
+        }
+      ],
+      "value": 0.2581991030910122,
+      "estimated_error": 1.54874624e-05,
+      "all_requested_tolerances_met": true,
+      "arithmetic": "long double amplitudes, double Cuba weights and accumulation"
+    },
+    "200001": {
+      "levels": [
+        {
+          "s_over_m2": 200001,
+          "real_subtracted": 0.013601818575811123,
+          "error": 1.3599835e-05,
+          "neval": 650403,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "200001",
+            "0.001",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 0.001,
+          "requested_absolute_tolerance": 1e-05,
+          "elapsed_seconds": 24.713513135910034
+        },
+        {
+          "s_over_m2": 200001,
+          "real_subtracted": 0.013616501947475811,
+          "error": 4.0843376e-06,
+          "neval": 1804635,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "200001",
+            "0.0003",
+            "5000000"
+          ],
+          "requested_relative_tolerance": 0.0003,
+          "requested_absolute_tolerance": 2.9999999999999997e-06,
+          "elapsed_seconds": 52.70587372779846,
+          "change_from_previous": 1.4683371664688319e-05
+        },
+        {
+          "s_over_m2": 200001,
+          "real_subtracted": 0.013624364929894967,
+          "error": 1.362409e-06,
+          "neval": 4157469,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "200001",
+            "0.0001",
+            "5000000"
+          ],
+          "elapsed_seconds": 139.30049419403076,
+          "arithmetic": "double",
+          "requested_relative_tolerance": 0.0001,
+          "requested_absolute_tolerance": 1e-06,
+          "change_from_previous": 7.862982419155548e-06
+        },
+        {
+          "s_over_m2": 200001,
+          "real_subtracted": 0.01362842773444441,
+          "error": 4.0884583e-07,
+          "neval": 9555309,
+          "fail": 0,
+          "command": [
+            "/tmp/qft-compton-real-audit",
+            "200001",
+            "3e-05",
+            "15000000"
+          ],
+          "requested_relative_tolerance": 3e-05,
+          "requested_absolute_tolerance": 3e-07,
+          "elapsed_seconds": 128.02492880821228,
+          "cubacores": 2,
+          "change_from_previous": 4.062804549443549e-06
+        }
+      ],
+      "value": 0.01362842773444441,
+      "estimated_error": 8.125609098887099e-06,
+      "all_requested_tolerances_met": true,
+      "arithmetic": "double with independent long double repeat of penultimate level",
+      "longdouble_precision_check": {
+        "s_over_m2": 200001,
+        "real_subtracted": 0.013624364929897272,
+        "error": 1.362409e-06,
+        "neval": 4157469,
+        "fail": 0,
+        "command": [
+          "/tmp/qft-compton-real-longdouble",
+          "200001",
+          "0.0001",
+          "5000000"
+        ],
+        "requested_relative_tolerance": 0.0001,
+        "requested_absolute_tolerance": 1e-06,
+        "elapsed_seconds": 663.89821434021
+      },
+      "double_longdouble_difference": 2.3054474995731766e-15,
+      "refinement_note": "Four successive levels. Changes decrease 1.4683e-5, 7.8630e-6, 4.0628e-6. Error dominated by refinement, not internal Cuhre estimate."
+    }
+  },
+  "error_rule": "2 max(last two Cuhre estimates, last refinement change)",
+  "double_source_sha256": "317efdb6136691e85348395b62e4bc0c4469b6de7a28fef7a315267cd19458d1",
+  "double_engine_sha256": "80aa777f439332b0fe2ba6ffdf2f71cfa299bcd3ded95f3dfd797b68cdd0ca63",
+  "cuba_library_sha256": "d82ff7395bfab50430800688bd0596cf800080ef5ce762ebcf2fce32577d1dc3",
+  "compile_commands": [
+    [
+      "g++",
+      "-O3",
+      "-std=c++17",
+      "-I/tmp/Cuba-4.2.2",
+      "/home/liangh/projects/2026_QFTBook/scripts/12_qed_processes/compton_real_integral.cpp",
+      "/tmp/Cuba-4.2.2/libcuba.a",
+      "-lm",
+      "-o",
+      "/tmp/qft-compton-real-audit"
+    ],
+    [
+      "g++",
+      "-O3",
+      "-std=c++17",
+      "-I/tmp/Cuba-4.2.2",
+      "/home/liangh/projects/2026_QFTBook/scripts/12_qed_processes/compton_real_analytic_numerical_longdouble.cpp",
+      "/tmp/Cuba-4.2.2/libcuba.a",
+      "-lm",
+      "-o",
+      "/tmp/qft-compton-real-longdouble"
+    ]
+  ]
+}

@@ -1,0 +1,37 @@
+\section{Reduction of the virtual root functions}
+\subsection{Collecting the coefficients}
+A compact expression need not eliminate the $G$ functions. It is useful
+first to combine their coefficients, before expanding any function into
+classical polylogarithms. For the six root words in the preceding table,
+the shuffle product gives
+\begin{equation}
+ G_{0,r,-1}=\ln X\,G_{r,-1}-G_{r,0,-1}-G_{r,-1,0}.
+ \label{eq:comp-root-compact-shuffle}
+\end{equation}
+Thus $G_{0,r,-1}$ is redundant. After this substitution, the coefficients
+of $G_{r,0,-1}$ and $G_{r,-1,0}$ are proportional with ratio $1:-3$.
+Define
+\begin{align}
+ p_F(X)&=7X^4+18X^3-144X^2-512X-256,\\
+ p_K(X)&=3X^4+10X^3-48X^2-192X-96,\\
+ p_W(X)&=3X^4+8X^3-60X^2-216X-112,\\
+ p_Z(X)&=X^4+2X^3-24X^2-80X-48,\\
+ p_0(X)&=X^4-2X^3-48X^2-128X-160.
+ \label{eq:comp-root-compact-polynomials}
+\end{align}
+The contribution $C_{\mathrm{six}}$ of these six original words to
+$\widehat C_{V+\mathrm{UV}}$ becomes
+\begin{equation}
+ \begin{aligned}
+ C_{\mathrm{six}}(X)=\frac{Y}{X^4(X+4)}\bigl\{&
+ 3p_FG_{r,-1,-1}+p_K(G_{r,0,-1}-3G_{r,-1,0})\\
+ &-6p_WG_{-4,r,-1}-8p_ZG_{r,-2,-1}
+       +3p_0\ln X\,G_{r,-1}\bigr\}.
+ \end{aligned}
+ \label{eq:comp-root-compact-G}
+\end{equation}
+All coefficients are obtained by exact rational collection of the original
+table. This removes one weight-three function and gives the other five a
+common denominator. The $G$ notation keeps this relation shorter than its
+fully expanded classical form. The identities below provide alternative
+representations for evaluation and further algebraic reductions.

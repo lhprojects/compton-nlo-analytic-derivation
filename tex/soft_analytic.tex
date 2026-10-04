@@ -1,0 +1,524 @@
+\subsection{The finite soft function in dilogarithms}
+\label{sec:comp-supp-soft-analytic}
+The soft-photon calculation leaves one finite parameter integral at
+fixed elastic scattering angle. It can be integrated before performing
+the elastic angular integral. In this section momenta and energies are
+in units of the electron mass, so $s>1$. Define
+\begin{align}
+ E&=\frac{s+1}{2\sqrt{s}},\qquad q=\frac{s-1}{2\sqrt{s}},
+ \qquad \beta=\frac qE,\qquad t=-2q^2(1-c),\\
+ z_e&=1-\frac t2,\qquad M_x=1-tx(1-x),
+ \qquad v_x=\sqrt{1-M_x/E^2}.
+\end{align}
+Here $c$ is the cosine of the elastic photon scattering angle in the
+center-of-mass frame. The function to be integrated is
+\begin{equation}
+ K=z_e I-\frac{\operatorname{artanh}\beta}{\beta},
+ \qquad
+ I=\int_0^1\frac{\operatorname{artanh}v_x}{v_xM_x}\,\dd x.
+ \label{eq:comp-soft-I-definition}
+\end{equation}
+The ratio $\operatorname{artanh}v_x/v_x$ equals one at $v_x=0$ by continuity.
+Every quantity in this integral is real in the physical angular interval.
+
+\paragraph{Rationalizing the square root.}
+For an interior angle introduce
+\begin{equation}
+ a=\frac{\sqrt{-t}}2,\qquad
+ \kappa=\frac{\sqrt{q^2-a^2}}E,\qquad
+ 0<a<q,\qquad 0<\kappa<\beta<1.
+\end{equation}
+Symmetry about $x=1/2$ allows the substitution $x=(1+y)/2$ with
+$0\leq y\leq1$. Then
+\begin{equation}
+ M_x=1+a^2-a^2y^2,\qquad
+ v_x^2=\kappa^2+\frac{a^2y^2}{E^2},\qquad
+ I=\frac1{aE}\int_\kappa^\beta
+ \frac{\operatorname{artanh}v}{(1-v^2)\sqrt{v^2-\kappa^2}}\,\dd v.
+\end{equation}
+Set $v=\kappa\cosh u=\kappa(r+r^{-1})/2$ with $r=e^u$.
+The result contains only rational functions and logarithms,
+\begin{align}
+ I&=\frac1{aE}\int_1^{R}
+ \frac{2r}{P_+(r)P_-(r)}
+ \ln\frac{P_+(r)}{P_-(r)}\,\dd r,
+ \label{eq:comp-soft-rational-integral}\\
+ P_+(r)&=\kappa r^2+2r+\kappa,\qquad
+ P_-(r)=-\kappa r^2+2r-\kappa,\\
+ R&=\frac{q+a}{\sqrt{q^2-a^2}},\qquad Y=R-1.
+\end{align}
+This transformation selects the positive square root because $y\geq0$
+and $u\geq0$. Thus it does not require analytic continuation from another
+kinematic region.
+
+\paragraph{A real dilogarithmic primitive.}
+Let $d=\sqrt{1-\kappa^2}$ and list the four roots with their signs,
+\begin{align}
+ (z_1,z_2,z_3,z_4)&=
+ \left(-\frac{1+d}{\kappa},-\frac{\kappa}{1+d},
+ \frac{\kappa}{1+d},\frac{1+d}{\kappa}\right),\\
+ (\epsilon_1,\epsilon_2,\epsilon_3,\epsilon_4)&=(1,1,-1,-1),
+ \qquad h_j=z_j-1,\\
+ A_j&=\frac1{4-2\kappa^2(z_j^2+1)},\qquad
+ L_0=\ln\frac{1+\kappa}{1-\kappa}.
+\end{align}
+Partial fractions and factorization give
+\begin{align}
+ \frac{2r}{P_+(r)P_-(r)}&=\sum_{j=1}^4\frac{A_j}{r-z_j},\\
+ \ln\frac{P_+(1+y)}{P_-(1+y)}
+ &=L_0+\sum_{j=1}^4\epsilon_j\ln(1-y/h_j).
+\end{align}
+The two negative roots and the smaller positive root have $h_j<0$.
+The remaining root satisfies $z_4>R$, because $v(R)=\beta<1$
+whereas $v(z_4)=1$. Consequently every factor $1-y/h_j$ is positive
+for $0\leq y\leq Y$. This proves that all logarithms in the transformed
+integral are real and that no pole lies on the integration path.
+
+Define the real dilogarithm on the whole real axis by
+\begin{equation}
+ \mathcal L_2(x)=\operatorname{Re}\operatorname{Li}_2(x+\ii0),
+ \qquad
+ \frac{\dd\mathcal L_2(x)}{\dd x}=-\frac{\ln|1-x|}{x}.
+\end{equation}
+For $x>1$ it can be evaluated without a complex branch choice as
+\begin{equation}
+ \mathcal L_2(x)=\frac{\pi^2}{6}-\ln x\ln(x-1)
+ -\operatorname{Li}_2(1-x),\qquad x>1.
+\end{equation}
+This identity follows by differentiating both sides and matching their
+continuous limits at $x=1$. For $x\leq1$ the ordinary real dilogarithm
+applies. Thus an argument larger than one does not introduce an imaginary
+contribution to $K$. For $g$ and $h$ drawn from the $h_j$, put
+\begin{align}
+ \mathcal J(Y;g,h)
+ &=\ln|1-g/h|\ln|1-Y/g|
+ -\mathcal L_2\!\left(\frac{Y-g}{h-g}\right)
+ +\mathcal L_2\!\left(-\frac{g}{h-g}\right),
+ \qquad g\ne h,\\
+ \mathcal J(Y;g,g)&=\frac12\ln^2|1-Y/g|.
+\end{align}
+Differentiation establishes the required primitive directly,
+\begin{equation}
+ \frac{\partial\mathcal J(Y;g,h)}{\partial Y}
+ =\frac{\ln(1-Y/h)}{Y-g},\qquad \mathcal J(0;g,h)=0.
+\end{equation}
+Indeed, for $g\ne h$ the two logarithms produced by differentiation
+combine to $\ln|(h-Y)/h|$. Positivity proved above removes the absolute
+value from this last expression. The closed result is therefore
+\begin{align}
+ W_j&=L_0\ln|1-Y/h_j|
+ +\sum_{k=1}^4\epsilon_k\mathcal J(Y;h_j,h_k),\\
+ K&=\boxed{\frac{z_e}{aE}\sum_{j=1}^4 A_jW_j
+ -\frac{\operatorname{artanh}\beta}{\beta}.}
+ \label{eq:comp-soft-K-dilog}
+\end{align}
+This is a finite sum of logarithms and dilogarithms with explicit
+arguments. No parameter quadrature remains in the finite soft function.
+
+\paragraph{Angular endpoints.}
+At $t=0$, $M_x=1$ and $v_x=\beta$ throughout the interval, which gives
+\begin{equation}
+ K(s,0)=0.
+\end{equation}
+At $t=-4q^2$ the rationalizing variable used above degenerates because
+$\kappa=0$. The endpoint can instead be integrated directly. Set
+$w=\operatorname{artanh}\beta$. Then
+\begin{align}
+ I\big|_{t=-4q^2}
+ &=\frac1{\beta E^2}\int_0^\beta
+ \frac{\operatorname{artanh}v}{v(1-v^2)}\,\dd v
+ =\frac{J_\beta}{\beta E^2},\\
+ J_\beta&=\frac{\operatorname{Li}_2(\beta)-\operatorname{Li}_2(-\beta)}2
+ +w\ln(2\cosh w)-\frac{w^2}2
+ -\frac12\operatorname{Li}_2(-e^{-2w})-\frac{\pi^2}{24},\\
+ K(s,-4q^2)&=\frac{1+2q^2}{\beta E^2}J_\beta-\frac w\beta.
+ \label{eq:comp-soft-backward-endpoint}
+\end{align}
+To obtain the second line, split $1/[v(1-v^2)]$ into
+$1/v+v/(1-v^2)$. The first term integrates to the difference of two
+dilogarithms. In the second term $v=\tanh u$ gives
+$\int_0^w u\tanh u\,\dd u$, which is integrated by parts using
+$\ln\cosh u=u+\ln(1+e^{-2u})-\ln2$.
+All dilogarithm arguments in this endpoint expression are less than one.
+
+\subsection{The integrated infrared coefficient}
+The coefficient multiplying the soft logarithm can also be integrated
+analytically over the elastic angle. Define the spin-averaged Born
+squared amplitude with its factor $e_{\mathrm T}^4$ removed by $\mathcal B$.
+In terms of $x=s-1$ and $y=1-u=x+t$, its invariant expression is
+\begin{equation}
+ \mathcal B=2\left[\frac xy+\frac yx
+ -4\left(\frac1y-\frac1x\right)
+ +4\left(\frac1y-\frac1x\right)^2\right].
+\end{equation}
+The forward limit is $\mathcal B=4$. At threshold this expression tends
+to $2(1+c^2)$, which also checks the normalization. Write the required
+angular coefficient as
+\begin{equation}
+ \mathcal C_{\mathrm{IR}}(s)=\int_{-1}^1
+ \mathcal B(s,t)\,[b_e(t)-1]\,\dd c,
+ \qquad b_e(t)=\frac{z_e\operatorname{arcosh}z_e}{\sqrt{z_e^2-1}}.
+\end{equation}
+The rapidity variable $r=\exp(\operatorname{arcosh}z_e)$ removes the
+square root in $b_e$. Reversing the integration limits gives
+\begin{align}
+ t&=2-r-r^{-1},\qquad y=s+1-r-r^{-1},\qquad 1\leq r\leq s,\\
+ \mathcal C_{\mathrm{IR}}(s)
+ &=\frac{2s}{x^2}\int_1^s
+ \left[R_+(r)\ln r-R_-(r)\right]\dd r,\\
+ R_\eta(r)&=\mathcal B(s,2-r-r^{-1})(1+\eta r^{-2}),
+ \qquad \eta=\pm1.
+\end{align}
+The last integral is a rational function times a single logarithm.
+For completeness all its partial-fraction coefficients can be stated
+explicitly. Put
+\begin{align}
+ A&=x-4-\frac8x,\qquad B_0=\frac2x\left(s+5+\frac4x\right),\\
+ z_\pm&=\frac{s+1\pm\sqrt{(s-1)(s+3)}}2,\\
+ d_z&=-1+z^{-2},\qquad e_z=-2z^{-3},
+ \qquad f_{\eta z}=1+\eta z^{-2}.
+\end{align}
+Then
+\begin{align}
+ R_\eta(r)&=\sum_{n=-3}^{1}p_{\eta n}r^n
+ +\sum_{z=z_\pm}\left[\frac{c_{\eta z}}{r-z}
+ +\frac{d_{\eta z}}{(r-z)^2}\right],\\
+ p_{\eta,1}&=-\frac2x,\quad p_{\eta,0}=B_0,
+ \quad p_{\eta,-3}=-\frac{2\eta}x,\quad
+ p_{\eta,-2}=\eta B_0,\\
+ p_{\eta,-1}&=-\frac2x+\eta\left(-\frac2x-2A\right),\\
+ d_{\eta z}&=\frac{8f_{\eta z}}{d_z^2},\qquad
+ c_{\eta z}=f_{\eta z}\left(\frac{2A}{d_z}
+ -\frac{8e_z}{d_z^3}\right)-\frac{16\eta}{z^3d_z^2}.
+\end{align}
+The coefficients follow by expanding $y$ to second order at each of its
+zeros. Both zeros are outside the interval: $0<z_-<1<s<z_+$.
+No pole displacement or continuation is required for this angular integral.
+
+Define elementary power primitives and the two pole primitives by
+\begin{align}
+ U_n(r)&=\frac{r^{n+1}}{n+1},\qquad
+ V_n(r)=r^{n+1}\left[\frac{\ln r}{n+1}-\frac1{(n+1)^2}\right],
+ \qquad n\ne-1,\\
+ U_{-1}(r)&=\ln r,\qquad V_{-1}(r)=\frac12\ln^2r,\\
+ H_1(r,z)&=\ln|r-z|,\qquad H_2(r,z)=-\frac1{r-z},\\
+ J_1(r,z)&=\ln r\ln|1-r/z|+\mathcal L_2(r/z),\\
+ J_2(r,z)&=-\frac{\ln r}{r-z}
+ +\frac{\ln|r-z|-\ln r}{z}.
+\end{align}
+Their derivatives are, respectively, $r^n$, $r^n\ln r$,
+$(r-z)^{-j}$, and $(r-z)^{-j}\ln r$. The integrated result is
+\begin{align}
+ \mathcal F_+(r)&=\sum_{n=-3}^1p_{+,n}V_n(r)
+ +\sum_{z=z_\pm}[c_{+z}J_1(r,z)+d_{+z}J_2(r,z)],\\
+ \mathcal F_-(r)&=\sum_{n=-3}^1p_{-,n}U_n(r)
+ +\sum_{z=z_\pm}[c_{-z}H_1(r,z)+d_{-z}H_2(r,z)],\\
+ \Delta\mathcal F_\eta&=\mathcal F_\eta(s)-\mathcal F_\eta(1),\\
+ \mathcal C_{\mathrm{IR}}(s)&=\boxed{\frac{2s}{(s-1)^2}
+ [\Delta\mathcal F_+-\Delta\mathcal F_-].}
+ \label{eq:comp-soft-integrated-ir}
+\end{align}
+This expression contains no angular integral. The cancellation of the total soft logarithm can therefore be checked
+with its coefficient already integrated analytically.
+
+\subsection{Exchanging the finite soft angular integrals}
+\label{sec:comp-soft-angular-exchange}
+The remaining finite soft angular coefficient is
+\begin{equation}
+ \mathcal C_K(s)=\int_{-1}^1\mathcal B(s,t)K(s,t)\,\dd c.
+\end{equation}
+Rather than integrate the individual dilogarithms in
+\eqref{eq:comp-soft-K-dilog}, it is useful to exchange the original
+parameter and angular integrations. Put $T=-t$, $h=1+T/4$, and
+\begin{equation}
+ f(M)=\frac{\operatorname{artanh}\sqrt{1-M/E^2}}
+ {M\sqrt{1-M/E^2}},\qquad
+ I(T)=\frac1{2\sqrt{h-1}}\int_1^h\frac{f(M)}{\sqrt{h-M}}\,\dd M.
+\end{equation}
+This is obtained from $M=h-(h-1)y^2$ in the original parameter integral.
+Since $1\leq h\leq E^2$, interchanging the two integrations yields
+\begin{equation}
+ \int_0^{4q^2}\mathcal B(T)(1+T/2)I(T)\,\dd T
+ =2\int_1^{E^2}f(M)\,\dd M
+ \int_M^{E^2}\frac{\mathcal B(h)(2h-1)}
+ {\sqrt{(h-1)(h-M)}}\,\dd h.
+\end{equation}
+All endpoint singularities here are integrable. The substitution
+$u=\sqrt{(h-M)/(h-1)}$ makes the inner integral rational. Its upper
+limit is $U=\sqrt{E^2-M}/q$. Define
+\begin{equation}
+ k^2=\frac{1+xU^2}{s},\qquad x=s-1,
+ \qquad h=\frac{M-u^2}{1-u^2}.
+\end{equation}
+The rational function that occurs is
+\begin{equation}
+ \frac{\mathcal B(h)(2h-1)}{1-u^2}
+ =\frac{a_1}{1-u^2}+\frac{a_2}{(1-u^2)^2}
+ +\frac{a_3}{(1-u^2)^3}
+ +\frac{b_1}{k^2-u^2}+\frac{b_2}{(k^2-u^2)^2},
+\end{equation}
+with explicit coefficients
+\begin{align}
+ a_1&=-\frac{x^3-6x^2-16x-8}{x^2},
+ &a_2&=\frac{(1-k^2)(x^2+2x+4)}x,\\
+ a_3&=-x(1-k^2)^2,
+ &b_1&=\frac{x^3-2x^2-16x-8}{x^2},\\
+ b_2&=\frac{4(1-k^2)(x+2)}{x^2}.
+\end{align}
+The elementary primitives needed at the upper limit are
+\begin{align}
+ F_1(U;k)&=\frac{\operatorname{artanh}(U/k)}k,\\
+ F_2(U;k)&=\frac{U}{2k^2(k^2-U^2)}+\frac{F_1(U;k)}{2k^2},\\
+ F_3(U;k)&=\frac{U}{4k^2(k^2-U^2)^2}+\frac{3F_2(U;k)}{4k^2}.
+\end{align}
+They vanish at $U=0$ and differentiate to $(k^2-U^2)^{-n}$ when $k$
+is held fixed. In the inner integration it is indeed fixed. Consequently
+\begin{align}
+ H(U)&=a_1F_1(U;1)+a_2F_2(U;1)+a_3F_3(U;1)
+ +b_1F_1(U;k)+b_2F_2(U;k),\\
+ \mathcal C_K(s)&=\frac4\beta\int_0^1
+ \frac{\operatorname{artanh}(\beta U)}{E^2(1-\beta^2U^2)}
+ H(U)\,\dd U-\frac{\operatorname{artanh}\beta}{\beta}
+ \mathcal C_0(s),
+ \label{eq:comp-soft-K-angular-reduced}\\
+ \mathcal C_0(s)&=\int_{-1}^1\mathcal B\,\dd c
+ =\frac{4s}{x^2}[P(x)-P(x/s)],\\
+ P(y)&=\frac{y^2}{2x}+\left(\frac4x+\frac4{x^2}\right)y
+ +\left(x-4-\frac8x\right)\ln y-\frac4y.
+\end{align}
+The square root $k$ is positive, and
+$k^2-U^2=(1-U^2)/s>0$ for $0\leq U<1$. Both inverse hyperbolic tangents
+in $H$ are therefore real. This reduction integrates the original elastic
+angle analytically before performing the remaining soft parameter integral.
+
+The one remaining square root can itself be rationalized by
+\begin{align}
+ w&=\sqrt{x}U+\sqrt{1+xU^2},
+ &1\leq w&\leq\sqrt{x}+\sqrt{s},\\
+ U&=\frac{w-w^{-1}}{2\sqrt{x}},
+ &k&=\frac{w+w^{-1}}{2\sqrt{s}}.
+\end{align}
+Thus \eqref{eq:comp-soft-K-angular-reduced} becomes an integral of
+rational functions of $w$ multiplying one or two logarithms of rational
+functions. It requires at most weight-three multiple polylogarithms.
+The endpoints and all logarithm arguments have been obtained directly
+from the physical interval, without selecting branches by comparison
+with a numerical answer.
+
+\paragraph{Reduction to a finite polylogarithmic expression.}
+It is useful to state an algebraic reduction which avoids printing a
+large list of weight-three terms. It terminates after at most two
+reductions for the expression below and contains no quadrature.
+Set $z=w-1$, $Z=\sqrt{s}+\sqrt{x}-1$, and regard $U$ and $k$ as the
+rational functions of $w=1+z$ just obtained. Write
+\begin{align}
+ H&=h_0+h_1\operatorname{artanh}U
+       +h_k\operatorname{artanh}(U/k),\\
+ h_0&=\frac{a_2U}{2(1-U^2)}
+ +a_3\left[\frac{U}{4(1-U^2)^2}
+ +\frac{3U}{8(1-U^2)}\right]
+ +\frac{b_2U}{2k^2(k^2-U^2)},\\
+ h_1&=a_1+\frac{a_2}2+\frac{3a_3}8,
+ \qquad h_k=\frac{b_1}k+\frac{b_2}{2k^3},\\
+ R_j(z)&=\frac{4U'(z)h_j}{\beta E^2(1-\beta^2U^2)},
+ \qquad j=0,1,k.
+\end{align}
+Define the positive root
+\begin{equation}
+ r=\sqrt{1+(\sqrt{x}/\beta)^2}-\sqrt{x}/\beta,\qquad 0<r<1.
+\end{equation}
+Each $R_j$ is explicitly rational. Its poles in the $w$ plane belong to
+\begin{equation}
+ w=0,\quad \pm\ii,\quad \pm r,\quad \pm r^{-1},
+\end{equation}
+The orders at $w=0$ are three for $R_0$ and
+four for $R_1$, and $R_k$ has no pole there. At $w=\pm\ii$, $R_0$ has
+simple poles and $R_k$ has double poles. The four real poles are simple.
+The polynomial parts of $R_0$, $R_1$, and $R_k$ have degrees one, two,
+and no polynomial part, respectively. These statements follow by
+substituting the displayed rational expressions for $U$ and $k$.
+Apparent endpoint poles in $h_0$
+cancel because $1-k^2=x(1-U^2)/s$ and $k^2-U^2=(1-U^2)/s$.
+
+\input{soft_kernel_reduction}
+
+For a finite list of pairs $(a,\ell_a)$ write
+$L(z)=\sum_a\ell_aG(a;z)$, where $G$ is the usual multiple
+polylogarithm with kernels $1/(z-a)$. The three lists needed here are
+\begin{align}
+ \mathcal A_\beta&=\tfrac12\{(r-1,+1),(-r^{-1}-1,+1),
+ (r^{-1}-1,-1),(-r-1,-1)\},\\
+ \mathcal A_1&=\tfrac12\{(W^{-1}-1,+1),(-W-1,+1),
+ (W-1,-1),(-W^{-1}-1,-1)\},\\
+ \mathcal A_k&=\tfrac12\{(W^{-1}-1,+1),(-W^{-1}-1,+1),
+ (W-1,-1),(-W-1,-1)\},\\
+ W&=\sqrt{s}+\sqrt{x}.
+\end{align}
+Here the factor $1/2$ multiplies the weights, not the letters.
+Factoring $1\pm\beta U$, $1\pm U$, and $k\pm U$ proves
+\begin{equation}
+ L_\beta(z)=\operatorname{artanh}(\beta U),\qquad
+ L_1(z)=\operatorname{artanh}U,\qquad
+ L_k(z)=\operatorname{artanh}(U/k).
+\end{equation}
+All three vanish at $z=0$, which fixes the constants in the factorized
+logarithms. Their real letters lie outside $0<z<Z$.
+The two functions with endpoint logarithms are defined by their limits
+from $z<Z$.
+
+Here is an explicit algebraic rule for removing the rational factors.
+Let $\mathfrak T[R;\boldsymbol a](z)$ be linear in the rational function
+$R$. Expand $R$ into its polynomial part and partial fractions. For a pole
+$a$ of order $m_a$, the coefficient of $(z-a)^{-n}$ is explicitly
+\begin{equation}
+ C_{a,n}=\left.\frac1{(m_a-n)!}
+ \frac{\dd^{m_a-n}}{\dd z^{m_a-n}}
+ [(z-a)^{m_a}R(z)]\right|_{z=a},\qquad 1\leq n\leq m_a.
+\end{equation}
+The polynomial part is obtained by polynomial division. The known pole
+list above makes all these operations finite. For a
+nonempty word $\boldsymbol a=(b,\boldsymbol c)$ use
+\begin{align}
+ \mathfrak T[(z-a)^{-1};\boldsymbol a](z)
+ &=G(a,\boldsymbol a;z),\\
+ \mathfrak T[(z-a)^{-n};b,\boldsymbol c](z)
+ &=-\frac{G(b,\boldsymbol c;z)}{(n-1)(z-a)^{n-1}}
+ +\frac1{n-1}\mathfrak T\!\left[
+ \frac1{(z-a)^{n-1}(z-b)};\boldsymbol c\right](z),
+ \quad n\geq2,\\
+ \mathfrak T[z^n;b,\boldsymbol c](z)
+ &=\frac{z^{n+1}}{n+1}G(b,\boldsymbol c;z)
+ -\frac1{n+1}\mathfrak T\!\left[
+ \frac{z^{n+1}}{z-b};\boldsymbol c\right](z),
+ \quad n\geq0.
+\end{align}
+For the empty word, use the elementary rules
+\begin{align}
+ \mathfrak T[z^n;\varnothing](z)&=\frac{z^{n+1}}{n+1},\\
+ \mathfrak T[(z-a)^{-1};\varnothing](z)&=G(a;z),\\
+ \mathfrak T[(z-a)^{-n};\varnothing](z)
+ &=\frac{(z-a)^{1-n}-(-a)^{1-n}}{1-n},\qquad n\geq2.
+\end{align}
+Every pole appearing here has $a\ne0$. Differentiation proves that
+$\mathfrak T[R;\boldsymbol a]'=R\,G(\boldsymbol a;z)$ and its value
+at zero is zero. For repeated poles and polynomial terms the word
+length decreases. Simple poles terminate immediately. Hence these
+rules specify a finite combination of rational functions and ordinary
+multiple polylogarithms, rather than a new unevaluated integral.
+
+The endpoint expression for the finite soft angular coefficient is
+\begin{align}
+ \mathcal S_0(z)&=\sum_{a\in\mathcal A_\beta}
+ \ell_a\mathfrak T[R_0;a](z),\\
+ \mathcal S_j(z)&=\sum_{a\in\mathcal A_\beta}
+ \sum_{b\in\mathcal A_j}\ell_a\ell_b
+ \left\{\mathfrak T[R_j;a,b](z)
+ +\mathfrak T[R_j;b,a](z)\right\},\qquad j=1,k,\\
+ \mathcal C_K(s)&=\lim_{z\to Z^-}
+ [\mathcal S_0(z)+\mathcal S_1(z)+\mathcal S_k(z)]
+ -\frac{\operatorname{artanh}\beta}{\beta}\mathcal C_0(s).
+ \label{eq:comp-soft-K-angular-GPL}
+\end{align}
+The two words in $\mathcal S_j$ are the shuffle identity for the product
+of two weight-one logarithms. Formula \eqref{eq:comp-soft-K-angular-GPL}
+is an algebraically specified weight-three polylogarithmic expression.
+An expanded list of its coefficients can be generated using only
+partial fractions and the finite rules above. The limit is finite:
+the original $U$ integrand has at most an integrable logarithm at $U=1$.
+
+\input{soft_reduced_endpoint}
+
+\paragraph{The finite endpoint limit.} The convergence of the endpoint
+expression follows from its local expansion.
+Let $d=1-U$ and let $\mathcal I(U)$ denote the integrand including the
+factor $4/\beta$ in \eqref{eq:comp-soft-K-angular-reduced}. Define
+\begin{align}
+ h_{0*}&=\frac{x^2+2x+4}{2s}-\frac{x^3}{4s^2}+\frac{2(x+2)}x,\\
+ B_*&=h_{0*}+2\ln2+\frac{b_1}2\ln s.
+\end{align}
+The rational coefficients have finite limits at $U=1$, and
+$h_1+h_k=4$ there. Also $1-U/k=d/s+O(d^2)$. Hence
+\begin{align}
+ \mathcal I(1-d)&=\frac{4\operatorname{artanh}\beta}{\beta}
+ [-2\ln d+B_*]+O(d\ln d),\\
+ \int_{1-d}^1\mathcal I(U)\,\dd U
+ &=\frac{4\operatorname{artanh}\beta}{\beta}
+ d[-2\ln d+2+B_*]+O(d^2\ln d).
+\end{align}
+Since $d\ln d\to0$, the omitted tail vanishes. This establishes the
+existence of the combined polylogarithmic endpoint limit.
+
+\subsection{Changing the soft energy frame}
+A useful independent check is to place the soft-photon energy bound in
+the final electron rest frame. Write $z_e=\cosh\eta$ and
+$v=\tanh\eta$. In this frame the final electron has energy one, the
+initial electron has energy $z_e$, and their interpolated momentum has
+\begin{equation}
+ E_x=1+x(z_e-1),\qquad
+ M_x=1+2(z_e-1)x(1-x),\qquad
+ v_x=\frac{x\sqrt{z_e^2-1}}{1+x(z_e-1)}.
+\end{equation}
+In this paragraph $x$ is a Feynman parameter. The finite cross term
+integrates directly after changing from $x$ to $v_x$,
+\begin{equation}
+ \int_0^1\frac{\operatorname{artanh}v_x}{v_xM_x}\,\dd x
+ =\frac{J(v)}{\sqrt{z_e^2-1}},\qquad
+ J(v)=\int_0^v\frac{\operatorname{artanh}u}{u(1-u^2)}\,\dd u.
+\end{equation}
+The integral $J$ is the dilogarithmic expression $J_\beta$ above with
+$\beta$ replaced by $v$ and $w$ by $\eta$. Including the two self terms
+gives the closed finite function
+\begin{equation}
+ K_{\mathrm{rest}}(t)=\frac{J(v)}v-\frac{b_e+1}2,
+ \qquad b_e=\frac\eta v.
+\end{equation}
+Thus the difference between a rest-frame energy bound $\sqrt{s}\varepsilon$
+and a center-of-mass energy bound $\varepsilon$ is
+\begin{equation}
+ \frac{\delta_{\mathrm{rest}}-\delta_{\mathrm{CM}}}{\alpha_{\mathrm T}}
+ =\frac2\pi\left[(b_e-1)\ln\sqrt{s}+K-K_{\mathrm{rest}}\right].
+ \label{eq:comp-soft-frame-change}
+\end{equation}
+This finite change also follows directly from the angular integral of
+the eikonal factor multiplied by $\ln[\sqrt{s}/(p'\cdot n)]$, where
+$n=(1,\widehat{\boldsymbol k})$ in the center-of-mass frame.
+
+For example, consider the asymmetric invariant cuts
+$2P\cdot k_1>\delta$ and $2p'\cdot k_2>\delta$, with
+$P=p+k$ and $\delta=2\sqrt{s}\varepsilon$.
+Since $2P\cdot k_1+2p'\cdot k_2=s-1$, their omitted soft regions do not
+overlap for sufficiently small $\delta$. The two soft terms have weights
+$1/2$ from the identical-photon phase-space factor. Their average differs
+from the original center-of-mass soft term by half of
+\eqref{eq:comp-soft-frame-change}. In the total coefficient multiplying
+$\alpha_{\mathrm T}^3/m^2$, the shift is
+\begin{equation}
+ \Delta C_{\mathrm{VS}}=
+ \frac1{2s}\left[\mathcal C_K-\mathcal C_{K,\mathrm{rest}}
+ +\frac{\ln s}{2}\mathcal C_{\mathrm{IR}}\right].
+\end{equation}
+It cannot be omitted if this asymmetric cut is used.
+
+The rest-frame angular coefficient has a short weight-three expression.
+Set $r=e^\eta$ and $z=r-1$. Since
+\begin{equation}
+ \frac{\dd J}{\dd r}=\ln r\left[-\frac1r+\frac1{r-1}+\frac1{r+1}\right],
+ \qquad J(0\text{ in }\eta)=0,
+\end{equation}
+its exact polylogarithmic form is
+\begin{equation}
+ J=-G(-1,-1;z)+G(0,-1;z)+G(-2,-1;z).
+\end{equation}
+Let $\widetilde R_+(z)=R_+(1+z)$, with $R_+$ the rational kernel used
+in the integrated infrared coefficient. The algebraic map $\mathfrak T$
+then gives
+\begin{align}
+ \mathcal Q(z)&=-\mathfrak T[\widetilde R_+;-1,-1](z)
+ +\mathfrak T[\widetilde R_+;0,-1](z)
+ +\mathfrak T[\widetilde R_+;-2,-1](z),\\
+ \mathcal C_{K,\mathrm{rest}}(s)
+ &=\frac{2s}{(s-1)^2}\mathcal Q(s-1)
+ -\frac12\mathcal C_{\mathrm{IR}}(s)-\mathcal C_0(s).
+\end{align}
+This alternative frame is not needed for the symmetric analytic
+regulator described next.
